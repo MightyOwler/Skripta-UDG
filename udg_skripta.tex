@@ -278,14 +278,14 @@ Naslednje množice so primeri mnogoterosti.
 	\item $M = \mathbb{R}^n$ je $n$-dimenzionalna mnogoterost,
 	\item $S^1$ je $1$-dimenzionalna mnogoterost,
 	\item $S^{n} = \left\{\left( x_1, x_2, \ldots, x_n, x_{n+1} \right)  \middle| \sum_{j=1}^{n+1} x_{i}^2 = 1\right\} \subseteq \mathbb{R}^{n+1}$ je $n$-dimenzionalna mnogoterost,
-	\item Projektivni prostori $\mathbb{R}P^{n} =  \bigslant{B^{n}}{\sim} $, kjer je $\vec{x}  \sim \vec{y}  \iff \vec{y}  = -\vec{x} $
+	\item Projektivni prostori $\mathbb{R}P^{n} =  \bigslant{B^{n}}{\sim} $, kjer je $\vec{x}  \sim \vec{y}  \iff \vec{y}  = -\vec{x}$ so $n$-dimenzionalne mnogoterosti.
 	\item Grupa \[
 			\operatorname{SU}\left( 2 \right) = \left\{ g =  \begin{pmatrix}
 	\alpha & \beta \\
 	- \overline{\beta}  & \overline{\alpha}  \\
 \end{pmatrix}  \middle|\, \alpha, \beta \in  \mathbb{C}, \det g = 1
-\right\}. 
-\]Topološko in geometrijsko je namreč $\operatorname{SU}\left( 2 \right) = S^3.$ To je primer Lijeve grupe.
+\right\} 	
+\]je $3$-dimenzionalna mnogoterost. Topološko in geometrijsko je namreč $\operatorname{SU}\left( 2 \right) = S^3.$ To je primer Lijeve grupe.
 \item Grupa \[
 		\operatorname{SO}\left( 3 \right) = \left\{ g = 
 \begin{pmatrix}
@@ -295,7 +295,7 @@ Naslednje množice so primeri mnogoterosti.
 \end{pmatrix}
  \middle|\, g^{T} = g^{-1}, \det  g = 1
 		\right\}. 
-\] Izkaže se, da je $\operatorname{SO}\left( 3\right ) =  \bigslant{B^3}{\sim } = \mathbb{R}P^3.$ To velja, ker vsaka preslikava iz $\operatorname{SO}\left( 3\right )$ predstavlja rotacijo prostora, vsako rotacijo pa lahko predstavimo z osjo in velikostjo kota vrtenja. Pri tem kota $\pi$ in $-\pi$ predstavljata vrtenje za isti kot. Če točki v $B\left( 0, \pi \right)^{3} \approx B^3$ priredimo os in razdaljo od izhodišča ter enačimo iste rotacije, dobimo natanko projektivni prostor $\mathbb{R}P^3$.
+\] Izkaže se, da je $\operatorname{SO}\left( 3\right ) =  \bigslant{B^3}{\sim } = \mathbb{R}P^3.$ To velja, ker vsaka preslikava iz $\operatorname{SO}\left( 3\right )$ predstavlja rotacijo prostora, vsako rotacijo pa lahko predstavimo z osjo in velikostjo kota vrtenja. Pri tem kota $\pi$ in $-\pi$ predstavljata vrtenje za isti kot. Če točki v krogli $B\left( 0, \pi \right)^{3} \approx B^3$ priredimo os in njeno razdaljo od izhodišča proglasimo za velikost kota vrtenja ter enačimo iste rotacije, dobimo natanko projektivni prostor $\mathbb{R}P^3$.
 \end{enumerate}
 \end{primer}
 
@@ -305,8 +305,8 @@ Naslednje množice so primeri mnogoterosti.
 Na topoloških mnogoterostih bi radi znali odvajati različne objekte, kot so na primer funkcije, krivulje, tenzorji itd. Zato moramo mnogoterosti opremiti z dodatno strukturo. Za začetek se spomnimo definicije odvedljivosti preslikav v evklidskih prostorih.
 
 \begin{definicija}
-Preslikava $F: W \to  \mathbb{R}^n$ odvedljiva, če za vsak $w \in  W$ obstaja linearna preslikava $A : \mathbb{R}^n \to  \mathbb{R}^n$, da velja \[
-	F\left( w + h \right) = F\left( w \right) + Ah + \mathcal{O}\left( h \right)\] in $\lim_{h \to 0} \frac{\lvert \mathcal{O}\left( h \right) \rvert }{\lvert\lvert h \rvert\rvert } = 0.$ Odvod preslikave $F$ v točki $w$ je preslikava $A = D_wF.$ 
+Preslikava $F: W^{\text{odp}}  \subseteq  \mathbb{R}^n \to  \mathbb{R}^n$ odvedljiva, če za vsak $w \in  W$ obstaja linearna preslikava $A : \mathbb{R}^n \to  \mathbb{R}^n$, da velja \[
+	F\left( w + h \right) = F\left( w \right) + Ah + \mathcal{O}\left( h \right)\] in $\lim_{h \to 0} \frac{\lvert\lvert \mathcal{O}\left( h \right) \rvert\rvert }{\lvert\lvert h \rvert\rvert } = 0.$ Odvod preslikave $F$ v točki $w$ je preslikava $A = D_wF.$ 
 \end{definicija}
 
 
@@ -322,20 +322,18 @@ Difeomorfizem je bijektivna odvedljiva preslikava, ki ima odvedljiv inverz.
 
 \begin{definicija}
 \label{def_atlas}
-Naj bo $M$ $n$-mnt. Gladek atlas $\mathcal{U}$ na $M$ je družina parov $\left( U_\alpha, \varphi_\alpha \right ),$  kjer je $U_\alpha^{\text{odp}}  \subseteq M$, $\varphi_\alpha: U_\alpha \subseteq  M \to V_\alpha \subseteq \mathbb{R}^n$.
-
-Natančneje, družina $\mathcal{U} = \left\{  \left( U_\alpha, \varphi_\alpha\right )\right  \mid  \alpha \in  A\}$ je $\mathcal{C}^1$-atlas, če velja: \begin{enumerate}
+Naj bo $M$ $n$-dimenzionalna mnogoterost. Gladek atlas $\mathcal{U}$ na $M$ je družina parov $\mathcal{U} = \left\{  \left( U_\alpha, \varphi_\alpha\right )\right  \mid  \alpha \in  A\},$ če za vsak $\alpha \in A$ velja: \begin{enumerate}
 	\item $U_\alpha^{\text{odp}} \subseteq M$
 	\item $\varphi_\alpha: U_\alpha \to  V_\alpha \subseteq  \mathbb{R}^n$ je homeomorfizem za nek $V_\alpha \subseteq  \mathbb{R}^n$
 	\item $\left\{ U_\alpha  \middle|\, \alpha\in  A \right\}$ je pokritje $M$
-	\item $g_{\alpha \beta}  = \varphi_\beta \circ \varphi_\alpha^{-1}: \varphi_\alpha(U_\alpha \cap  U_\beta) \to\varphi_\beta(U_\alpha \cap  U_\beta)$ mora biti difeomorfizem     
+	\item $g_{\alpha \beta}  = \varphi_\beta \circ \varphi_\alpha^{-1}: (\varphi_\alpha)_{*}(U_\alpha \cap  U_\beta) \to(\varphi_\beta)_{*}(U_\alpha \cap  U_\beta)$ je difeomorfizem     
 \end{enumerate}
-Dodatek: Če so vse predhodne preslikave $g_{\alpha \beta}$  $k$-difeomorfizmi, imamo $\mathcal{C}^{k}$-atlas. Če so vse preslikave gladke, imamo $\mathcal{C}^{\infty}$-atlas, če so vse analitične, pa $\mathcal{C}^{\omega}$-atlas.     
+Dodatek: Če so vse prehodne preslikave $g_{\alpha \beta}$  $k$-difeomorfizmi z zveznim $k$-tim odvodom, imamo $\mathcal{C}^{k}$-atlas. Če so vse preslikave gladke, imamo $\mathcal{C}^{\infty}$-atlas, če so vse analitične, pa $\mathcal{C}^{\omega}$-atlas.     
  
 \end{definicija}
 
 \begin{opomba}
-	Preslikava $g_{\alpha \beta}$  iz prejšnje definicije je preslikava iz $\mathbb{R}^n \to  \mathbb{R}^n$. Torej jo znamo odvajati in vemo, da je v izbranih koordinatah na $\mathbb{R}^n$ je matrika odvoda Jacobijeva matrika \[
+	Preslikava $g_{\alpha \beta}$  iz prejšnje definicije je preslikava iz $U_\alpha \subseteq  \mathbb{R}^n \to  \mathbb{R}^n$. Torej jo znamo odvajati in vemo, da je v izbranih koordinatah na $\mathbb{R}^n$ matrika odvoda enaka Jacobijevi matriki: \[
 F\left( x_1, \ldots, x_{n} \right) = \begin{pmatrix}F_1(x_1, \dots, x_n)\\ \vdots\\ F_n(x_1, \dots, x_n) \end{pmatrix}	\implies D_wF = \begin{pmatrix}
 \frac{\partial F_1}{\partial x_1} & \dots & \frac{\partial F_1}{\partial x_n} \\
 \vdots & \vdots & \ddots \\
@@ -353,7 +351,7 @@ Za motivacijo naslednje definicije se spomnimo dejstva, da vemo, kakšne so glad
 
 \begin{definicija}
 \label{def_gladke_preslikave}
- Funkcija $f : M \to  R$ je gladka, če je gladka vsaka preslikava $f \circ \varphi_\alpha^{-1} : V_\alpha \subseteq  \mathbb{R}^n \to  \mathbb{R}^n$.
+ Funkcija $f : M \to  \mathbb{R}$ je gladka, če je gladka vsaka preslikava $f \circ \varphi_\alpha^{-1} : V_\alpha \subseteq  \mathbb{R}^n \to  \mathbb{R}$.
 \end{definicija}
 
 
@@ -420,14 +418,14 @@ Naj bo $\langle \cdot , \cdot  \rangle $  neki skalarni produkt na $\mathcal{V} 
 \langle a_n, a_1 \rangle & \dots & \langle a_1,a_n \rangle 
 \end{pmatrix} \begin{pmatrix} b_1 \\ \vdots \\ b_n \end{pmatrix}
 \] 
-Iz simetričnosti skalarnega produkta $\langle v_{i}, v_{j} \rangle  = \langle v_{j}, v_{i} \rangle $ sledi, da je zgornja matrika simetrična. Iz pozitivne definitnosti skalarnega produkta ($\langle v_{i}, v_{i} \rangle \ge 0$) pa sledi še pozitivna definitnost te matrike. 
+Iz simetričnosti skalarnega produkta ($\langle v_{i}, v_{j} \rangle  = \langle v_{j},  v_{i} \rangle $) sledi, da je zgornja matrika simetrična. Iz pozitivne definitnosti skalarnega produkta ($\langle v_{i}, v_{i} \rangle > 0$) pa sledi še pozitivna definitnost te matrike. 
 
 \begin{opomba}
  Kvadratne matrike so lahko koordinatni zapisi linearnih preslikav iz $\mathbb{R}^n \to  \mathbb{R}^n$, lahko pa so tudi koordinatni zapisi skalarnih produktov. To je odvisno od tega, kako se matrike transformirajo pri prehodu v različno bazo.
 
  Naj bo $P$ poljubna preslikava med bazama,  $L_e$ linearna preslikava glede na bazo $\left\{ e_1, \ldots , e_{n}\right\}$, $L_f$ pa glede na bazo $\left\{ f_1, \ldots, f_{n}\right\}.$ Potem iz algebre 1 vemo, da je \[
  L_f = PL_eP^{-1}.
- \]Zdaj pa izpeljimo, kako se transformira matrika skalarnega produkta. Naj bosta $a_f = Pa_e$ in $b_f = Pb_e$. Potem dobimo \begin{align*}
+ \]Zdaj pa izpeljimo, kako se transformira matrika skalarnega produkta. Naj bosta $a_f = Pa_e$ in $b_f = Pb_e$. Potem dobimo iz enakosti \begin{align*}
      \langle a_f, b_f \rangle  &= \langle a_e, b_e \rangle  \\
      a_f^{T} A_f b_f &= a_e^{T} A_e b_e \\
 	 a_e^{T} P^{T} A_f P b_e &= a_e^{T} A_e b_e, \forall a_e, b_e.
