@@ -305,7 +305,7 @@ Naslednje množice so primeri mnogoterosti.
 Na topoloških mnogoterostih bi radi znali odvajati različne objekte, kot so na primer funkcije, krivulje, tenzorji itd. Zato moramo mnogoterosti opremiti z dodatno strukturo. Za začetek se spomnimo definicije odvedljivosti preslikav v evklidskih prostorih.
 
 \begin{definicija}
-Preslikava $F: W^{\text{odp}}  \subseteq  \mathbb{R}^n \to  \mathbb{R}^n$ odvedljiva, če za vsak $w \in  W$ obstaja linearna preslikava $A : \mathbb{R}^n \to  \mathbb{R}^n$, da velja \[
+Preslikava $F: W^{\text{odp}}  \subseteq  \mathbb{R}^n \to  \mathbb{R}^n$ je odvedljiva v točki $w \in  W$, če obstaja linearna preslikava $A : \mathbb{R}^n \to  \mathbb{R}^n$ in preslikava $\mathcal{O}: W \to \mathbb{R}^n$, da za vse ustrezne argumente velja \[
 	F\left( w + h \right) = F\left( w \right) + Ah + \mathcal{O}\left( h \right)\] in $\lim_{h \to 0} \frac{\lvert\lvert \mathcal{O}\left( h \right) \rvert\rvert }{\lvert\lvert h \rvert\rvert } = 0.$ Odvod preslikave $F$ v točki $w$ je preslikava $A = D_wF.$ 
 \end{definicija}
 
@@ -404,8 +404,8 @@ Vložena ploskev $X \subseteq  \mathbb{R}^n$ je tudi abstraktna mnogoterost. Pog
 
 \subsection{Metrika na ploskvi}%
 
-Če hočemo meriti razdalje med pari točk na gladki mnogoterosti, potrebujemo še dodatno strukturo - metriko. Ta nam omogoča merjenje dolžin krivulj. Če si predstavljamo krivuljo $\gamma : \left( a,b \right) \to M$, je najbolj naravna definicija njene dolžine \[
-\mathcal{L}\left( \gamma \right) = \int_{a}^{b} \lvert\lvert \dot{\gamma}  \rvert\rvert  \, dt. 
+Če hočemo meriti razdalje med pari točk na gladki mnogoterosti, potrebujemo še dodatno strukturo -- metriko. Ta nam omogoča merjenje dolžin krivulj. Če si predstavljamo krivuljo $\gamma : \left( a,b \right) \to M$, je najbolj naravna definicija njene dolžine \[
+\mathcal{L}\left( \gamma \right) = \int_{a}^{b} \lvert\lvert \dot{\gamma } \left( t \right) \rvert\rvert  \, dt. 
 \]Znati moramo torej izračunati dolžino oziroma normo tangentnega vektorja. Najbolje je, če je ta norma porojena s skalarnim produktom, torej $\lvert\lvert x \rvert\rvert = \sqrt{\langle x,x \rangle } $.
 
 Naj bo $\langle \cdot , \cdot  \rangle $  neki skalarni produkt na $\mathcal{V} = \mathbb{R}^n$ in naj bo $\left\{ v_1, \ldots , v_{n} \right\}$  baza za $\mathcal{V}$, ki ni nujno ortonormirana. Vzemimo vektorja $\vec{x}  = \sum_{i=1}^{n} a_{i}v_{i}$ in $\vec{y}  = \sum_{i=1}^{n} b_{i}v_{i}.$ Potem velja, da je skalarni produkt enak \[
