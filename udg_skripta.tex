@@ -302,7 +302,17 @@ Naslednje množice so primeri mnogoterosti.
 \subsection{Gladke mnogoterosti}%
 \label{sub:Gladke_mnogoterosti}
 
-Na topoloških mnogoterostih bi radi znali odvajati različne objekte, kot so na primer funkcije, krivulje, tenzorji itd. Zato moramo mnogoterosti opremiti z dodatno strukturo. 
+Na topoloških mnogoterostih bi radi znali odvajati različne objekte, kot so na primer funkcije, krivulje, tenzorji itd. Zato moramo mnogoterosti opremiti z dodatno strukturo. Za začetek se spomnimo definicije odvedljivosti preslikav v evklidskih prostorih.
+
+\begin{definicija}
+Preslikava $F: W \to  \mathbb{R}^n$ odvedljiva, če za vsak $w \in  W$ obstaja linearna preslikava $A : \mathbb{R}^n \to  \mathbb{R}^n$, da velja \[
+	F\left( w + h \right) = F\left( w \right) + Ah + \mathcal{O}\left( h \right)\] in $\lim_{h \to 0} \frac{\lvert \mathcal{O}\left( h \right) \rvert }{\lvert\lvert h \rvert\rvert } = 0.$ Odvod preslikave $F$ v točki $w$ je preslikava $A = D_wF.$ 
+\end{definicija}
+
+
+\begin{definicija}
+\label{def_odvedljivost}
+Preslikava $F$ je odvedljiva na množici $W$, če je odvedljiva v vsaki točki $w \in  W$.\end{definicija}
 
 \begin{definicija}
 \label{def_difeomorfizem}
@@ -325,17 +335,7 @@ Dodatek: Če so vse predhodne preslikave $g_{\alpha \beta}$  $k$-difeomorfizmi, 
 \end{definicija}
 
 \begin{opomba}
-	Preslikava $g_{\alpha \beta}$  iz prejšnje definicije je preslikava iz $\mathbb{R}^n \to  \mathbb{R}^n$. V splošnem je preslikava $F: W \to  \mathbb{R}^n$ odvedljiva, če za vsak $w \in  W$ obstaja linearna preslikava $A : \mathbb{R}^n \to  \mathbb{R}^n$, da velja \[
-	F\left( w + h \right) = F\left( w \right) + Ah + \mathcal{O}\left( h \right)\] in $\lim_{h \to 0} \frac{\lvert \mathcal{O}\left( h \right) \rvert }{\lvert\lvert h \rvert\rvert } = 0.$ Odvod preslikave $F$ v točki $w$ je preslikava $A = D_wF.$          
-\end{opomba}
-
-\begin{definicija}
-\label{def_odvedljivost}
-Preslikava $F$ je odvedljiva na množici $W$, če je odvedljiva v vsaki točki $w \in  W$.\end{definicija}
-
-\begin{opomba}
-    
- V izbranih koordinatah na $\mathbb{R}^n$ je matrika odvoda Jacobijeva matrika \[
+	Preslikava $g_{\alpha \beta}$  iz prejšnje definicije je preslikava iz $\mathbb{R}^n \to  \mathbb{R}^n$. Torej jo znamo odvajati in vemo, da je v izbranih koordinatah na $\mathbb{R}^n$ je matrika odvoda Jacobijeva matrika \[
 F\left( x_1, \ldots, x_{n} \right) = \begin{pmatrix}F_1(x_1, \dots, x_n)\\ \vdots\\ F_n(x_1, \dots, x_n) \end{pmatrix}	\implies D_wF = \begin{pmatrix}
 \frac{\partial F_1}{\partial x_1} & \dots & \frac{\partial F_1}{\partial x_n} \\
 \vdots & \vdots & \ddots \\
