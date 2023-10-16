@@ -306,13 +306,13 @@ Na topoloških mnogoterostih bi radi znali odvajati različne objekte, kot so na
 
 \begin{definicija}
 Preslikava $F: W^{\text{odp}}  \subseteq  \mathbb{R}^n \to  \mathbb{R}^n$ je odvedljiva v točki $w \in  W$, če obstaja linearna preslikava $A : \mathbb{R}^n \to  \mathbb{R}^n$ in preslikava $\mathcal{O}: W \to \mathbb{R}^n$, da za vse ustrezne argumente velja \[
-	F\left( w + h \right) = F\left( w \right) + Ah + \mathcal{O}\left( h \right)\] in $\lim_{h \to 0} \frac{\lvert\lvert \mathcal{O}\left( h \right) \rvert\rvert }{\lvert\lvert h \rvert\rvert } = 0.$ Odvod preslikave $F$ v točki $w$ je preslikava $A = D_wF.$ 
+	F\left( w + h \right) = F\left( w \right) + Ah + \mathcal{O}\left( h \right)\] in $\lim_{h \to 0} \frac{\lvert\lvert \mathcal{O}\left( h \right) \rvert\rvert }{\lvert\lvert h \rvert\rvert } = 0.$ Odvod preslikave $F$ v točki $w$ je preslikava $A = D_wF = \left( DF \right)_w.$ 
 \end{definicija}
 
 
 \begin{definicija}
 \label{def_odvedljivost}
-Preslikava $F$ je odvedljiva na množici $W$, če je odvedljiva v vsaki točki $w \in  W$.\end{definicija}
+Preslikava $F: W^{\text{odp}}  \subseteq  \mathbb{R}^n \to  \mathbb{R}^n$ je odvedljiva na množici $W$, če je odvedljiva v vsaki točki $w \in  W$.\end{definicija}
 
 \begin{definicija}
 \label{def_difeomorfizem}
@@ -322,11 +322,11 @@ Difeomorfizem je bijektivna odvedljiva preslikava, ki ima odvedljiv inverz.
 
 \begin{definicija}
 \label{def_atlas}
-Naj bo $M$ $n$-dimenzionalna mnogoterost. Gladek atlas $\mathcal{U}$ na $M$ je družina parov $\mathcal{U} = \left\{  \left( U_\alpha, \varphi_\alpha\right )\right  \mid  \alpha \in  A\},$ če za vsak $\alpha \in A$ velja: \begin{enumerate}
+Naj bo $M$ $n$-dimenzionalna mnogoterost. Gladek atlas $\mathcal{U}$ na $M$ je družina parov $\mathcal{U} = \left\{  \left( U_\alpha, \varphi_\alpha\right)  \mid  \alpha \in  A \right\},$ če za vsak $\alpha \in A$ velja: \begin{enumerate}
 	\item $U_\alpha^{\text{odp}} \subseteq M$
 	\item $\varphi_\alpha: U_\alpha \to  V_\alpha \subseteq  \mathbb{R}^n$ je homeomorfizem za nek $V_\alpha \subseteq  \mathbb{R}^n$
 	\item $\left\{ U_\alpha  \middle|\, \alpha\in  A \right\}$ je pokritje $M$
-	\item $g_{\alpha \beta}  = \varphi_\beta \circ \varphi_\alpha^{-1}: (\varphi_\alpha)_{*}(U_\alpha \cap  U_\beta) \to(\varphi_\beta)_{*}(U_\alpha \cap  U_\beta)$ je difeomorfizem     
+	\item za vsaka $\alpha, \beta \in A$ je preslikava $g_{\alpha \beta}  = \varphi_\beta \circ \varphi_\alpha^{-1}: (\varphi_\alpha)_{*}(U_\alpha \cap  U_\beta) \to(\varphi_\beta)_{*}(U_\alpha \cap  U_\beta)$ difeomorfizem     
 \end{enumerate}
 Dodatek: Če so vse prehodne preslikave $g_{\alpha \beta}$  $k$-difeomorfizmi z zveznim $k$-tim odvodom, imamo $\mathcal{C}^{k}$-atlas. Če so vse preslikave gladke, imamo $\mathcal{C}^{\infty}$-atlas, če so vse analitične, pa $\mathcal{C}^{\omega}$-atlas.     
  
@@ -336,7 +336,7 @@ Dodatek: Če so vse prehodne preslikave $g_{\alpha \beta}$  $k$-difeomorfizmi z 
 	Preslikava $g_{\alpha \beta}$  iz prejšnje definicije je preslikava iz $U_\alpha \subseteq  \mathbb{R}^n \to  \mathbb{R}^n$. Torej jo znamo odvajati in vemo, da je v izbranih koordinatah na $\mathbb{R}^n$ matrika odvoda enaka Jacobijevi matriki: \[
 F\left( x_1, \ldots, x_{n} \right) = \begin{pmatrix}F_1(x_1, \dots, x_n)\\ \vdots\\ F_n(x_1, \dots, x_n) \end{pmatrix}	\implies D_wF = \begin{pmatrix}
 \frac{\partial F_1}{\partial x_1} & \dots & \frac{\partial F_1}{\partial x_n} \\
-\vdots & \vdots & \ddots \\
+\vdots & \ddots & \vdots \\
 \frac{\partial F_n}{\partial x_1} & \dots & \frac{\partial F_n}{\partial x_n}
 \end{pmatrix}_w	. 
 \]     
@@ -351,7 +351,7 @@ Za motivacijo naslednje definicije se spomnimo dejstva, da vemo, kakšne so glad
 
 \begin{definicija}
 \label{def_gladke_preslikave}
- Funkcija $f : M \to  \mathbb{R}$ je gladka, če je gladka vsaka preslikava $f \circ \varphi_\alpha^{-1} : V_\alpha \subseteq  \mathbb{R}^n \to  \mathbb{R}$.
+ Naj bo $M$ $n$-dimenzionalna mnogoterost. Funkcija $f : M \to  \mathbb{R}$ je gladka, če je gladka vsaka preslikava $f \circ \varphi_\alpha^{-1} : V_\alpha \subseteq  \mathbb{R}^n \to  \mathbb{R}$.
 \end{definicija}
 
 
@@ -433,7 +433,6 @@ Iz simetričnosti skalarnega produkta ($\langle v_{i}, v_{j} \rangle  = \langle 
 
  Torej transformacijska pravila določajo vrsto preslikave, podobno kot pri fiziki.
 \end{opomba}
-
 
 \end{document}
 
