@@ -475,12 +475,24 @@ $P$ ekvivalentno \[A_f = PA_eP^{T}.\]
 Torej transformacijska pravila določajo vrsto
 preslikave, podobno kot pri fiziki. \end{opomba}
 
+Preden se lotimo definicije tangentne ravnine, se spomnimo naslednje
+definicije. 
+
+\begin{definicija}
+\label{def_rang_preslikave}
+ Naj bo preslikava $F: W \subseteq  \mathbb{R}^n \to  \mathbb{R}^m$ odvedljiva.
+ Rang preslikave $F$ v točki $w \in  W$ je enak rangu matrike $D_wF$. Pravimo,
+ da ima $F$ v točki $w \in  W$ maksimalen rang, če ima matrika $D_wF$
+ maksimalen rang.
+\end{definicija}
+
+
 \begin{definicija} 
 	\label{def_tangentna_ravnina}
 	Naj bo $X \subseteq \mathbb{R}^3$ vložena ploskev in točka $m
 \in X$. Tangentna ravnina $T_mX$ je množica tangent
 vseh krivulj v $X$, ki v času $t = 0$ gredo skozi $m$.
-\[ T_mX = \left\{ \dot{\gamma}_m\left( 0 \right) \mid
+\[ T_mX = \left\{ \dot{\gamma}\left( 0 \right) \mid
 \gamma : \left(  - \varepsilon, \varepsilon \right)
 \to  X \subseteq  \mathbb{R}^3 \text{ krivulja, } \gamma\left(
 0 \right) = m\right\} \]
@@ -489,11 +501,11 @@ vseh krivulj v $X$, ki v času $t = 0$ gredo skozi $m$.
 
 \begin{trditev}
 \label{trd_tangentna_ravnina_je_dvodimenzionalen_vektorski_prostor}
-$T_mX$ je dvodimenzionalen realen vektorski podprostor v
+$T_mX$ je dvodimenzionalen realni vektorski podprostor v
 $\mathbb{R}^3$. \end{trditev} \noident {\em Dokaz:\/} Naj bo $r : V
 \subseteq  \mathbb{R}^2 \to X \subseteq \mathbb{R}^3$ neka regularna
-parametrizacija ploskve $X$ (to pomeni, da mora biti rang preslikave $r$, torej
-rang matrike $Dr$, konstantno enak 2) v okolici točke  $m \in  X$. Naj
+parametrizacija ploskve $X$ (to pomeni, da mora biti rang preslikave
+$r$ maksimalen, torej konstantno enak 2) v okolici točke  $m \in  X$. Naj
 bo $p = \left( u, v \right) \in  V \subseteq \mathbb{R}^2.$ Pišimo \[ r\left(
 p \right) = r\left( u,v \right) = \begin{pmatrix} x\left( u,v
 \right) \\ y\left( u,v \right) \\ z\left( u,v \right)
@@ -620,7 +632,7 @@ naslednje standardne oznake:
 \[ E(u,v) = \left<r_u(u,v), r_u(u,v) \right>,   \,\,\,   F(u,v) =  \left<r_u(u,v),
 r_v(u,v) \right>, \,\,\,     G(u,v) =  \left<r_v(u,v), r_v(u,v)
 \right>.  \]
-Včasih uporabimo tudi zlorabo notacije 
+Včasih tudi zlorabimo notacijo 
 \[ E(m) = E(r(u,v)) = E(u,v). \]
 
 \begin{definicija}
