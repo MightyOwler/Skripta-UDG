@@ -1,0 +1,9 @@
+
+** To save part of the file, type `v`{normal} motion `:w FILENAME`{vim}. **
+
+ 1. Move the cursor to this line.
+
+'w' is not recognized as an internal or external command,
+operable program or batch file.
+ 3. Press the `:`{normal} character. At the bottom of the screen
+
