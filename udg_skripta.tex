@@ -205,6 +205,10 @@
 }
 
 
+\newcommand{\bigslant}[2]{{\raisebox{.2em}{$#1$}\left/\raisebox{-.2em}{$#2$}\right.}}
+
+\setlength{\parskip}{1em}
+
 \begin{document}
 
 \title{Uvod v diferencialno geometrijo}
@@ -213,7 +217,9 @@
 
 \section{Uvod}% \label{sec:Uvod}
 
-\begin{definicija} \label{def_mnt} Topološki prostor $M$
+\begin{definicija}
+\label{def_mnt}
+Topološki prostor $M$
 je $n$-dimenzionalna mnogoterost, če za vsak $m \in M$
 obstaja okolica $m \in U \subseteq M$ in homeomorfizem
 $\varphi : U \to V^{\text{odp}} \subseteq
@@ -221,30 +227,39 @@ $\varphi : U \to V^{\text{odp}} \subseteq
 \end{definicija}
 
 
-\begin{primer} Naslednje množice so primeri mnogoterosti.
-
-\begin{enumerate} \item $M = \mathbb{R}^n$ je
-$n$-dimenzionalna mnogoterost, \item $S^1$ je
-$1$-dimenzionalna mnogoterost, \item $S^{n} =
+\begin{primer}
+Naslednje množice so primeri mnogoterosti.
+\begin{enumerate}
+	\item $M = \mathbb{R}^n$ je
+$n$-dimenzionalna mnogoterost,
+	\item $S^1$ je
+$1$-dimenzionalna mnogoterost,
+  \item $S^{n} =
 \left\{\left( x_1, x_2, \ldots, x_n, x_{n+1}
 \right) \middle| \sum_{j=1}^{n+1} x_{i}^2 =
 1\right\} \subseteq \mathbb{R}^{n+1}$ je
-$n$-dimenzionalna mnogoterost, \item Projektivni
+$n$-dimenzionalna mnogoterost,
+	\item Projektivni
 prostori $\mathbb{R}P^{n} = \bigslant{B^{n}}{\sim} $,
 kjer je $\vec{x} \sim \vec{y}  \iff \vec{y}  =
--\vec{x}$ so $n$-dimenzionalne mnogoterosti. \item
-Grupa \[ \operatorname{SU}\left( 2 \right) = \left\{ g
-= \begin{pmatrix} \alpha & \beta \\ -
+-\vec{x}$ so $n$-dimenzionalne mnogoterosti.
+	\item Grupa \[ \operatorname{SU}\left( 2 \right) = \left\{ g
+= \begin{pmatrix}
+\alpha & \beta \\ -
 \overline{\beta}  & \overline{\alpha}  \\
-\end{pmatrix}  \middle|\, \alpha, \beta \in  \mathbb{C}, \det
+\end{pmatrix}
+\middle|\, \alpha, \beta \in  \mathbb{C}, \det
 g = 1 \right\} 	\]je $3$-dimenzionalna mnogoterost. Topološko in
 geometrijsko je namreč $\operatorname{SU}\left( 2 \right) = S^3.$ To
-je primer Lijeve grupe. \item Grupa \[
+je primer Lijeve grupe.
+	\item Grupa \[
 \operatorname{SO}\left( 3 \right) =
-\left\{ g = \begin{pmatrix} a_{11} &
+\left\{ g =
+\begin{pmatrix} a_{11} &
 a_{12} & a_{13} \\ a_{21} & a_{22}
 & a_{23} \\ a_{31} & a_{32}
-& a_{33} \\ \end{pmatrix}
+& a_{33} \\
+\end{pmatrix}
 \middle|\, g^{T} = g^{-1}, \det  g
 = 1 \right\}. \] Izkaže se, da je
 $\operatorname{SO}\left( 3\right ) =
@@ -270,7 +285,8 @@ kot so na primer funkcije, krivulje, tenzorji itd. Zato moramo
 mnogoterosti opremiti z dodatno strukturo. Za začetek se spomnimo
 definicije odvedljivosti preslikav v evklidskih prostorih.
 
-\begin{definicija} Preslikava $F: W^{\text{odp}} \subseteq
+\begin{definicija}
+Preslikava $F: W^{\text{odp}} \subseteq
 \mathbb{R}^n \to \mathbb{R}^n$ je odvedljiva v točki $w \in W$, če
 obstaja linearna preslikava $A : \mathbb{R}^n \to \mathbb{R}^n$ in
 preslikava $\mathcal{O}: W \to \mathbb{R}^n$, da za vse ustrezne
@@ -282,34 +298,38 @@ je preslikava $A = D_wF = \left( DF \right)_w.$
 \end{definicija}
 
 
-\begin{definicija} \label{def_odvedljivost} Preslikava $F:
-W^{\text{odp}} \subseteq  \mathbb{R}^n \to \mathbb{R}^n$ je odvedljiva
+\begin{definicija}
+\label{def_odvedljivost}
+Preslikava $F: W^{\text{odp}} \subseteq  \mathbb{R}^n \to \mathbb{R}^n$ je odvedljiva
 na množici $W$, če je odvedljiva v vsaki točki $w \in
-W$.\end{definicija}
+W$.
+\end{definicija}
 
 \begin{definicija} \label{def_difeomorfizem} Difeomorfizem je
 bijektivna odvedljiva preslikava, ki ima odvedljiv inverz. 
-
 \end{definicija}
 
-\begin{definicija} \label{def_atlas} Naj bo $M$ $n$-dimenzionalna
-mnogoterost. Gladek atlas $\mathcal{U}$ na $M$ je družina parov
+\begin{definicija}
+\label{def_atlas}
+Naj bo $M$ $n$-dimenzionalna mnogoterost. Gladek atlas $\mathcal{U}$ na $M$ je družina parov
 $\mathcal{U} = \left\{ \left( U_\alpha, \varphi_\alpha\right)
 \mid \alpha \in  A \right\},$ če za vsak $\alpha \in A$ velja:
-\begin{enumerate} \item $U_\alpha^{\text{odp}} \subseteq M$ \item
+\begin{enumerate}
+ \item $U_\alpha^{\text{odp}} \subseteq M$ \item
 $\varphi_\alpha: U_\alpha \to V_\alpha \subseteq \mathbb{R}^n$
 je homeomorfizem za nek $V_\alpha \subseteq \mathbb{R}^n$
-\item $\left\{ U_\alpha \middle|\, \alpha\in  A \right\}$ je
+ \item $\left\{ U_\alpha \middle|\, \alpha\in  A \right\}$ je
 pokritje $M$ \item za vsaka $\alpha, \beta \in A$ je
 preslikava $g_{\alpha \beta}  = \varphi_\beta \circ
 \varphi_\alpha^{-1}: (\varphi_\alpha)_{*}(U_\alpha \cap
 U_\beta) \to(\varphi_\beta)_{*}(U_\alpha \cap  U_\beta)$
-difeomorfizem     \end{enumerate} Dodatek: Če so vse prehodne
+difeomorfizem 
+\end{enumerate}
+Dodatek: Če so vse prehodne
 preslikave $g_{\alpha \beta}$  $k$-difeomorfizmi z zveznim $k$-tim
 odvodom, imamo $\mathcal{C}^{k}$-atlas. Če so vse preslikave gladke,
 imamo $\mathcal{C}^{\infty}$-atlas, če so vse analitične, pa
 $\mathcal{C}^{\omega}$-atlas.     
-
 \end{definicija}
 
 \begin{opomba}
@@ -318,14 +338,19 @@ je preslikava iz $U_\alpha \subseteq \mathbb{R}^n \to
 \mathbb{R}^n$. Torej jo znamo odvajati in vemo, da je v izbranih
 koordinatah na $\mathbb{R}^n$ matrika odvoda enaka Jacobijevi
 matriki: \[ F\left( x_1, \ldots, x_{n} \right) =
-\begin{pmatrix}F_1(x_1, \dots, x_n)\\ \vdots\\ F_n(x_1, \dots,
-x_n) \end{pmatrix}	\implies D_wF = \begin{pmatrix}
+\begin{pmatrix}
+F_1(x_1, \dots, x_n)\\ \vdots\\ F_n(x_1, \dots, x_n)
+\end{pmatrix}
+\implies D_wF = \begin{pmatrix}
 \frac{\partial F_1}{\partial x_1} & \dots & \frac{\partial
 F_1}{\partial x_n} \\ \vdots & \ddots & \vdots \\
 \frac{\partial F_n}{\partial x_1} & \dots & \frac{\partial
-F_n}{\partial x_n} \end{pmatrix}_w	. \] \end{opomba}
+F_n}{\partial x_n} \end{pmatrix}_w	. \]
+\end{opomba}
 
-\begin{definicija} \label{def_gladka_mnt} Topološka mnogoterost $M$,
+\begin{definicija}
+\label{def_gladka_mnt}
+Topološka mnogoterost $M$,
 ki premore kakšen gladek atlas, je gladka mnogoterost.
 \end{definicija}
 
@@ -333,19 +358,23 @@ Za motivacijo naslednje definicije se spomnimo dejstva, da vemo,
 kakšne so gladke preslikave iz $\mathbb{R}^n \to  \mathbb{R}^n$. Nismo
 pa še definirali gladkih preslikav iz mnogoterosti $M \to \mathbb{R}$. 
 
-\begin{definicija} \label{def_gladke_preslikave} Naj bo $M$
+\begin{definicija}
+\label{def_gladke_preslikave}
+Naj bo $M$
 $n$-dimenzionalna mnogoterost. Funkcija $f : M \to  \mathbb{R}$ je
 gladka, če je gladka vsaka preslikava $f \circ \varphi_\alpha^{-1}
 : V_\alpha \subseteq \mathbb{R}^n \to  \mathbb{R}$.
 \end{definicija}
 
 
-\begin{definicija} \label{def_gladka_krivulja}
+\begin{definicija}
+\label{def_gladka_krivulja}
 Naj bo $\left( M,\mathcal{U} \right)$  gladka mnogoterost. Krivulja $\gamma :
 \left( a, b \right) \to  M$ je gladka krivulja, v $M$, če za
 $\forall  \alpha \in A$ velja, da je $\varphi_\alpha \circ \gamma
 : \left( a, b \right) \to  V_\alpha \subseteq \mathbb{R}^n$ gladka
-krivulja v $V_\alpha \subseteq  \mathbb{R}^n$. \end{definicija}
+krivulja v $V_\alpha \subseteq  \mathbb{R}^n$.
+\end{definicija}
 
 \begin{definicija} \label{def_ekvivalnentnost_atlasov} Atlasa
 $\mathcal{U} = \left\{ \left( U_\alpha, \varphi_\alpha \right)
@@ -360,13 +389,16 @@ $U_\alpha \cap  W_\beta \neq \emptyset$ sledi, da je \[
 U_\alpha \cap W_\beta \right)\subseteq \mathbb{R}^n \] difeomorfizem.
 \end{definicija}
 
-\begin{opomba} Ekvivalentnost atlasov je ekvivalenčna relacija,
+\begin{opomba}
+Ekvivalentnost atlasov je ekvivalenčna relacija,
 ekvivalenčni razred atlasa $\mathcal{U}$ označimo z $\left[
-\mathcal{U} \right].$ \end{opomba}
+\mathcal{U} \right].$ 
+\end{opomba}
 
 \begin{definicija} \label{def_gladka_struktura} Naj bo $M$ topološka
 mnogoterost in $\mathcal{U}$ gladek atlas na $M$. Potem je $\left[
-\mathcal{U} \right]$ gladka struktura na $M$.    \end{definicija}
+\mathcal{U} \right]$ gladka struktura na $M$.    
+\end{definicija}
 
 \begin{opomba} Dejstvo, da lahko obstajajo kakšne netrivialne
 (eksotične strukture) na mnogoterostih, je zelo netrivialno. Iz
@@ -374,7 +406,8 @@ mnogoterost in $\mathcal{U}$ gladek atlas na $M$. Potem je $\left[
 in \href{https://mathworld.wolfram.com/FreedmanTheorem.html}{Freedmanovega}
 izreka sledi, da ima $\mathbb{R}^{4}$ neštevno neskončno
 eksotičnih gladkih struktur. Vsi ostali $\mathbb{R}^n$ imajo
-zgolj svojo trivialno in nobene eksotične.  \end{opomba}
+zgolj svojo trivialno in nobene eksotične.
+\end{opomba}
 
 \section{Gladke vložene ploskve}%
 \label{sec:Gladke_vložene_ploskve}
@@ -385,15 +418,17 @@ prostorih. Pri uvodu v diferencialno geometrijo pa se bomo v
 glavnem ukvarjali z eno in dvodimenzionalnimi mnogoterostmi,
 vloženimi v prostor $\mathbb{R}^3$. 
 
-\begin{definicija} \label{def_gladka_vložena_ploskev} Množica
+\begin{definicija}
+\label{def_gladka_vložena_ploskev} Množica
 $X \subseteq \mathbb{R}^3$ je gladka vložena ploskev, če
 za vsak $m \in  X$ obstaja krogla za $m$ $W \subseteq
 \mathbb{R}^n$ in gladka funkcija $f : W \to \mathbb{R}$,
-za katero velja \begin{enumerate} \item $X \cap W =
+za katero velja 
+\begin{enumerate} \item $X \cap W =
 f^{*}\left( \left\{ 0\right\}  \right)$ \item $\left(
 Df \right)_w \neq 0 $ za vsak $w \in X \cap  W$  
-
-\end{enumerate}    \end{definicija}
+\end{enumerate}    
+\end{definicija}
 
 Vložena ploskev $X \subseteq  \mathbb{R}^n$ je tudi abstraktna
 mnogoterost. Poglejmo si, kako bi konstruirali atlas na $X$.
@@ -439,17 +474,22 @@ nujno ortonormirana. Vzemimo vektorja $\vec{x}  =
 \sum_{i=1}^{n} a_{i}v_{i}$ in $\vec{y}  = \sum_{i=1}^{n}
 b_{i}v_{i}.$ Potem velja, da je skalarni produkt enak \[
 \langle \vec{x} , \vec{y} \rangle = \sum_{i,j = 1}^{n}
-a_{i}b_{j}\langle v_{i}, v_{j} \rangle = \begin{pmatrix}
-a_1 & \ldots & a_n \end{pmatrix} \begin{pmatrix}
+a_{i}b_{j}\langle v_{i}, v_{j} \rangle =
+\begin{pmatrix}
+a_1 & \ldots & a_n
+\end{pmatrix}
+\begin{pmatrix}
 \langle a_1, a_1 \rangle & \dots & \langle a_1, a_n
 \rangle \\ \vdots & \ddots & \vdots \\ \langle a_n,
 a_1 \rangle & \dots & \langle a_1,a_n \rangle
-\end{pmatrix} \begin{pmatrix} b_1 \\ \vdots \\ b_n
-\end{pmatrix} \] Iz simetričnosti skalarnega produkta
+\end{pmatrix}
+\begin{pmatrix} b_1 \\ \vdots \\ b_n
+\end{pmatrix} \]
+Iz simetričnosti skalarnega produkta
 ($\langle v_{i}, v_{j} \rangle  = \langle v_{j},  v_{i}
 \rangle $) sledi, da je zgornja matrika simetrična. Iz
 pozitivne definitnosti skalarnega produkta ($\langle
-v_{i}, v_{i} \rangle > 0$) pa sledi še pozitivna
+v_{i}, v_{i} \rangle > 0$) pa sledi še pozitivna 
 definitnost te matrike. 
 
 \begin{opomba}
@@ -474,7 +514,8 @@ $P^{T}A_fP = A_e$ oziroma zaradi ortogonalnosti
 $P$ ekvivalentno \[A_f = PA_eP^{T}.\]
 
 Torej transformacijska pravila določajo vrsto
-preslikave, podobno kot pri fiziki. \end{opomba}
+preslikave, podobno kot pri fiziki. 
+\end{opomba}
 
 Preden se lotimo definicije tangentne ravnine, se spomnimo naslednje
 definicije. 
@@ -503,14 +544,18 @@ vseh krivulj v $X$, ki v času $t = 0$ gredo skozi $m$.
 \begin{trditev}
 \label{trd_tangentna_ravnina_je_dvodimenzionalen_vektorski_prostor}
 $T_mX$ je dvodimenzionalen realni vektorski podprostor v
-$\mathbb{R}^3$. \end{trditev} \noident {\em Dokaz:\/} Naj bo $r : V
+$\mathbb{R}^3$. 
+\end{trditev} \noident 
+{\em Dokaz:\/} Naj bo $r : V
 \subseteq  \mathbb{R}^2 \to X \subseteq \mathbb{R}^3$ neka regularna
 parametrizacija ploskve $X$ (to pomeni, da mora biti rang preslikave
 $r$ maksimalen, torej konstantno enak 2) v okolici točke  $m \in  X$. Naj
 bo $p = \left( u, v \right) \in  V \subseteq \mathbb{R}^2.$ Pišimo \[ r\left(
-p \right) = r\left( u,v \right) = \begin{pmatrix} x\left( u,v
+p \right) = r\left( u,v \right) = 
+\begin{pmatrix} x\left( u,v
 \right) \\ y\left( u,v \right) \\ z\left( u,v \right)
-\end{pmatrix} . \] Naj bo $m = r\left( u_0, v_0 \right).$ Trdimo, da
+\end{pmatrix} . \]
+Naj bo $m = r\left( u_0, v_0 \right).$ Trdimo, da
 je $ T_mX = \operatorname{im} \left( D_{(u_0, v_0)}r \right) $.
 Najprej dokažimo inkluzijo $T_mX \subseteq \operatorname{im} \left(
 D_{(u_0, v_0)}r \right)$. 
@@ -578,7 +623,7 @@ oziroma z eno samo parametrizacijo.
  Za drugo parametrizacijo ploskve $X$ bi dobili druge koeficiente
  matrike.
 \end{opomba}
-Naj bo $\gamma: [a,b] \to  X$ krivulja. Njeno parametrizacijo $r$
+ Naj bo $\gamma: [a,b] \to  X$ krivulja. Njeno parametrizacijo $r$
 lahko napišemo v obliki  $\gamma(t) = r(u(t), v(t))$ za primerne
 funkcije $u,v : [a,b] \to \mathbb{R}$, $\beta(t) = (u(t), v(t))$,
 $\gamma(t) = r(\beta(t)).$ V koordinatah lahko zapišemo 
@@ -609,7 +654,7 @@ Dolžina krivulje $\gamma: [a,b] \to  X \subseteq  \mathbb{R}^3$ glede
 na metriko $g$ je v parametrizaciji $r$ podana s formulo 
 \[ \mathcal{L}_g(\gamma) = \int_{a}^{b} \sqrt{ 
 \begin{pmatrix}
-	\dot{u}(t) & \dot{v}(t) \\
+    \dot{u}(t) & \dot{v}(t) \\
 \end{pmatrix}
 \begin{pmatrix}
 	g_{11} & g_{12}  \\
@@ -639,13 +684,13 @@ Včasih tudi zlorabimo notacijo
 \begin{definicija}
 \label{def_prva_fundamentalna_forma}
  Metrika na $X \subseteq  \mathbb{R}^2$, ki je glede na $r: V \to  X
- \subseteq  \mathbb{R}^3$ podana z matrično funkcijo \begin{align*}
+\subseteq  \mathbb{R}^3$ podana z matrično funkcijo \begin{align*}
  	g_f: V &\longrightarrow M_2(\mathbb{R}) \\
 	(u,v) &\longmapsto 
-	\begin{pmatrix}
-		E & F \\
-		F & G \\
-	\end{pmatrix}
+\begin{pmatrix}
+	E & F \\
+	F & G \\
+\end{pmatrix}
 \begin{pmatrix}
 	u \\
 	v \\
@@ -694,8 +739,8 @@ definicija pa je nekoliko drugačna, kot bi morda pričakovali.
 \begin{definicija}
 \label{def_izometrija}
  Preslikava $f: X \to X'$ nad dvema ploskvama $X, X' \subseteq
- \mathbb{R}^3$ je izometrija, če je za vsako krivuljo $\gamma: \left[ a,b
- \right] \to  X$ dolžina 
+ \mathbb{R}^3$ je izometrija, če za vsako krivuljo $\gamma: \left[ a,b
+ \right] \to  X$ velja enakost med dolžinama 
  \[ \mathcal{L}_X(\gamma) = \mathcal{L}_{X'}(\gamma). \]
 \end{definicija}
 
