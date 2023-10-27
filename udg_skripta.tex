@@ -855,21 +855,21 @@ Pokažimo najprej obrat $(\impliedby)$. Recimo, da obstajata parametrizaciji $r:
 Naj bo $f = \tilde{r} \circ  r^{-1}$. Preveriti moramo, da je $f$
 izometrija. Naj bo $\gamma: [a,b] \to  X$ poljubna krivulja in
 primerjamo dolžini $\mathcal{L}_r(\gamma)$ ter
-$\mathcal{L}_r(f(\gamma))$. Potem obstaja krivulja $\beta:
-[\alpha,\beta] \to  V$ za katero velja $\gamma(t) = r(\beta(t)).$
+$\mathcal{L}_{\tilde{r}}(f(\gamma))$. Potem obstaja krivulja $\beta:
+[\alpha,\beta] \to  V$ za katero velja $\gamma(t) = r(\beta(t))$.
 Potem za $f(\gamma(t))$ velja 
 \[ f(\gamma(t)) = f(r(\beta(t))) = \tilde{r}(\beta(t)).\]
 Ker je $\beta(t)$ ravninska krivulja, velja 
 \[ \begin{align*}
     \gamma(t) &= r(\beta(t)) = r(u(t), v(t)), \\
-    \tilde{\gamma} (t) &= \tilde{r} (\beta(t)) = \tilde{r} (u(t), v(t).)   
+    \tilde{\gamma}(t) &= \tilde{r} (\beta(t)) = \tilde{r} (u(t), v(t).)   
 \end{align*} \]
 Torej imamo enačbi 
 \[ \mathcal{L}_r(\gamma) = \int_{a}^{b} \sqrt{E(u,v)\dot{u}^2 +
 2F(u,v)\dot{u}\dot{v} + G(u,v)\dot{v}^2} \, dt, \]
-\[ \mathcal{L}_{\tilde{r} }(\gamma) = \int_{a}^{b} \sqrt{\tilde{E} (u,v)\dot{u}^2 +
+\[ \mathcal{L}_{\tilde{r}}(\tilde{\gamma}) = \int_{a}^{b} \sqrt{\tilde{E} (u,v)\dot{u}^2 +
 2\tilde{F}(u,v)\dot{u}\dot{v} + \tilde{G}(u,v)\dot{v}^2} \, dt.  \]
-Ker do posamezni sumandi enaki, sta izraza enaka, torej je $f =
+Ker so posamezni sumandi enaki, sta izraza enaka, torej je $f =
 \tilde{r} \circ r^{-1}$ res izometrija.
 
 Zdaj dokažimo še $(\implies)$. Denimo, da imamo med $X$ in $\tilde{X}$
@@ -892,7 +892,7 @@ Sedaj si oglejmo $f(\gamma (t)) = \tilde{r}(\beta(t)) = \tilde{r}(u_0
   \dot{\tilde{\gamma}}(t) \rvert\rvert   \, dt  \\ &= 
   \int_{0}^{\varepsilon} \sqrt{\langle\dot{\tilde{\gamma}}(t), \dot{\tilde{\gamma}}(t)  \rangle} \, dt  \\ &=
   \int_{0}^{\varepsilon} \sqrt{\langle \tilde{r}_u(u_0 + t, v_0), \tilde{r}_u(u_0 + t, v_0) \rangle}   \, dt \\ &= 
-  \int_{0}^{\varepsilon} \vec{r}(u_0 + t, v_0)  \, dt. 
+  \int_{0}^{\varepsilon} \tilde{r}(u_0 + t, v_0)  \, dt. 
 \end{align*} \]
 Po predpostavki o izometričnosti velja 
 \[ \begin{align*}
@@ -904,12 +904,13 @@ Po predpostavki o izometričnosti velja
 dobimo zaradi zveznosti funkcij 
 \[ E(u_0, v_0) = \tilde{E}(u_0, v_0). \]
 Še lažje ta rezultat dobimo tako, da na obeh straneh odvajamo po $\varepsilon$ in vstavimo $\varepsilon = 0$.
+
 Če zdaj vzamemo $\beta(t) = (u_0, v_0 + t)$, dobimo po enakem postopku kot prej 
 \[ G(u_0, v_0) = \tilde{G}(u_0, v_0). \]
 Nato vzamemo $\beta(t) = (u_0 + t, v_0 + t)$ in imamo
 \[ \mathcal{L}_r(\gamma) = \int_{0}^{\varepsilon} \sqrt{E(u_0 + t, v_0 + t) + 2F(u_0 + t, v_0 + t) + G(u_0 + t, v_0 + t)}   \, dt,  \]
-\[ \mathcal{L}_r(\gamma) = \int_{0}^{\varepsilon} \sqrt{\tilde{E}(u_0 + t, v_0 + t) + 2\tilde{F}(u_0 + t, v_0 + t) + \tilde{G}(u_0 + t, v_0 + t)}   \, dt. \]
-Če zdaj zopet odvajamo po $\varepsilon$ in vstavimo $\varepsilon = 0$, dobimo enakost integrandov v točki $(u_0, v_0)$, od koder sledi 
+\[ \mathcal{L}_{\tilde{r}}(\tilde{\gamma}) = \int_{0}^{\varepsilon} \sqrt{\tilde{E}(u_0 + t, v_0 + t) + 2\tilde{F}(u_0 + t, v_0 + t) + \tilde{G}(u_0 + t, v_0 + t)}   \, dt. \]
+Če zdaj zopet odvajamo po $\varepsilon$ in vstavimo $\varepsilon = 0$, dobimo enakost integrandov v točki $(u_0, v_0)$, od koder sledi še zadnja zahteva
 \[ F(u_0, v_0) = \tilde{F}(u_0, v_0). \]
 \qed
 
