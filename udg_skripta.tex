@@ -738,10 +738,10 @@ definicija pa je nekoliko drugačna, kot bi morda pričakovali.
 
 \begin{definicija}
 \label{def_izometrija}
- Preslikava $f: X \to X'$ nad dvema ploskvama $X, X' \subseteq
+ Preslikava $f: X \to \tilde{X}$ nad dvema ploskvama $X, \tilde{X} \subseteq
  \mathbb{R}^3$ je izometrija, če za vsako krivuljo $\gamma: \left[ a,b
  \right] \to  X$ velja enakost med dolžinama 
- \[ \mathcal{L}_X(\gamma) = \mathcal{L}_{X'}(\gamma). \]
+ \[ \mathcal{L}_X(\gamma) = \mathcal{L}_{\tilde{X}}(\gamma). \]
 \end{definicija}
 
 \begin{opomba}
@@ -749,6 +749,216 @@ definicija pa je nekoliko drugačna, kot bi morda pričakovali.
  smislu.
 \end{opomba}
 
+\begin{primer}
+ 1. fundamentalna forma na sferi glede na sferične koordinate. Če
+ odvzamemo iz $S^2$ en poldnevnik, jo lahko parametriziramo s
+ sferičnimi koordinatami: 
+ \[ r: \begin{pmatrix}
+ 	u \\ v
+ \end{pmatrix} \subseteq  V = \left( -\pi, \pi \right) \times \left(
+ 0, \pi  \right) \subseteq  \mathbb{R}^2 \to  \mathbb{R}^3
+  \] s predpisom \[ r(u,v) = 
+\begin{pmatrix}\cos u \cos v \\ \cos u \sin v \\ \sin u
+\end{pmatrix}.\]
+Potem dobimo parcialna odvoda 
+\[   r_u(u,v) = \begin{pmatrix}-\sin u \cos v \\ -\sin u \sin v \\ \cos u
+\end{pmatrix}, \,\,  r_v(u,v) = 
+\begin{pmatrix}-\cos u \sin  v \\ \cos u \cos v \\ 0
+\end{pmatrix}.\]
+Od tod sledi 
+\[ \begin{align*}
+    E &= \langle r_u, r_u \rangle = 1, \\
+    F &= \langle r_u, r_v \rangle = 0, \\
+	G &= \langle r_v, r_v \rangle = \cos^2 u,
+\end{align*} \] kar lahko zapišemo v obliki 
+\[ 
+\begin{pmatrix}
+	E & F \\
+	F & G \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+	1 & 0 \\
+	0 & \cos^2 u \\
+\end{pmatrix}
+.
+\]
+\end{primer}
+
+\begin{primer}
+ Naj bo $X$ rotacijska ploskev, ki jo dobimo, če krivuljo $x =  f(z)$
+ zavrtimo okoli osi $z$: 
+ \[ r: \left( u,v \right) \mapsto  
+\begin{pmatrix}
+	f(u) \cos(v) \\
+	f(u) \sin (v) \\
+	u \\
+\end{pmatrix}
+.\]Potem imamo odvoda 
+\[   r_u(u,v) = \begin{pmatrix} f'(u) u \cos v \\ f'(u) \sin v \\ 1
+\end{pmatrix}, \,\,  r_v(u,v) = 
+\begin{pmatrix}-f(u) \sin  v \\ f(u) \cos v \\ 0
+\end{pmatrix}.\]
+Od tod sledi 
+\[ \begin{align*}
+    E &= \langle r_u, r_u \rangle = 1 + f'(u)^2, \\
+    F &= \langle r_u, r_v \rangle = 0, \\
+	G &= \langle r_v, r_v \rangle = f(u)^2,
+\end{align*} \] kar lahko zapišemo v obliki 
+\[ 
+\begin{pmatrix}
+	E & F \\
+	F & G \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+	1 + f'(u)^2 & 0 \\
+	0 & f(u)^2 \\
+\end{pmatrix}
+.
+\]
+\end{primer}
+
+Naslednji izrek nam pove povezavo med 1. fundamentalno formo in
+izometričnostjo ploskev.
+
+\begin{izrek}
+\label{izr_izometricnost_in_prva_forma}
+Naj bo $X \to  \tilde{X}$ izometrija. Tedaj obstaja par parametrizacij
+$r : V \to X$ in $\tilde{r}: V \to  \tilde{X}$, da za pripadajoči
+fundamentalni formi velja 
+\[ 
+\begin{pmatrix}
+	E & F \\
+	F & G \\
+\end{pmatrix}_{(u,v)}
+=
+\begin{pmatrix}
+	\tilde{E}  & \tilde{F}  \\
+	\tilde{F}  & \tilde{G}  \\
+\end{pmatrix}_{(u,v)}
+.\]
+Velja tudi obratno, torej če za ploskvi $X, \tilde{X} $ obstajata
+parametrizaciji $r$ in $\tilde{r}$, za kateri velja zgornji sistem
+enačb, potem sta $X$ in $\tilde{X}$ izometrični.
+\end{izrek}
+\noident
+{\em Dokaz:\/}
+Pokažimo najprej obrat $(\impliedby)$. Recimo, da obstajata parametrizaciji $r: V
+\to  X$ in $\tilde{r}: V \to  \tilde{X} $, da velja 
+\[ 
+\begin{pmatrix}
+	\tilde{E}  & \tilde{F}  \\
+	\tilde{F}  & \tilde{G}  \\
+\end{pmatrix}_{(u,v)}
+.\]
+Naj bo $f = \tilde{r} \circ  r^{-1}$. Preveriti moramo, da je $f$
+izometrija. Naj bo $\gamma: [a,b] \to  X$ poljubna krivulja in
+primerjamo dolžini $\mathcal{L}_r(\gamma)$ ter
+$\mathcal{L}_r(f(\gamma))$. Potem obstaja krivulja $\beta:
+[\alpha,\beta] \to  V$ za katero velja $\gamma(t) = r(\beta(t)).$
+Potem za $f(\gamma(t))$ velja 
+\[ f(\gamma(t)) = f(r(\beta(t))) = \tilde{r}(\beta(t)).\]
+Ker je $\beta(t)$ ravninska krivulja, velja 
+\[ \begin{align*}
+    \gamma(t) &= r(\beta(t)) = r(u(t), v(t)), \\
+    \tilde{\gamma} (t) &= \tilde{r} (\beta(t)) = \tilde{r} (u(t), v(t).)   
+\end{align*} \]
+Torej imamo enačbi 
+\[ \mathcal{L}_r(\gamma) = \int_{a}^{b} \sqrt{E(u,v)\dot{u}^2 +
+2F(u,v)\dot{u}\dot{v} + G(u,v)\dot{v}^2} \, dt, \]
+\[ \mathcal{L}_{\tilde{r} }(\gamma) = \int_{a}^{b} \sqrt{\tilde{E} (u,v)\dot{u}^2 +
+2\tilde{F}(u,v)\dot{u}\dot{v} + \tilde{G}(u,v)\dot{v}^2} \, dt.  \]
+Ker do posamezni sumandi enaki, sta izraza enaka, torej je $f =
+\tilde{r} \circ r^{-1}$ res izometrija.
+
+Zdaj dokažimo še $(\implies)$. Denimo, da imamo med $X$ in $\tilde{X}$
+izomerijo $f: X \to  \tilde{X}.$ Naj bo $\gamma(t) = r(\beta(t)) =
+(u_0 + t, v_0)$ in $t \in  (0, \varepsilon).$ Pri tem je točka $(u_0,
+v_0) \in V$ poljubna in določa točko $p = r(u_0, v_0) \in  X$. Zdaj
+izračunamo 
+\[ 
+\mathcal{L}_r(\gamma(t)) = \int_{0}^{\varepsilon} \lvert\lvert
+\dot{\gamma}(t) \rvert\rvert   \, dt = \int_{0}^{\varepsilon} \sqrt{\langle
+\dot{\gamma}(t), \dot{\gamma}(t)  \rangle} \, dt =
+\int_{0}^{\varepsilon} \sqrt{\langle r_u, r_u \rangle}   \, dt =
+\int_{0}^{\varepsilon}\sqrt{  E(u_0 + t, v_0) }  \, dt. 
+\]
+Sedaj si oglejmo $f(\gamma (t)) = \tilde{r}(\beta(t)) = \tilde{r}(u_0
++ t, v_0)$. Potem imamo:
+
+\[ \begin{align*}
+  \mathcal{L}_{\tilde{r}}(f(\gamma(t))) &= \int_{0}^{\varepsilon} \lvert\lvert
+  \dot{\tilde{\gamma}}(t) \rvert\rvert   \, dt  \\ &= 
+  \int_{0}^{\varepsilon} \sqrt{\langle\dot{\tilde{\gamma}}(t), \dot{\tilde{\gamma}}(t)  \rangle} \, dt  \\ &=
+  \int_{0}^{\varepsilon} \sqrt{\langle \tilde{r}_u(u_0 + t, v_0), \tilde{r}_u(u_0 + t, v_0) \rangle}   \, dt \\ &= 
+  \int_{0}^{\varepsilon} \vec{r}(u_0 + t, v_0)  \, dt. 
+\end{align*} \]
+Po predpostavki o izometričnosti velja 
+\[ \begin{align*}
+    \mathcal{L}_r(\gamma) &= \mathcal{L}_{\tilde{r}}(f(\gamma)) \\
+    \int_{0}^{\varepsilon} \sqrt{E(u_0 + t, v_0)}   \, d  &= \int_{0}^{\varepsilon} \sqrt{\tilde{E}(u_0 + t, v_0)}.
+\end{align*} \]
+Če uporabimo izrek o povprečni vrednosti, dobimo 
+\[ E(u_0 + \hat{t} , v_0) \varepsilon = \tilde{E}(u_0 + \hat{\hat{t}} , v_0) \varepsilon\]in če pošljemo $\varepsilon \to  0$,
+dobimo zaradi zveznosti funkcij 
+\[ E(u_0, v_0) = \tilde{E}(u_0, v_0). \]
+Še lažje ta rezultat dobimo tako, da na obeh straneh odvajamo po $\varepsilon$ in vstavimo $\varepsilon = 0$.
+Če zdaj vzamemo $\beta(t) = (u_0, v_0 + t)$, dobimo po enakem postopku kot prej 
+\[ G(u_0, v_0) = \tilde{G}(u_0, v_0). \]
+Nato vzamemo $\beta(t) = (u_0 + t, v_0 + t)$ in imamo
+\[ \mathcal{L}_r(\gamma) = \int_{0}^{\varepsilon} \sqrt{E(u_0 + t, v_0 + t) + 2F(u_0 + t, v_0 + t) + G(u_0 + t, v_0 + t)}   \, dt,  \]
+\[ \mathcal{L}_r(\gamma) = \int_{0}^{\varepsilon} \sqrt{\tilde{E}(u_0 + t, v_0 + t) + 2\tilde{F}(u_0 + t, v_0 + t) + \tilde{G}(u_0 + t, v_0 + t)}   \, dt. \]
+Če zdaj zopet odvajamo po $\varepsilon$ in vstavimo $\varepsilon = 0$, dobimo enakost integrandov v točki $(u_0, v_0)$, od koder sledi 
+\[ F(u_0, v_0) = \tilde{F}(u_0, v_0). \]
+\qed
+
+\begin{primer}
+ Ali je stožec brez ene tvorilke izometričen kosu ravnine? Naj bo podan 
+ \[ S = \left\{ (x,y,z)  \middle|\, x^2 + y^2 + z^2 = 1 \right\}.\]
+ Parametriziramo ga z
+ \[ r(u,v) = (u \cos v, u \sin v, u) \]in po znanem postopku dobimo 
+ \[ \begin{pmatrix}
+  E & F\\
+  F & G\\
+ \end{pmatrix} 
+ = \begin{pmatrix}
+  2 & 0\\
+  0 & u^2\\
+ \end{pmatrix}.\]
+Pričakujemo, da bo $S$ izometričen nekemu krožnemu izseku. Če definiramo 
+\[ \tilde{r}(u,v) = (\alpha u \cos(\beta v), \alpha u \sin(\beta v), 0)\]dobimo sistem enačb 
+\[ \begin{pmatrix}
+  \tilde{E} & \tilde{F}\\
+  \tilde{F} & \tilde{G}\\
+ \end{pmatrix} 
+ = \begin{pmatrix}
+  \alpha^2 & 0\\
+  0 & \alpha^2 \beta^2 u^2\\
+ \end{pmatrix}.\]
+Pogoj  \[ \begin{pmatrix}
+  E & F\\
+  F & G\\
+ \end{pmatrix}_{(u,v)}
+ = \begin{pmatrix}
+  \tilde{E} & \tilde{F}\\
+  \tilde{F} & \tilde{G}\\
+ \end{pmatrix}_{(u,v)}\]je izpolnjen pri $\alpha = \sqrt{2},\, \beta = \frac{1}{\sqrt{2}}$ (če bi zamenjali predznake $\alpha$ in $\beta$, bi dobili drugačne parametrizacije). Torej je stožec $S$ izometričen krožnemu izseku s parametrizaijo  
+ \[ \tilde{r}(u,v) = \left(\sqrt{2}  u \cos(\frac{1}{\sqrt{2}} v), \sqrt{2}  u \sin(\frac{1}{\sqrt{2}} v), 0 \right).\]
+\end{primer}
+
+Na tej točki se pojavi naravno vprašanje: ali znamo poiskati vse ploskve v $\mathbb{R}^3$, ki so izomertične ravnini?
+Izkaže se, da znamo, saj velja naslednji izrek.
+
+\begin{izrek}
+\label{izr_izometricnost_ploskev_ravnini}
+  Naj bo ploskev $X$ izometrična kakšnemu kosu ravnine. Potem je $X$ bodisi stožec, valj, ali kakšna tangentna premonosna ploskev.
+\end{izrek}
+
+\begin{definicija}
+\label{def_tangentno_premonsna_ploskev}
+ Naj bo $\gamma: [a,b] \to  \mathbb{R}^3$ prostorska krivulja, parametriziarana z naravnim parametrom. Tangentna premonosna ploskev,
+ podana s krivuljo $\gamma$, je del prostora $\mathbb{R}^3$, ki ga opiše tangenta na $\gamma(t)$ na intervalu $t \in  [a,b]$.
+\end{definicija}
+
 \end{document}
-
-
