@@ -248,7 +248,7 @@ kjer je $\vec{x} \sim \vec{y}  \iff \vec{y}  =
 \alpha & \beta \\ -
 \overline{\beta}  & \overline{\alpha}  \\
 \end{pmatrix}
-\middle|\, \alpha, \beta \in  \mathbb{C}, \det
+\middle|\, \alpha, \beta \in  \mathbb{C}, \, \det
 g = 1 \right\} 	\]je $3$-dimenzionalna mnogoterost. Topološko in
 geometrijsko je namreč $\operatorname{SU}\left( 2 \right) = S^3.$ To
 je primer Lijeve grupe.
@@ -260,7 +260,7 @@ a_{12} & a_{13} \\ a_{21} & a_{22}
 & a_{23} \\ a_{31} & a_{32}
 & a_{33} \\
 \end{pmatrix}
-\middle|\, g^{T} = g^{-1}, \det  g
+\middle|\, g^{T} = g^{-1}, \, \det  g
 = 1 \right\}. \] Izkaže se, da je
 $\operatorname{SO}\left( 3\right ) =
 \bigslant{B^3}{\sim } = \mathbb{R}P^3.$ To
@@ -370,7 +370,7 @@ gladka, če je gladka vsaka preslikava $f \circ \varphi_\alpha^{-1}
 \begin{definicija}
 \label{def_gladka_krivulja}
 Naj bo $\left( M,\mathcal{U} \right)$  gladka mnogoterost. Krivulja $\gamma :
-\left( a, b \right) \to  M$ je gladka krivulja, v $M$, če za
+\left( a, b \right) \to  M$ je gladka krivulja v $M$, če za
 $\forall  \alpha \in A$ velja, da je $\varphi_\alpha \circ \gamma
 : \left( a, b \right) \to  V_\alpha \subseteq \mathbb{R}^n$ gladka
 krivulja v $V_\alpha \subseteq  \mathbb{R}^n$.
@@ -484,7 +484,7 @@ a_1 & \ldots & a_n
 a_1 \rangle & \dots & \langle a_1,a_n \rangle
 \end{pmatrix}
 \begin{pmatrix} b_1 \\ \vdots \\ b_n
-\end{pmatrix} \]
+\end{pmatrix}. \]
 Iz simetričnosti skalarnega produkta
 ($\langle v_{i}, v_{j} \rangle  = \langle v_{j},  v_{i}
 \rangle $) sledi, da je zgornja matrika simetrična. Iz
@@ -790,12 +790,12 @@ Od tod sledi
  zavrtimo okoli osi $z$: 
  \[ r: \left( u,v \right) \mapsto  
 \begin{pmatrix}
-	f(u) \cos(v) \\
-	f(u) \sin (v) \\
+	f(u) \cos v \\
+	f(u) \sin v \\
 	u \\
 \end{pmatrix}
 .\]Potem imamo odvoda 
-\[   r_u(u,v) = \begin{pmatrix} f'(u) u \cos v \\ f'(u) \sin v \\ 1
+\[   r_u(u,v) = \begin{pmatrix} f'(u) \cos v \\ f'(u) \sin v \\ 1
 \end{pmatrix}, \,\,  r_v(u,v) = 
 \begin{pmatrix}-f(u) \sin  v \\ f(u) \cos v \\ 0
 \end{pmatrix}.\]
@@ -896,20 +896,23 @@ Sedaj si oglejmo $f(\gamma (t)) = \tilde{r}(\beta(t)) = \tilde{r}(u_0
 \end{align*} \]
 Po predpostavki o izometričnosti velja 
 \[ \begin{align*}
-    \mathcal{L}_r(\gamma) &= \mathcal{L}_{\tilde{r}}(f(\gamma)) \\
-    \int_{0}^{\varepsilon} \sqrt{E(u_0 + t, v_0)}   \, d  &= \int_{0}^{\varepsilon} \sqrt{\tilde{E}(u_0 + t, v_0)}.
+    \mathcal{L}_r(\gamma) &= \mathcal{L}_{\tilde{r}}(f(\gamma)), \\
+    \int_{0}^{\varepsilon} \sqrt{E(u_0 + t, v_0)}   \, dt  &= \int_{0}^{\varepsilon} \sqrt{\tilde{E}(u_0 + t, v_0)} \, dt.
 \end{align*} \]
-Če uporabimo izrek o povprečni vrednosti, dobimo 
+Po izreku o povprečni vrednosti, obstajata neka $\hat{t}, \hat{\hat{t}} \in  (0, \varepsilon)$, da velja
 \[ E(u_0 + \hat{t} , v_0) \varepsilon = \tilde{E}(u_0 + \hat{\hat{t}} , v_0) \varepsilon\]in če pošljemo $\varepsilon \to  0$,
-dobimo zaradi zveznosti funkcij 
+zaradi zveznosti funkcij dobimo 
 \[ E(u_0, v_0) = \tilde{E}(u_0, v_0). \]
 Še lažje ta rezultat dobimo tako, da na obeh straneh odvajamo po $\varepsilon$ in vstavimo $\varepsilon = 0$.
 
 Če zdaj vzamemo $\beta(t) = (u_0, v_0 + t)$, dobimo po enakem postopku kot prej 
 \[ G(u_0, v_0) = \tilde{G}(u_0, v_0). \]
 Nato vzamemo $\beta(t) = (u_0 + t, v_0 + t)$ in imamo
-\[ \mathcal{L}_r(\gamma) = \int_{0}^{\varepsilon} \sqrt{E(u_0 + t, v_0 + t) + 2F(u_0 + t, v_0 + t) + G(u_0 + t, v_0 + t)}   \, dt,  \]
-\[ \mathcal{L}_{\tilde{r}}(\tilde{\gamma}) = \int_{0}^{\varepsilon} \sqrt{\tilde{E}(u_0 + t, v_0 + t) + 2\tilde{F}(u_0 + t, v_0 + t) + \tilde{G}(u_0 + t, v_0 + t)}   \, dt. \]
+\[ \begin{align*}
+  \mathcal{L}_r(\gamma) &= \int_{0}^{\varepsilon} \sqrt{E(u_0 + t, v_0 + t) + 2F(u_0 + t, v_0 + t) + G(u_0 + t, v_0 + t)}   \, dt  \\
+  = \mathcal{L}_{\tilde{r}}(\tilde{\gamma}) &= \int_{0}^{\varepsilon} \sqrt{\tilde{E}(u_0 + t, v_0 + t) + 2\tilde{F}(u_0 + t, v_0 + t) + \tilde{G}(u_0 + t, v_0 + t)}   \, dt. 
+\end{align*} \]
+
 Če zdaj zopet odvajamo po $\varepsilon$ in vstavimo $\varepsilon = 0$, dobimo enakost integrandov v točki $(u_0, v_0)$, od koder sledi še zadnja zahteva
 \[ F(u_0, v_0) = \tilde{F}(u_0, v_0). \]
 \qed
@@ -922,17 +925,17 @@ Nato vzamemo $\beta(t) = (u_0 + t, v_0 + t)$ in imamo
  \[ \begin{pmatrix}
   E & F\\
   F & G\\
- \end{pmatrix} 
+ \end{pmatrix}_{(u,v)} 
  = \begin{pmatrix}
   2 & 0\\
   0 & u^2\\
  \end{pmatrix}.\]
-Pričakujemo, da bo $S$ izometričen nekemu krožnemu izseku. Če definiramo 
-\[ \tilde{r}(u,v) = (\alpha u \cos(\beta v), \alpha u \sin(\beta v), 0)\]dobimo sistem enačb 
+Pričakujemo, da bo $S$ izometričen nekemu krožnemu izseku, ki ga parametriziramo z 
+\[ \tilde{r}(u,v) = (\alpha u \cos(\beta v), \alpha u \sin(\beta v), 0).\]Tako dobimo sistem enačb 
 \[ \begin{pmatrix}
   \tilde{E} & \tilde{F}\\
   \tilde{F} & \tilde{G}\\
- \end{pmatrix} 
+ \end{pmatrix}_{(u,v)} 
  = \begin{pmatrix}
   \alpha^2 & 0\\
   0 & \alpha^2 \beta^2 u^2\\
