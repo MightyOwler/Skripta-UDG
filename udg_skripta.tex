@@ -584,14 +584,14 @@ vektor $\omegainn \mathbb{R}^2$ in naj bo $v = \left( D_{(u_0,
 v_0)r} \cdot w \right)$. Potrebujemo krivuljo $\gamma(t),
 \gamma(0) = m,$ za katero bo veljalo $\dot{\gamma} (0) = v.$
 Oglejmo si \[ \left( D_{(u_0, v_0)}r \right)(\dot{\beta} (0)) =
-\frac{d}{dt} \big| r(\beta(t)). \]  Trdimo, da za $\gamma(t) =
-r(\beta(t))$  velja, da je $\dot{\gamma}(0) \in  T_mX.$ To
-je res, saj velja, da je $\gamma(t): (-\varepsilon,
-\varepsilon)\to  X \subseteq \mathbb{R}^3$, hkrati pa velja
-tudi $\gamma(0) = r(\beta(0) )= r(u_0, v_0) = m$. Torej velja,
+\frac{d}{dt} \big|_{t = 0} r(\beta(t)). \]  Trdimo, da za $\gamma(t) =
+r(\beta(t))$  velja $\dot{\gamma}(0) \in  T_mX.$ To
+je res, saj je $\gamma(t): (-\varepsilon,
+\varepsilon)\to  X \subseteq \mathbb{R}^3$, hkrati pa tudi $\gamma(0) = r(\beta(0) )= r(u_0, v_0) = m$. Torej velja,
 da je $T_mX = \operatorname{im}(D_{(u_0,v_0)}r)$. Ker smo zahtevali,
-da je parametrizacija regularna, je matrika $D_{(u_0,v_0)}r$ reda 2,
-torej je  $T_mX$ dvodimenzionalen vektorski prostor.   \qed
+da je parametrizacija regularna, je matrika $D_{(u_0,v_0)}r$ ranga 2,
+torej je  $T_mX$ dvodimenzionalen vektorski prostor.
+\qed
 
 \begin{opomba}
  Tangentna ravnina je pravi vektorski prostor in ne afin kot
@@ -899,7 +899,7 @@ Po predpostavki o izometričnosti velja
     \mathcal{L}_r(\gamma) &= \mathcal{L}_{\tilde{r}}(f(\gamma)), \\
     \int_{0}^{\varepsilon} \sqrt{E(u_0 + t, v_0)}   \, dt  &= \int_{0}^{\varepsilon} \sqrt{\tilde{E}(u_0 + t, v_0)} \, dt.
 \end{align*} \]
-Po izreku o povprečni vrednosti, obstajata neka $\hat{t}, \hat{\hat{t}} \in  (0, \varepsilon)$, da velja
+Po izreku o povprečni vrednosti obstajata neka $\hat{t}, \hat{\hat{t}} \in  (0, \varepsilon)$, da velja
 \[ E(u_0 + \hat{t} , v_0) \varepsilon = \tilde{E}(u_0 + \hat{\hat{t}} , v_0) \varepsilon\]in če pošljemo $\varepsilon \to  0$,
 zaradi zveznosti funkcij dobimo 
 \[ E(u_0, v_0) = \tilde{E}(u_0, v_0). \]
