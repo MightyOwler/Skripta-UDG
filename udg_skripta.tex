@@ -215,6 +215,8 @@
 \author{Jaša Knap}
 \maketitle
 
+\include{Poglavja/1-Uvod}
+
 \section{Uvod}% \label{sec:Uvod}
 
 \begin{definicija}
@@ -1029,7 +1031,7 @@ naravno parametrizirana krivulja $\gamma(u) = (x(u), y(u))$, za katero za vsak $
 
 \begin{opomba}
  Pri določenih $(u,v)$ nam krivulja $\gamma(u)$ podaja tangentno premonosno ploskev. Ta ploskev je del ravnine, v kateri
- leži krivulja krivulja $\gamma(u)$. Po izreku iz prejšnjih predavanj (TODO ali \ref{izr_izometricnost_in_prva_forma} ali \ref{izr_izometricnost_ploskev_ravnini}) je ta ploskev izometrična nekemu kosu ravnine.
+ leži krivulja krivulja $\gamma(u)$. Po izreku iz prejšnjih predavanj (TODO ali \href{izr_izometricnost_in_prva_forma} ali \href{izr_izometricnost_ploskev_ravnini}) je ta ploskev izometrična nekemu kosu ravnine.
 \end{opomba}
 
 S tem razmislekom smo dokazali izrek.
@@ -1153,17 +1155,17 @@ Od tod sledi naslednji izrek.
   \[ \begin{pmatrix}
   E & F \\
   F & G
-  \end{pmatrix} = \text{Jac}(g)^{T}
+  \end{pmatrix} = \operatorname{Jac}(g)^{T}
   \begin{pmatrix}
     \tilde{E} & \tilde{F} \\
     \tilde{F} & \tilde{G}
     \end{pmatrix}
-  \text{Jac}(g). \]
+  \operatorname{Jac}(g). \]
 \end{izrek}
 
 \begin{posledica}
 \label{psl_dobra_definiranost_ploscine}
- Definicija ploščine \ref{def_ploscina_plosvke} je dobra.
+ Definicija ploščine \href{def_ploscina_plosvke} je dobra.
 \end{posledica}
 \noident
 {\em Dokaz:\/}
@@ -1202,5 +1204,51 @@ Recimo, da imamo podano $V \subseteq  \mathbb{R}^2$ in matrično funkcijo \begin
 Zanimivo vprašanje se glasi: Ali lahko to funkcijo realiziramo v vloženi mnogoterosti? Odgovor je da (ampak lokalno, ker bi lahko prišlo do problemov s samopresečišči).
 
 \subsection{Ukrivljenost}
+
+\subsubsection{Druga fundamentalna forma}
+
+Naj bo $X \subseteq \mathbb{R}^3$ ploskev s parametrizacijo $r: V \subseteq \mathbb{R}^2 \to  X$.
+Intuitivno je ukrivljenost ploskve $X$ v točki $r(u,v) = m \in X$ `hitrost` oddaljevanja $X$ od tangentne ravnine $T_{m}X$.
+Naj bo $n$ normala na ravnino $T_{m}X$ v točki $m$. Naj bo torej točka $r(u', v') = r(u + \Delta u, v + \Delta v)$ blizu točke $m = r(u,v)$ in izmerimo razdaljo od točke $r(u', v')$ do $T_mX$.
+
+Dobimo 
+\[ d = \langle n, r(u', v') - r(u,v) \rangle.\]
+Ker sta spremembi $\Delta u$ in $\Delta v$ majhni, naredimo Taylorjev razvoj, ter izrazimo 
+\[ r(u', v') - r(u,v) = r_u \Delta u + r_v \Delta v + \frac{1}{2} \left(r_{uu} (\Delta u)^2 + 2r_{uv} \Delta u \Delta v + r_{vv} (\Delta v)^2 \right) + \ldots \]
+
+Ker vemo tudi, da je normala pravokotna na vektorja $r_u$ in $r_v$, lahko zapišemo 
+\[ d = \langle n, r(u', v') - r(u,v) \rangle \approx \underbrace{\langle r_u, n \rangle}_0   \Delta u + \underbrace{\langle r_v, n \rangle}_0  \Delta v  
++ \frac{1}{2} \left( \langle r_{uu}, n \rangle (\Delta u)^2 +  2\langle r_{uv}, n \rangle \Delta u \Delta v + \langle r_{vv}, n \rangle (\Delta v)^2 \right).\]
+oziroma 
+\[ d \approx \frac{1}{2} \left( \langle r_{uu}, n \rangle (\Delta u)^2 +  2\langle r_{uv}, n \rangle \Delta u \Delta v + \langle r_{vv}, n \rangle (\Delta v)^2 \right). \]
+
+Zdaj lahko smiselno definiramo drugo fundamentalno formo ploskve.
+
+\begin{definicija}
+\label{def_druga_fundamentalna_forma_ploskve}
+ Druga fundamentaa forma ploslve $X$ v točki $m = r(u,v)$ je podana z matriko 
+ \[ \begin{pmatrix}
+ L & M \\
+ M & N
+ \end{pmatrix}_{(u,v)} = \begin{pmatrix}
+ L(u,v) & M(u,v) \\
+ M(u,v) & N(u,v)
+ \end{pmatrix}, \]
+ kjer so $L, M, N: V \to  \mathbb{R}$ funkcije s predpisi 
+ \[ \begin{align*}
+    L(u,v)  &= \langle r_{uu}(u,v), n(u,v) \rangle  \\
+    M(u,v)  &= \langle r_{uv}(u,v), n(u,v) \rangle  \\
+    N(u,v)  &= \langle r_{vv}(u,v), n(u,v) \rangle  
+ \end{align*} \]
+
+\begin{opomba}
+ Za drugo fundamentalno formo je res nujen skalarni produkt v $\mathbb{R}^3$.
+\end{opomba}
+
+
+\end{definicija}
+
+
+
 
 \end{document}
