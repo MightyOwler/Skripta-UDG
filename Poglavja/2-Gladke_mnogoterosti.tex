@@ -662,6 +662,8 @@ lahko ploščino izrazimo tudi kot
 
 Velja $r(u,v) = \tilde{r}(g(u,v))$. Poglejmo si, kaj se zgodi z matriko prve fundamentalne forme transformaciji med parametrizacijama.
 
+% TODO tukaj ta razmislek premakni v izrek
+
 \subsection{Transformacijska pravila za I-forme}
 
 Naj bosta $r: V_1 \to  X$ in $\tilde{r}: V_2 \to  X$ dve parametrizaciji iste ploskve. Med njima velja $r(u,v) = \tilde{r}(\tilde{u}(u,v), \tilde{v}(u,v))$.
@@ -739,7 +741,7 @@ Od tod sledi naslednji izrek.
 
 \begin{izrek}
 \label{izr_transformacija_1_forme}
-  Naj za parametrizaciji $r: V_1 \to  X$ in $V_2 \to X$ velja 
+  Naj za parametrizaciji $r: V_1 \to  X$ in $\tilde{r}: V_2 \to X$ velja 
   \begin{equation*} r(u,v) = \tilde{r}(\tilde{u}(u,v), \tilde{v}(u,v)) = \tilde{r}(g(u,v)).\end{equation*}Potem za I-formi glede na ti parametrizaciji velja 
   \begin{equation*} \begin{pmatrix}
   E & F \\
@@ -798,8 +800,7 @@ Zanimivo vprašanje se glasi: Ali lahko to funkcijo realiziramo v vloženi mnogo
 
 Naj bo $X \subseteq \mathbb{R}^3$ ploskev s parametrizacijo $r: V \subseteq \mathbb{R}^2 \to  X$.
 Intuitivno je ukrivljenost ploskve $X$ v točki $r(u,v) = m \in X$ `hitrost` oddaljevanja $X$ od tangentne ravnine $T_{m}X$.
-Naj bo $n$ normala na ravnino $T_{m}X$ v točki $m$. Naj bo torej točka $r(u', v') = r(u + \Delta u, v + \Delta v)$ blizu točke $m = r(u,v)$ in izmerimo razdaljo od točke $r(u', v')$ do $T_mX$.
-
+Naj bo $n$ normala na ravnino $T_{m}X$ v točki $m$. Naj bo točka $r(u', v') = r(u + \Delta u, v + \Delta v)$ blizu točke $m = r(u,v)$. Izmeriti hočemo razdaljo od točke $r(u', v')$ do $T_mX$.
 Dobimo 
 \begin{equation*} d = \langle n, r(u', v') - r(u,v) \rangle.\end{equation*}
 Ker sta spremembi $\Delta u$ in $\Delta v$ majhni, naredimo Taylorjev razvoj, ter izrazimo 
@@ -815,7 +816,7 @@ Zdaj lahko smiselno definiramo drugo fundamentalno formo ploskve.
 
 \begin{definicija}
 \label{def_druga_fundamentalna_forma_ploskve}
- Druga fundamentaa forma ploslve $X$ v točki $m = r(u,v)$ je podana z matriko 
+ Naj bo $X \subseteq \mathbb{R}^3$ ploskev s parametrizacijo $r: V \subseteq \mathbb{R}^2 \to  X$. Druga fundamentalna forma $X$ v točki $m = r(u,v)$ je podana z matriko 
  \begin{equation*} \begin{pmatrix}
  L & M \\
  M & N
@@ -836,7 +837,7 @@ Zdaj lahko smiselno definiramo drugo fundamentalno formo ploskve.
     Za drugo fundamentalno formo je res nujen skalarni produkt v $\mathbb{R}^3$ (za razliko od prve fundamentalne forme, ki v vsaki točki določa drug skalarni produkt). 
 \end{opomba}
 
-Razmislili smo že, da veja 
+Razmislili smo že, da velja ocena razdalje
 \begin{equation*} d \approx \begin{pmatrix}
   \Delta u  &  \Delta v 
 \end{pmatrix} \begin{pmatrix}
@@ -851,16 +852,16 @@ Razmislili smo že, da veja
 Od te točke naprej predpostavljamo, da so vse krivulje naravno parametrizirane. Naj bo $\gamma: [a,b] \to X$ gladka krivulja. 
 Spomnimo se definicije fleksijske ukrivljenosti krivulje \href{def_fleksijska_ukrivljenost}, velja $\kappa(t) = \lvert\lvert \ddot{\gamma}(t) \rvert\rvert$.
 V nadaljevanju bomo razdelili vektor pospeška na geodetsko in normalno komponentno, torej 
-\begin{equation*} \ddot{\gamma} = \ddot{\gamma}_g + \ddot{\gamma}_n.\end{equation*}
+\begin{equation*} \ddot{\gamma}(t) = \ddot{\gamma}_g(t) + \ddot{\gamma}_n(t).\end{equation*}
 
-Zato najprej definirajmo geodetsko in normalno ukrivljenost.
+Zato najprej definirajmo geodetsko in normalno ukrivljenost krivulje.
 
 \begin{definicija}
 \label{def_geodetska_in_normalna_ukrivljenost}
 Naj bo $X \subseteq \mathbb{R}^3$ ploskev s parametrizacijo $r: V \subseteq \mathbb{R}^2 \to  X$ in naj bo $\gamma: [a,b] \to X$ gladka krivulja. 
 Definirajmo normalo na krivuljo $\gamma$
-\begin{equation*} n_{\gamma}(t) = \frac{r_u(u(t), v(t)) \times  r_v(u(t), v(t))}{\lvert\lvert r_u(u(t), v(t)) \rvert\rvert }.\end{equation*}
-Potem definiramo normalno in geodetsko ukrivljenost kot 
+\begin{equation*} n_{\gamma}(t) = \frac{r_u(u(t), v(t)) \times  r_v(u(t), v(t))}{\lvert\lvert r_u(u(t), v(t)) \times  r_v(u(t), v(t)) \rvert\rvert }.\end{equation*}
+Potem definiramo normalno in geodetsko ukrivljenost krivulje $\gamma$ kot 
 \begin{align*}
     \kappa_n(t) &= \langle \ddot{\gamma}(t), n_{\gamma}(t) \rangle,  \\
     \kappa_g(t) &= \langle \ddot{\gamma}(t), \dot{\gamma}(t) \times n_{\gamma}(t) \rangle.
@@ -868,16 +869,15 @@ Potem definiramo normalno in geodetsko ukrivljenost kot
 
 \end{definicija}
 
-Zdaj si poglejmo, kako se izraža normalna ukrivljenost s pomočjo druge fundamentalne forme.
+Zdaj si poglejmo, kako se izraža normalna ukrivljenost krivulje s pomočjo druge fundamentalne forme.
 
 \begin{izrek}
 \label{izr_izrazava_normalne_ukrivljenosti_z_drugo_fundamentalno_formo}
   Naj bo $\gamma: [a,b] \to X$ gladka krivulja, podana s parametrizacijo $\gamma(t) = r(u(t), v(t))$. Tedaj lahko njeno normalno ukrivljenost
   izračunamo po formuli 
   \begin{equation*} \kappa_n(t) = \begin{pmatrix}
-    \dot{u}(t) \\
-    \dot{v}(t) 
-  \end{pmatrix} = 
+    \dot{u}(t) & \dot{v}(t) 
+  \end{pmatrix}  
   \begin{pmatrix}
     L & M \\
     M & N
@@ -917,15 +917,15 @@ Vsako funkcijo normalne ukrivljenosti lahko razširimo na tangentno ravnino na n
 
 \begin{definicija}
 \label{def_razsiritev_normalne_ukrivljenosti}
-    Naj bo $X \subseteq \mathbb{R}^3$ ploskev s parametrizacijo $: V \subseteq \mathbb{R}^2 \to  X$
+    Naj bo $X \subseteq \mathbb{R}^3$ ploskev s parametrizacijo $r: V \subseteq \mathbb{R}^2 \to  X$
     in naj bo $\begin{pmatrix}
     L & M \\
     M & N
     \end{pmatrix}$ II-forma ploskve $X$ glede na $r$. Naj bo $r(u_0, v_0) = m \in  X$. Vemo, da je $\left\{ r_u(u_0, v_0), r_v(u_0, v_0) \right\}$ baza za
-    tangetno ravnino $T_mX$. Zato lahko vsak vektor v njej enolično zapišemo v obliki $\xi r_u(u_0, v_0) + \eta r_v(u_0, v_0).$
+    tangetno ravnino $T_mX$, zato lahko vsak vektor v njej enolično zapišemo v obliki $\xi r_u(u_0, v_0) + \eta r_v(u_0, v_0).$
     Potem obstaja funkcija \begin{align*}
        \kappa_n : T_mX &\longrightarrow \mathbb{R} \\
-        \kappa_n(\xi r_u(u_0, v_0) + \eta r_v(u_0, v_0)) =: \kappa_n(\xi, \eta) &\longmapsto 
+        \kappa_n(\xi r_u(u_0, v_0) + \eta r_v(u_0, v_0)) =: \kappa_n(\xi, \eta) &=
         \begin{pmatrix}
           \xi  & \eta
         \end{pmatrix}
@@ -941,20 +941,20 @@ Vsako funkcijo normalne ukrivljenosti lahko razširimo na tangentno ravnino na n
 \end{definicija}
 
 \begin{opomba}
- Če je $(\xi, \eta) = (\dot{u}, \dot{v})$ in $\gamma$ naravno parametriziana krivulja, potem par $(\xi, \eta)$ leži
+ Če je $(\xi, \eta) = (\dot{u}, \dot{v})$ in je $\gamma$ naravno parametriziana krivulja, potem par $(\xi, \eta)$ leži
  na enotski krožnici v ravnini $T_mX$. V $\mathbb{R}^3$ je to res običajna krožnica glede na
- evklidkski skalarni produkt, v koordinatah $(\xi, \eta)$ pa je 
+ evklidkski skalarni produkt, v koordinatah $(\xi, \eta)$ pa jo določa enačba 
  \begin{equation*} E \xi^2 + 2F \xi \eta + G \eta^2  = 1.\end{equation*}
 \end{opomba}
 
 \begin{definicija}
 \label{def_glavni_ukrivljenosti_ploskve}
  Ekstrema funkcije $\kappa_n: T_mX \to  \mathbb{R}$, skrčene na enotsko sfero $E \xi^2 + 2F \xi \eta + G \eta^2  = 1$, imenujemo glavni ukrivljenosti ploskve $X$ v točki $m$. 
- Označimo ju s $\kappa_1$, $\kappa_2$. 
+ Označimo ju s $\kappa_1$ in $\kappa_2$. 
 \end{definicija}
 
 \begin{opomba}
- Ali minimum označimo $\kappa_1$ ali $\kappa_2$, je stvar dogovora. Ekstrema obstajata, ker je krožnica kompakt, torej ima zvezna funkcija $\kappa_n$ na njej minimum in maksimum.
+ Ali minimum označimo s $\kappa_1$ ali $\kappa_2$, je stvar dogovora. Ekstrema obstajata, ker je krožnica kompakt, torej ima zvezna funkcija $\kappa_n$ na njej minimum in maksimum.
 \end{opomba}
 
 \begin{definicija}
@@ -979,7 +979,7 @@ Vsako funkcijo normalne ukrivljenosti lahko razširimo na tangentno ravnino na n
 
 \begin{definicija}
 \label{def_povprecna_ukrivljenost}
-    Povprečna ukrivljenst ploskve $X$ v točki $m$ je podana s formulo 
+    Povprečna ukrivljenost ploskve $X$ v točki $m$ je podana s formulo 
     \begin{equation*} H(m) = \frac{1}{2} (\kappa_1(m) + \kappa_2(m) ).\end{equation*}
 \end{definicija}
 
@@ -999,7 +999,7 @@ Z naslednjim izrekom bomo utemeljili, da sta glavni ukrivljenosti res kvečjem d
 \noident
 {\em Dokaz:\/}
  Ekstrema $\lambda_1$, $\lambda_2$ sta vezana ekstrema za funkcijo $\kappa_n: T_mX \to \mathbb{R}$.
- Zaradi homeomorfizma $T_mX \approx R^2$ lahko identificiramo elemente $T_mX$ s pari $(\xi, \eta)$. Naša krožnica je
+ Zaradi homeomorfizma $T_mX \approx \mathbb{R}^2$ lahko identificiramo elemente $T_mX$ s pari $(\xi, \eta)$. Naša krožnica je
  določena z vezjo $\lvert\lvert (\xi, \eta) \rvert\rvert = 1$. Torej iščemo ekstreme funkcije \begin{equation*}
    \kappa_n(\xi, \eta) = \begin{pmatrix}
      \xi & \eta 
@@ -1024,36 +1024,36 @@ Z naslednjim izrekom bomo utemeljili, da sta glavni ukrivljenosti res kvečjem d
      \begin{pmatrix}
        \xi \\
        \eta 
-     \end{pmatrix} = E \xi^2 + 2F \xi \eta + G \eta^2.
+     \end{pmatrix} = E \xi^2 + 2F \xi \eta + G \eta^2 = 1.
    \end{equation*}  
     Zdaj se s pomočjo analize 2 spomnimo, da se vezane ekstreme išče s pomočjo Lagrangeeve funkcije \begin{equation*}
       \kappa_n(\xi, \eta) - \lambda g(\xi, \eta).
     \end{equation*}  
-    Da bo skalar $\lambda$ ekstrem, mora veljati zveza \begin{equation*}
+    Da bo skalar $\lambda$ določal ekstrem, mora veljati zveza \begin{equation*}
       \operatorname{grad}(\kappa_n(\xi, \eta) - \lambda g(\xi, \eta)) = 0.
     \end{equation*}  
     Zaradi linearnosti gradienta je to ekvivalentno zvezi \begin{equation*}
-        \operatorname{grad}(\kappa_n(\xi, \eta)) - \lambda \operatorname{grad}(g(\xi, \eta)).
+        \operatorname{grad}(\kappa_n(\xi, \eta)) - \lambda \operatorname{grad}(g(\xi, \eta)) = 0.
     \end{equation*}
-    Pri tem dobimo \begin{align*}
+    Zdaj poračunamo gradienta, da dobimo \begin{align*}
         \operatorname{grad}(\kappa_n(\xi, \eta)) = \begin{pmatrix}
-            \frac{ \partial \kappa_n }{ \partial \xi } \\\\
+            \frac{ \partial \kappa_n }{ \partial \xi } \\
             \frac{ \partial \kappa_n }{ \partial \eta }
         \end{pmatrix}  &= 2 \begin{pmatrix}
-        L & M \\\\
+        L & M \\
         M & N
         \end{pmatrix}  \begin{pmatrix}
-            \xi \\\\
+            \xi \\
             \eta
         \end{pmatrix},  \\
         \operatorname{grad}(g(\xi, \eta)) = \begin{pmatrix}
-            \frac{ \partial g }{ \partial \xi } \\\\
+            \frac{ \partial g }{ \partial \xi } \\
             \frac{ \partial g }{ \partial \eta }
         \end{pmatrix}  &= 2 \begin{pmatrix}
         E & F \\
         F & G
         \end{pmatrix}  \begin{pmatrix}
-            \xi \\\\
+            \xi \\
             \eta
         \end{pmatrix}.
     \end{align*}
@@ -1067,10 +1067,10 @@ Z naslednjim izrekom bomo utemeljili, da sta glavni ukrivljenosti res kvečjem d
     E & F \\
     F & G
     \end{pmatrix} \right) \begin{pmatrix}
-        \xi \\\\
+        \xi \\
         \eta
     \end{pmatrix} =  \begin{pmatrix}
-        0 \\\\
+        0 \\
         0
     \end{pmatrix}.
     \end{equation*}  
@@ -1084,7 +1084,7 @@ Z naslednjim izrekom bomo utemeljili, da sta glavni ukrivljenosti res kvečjem d
     F & G
     \end{pmatrix} \right) = 0.
      \end{equation*}  
-     Denimo, da imamo neki rešitvi $\lambda_1$, $\lambda_2$. Potem obstajata vektorja $(\xi_1, \eta_1)^{T}$, $(\xi_2, \eta_2)^{T}$, da je   
+     Denimo, da imamo neki rešitvi $\lambda_1$, $\lambda_2$. Potem obstajata vektorja $(\xi_1, \eta_1)^{T}$, $(\xi_2, \eta_2)^{T}$, da je za $i = 1,2$
      \begin{equation*}
         \left(
             \begin{pmatrix}
@@ -1094,14 +1094,14 @@ Z naslednjim izrekom bomo utemeljili, da sta glavni ukrivljenosti res kvečjem d
         E & F \\
         F & G
         \end{pmatrix} \right) \begin{pmatrix}
-            \xi_i \\\\
+            \xi_i \\
             \eta_i
         \end{pmatrix} =  \begin{pmatrix}
-            0 \\\\
+            0 \\
             0
         \end{pmatrix}.
      \end{equation*}  
-    Če vzamemo enotska vektorja $(\xi_1, \eta_1)^{T}$, $(\xi_2, \eta_2)^{T}$, in množimo zgornjo enačbo z leve z $(\xi_i, \eta_i)$, 
+    Če vzamemo enotska vektorja $(\xi_1, \eta_1)^{T}$, $(\xi_2, \eta_2)^{T}$, in množimo $i$-to zgornjo enačbo z leve z $(\xi_i, \eta_i)$, 
     dobimo 
     \begin{equation*}
         \underbrace{\begin{pmatrix}
@@ -1111,7 +1111,7 @@ Z naslednjim izrekom bomo utemeljili, da sta glavni ukrivljenosti res kvečjem d
           L & M \\
           M & N
           \end{pmatrix}\begin{pmatrix}
-            \xi_i \\\\
+            \xi_i \\
             \eta_i
         \end{pmatrix}}_{\kappa_n(\xi, \eta)}    - \lambda_i 
         \underbrace{\begin{pmatrix}
@@ -1121,17 +1121,17 @@ Z naslednjim izrekom bomo utemeljili, da sta glavni ukrivljenosti res kvečjem d
         E & F \\
         F & G
         \end{pmatrix} \begin{pmatrix}
-            \xi_i \\\\
+            \xi_i \\
             \eta_i
         \end{pmatrix}}_1  =  \begin{pmatrix}
-            0 \\\\
+            0 \\
             0
         \end{pmatrix}.
      \end{equation*}
-     Desni člen pride $1$, ker smo izbrali enotska vektorja. Preostaneta nam torej enačbi \begin{equation*}
-       \kappa_n(\xi_i, \eta_i) = \lambda_i.
+     Desni člen je enak $1$, ker smo izbrali enotska vektorja glede na skalarni produkt, porojen s to matriko. Preostaneta nam torej enačbi \begin{equation*}
+       \kappa_n(\xi_i, \eta_i) = \lambda_i, \,\,\, i = 1,2.
      \end{equation*}  
-     Točki $(\xi_i, \eta_i)$ sta vezana ekstrema funkcije $\kappa_n$ pri vezi $g = 1$. Torej sta to ničli
+     Točki $(\xi_i, \eta_i)$ sta vezana ekstrema funkcije $\kappa_n$ pri vezi $g = 1$. Torej sta to ničli kvadratnega polinoma
      \begin{equation*}
         \det \left( 
          \begin{pmatrix}
