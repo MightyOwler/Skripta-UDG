@@ -831,6 +831,170 @@ Zdaj lahko smiselno definiramo drugo fundamentalno formo ploskve.
 \end{definicija}
 
 \begin{opomba}
-    Za drugo fundamentalno formo je res nujen skalarni produkt v $\mathbb{R}^3$.
+    Za drugo fundamentalno formo je res nujen skalarni produkt v $\mathbb{R}^3$ (za razliko od prve fundamentalne forme, ki v vsaki točki določa drug skalarni produkt). 
 \end{opomba}
 
+Razmislili smo že, da veja 
+\[ d \approx \begin{pmatrix}
+  \Delta u  &  \Delta v 
+\end{pmatrix} \begin{pmatrix}
+  L & M \\
+  M & N
+\end{pmatrix}_{(u,v)}  
+\begin{pmatrix}
+  \Delta u \\
+  \Delta v 
+\end{pmatrix}.\]
+
+Od te točke naprej predpostavljamo, da so vse krivulje naravno parametrizirane. Naj bo $\gamma: [a,b] \to X$ gladka krivulja. 
+Spomnimo se definicije fleksijske ukrivljenosti krivulje \href{def_fleksijska_ukrivljenost}, velja $\kappa(t) = \lvert\lvert \ddot{\gamma}(t) \rvert\rvert$.
+V nadaljevanju bomo razdelili vektor pospeška na geodetsko in normalno komponentno, torej 
+\[ \ddot{\gamma} = \ddot{\gamma}_g + \ddot{\gamma}_n.\]
+
+Zato najprej definirajmo geodetsko in normalno ukrivljenost.
+
+\begin{definicija}
+\label{def_geodetska_in_normalna_ukrivljenost}
+Naj bo $X \subseteq \mathbb{R}^3$ ploskev s parametrizacijo $r: V \subseteq \mathbb{R}^2 \to  X$ in naj bo $\gamma: [a,b] \to X$ gladka krivulja. 
+Definirajmo normalo na krivuljo $\gamma$
+\[ n_{\gamma}(t) = \frac{r_u(u(t), v(t)) \times  r_v(u(t), v(t))}{\lvert\lvert r_u(u(t), v(t)) \rvert\rvert }.\]
+Potem definiramo normalno in geodetsko ukrivljenost kot 
+\[ \begin{align*}
+    \kappa_n(t) &= \langle \ddot{\gamma}(t), n_{\gamma}(t) \rangle,  \\
+    \kappa_g(t) &= \langle \ddot{\gamma}(t), \dot{\gamma}(t) \times n_{\gamma}(t) \rangle.
+\end{align*} \] 
+
+\end{definicija}
+
+Zdaj si poglejmo, kako se izraža normalna ukrivljenost s pomočjo druge fundamentalne forme.
+
+\begin{izrek}
+\label{izr_izrazava_normalne_ukrivljenosti_z_drugo_fundamentalno_formo}
+  Naj bo $\gamma: [a,b] \to X$ gladka krivulja, podana s parametrizacijo $\gamma(t) = r(u(t), v(t))$. Tedaj lahko njeno normalno ukrivljenost
+  izračunamo po formuli 
+  \[ \kappa_n(t) = \begin{pmatrix}
+    \dot{u}(t) \\
+    \dot{v}(t) 
+  \end{pmatrix} = 
+  \begin{pmatrix}
+    L & M \\
+    M & N
+  \end{pmatrix}_{(u(t), v(t))}  
+  \begin{pmatrix}
+    \dot{u}(t) \\
+    \dot{v}(t) 
+  \end{pmatrix}.  \]
+\end{izrek}
+
+\noident
+{\em Dokaz:\/}
+ Najprej zapišemo prva dva odvoda 
+ \[ \begin{align*}
+     \dot{\gamma}(t) &= r_u \dot{u} + r_v \dot{v}, \\
+     \ddot{\gamma}(t) &= \ddot{u} r_u + \ddot{v} r_v + r_{uu} \dot{u}^2 + 2r_{uv} \dot{u} \dot{v} + r_{vv} \dot{v}^2   .
+ \end{align*} \]
+Od tod dobimo 
+\[ \begin{align*}
+    \kappa_n = \langle \ddot{\gamma}, n \rangle  &= \langle r_{uu}, n \rangle \dot{u}^2 + 2  \langle r_{uv}, n \rangle \dot{u} \dot{v} + \langle r_{vv}, n \rangle  \dot{v}^2 \\
+     &= L \dot{u}^2 + 2M \dot{u} \dot{v} + F \dot{v}^2 \\
+     &= \begin{pmatrix}
+        \dot{u} & \dot{v} 
+      \end{pmatrix} = 
+      \begin{pmatrix}
+        L & M \\
+        M & N
+      \end{pmatrix}  
+      \begin{pmatrix}
+        \dot{u} \\
+        \dot{v} 
+      \end{pmatrix}.
+\end{align*} \]
+\qed
+
+Vsako funkcijo normalne ukrivljenosti lahko razširimo na tangentno ravnino na naslednji način.
+
+\begin{definicija}
+\label{def_razsiritev_normalne_ukrivljenosti}
+    Naj bo $X \subseteq \mathbb{R}^3$ ploskev s parametrizacijo $: V \subseteq \mathbb{R}^2 \to  X$
+    in naj bo $\begin{pmatrix}
+    L & M \\
+    M & N
+    \end{pmatrix}$ II-forma ploskve $X$ glede na $r$. Naj bo $r(u_0, v_0) = m \in  X$. Vemo, da je $\left\{ r_u(u_0, v_0), r_v(u_0, v_0) \right\}$ baza za
+    tangetno ravnino $T_mX$. Zato lahko vsak vektor v njej enolično zapišemo v obliki $\xi r_u(u_0, v_0) + \eta r_v(u_0, v_0).$
+    Potem obstaja funkcija \begin{align*}
+       \kappa_n : T_mX &\longrightarrow \mathbb{R} \\
+        \kappa_n(\xi r_u(u_0, v_0) + \eta r_v(u_0, v_0)) =: \kappa_n(\xi, \eta) &\longmapsto 
+        \begin{pmatrix}
+          \xi  & \eta
+        \end{pmatrix}
+        \begin{pmatrix}
+          L & M \\
+          M & N
+        \end{pmatrix}_{(r(u_0, v_0))}  
+        \begin{pmatrix}
+          \xi \\
+          \eta
+        \end{pmatrix}
+    \end{align*} 
+\end{definicija}
+
+\begin{opomba}
+ Če je $(\xi, \eta) = (\dot{u}, \dot{v})$ in $\gamma$ naravno parametriziana krivulja, potem par $(\xi, \eta)$ leži
+ na enotski krožnici v ravnini $T_mX$. V $\mathbb{R}^3$ je to res običajna krožnica glede na
+ evklidkski skalarni produkt, v koordinatah $(\xi, \eta)$ pa je 
+ \[ E \xi^2 + 2F \xi \eta + G \eta^2  = 1.\]
+\end{opomba}
+
+\begin{definicija}
+\label{def_glavni_ukrivljenosti_ploskve}
+ Ekstrema funkcije $\kappa_n: T_mX \to  \mathbb{R}$, skrčene na enotsko sfero $E \xi^2 + 2F \xi \eta + G \eta^2  = 1$, imenujemo glavni ukrivljenosti ploskve $X$ v točki $m$. 
+ Označimo ju s $\kappa_1$, $\kappa_2$. 
+\end{definicija}
+
+\begin{opomba}
+ Ali minimum označimo $\kappa_1$ ali $\kappa_2$, je stvar dogovora. Ekstrema obstajata, ker je krožnica kompakt, torej ima zvezna funkcija $\kappa_n$ na njej minimum in maksimum.
+\end{opomba}
+
+\begin{definicija}
+\label{def_glavni_smeri}
+ Tangetna vektorja $\xi_1 r_u  + \eta_1 r_v$, $\xi_2 r_u  + \eta_2 r_v \in T_mX$, ki sta (različna) ekstrema funkcije $\kappa_n$, se imenujeta glavni smeri.
+\end{definicija}
+
+\begin{opomba}
+ Kmalu bomo dokazali, da sta glavni smeri res kvečjem dve, zato je takšna definicija upravičena (če bi bila $\kappa_n$ poljubna zvezna funkcija, bi lahko imela več ekstremov).
+\end{opomba}
+
+\begin{definicija}
+\label{def_Gaussova_ukrivljenost}
+ Gaussova ukrivljenost ploskve $X$ v točki $m$ je podana s produktom 
+ \[ \kappa(m) = \kappa_1(m) \kappa_2(m).\]
+\end{definicija}
+
+\begin{opomba}
+ Izkazalo se bo, da je Gaussova ukrivljenost izometrična varianta in da je tesno povezana z Eulerjevo karakteristiko.
+\end{opomba}
+
+
+\begin{definicija}
+\label{def_povprecna_ukrivljenost}
+    Povprečna ukrivljenst ploskve $X$ v točki $m$ je podana s formulo 
+    \[ H(m) = \frac{1}{2} (\kappa_1(m) + \kappa_2(m) ).\]
+\end{definicija}
+
+Z naslednjim izrekom bomo utemeljili, da sta glavni ukrivljenosti res kvečjem dve. 
+
+\begin{izrek}
+\label{izr_glavni_ukrivljenosti_sta_nicli_kvadratne_emacbe}
+  Glavni ukrivljenosti sta ničli kvadratne enačbe 
+  \[ \det \left( \begin{pmatrix}
+  L & M \\
+  M & N
+  \end{pmatrix}_{(m)} - \lambda \begin{pmatrix}
+  E & F \\
+  F & G
+  \end{pmatrix}_{(m)}  \right) = 0. \]
+\end{izrek}
+\noident
+{\em Dokaz:\/}
+ 
+\qed
