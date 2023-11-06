@@ -48,10 +48,10 @@ definiramo $U = W_0 \cap  X$, postane par $\left( U,
 mnogoterosti, potrebujemo še dodatno strukturo --
 metriko. Ta nam omogoča merjenje dolžin krivulj. Če si
 predstavljamo krivuljo $\gamma : \left( a,b \right)
-\to M$, je najbolj naravna definicija njene dolžine \[
+\to M$, je najbolj naravna definicija njene dolžine \begin{equation*}
 \mathcal{L}\left( \gamma \right) = \int_{a}^{b}
 \lvert\lvert \dot{\gamma } \left( t \right) \rvert\rvert
-\, dt. \]Znati moramo torej izračunati dolžino oziroma normo
+\, dt. \end{equation*}Znati moramo torej izračunati dolžino oziroma normo
 tangentnega vektorja. Najbolje je, če je ta norma porojena s
 skalarnim produktom, torej $\lvert\lvert x \rvert\rvert =
 \sqrt{\langle x,x \rangle } $.
@@ -61,7 +61,7 @@ produkt na $\mathcal{V} = \mathbb{R}^n$ in naj bo $\left\{
 v_1, \ldots , v_{n} \right\}$  baza za $\mathcal{V}$, ki ni
 nujno ortonormirana. Vzemimo vektorja $\vec{x}  =
 \sum_{i=1}^{n} a_{i}v_{i}$ in $\vec{y}  = \sum_{i=1}^{n}
-b_{i}v_{i}.$ Potem velja, da je skalarni produkt enak \[
+b_{i}v_{i}.$ Potem velja, da je skalarni produkt enak \begin{equation*}
 \langle \vec{x} , \vec{y} \rangle = \sum_{i,j = 1}^{n}
 a_{i}b_{j}\langle v_{i}, v_{j} \rangle =
 \begin{pmatrix}
@@ -73,7 +73,7 @@ a_1 & \ldots & a_n
 a_1 \rangle & \dots & \langle a_1,a_n \rangle
 \end{pmatrix}
 \begin{pmatrix} b_1 \\ \vdots \\ b_n
-\end{pmatrix}. \]
+\end{pmatrix}. \end{equation*}
 Iz simetričnosti skalarnega produkta
 ($\langle v_{i}, v_{j} \rangle  = \langle v_{j},  v_{i}
 \rangle $) sledi, da je zgornja matrika simetrična. Iz
@@ -91,8 +91,8 @@ matrike transformirajo pri prehodu v različno bazo.
 Naj bo $P$ poljubna preslikava med bazama, $L_e$
 linearna preslikava glede na bazo $\left\{ e_1, \ldots
 , e_{n}\right\}$, $L_f$ pa glede na bazo $\left\{ f_1,
-\ldots, f_{n}\right\}.$ Potem iz algebre 1 vemo, da je \[
-L_f = PL_eP^{-1}. \]Zdaj pa izpeljimo, kako se
+\ldots, f_{n}\right\}.$ Potem iz algebre 1 vemo, da je \begin{equation*}
+L_f = PL_eP^{-1}. \end{equation*}Zdaj pa izpeljimo, kako se
 transformira matrika skalarnega produkta. Naj bosta
 $a_f = Pa_e$ in $b_f = Pb_e$. Potem dobimo iz enakosti
 \begin{align*} \langle a_f, b_f \rangle &= \langle
@@ -100,7 +100,7 @@ a_e, b_e \rangle \\ a_f^{T} A_f b_f &= a_e^{T} A_e
 b_e \\ a_e^{T} P^{T} A_f P b_e &= a_e^{T} A_e b_e,
 \forall a_e, b_e. \end{align*} Od tod sledi, da je
 $P^{T}A_fP = A_e$ oziroma zaradi ortogonalnosti
-$P$ ekvivalentno \[A_f = PA_eP^{T}.\]
+$P$ ekvivalentno \begin{equation*}A_f = PA_eP^{T}.\end{equation*}
 
 Torej transformacijska pravila določajo vrsto
 preslikave, podobno kot pri fiziki. 
@@ -123,10 +123,10 @@ definicije.
 	Naj bo $X \subseteq \mathbb{R}^3$ vložena ploskev in točka $m
 \in X$. Tangentna ravnina $T_mX$ je množica tangent
 vseh krivulj v $X$, ki v času $t = 0$ gredo skozi $m$.
-\[ T_mX = \left\{ \dot{\gamma}\left( 0 \right) \mid
+\begin{equation*} T_mX = \left\{ \dot{\gamma}\left( 0 \right) \mid
 \gamma : \left(  - \varepsilon, \varepsilon \right)
 \to  X \subseteq  \mathbb{R}^3 \text{ krivulja, } \gamma\left(
-0 \right) = m\right\} \]
+0 \right) = m\right\} \end{equation*}
 \end{definicija}
 
 
@@ -139,11 +139,11 @@ $\mathbb{R}^3$.
 \subseteq  \mathbb{R}^2 \to X \subseteq \mathbb{R}^3$ neka regularna
 parametrizacija ploskve $X$ (to pomeni, da mora biti rang preslikave
 $r$ maksimalen, torej konstantno enak 2) v okolici točke  $m \in  X$. Naj
-bo $p = \left( u, v \right) \in  V \subseteq \mathbb{R}^2.$ Pišimo \[ r\left(
+bo $p = \left( u, v \right) \in  V \subseteq \mathbb{R}^2.$ Pišimo \begin{equation*} r\left(
 p \right) = r\left( u,v \right) = 
 \begin{pmatrix} x\left( u,v
 \right) \\ y\left( u,v \right) \\ z\left( u,v \right)
-\end{pmatrix} . \]
+\end{pmatrix} . \end{equation*}
 Naj bo $m = r\left( u_0, v_0 \right).$ Trdimo, da
 je $ T_mX = \operatorname{im} \left( D_{(u_0, v_0)}r \right) $.
 Najprej dokažimo inkluzijo $T_mX \subseteq \operatorname{im} \left(
@@ -161,8 +161,8 @@ $\mathbb{R}^2,$ obstajata funkciji $u\left( t \right), v\left( t
 \right)$, da je $\beta\left( t \right) = \left( u(t), v(t) \right).$
 Pri tem velja, da je $\beta(0) = (u(0), v(0)) = (u_0, v_0).$ Vidimo,
 da je $\gamma(t) = r(u(t), v(t)).$ Po verižnem pravilu za odvajanje
-imamo \[ \dot{\gamma }(0)= \frac{d}{dt} \big|_{t = 0} \gamma(t) =
-\left( D_{ (u_0, v_0)}r \right) \dot{\beta} (0).\]Torej je
+imamo \begin{equation*} \dot{\gamma }(0)= \frac{d}{dt} \big|_{t = 0} \gamma(t) =
+\left( D_{ (u_0, v_0)}r \right) \dot{\beta} (0).\end{equation*}Torej je
 $\dot{\gamma} (0) \in \operatorname{im} \left( D_{(u_0,v_0)}r
 \right).$ 
 
@@ -170,8 +170,8 @@ Nato dokažimo še obratno inkluzijo $T_mX \supseteq
 \operatorname{im} \left( D_{(u_0, v_0)}r \right)$. Vzemimo poljuben
 vektor $\omega \in \mathbb{R}^2$ in naj bo $v = \left( D_{(u_0, v_0)r} \cdot w \right)$. Potrebujemo krivuljo $\gamma(t),
 \gamma(0) = m,$ za katero bo veljalo $\dot{\gamma} (0) = v.$
-Oglejmo si \[ \left( D_{(u_0, v_0)}r \right)(\dot{\beta} (0)) =
-\frac{d}{dt} \big|_{t = 0} r(\beta(t)). \]  Trdimo, da za $\gamma(t) =
+Oglejmo si \begin{equation*} \left( D_{(u_0, v_0)}r \right)(\dot{\beta} (0)) =
+\frac{d}{dt} \big|_{t = 0} r(\beta(t)). \end{equation*}  Trdimo, da za $\gamma(t) =
 r(\beta(t))$  velja $\dot{\gamma}(0) \in  T_mX.$ To
 je res, saj je $\gamma(t): (-\varepsilon,
 \varepsilon)\to  X \subseteq \mathbb{R}^3$, hkrati pa tudi $\gamma(0) = r(\beta(0) )= r(u_0, v_0) = m$. Torej velja,
@@ -214,9 +214,9 @@ lahko napišemo v obliki  $\gamma(t) = r(u(t), v(t))$ za primerne
 funkcije $u,v : [a,b] \to \mathbb{R}$, $\beta(t) = (u(t), v(t))$,
 $\gamma(t) = r(\beta(t)).$ V koordinatah lahko zapišemo 
 
-\[ \gamma(t) =  \begin{pmatrix}x(u(t), v(t))\\ y(u(t), v(t)) \\
-z(u(t), v(t)) \end{pmatrix}, \]
-\[ \dot{\gamma}(t) = \frac{d}{dt} \big|_{t = t_0} r(\beta(t)) =
+\begin{equation*} \gamma(t) =  \begin{pmatrix}x(u(t), v(t))\\ y(u(t), v(t)) \\
+z(u(t), v(t)) \end{pmatrix}, \end{equation*}
+\begin{equation*} \dot{\gamma}(t) = \frac{d}{dt} \big|_{t = t_0} r(\beta(t)) =
 (D_{(u_0, v_0)}r)(\dot{\beta}(t_0)) = 
 \begin{pmatrix}
 	\frac{ \partial x }{ \partial u }  & \frac{ \partial x }{ \partial v }  \\
@@ -228,7 +228,7 @@ z(u(t), v(t)) \end{pmatrix}, \]
 \begin{pmatrix}
 	\dot{u} \\ \dot{v}
 \end{pmatrix}
- = r_u(u_0 , v_0)\dot{u}(t_0) + r_v(u_0 , v_0)\dot{v}(t_0). \]
+ = r_u(u_0 , v_0)\dot{u}(t_0) + r_v(u_0 , v_0)\dot{v}(t_0). \end{equation*}
  To je razvoj vektorja $\dot{\gamma}(t_0)$ po bazi $\left\{ r_u(u_0 ,
 v_0), r_v(u_0 , v_0) \right\}$ prostora $T_{\gamma(t_0)}X$, ki pa ni
 nujno ortogonalna. Pravzaprav je ortogonalna le v precej posebnih
@@ -238,7 +238,7 @@ primerih.
 \label{def_dolzina_krivulje}
 Dolžina krivulje $\gamma: [a,b] \to  X \subseteq  \mathbb{R}^3$ glede
 na metriko $g$ je v parametrizaciji $r$ podana s formulo 
-\[ \mathcal{L}_g(\gamma) = \int_{a}^{b} \sqrt{ 
+\begin{equation*} \mathcal{L}_g(\gamma) = \int_{a}^{b} \sqrt{ 
 \begin{pmatrix}
     \dot{u}(t) & \dot{v}(t) \\
 \end{pmatrix}
@@ -250,7 +250,7 @@ na metriko $g$ je v parametrizaciji $r$ podana s formulo
 	\dot{u}(t) \\
 	\dot{v}(t) \\
 \end{pmatrix}
-}  \, dt  \]
+}  \, dt  \end{equation*}
 \end{definicija}
 
 Ustrezni skalarni produkti na ravnini $T_mX$ so glede na
@@ -261,11 +261,11 @@ g_{22}$. Naj bo sedaj ambientni prostor $\mathbb{R}^3$ opremljen s
 fiksnim evklidskim skalarnim produktom, in koeficiente $g_{ij}$
 poračunamo z njim (na enak način kot prej). Pri tem uporabimo
 naslednje standardne oznake: 
-\[ E(u,v) = \left<r_u(u,v), r_u(u,v) \right>,   \,\,\,   F(u,v) =  \left<r_u(u,v),
+\begin{equation*} E(u,v) = \left<r_u(u,v), r_u(u,v) \right>,   \,\,\,   F(u,v) =  \left<r_u(u,v),
 r_v(u,v) \right>, \,\,\,     G(u,v) =  \left<r_v(u,v), r_v(u,v)
-\right>.  \]
+\right>.  \end{equation*}
 Včasih tudi zlorabimo notacijo 
-\[ E(m) = E(r(u,v)) = E(u,v). \]
+\begin{equation*} E(m) = E(r(u,v)) = E(u,v). \end{equation*}
 
 \begin{definicija}
 \label{def_prva_fundamentalna_forma}
@@ -327,7 +327,7 @@ definicija pa je nekoliko drugačna, kot bi morda pričakovali.
  Preslikava $f: X \to \tilde{X}$ nad dvema ploskvama $X, \tilde{X} \subseteq
  \mathbb{R}^3$ je izometrija, če za vsako krivuljo $\gamma: \left[ a,b
  \right] \to  X$ velja enakost med dolžinama 
- \[ \mathcal{L}_X(\gamma) = \mathcal{L}_{\tilde{X}}(f(\gamma)). \]
+ \begin{equation*} \mathcal{L}_X(\gamma) = \mathcal{L}_{\tilde{X}}(f(\gamma)). \end{equation*}
 \end{definicija}
 
 \begin{opomba}
@@ -339,25 +339,25 @@ definicija pa je nekoliko drugačna, kot bi morda pričakovali.
  1. fundamentalna forma na sferi glede na sferične koordinate. Če
  odvzamemo iz $S^2$ en poldnevnik, jo lahko parametriziramo s
  sferičnimi koordinatami: 
- \[ r: \begin{pmatrix}
+ \begin{equation*} r: \begin{pmatrix}
  	u \\ v
  \end{pmatrix} \subseteq  V = \left( -\pi, \pi \right) \times \left(
  0, \pi  \right) \subseteq  \mathbb{R}^2 \to  \mathbb{R}^3
-  \] s predpisom \[ r(u,v) = 
+  \end{equation*} s predpisom \begin{equation*} r(u,v) = 
 \begin{pmatrix}\cos u \cos v \\ \cos u \sin v \\ \sin u
-\end{pmatrix}.\]
+\end{pmatrix}.\end{equation*}
 Potem dobimo parcialna odvoda 
-\[   r_u(u,v) = \begin{pmatrix}-\sin u \cos v \\ -\sin u \sin v \\ \cos u
+\begin{equation*}   r_u(u,v) = \begin{pmatrix}-\sin u \cos v \\ -\sin u \sin v \\ \cos u
 \end{pmatrix}, \,\,  r_v(u,v) = 
 \begin{pmatrix}-\cos u \sin  v \\ \cos u \cos v \\ 0
-\end{pmatrix}.\]
+\end{pmatrix}.\end{equation*}
 Od tod sledi 
-\[ \begin{align*}
+\begin{align*}
     E &= \langle r_u, r_u \rangle = 1, \\
     F &= \langle r_u, r_v \rangle = 0, \\
 	G &= \langle r_v, r_v \rangle = \cos^2 u,
-\end{align*} \] kar lahko zapišemo v obliki 
-\[ 
+\end{align*} kar lahko zapišemo v obliki 
+\begin{equation*} 
 \begin{pmatrix}
 	E & F \\
 	F & G \\
@@ -368,30 +368,31 @@ Od tod sledi
 	0 & \cos^2 u \\
 \end{pmatrix}
 .
-\]
+\end{equation*}
 \end{primer}
 
 \begin{primer}
  Naj bo $X$ rotacijska ploskev, ki jo dobimo, če krivuljo $x =  f(z)$
  zavrtimo okoli osi $z$: 
- \[ r: \left( u,v \right) \mapsto  
+ \begin{equation*} r: \left( u,v \right) \mapsto  
 \begin{pmatrix}
 	f(u) \cos v \\
 	f(u) \sin v \\
 	u \\
 \end{pmatrix}
-.\]Potem imamo odvoda 
-\[   r_u(u,v) = \begin{pmatrix} f'(u) \cos v \\ f'(u) \sin v \\ 1
+.\end{equation*}Potem imamo odvoda 
+\begin{equation*}   r_u(u,v) = \begin{pmatrix} f'(u) \cos v \\ f'(u) \sin v \\ 1
 \end{pmatrix}, \,\,  r_v(u,v) = 
 \begin{pmatrix}-f(u) \sin  v \\ f(u) \cos v \\ 0
-\end{pmatrix}.\]
+\end{pmatrix}.\end{equation*}
 Od tod sledi 
-\[ \begin{align*}
+\begin{align*}
     E &= \langle r_u, r_u \rangle = 1 + f'(u)^2, \\
     F &= \langle r_u, r_v \rangle = 0, \\
 	G &= \langle r_v, r_v \rangle = f(u)^2,
-\end{align*} \] kar lahko zapišemo v obliki 
-\[ 
+\end{align*}
+kar lahko zapišemo v obliki 
+\begin{equation*} 
 \begin{pmatrix}
 	E & F \\
 	F & G \\
@@ -402,7 +403,7 @@ Od tod sledi
 	0 & f(u)^2 \\
 \end{pmatrix}
 .
-\]
+\end{equation*}
 \end{primer}
 
 Naslednji izrek nam pove povezavo med 1. fundamentalno formo in
@@ -413,7 +414,7 @@ izometričnostjo ploskev.
 Naj bo $X \to  \tilde{X}$ izometrija med ploskvama. Tedaj obstaja par parametrizacij
 $r : V \to X$ in $\tilde{r}: V \to  \tilde{X}$, da za pripadajoči
 fundamentalni formi velja 
-\[ 
+\begin{equation*} 
 \begin{pmatrix}
 	E & F \\
 	F & G \\
@@ -423,7 +424,7 @@ fundamentalni formi velja
 	\tilde{E}  & \tilde{F}  \\
 	\tilde{F}  & \tilde{G}  \\
 \end{pmatrix}_{(u,v)}
-.\]
+.\end{equation*}
 Velja tudi obratno, torej če za ploskvi $X, \tilde{X} $ obstajata
 parametrizaciji $r$ in $\tilde{r}$, za kateri velja zgornji sistem
 enačb, potem sta $X$ in $\tilde{X}$ izometrični.
@@ -431,12 +432,12 @@ enačb, potem sta $X$ in $\tilde{X}$ izometrični.
 {\em Dokaz:\/}
 Pokažimo najprej obrat $(\impliedby)$. Recimo, da obstajata parametrizaciji $r: V
 \to  X$ in $\tilde{r}: V \to  \tilde{X} $, da velja 
-\[ 
+\begin{equation*} 
 \begin{pmatrix}
 	\tilde{E}  & \tilde{F}  \\
 	\tilde{F}  & \tilde{G}  \\
 \end{pmatrix}_{(u,v)}
-.\] 
+.\end{equation*} 
 % TODO ali je res smisleno, da je indeks _r? Verjetno je bolj smiselno, da je _X, ker je dolžina itak neodvisna od parametrizacije  
 Naj bo $f = \tilde{r} \circ  r^{-1}$. Preveriti moramo, da je $f$
 izometrija. Naj bo $\gamma: [a,b] \to  X$ poljubna krivulja in
@@ -444,17 +445,17 @@ primerjamo dolžini $\mathcal{L}_r(\gamma)$ ter
 $\mathcal{L}_{\tilde{r}}(f(\gamma))$. Potem obstaja krivulja $\beta:
 [\alpha,\beta] \to  V$ za katero velja $\gamma(t) = r(\beta(t))$.
 Potem za $f(\gamma(t))$ velja 
-\[ f(\gamma(t)) = f(r(\beta(t))) = \tilde{r}(\beta(t)).\]
+\begin{equation*} f(\gamma(t)) = f(r(\beta(t))) = \tilde{r}(\beta(t)).\end{equation*}
 Ker je $\beta(t)$ ravninska krivulja, velja 
-\[ \begin{align*}
+\begin{align*}
     \gamma(t) &= r(\beta(t)) = r(u(t), v(t)), \\
     \tilde{\gamma}(t) &= \tilde{r} (\beta(t)) = \tilde{r} (u(t), v(t)).   
-\end{align*} \]
+\end{align*}
 Torej imamo enačbi 
-\[ \mathcal{L}_r(\gamma) = \int_{a}^{b} \sqrt{E(u,v)\dot{u}^2 +
-2F(u,v)\dot{u}\dot{v} + G(u,v)\dot{v}^2} \, dt, \]
-\[ \mathcal{L}_{\tilde{r}}(\tilde{\gamma}) = \int_{a}^{b} \sqrt{\tilde{E} (u,v)\dot{u}^2 +
-2\tilde{F}(u,v)\dot{u}\dot{v} + \tilde{G}(u,v)\dot{v}^2} \, dt.  \]
+\begin{equation*} \mathcal{L}_r(\gamma) = \int_{a}^{b} \sqrt{E(u,v)\dot{u}^2 +
+2F(u,v)\dot{u}\dot{v} + G(u,v)\dot{v}^2} \, dt, \end{equation*}
+\begin{equation*} \mathcal{L}_{\tilde{r}}(\tilde{\gamma}) = \int_{a}^{b} \sqrt{\tilde{E} (u,v)\dot{u}^2 +
+2\tilde{F}(u,v)\dot{u}\dot{v} + \tilde{G}(u,v)\dot{v}^2} \, dt.  \end{equation*}
 Ker so posamezni sumandi enaki, sta izraza enaka, torej je $f =
 \tilde{r} \circ r^{-1}$ res izometrija.
 
@@ -463,79 +464,79 @@ izomerijo $f: X \to  \tilde{X}.$ Naj bo $\gamma(t) = r(\beta(t)) =
 (u_0 + t, v_0)$ in $t \in  (0, \varepsilon).$ Pri tem je točka $(u_0,
 v_0) \in V$ poljubna in določa točko $p = r(u_0, v_0) \in  X$. Zdaj
 izračunamo 
-\[ 
+\begin{equation*} 
 \mathcal{L}_r(\gamma(t)) = \int_{0}^{\varepsilon} \lvert\lvert
 \dot{\gamma}(t) \rvert\rvert   \, dt = \int_{0}^{\varepsilon} \sqrt{\langle
 \dot{\gamma}(t), \dot{\gamma}(t)  \rangle} \, dt =
 \int_{0}^{\varepsilon} \sqrt{\langle r_u, r_u \rangle}   \, dt =
 \int_{0}^{\varepsilon}\sqrt{  E(u_0 + t, v_0) }  \, dt. 
-\]
+\end{equation*}
 Sedaj si oglejmo $f(\gamma (t)) = \tilde{r}(\beta(t)) = \tilde{r}(u_0
 + t, v_0)$. Potem imamo:
 
-\[ \begin{align*}
+\begin{align*}
   \mathcal{L}_{\tilde{r}}(f(\gamma(t))) &= \int_{0}^{\varepsilon} \lvert\lvert
   \dot{\tilde{\gamma}}(t) \rvert\rvert   \, dt  \\ &= 
   \int_{0}^{\varepsilon} \sqrt{\langle\dot{\tilde{\gamma}}(t), \dot{\tilde{\gamma}}(t)  \rangle} \, dt  \\ &=
   \int_{0}^{\varepsilon} \sqrt{\langle \tilde{r}_u(u_0 + t, v_0), \tilde{r}_u(u_0 + t, v_0) \rangle}   \, dt \\ &= 
   \int_{0}^{\varepsilon} \tilde{r}(u_0 + t, v_0)  \, dt. 
-\end{align*} \]
+\end{align*}
 Po predpostavki o izometričnosti velja 
-\[ \begin{align*}
+\begin{align*}
     \mathcal{L}_r(\gamma) &= \mathcal{L}_{\tilde{r}}(f(\gamma)), \\
     \int_{0}^{\varepsilon} \sqrt{E(u_0 + t, v_0)}   \, dt  &= \int_{0}^{\varepsilon} \sqrt{\tilde{E}(u_0 + t, v_0)} \, dt.
-\end{align*} \]
+\end{align*}
 Po izreku o povprečni vrednosti obstajata neka $\hat{t}, \hat{\hat{t}} \in  (0, \varepsilon)$, da velja
-\[ E(u_0 + \hat{t} , v_0) \varepsilon = \tilde{E}(u_0 + \hat{\hat{t}} , v_0) \varepsilon\]in če pošljemo $\varepsilon \to  0$,
+\begin{equation*} E(u_0 + \hat{t} , v_0) \varepsilon = \tilde{E}(u_0 + \hat{\hat{t}} , v_0) \varepsilon\end{equation*}in če pošljemo $\varepsilon \to  0$,
 zaradi zveznosti funkcij dobimo 
-\[ E(u_0, v_0) = \tilde{E}(u_0, v_0). \]
+\begin{equation*} E(u_0, v_0) = \tilde{E}(u_0, v_0). \end{equation*}
 Še lažje ta rezultat dobimo tako, da na obeh straneh odvajamo po $\varepsilon$ in vstavimo $\varepsilon = 0$.
 
 Če zdaj vzamemo $\beta(t) = (u_0, v_0 + t)$, dobimo po enakem postopku kot prej 
-\[ G(u_0, v_0) = \tilde{G}(u_0, v_0). \]
+\begin{equation*} G(u_0, v_0) = \tilde{G}(u_0, v_0). \end{equation*}
 Nato vzamemo $\beta(t) = (u_0 + t, v_0 + t)$ in imamo
-\[ \begin{align*}
+\begin{align*}
   \mathcal{L}_r(\gamma) &= \int_{0}^{\varepsilon} \sqrt{E(u_0 + t, v_0 + t) + 2F(u_0 + t, v_0 + t) + G(u_0 + t, v_0 + t)}   \, dt  \\
   = \mathcal{L}_{\tilde{r}}(\tilde{\gamma}) &= \int_{0}^{\varepsilon} \sqrt{\tilde{E}(u_0 + t, v_0 + t) + 2\tilde{F}(u_0 + t, v_0 + t) + \tilde{G}(u_0 + t, v_0 + t)}   \, dt. 
-\end{align*} \]
+\end{align*}
 
 Če zdaj zopet odvajamo po $\varepsilon$ in vstavimo $\varepsilon = 0$, dobimo enakost integrandov v točki $(u_0, v_0)$, od koder sledi še zadnja zahteva
-\[ F(u_0, v_0) = \tilde{F}(u_0, v_0). \]
+\begin{equation*} F(u_0, v_0) = \tilde{F}(u_0, v_0). \end{equation*}
 \qed
 
 \begin{primer}
  Ali je stožec brez ene tvorilke izometričen kosu ravnine? Naj bo podan 
- \[ S = \left\{ (x,y,z)  \middle|\, x^2 + y^2 + z^2 = 1 \right\}.\]
+ \begin{equation*} S = \left\{ (x,y,z)  \middle|\, x^2 + y^2 + z^2 = 1 \right\}.\end{equation*}
  Parametriziramo ga z
- \[ r(u,v) = (u \cos v, u \sin v, u) \]in po znanem postopku dobimo 
- \[ \begin{pmatrix}
+ \begin{equation*} r(u,v) = (u \cos v, u \sin v, u) \end{equation*}in po znanem postopku dobimo 
+ \begin{equation*} \begin{pmatrix}
   E & F\\
   F & G\\
  \end{pmatrix}_{(u,v)} 
  = \begin{pmatrix}
   2 & 0\\
   0 & u^2\\
- \end{pmatrix}.\]
+ \end{pmatrix}.\end{equation*}
 Pričakujemo, da bo $S$ izometričen nekemu krožnemu izseku, ki ga parametriziramo z 
-\[ \tilde{r}(u,v) = (\alpha u \cos(\beta v), \alpha u \sin(\beta v), 0).\]Tako dobimo sistem enačb 
-\[ \begin{pmatrix}
+\begin{equation*} \tilde{r}(u,v) = (\alpha u \cos(\beta v), \alpha u \sin(\beta v), 0).\end{equation*}Tako dobimo sistem enačb 
+\begin{equation*} \begin{pmatrix}
   \tilde{E} & \tilde{F}\\
   \tilde{F} & \tilde{G}\\
  \end{pmatrix}_{(u,v)} 
  = \begin{pmatrix}
   \alpha^2 & 0\\
   0 & \alpha^2 \beta^2 u^2\\
- \end{pmatrix}.\]
-Pogoj  \[ \begin{pmatrix}
+ \end{pmatrix}.\end{equation*}
+Pogoj  \begin{equation*} \begin{pmatrix}
   E & F\\
   F & G\\
  \end{pmatrix}_{(u,v)}
  = \begin{pmatrix}
   \tilde{E} & \tilde{F}\\
   \tilde{F} & \tilde{G}\\
- \end{pmatrix}_{(u,v)}\]je izpolnjen pri $\alpha = \sqrt{2},\, \beta = \frac{1}{\sqrt{2}}$ (če bi zamenjali predznake $\alpha$ in $\beta$, bi dobili drugačne parametrizacije).
+ \end{pmatrix}_{(u,v)}\end{equation*}je izpolnjen pri $\alpha = \sqrt{2},\, \beta = \frac{1}{\sqrt{2}}$ (če bi zamenjali predznake $\alpha$ in $\beta$, bi dobili drugačne parametrizacije).
  Torej je stožec $S$ izometričen krožnemu izseku s parametrizaijo  
- \[ \tilde{r}(u,v) = \left(\sqrt{2}  u \cos(\frac{1}{\sqrt{2}} v), \sqrt{2}  u \sin(\frac{1}{\sqrt{2}} v), 0 \right).\]
+ \begin{equation*} \tilde{r}(u,v) = \left(\sqrt{2}  u \cos(\frac{1}{\sqrt{2}} v), \sqrt{2}  u \sin(\frac{1}{\sqrt{2}} v), 0 \right).\end{equation*}
 \end{primer}
 
 Na tej točki se pojavi naravno vprašanje: ali znamo poiskati vse ploskve v $\mathbb{R}^3$, ki so izomertične ravnini?
@@ -554,35 +555,35 @@ Izkaže se, da znamo, saj velja naslednji izrek.
 
 Če je $\gamma = \gamma(u)$ naravna parametrizacija, potem je smiselna parametrizacija tangentno premonosne ploskve $X$
 podana z 
-\[ r(u,v) = \gamma(u) + v \dot{\gamma}(u).\]Ker je $\gamma$ naravna parametrizacija, velja kot prvo 
-\[ \lvert\lvert \dot{\gamma}(u) \rvert\rvert = \langle \dot{\gamma}(u), \dot{\gamma}(u) \rangle  = 1. \]Če to zvezo odvajamo, dobimo 
-\[ \langle \ddot{\gamma}(u) , \dot{\gamma}(u) \rangle + \langle \dot{\gamma}(u) , \ddot{\gamma}(u) \rangle = 0  \]
+\begin{equation*} r(u,v) = \gamma(u) + v \dot{\gamma}(u).\end{equation*}Ker je $\gamma$ naravna parametrizacija, velja kot prvo 
+\begin{equation*} \lvert\lvert \dot{\gamma}(u) \rvert\rvert = \langle \dot{\gamma}(u), \dot{\gamma}(u) \rangle  = 1. \end{equation*}Če to zvezo odvajamo, dobimo 
+\begin{equation*} \langle \ddot{\gamma}(u) , \dot{\gamma}(u) \rangle + \langle \dot{\gamma}(u) , \ddot{\gamma}(u) \rangle = 0  \end{equation*}
 in iz simetričnosti skalarnega produkta sledi 
-\[ \langle \ddot{\gamma}(u) , \dot{\gamma}(u) \rangle = 0. \]
+\begin{equation*} \langle \ddot{\gamma}(u) , \dot{\gamma}(u) \rangle = 0. \end{equation*}
 Torej je pospešek pri naravni parametrizaciji vedno pravokoten na hitrost. To lahko opazimo, če se v avtu peljemo s konstantno hitrostjo. Pospešek bomo čutili
 samo v ovinkih in to pravokotno glede na smer vožnje.
 
 \begin{definicija}
 \label{def_fleksijska_ukrivljenost}
  Fleksijska ukrivljenost naravno parametrizirane krivulje $\gamma(u)$ je podana z 
- \[ \kappa(u) = \sqrt{\langle \ddot{\gamma}(u), \ddot{\gamma}(u) \rangle } = \lvert\lvert \ddot{\gamma}(u) \rvert\rvert. \]
+ \begin{equation*} \kappa(u) = \sqrt{\langle \ddot{\gamma}(u), \ddot{\gamma}(u) \rangle } = \lvert\lvert \ddot{\gamma}(u) \rvert\rvert. \end{equation*}
 \end{definicija}
 
 Izračunajmo 1. fundamentalno formo tangentno premonosne ploskve. Ker velja zveza
-\[ r(u,v) = \gamma(u) + v \dot{\gamma}(u),\]takoj dobimo 
+\begin{equation*} r(u,v) = \gamma(u) + v \dot{\gamma}(u),\end{equation*}takoj dobimo 
 
-\[ \begin{align*}
+\begin{align*}
     r_u(u,v) &= \dot{\gamma}(u) + v \ddot{\gamma}(u), \\
     r_v(u,v) &= \dot{\gamma}(u). 
-\end{align*} \]
+\end{align*}
 Če od tod po znanem postopku poračunamo koeficiente 1. fundamentalne forme (pri čemer upoštevamo, da je pospešek pravokoten na hitrost), dobimo 
-\[ \begin{pmatrix}
+\begin{equation*} \begin{pmatrix}
 E & F \\
 F & G
 \end{pmatrix}_{(u,v)} = \begin{pmatrix}
   1 + v^2 \kappa^2 & 1\\
   1 & 1\\
-\end{pmatrix}.\]
+\end{pmatrix}.\end{equation*}
 
 Torej vidimo, da je matrika 1. fundamentalne forme zares odvisna samo od fleksijske ukrivljenosti.
 
@@ -594,24 +595,25 @@ Torej vidimo, da je matrika 1. fundamentalne forme zares odvisna samo od fleksij
 
 {\em Dokaz:\/}
  Ker je krivulja $\gamma$ ravninska, lahko zapišemo 
- \[ \begin{align*}
+ \begin{align*}
      \gamma(u) &= (x(u), y(u)), \\
      \dot{\gamma}(u) &= (\dot{x}(u), \dot{y}(u)), \\ 
      \ddot{\gamma}(u) &= (\ddot{x}(u), \ddot{y}(u)).
- \end{align*} \]Ker je parametrizacija naravna, imamo še sistem enačb
- \[ \begin{align*}
+ \end{align*}
+ Ker je parametrizacija naravna, imamo še sistem enačb
+ \begin{align*}
   \lvert\lvert \dot{\gamma}(u) \rvert\rvert &= 1,   \\
   \lvert\lvert \ddot{\gamma}(u) \rvert\rvert &= \kappa(u) ,   \\
-    \langle \ddot{\gamma}, \dot{\gamma} \rangle   &= 0.
- \end{align*} \]
+    \langle \ddot{\gamma}(u), \dot{\gamma}(u) \rangle   &= 0.
+ \end{align*}
  Enotski vektor, pravokoten na $\dot{\gamma}(u) = (\dot{x}(u), \dot{y}(u))$, je vektor $(\dot{y}(u), -\dot{x}(u))$. Ta vektor je vzporeden vektorju pospeška,
  torej bo za neko funkcijo $k : [\alpha, \beta]  \to \mathbb{R}$ veljalo 
- \[ (\ddot{x}(u), \ddot{y}(u)) = k(u) (\dot{y}(u), -\dot{x}(u)). \]Če obe strani enačbe normiramo, iz prejšnega sistema enačb vidimo, da mora priti natanko 
- \[ (\ddot{x}(u), \ddot{y}(u)) = \kappa(u) (\dot{y}(u), -\dot{x}(u)).\]To je sistem navadnih diferencialnih enačb 
- \[ \begin{align*}
+ \begin{equation*} (\ddot{x}(u), \ddot{y}(u)) = k(u) (\dot{y}(u), -\dot{x}(u)). \end{equation*}Če obe strani enačbe normiramo, iz prejšnega sistema enačb vidimo, da mora priti natanko 
+ \begin{equation*} (\ddot{x}(u), \ddot{y}(u)) = \kappa(u) (\dot{y}(u), -\dot{x}(u)).\end{equation*}To je sistem navadnih diferencialnih enačb 
+ \begin{align*}
      \ddot{x}(u) &= \kappa(u) \dot{y}(u), \\
      \ddot{y}(u) &= -\kappa(u) \dot{x}(u).
- \end{align*} \]
+ \end{align*}
 Pri analizi 3 smo (bomo čez 14 dni?!) dokazali eksistenčni izrek za obstoj rešitev tega sistema. Z drugimi besedami, obstaja
 naravno parametrizirana krivulja $\gamma(u) = (x(u), y(u))$, za katero za vsak $u \in [\alpha, \beta]$ velja $\lvert\lvert \ddot{\gamma}(u) \rvert\rvert = \kappa(u)$.
 \qed
@@ -631,7 +633,7 @@ S tem razmislekom smo dokazali izrek.
 \begin{definicija}
 \label{def_ploscina_plosvke}
   Ploščina ploskve $X$, parametrizirane z $r: V sun \mathbb{R}^2 \to  X \subseteq  \mathbb{R}^3$ je podana z 
-  \[ A(X) = \int_{V} \lvert\lvert r_u \times  r_v \rvert\rvert   \, du \, dv.\] 
+  \begin{equation*} A(X) = \int_{V} \lvert\lvert r_u \times  r_v \rvert\rvert   \, du \, dv.\end{equation*} 
 \end{definicija}
 
 \begin{opomba}
@@ -640,12 +642,12 @@ S tem razmislekom smo dokazali izrek.
 
 \begin{opomba}
  Ker velja zveza
- \[ \lvert\lvert r_u \times  r_v \rvert\rvert^2  = \langle r_u, r_u \rangle \langle r_v , r_v \rangle  - \langle r_u, r_v \rangle^2 = EG - F^2, \]
+ \begin{equation*} \lvert\lvert r_u \times  r_v \rvert\rvert^2  = \langle r_u, r_u \rangle \langle r_v , r_v \rangle  - \langle r_u, r_v \rangle^2 = EG - F^2, \end{equation*}
 lahko ploščino izrazimo tudi kot 
- \[ A(X) = \int_{V} \sqrt{EG - F^2}  \, du \, dv = \int_{V} \sqrt{\det \begin{pmatrix}
+ \begin{equation*} A(X) = \int_{V} \sqrt{EG - F^2}  \, du \, dv = \int_{V} \sqrt{\det \begin{pmatrix}
  E & F \\
  F & G
- \end{pmatrix}}  \, du \, dv. \]
+ \end{pmatrix}}  \, du \, dv. \end{equation*}
 \end{opomba}
 
 \begin{definicija}
@@ -665,16 +667,16 @@ Velja $r(u,v) = \tilde{r}(g(u,v))$. Poglejmo si, kaj se zgodi z matriko prve fun
 Naj bosta $r: V_1 \to  X$ in $\tilde{r}: V_2 \to  X$ dve parametrizaciji iste ploskve. Med njima velja $r(u,v) = \tilde{r}(\tilde{u}(u,v), \tilde{v}(u,v))$.
 To nam da prehodno preslikavo $g: \tilde{r}^{-1} \circ  r : V_1 \to  V_2$. Vektor, razvit po bazi $\left\{ r_u, r_v \right\}$ bomo skušali
 razviti bo bazi $\left\{ \tilde{r}_{\tilde{u}}, \tilde{r}_{\tilde{v}} \right\}$. Imamo 
-\[ \begin{align*}
+\begin{align*}
   r(u,v) &= \tilde{r}(\tilde{u}(u,v), \tilde{v}(u,v)), \\
   r_u   &= \tilde{r}_{\tilde{u}} \tilde{u}_u + \tilde{r}_{\tilde{v}} \tilde{v}_u, \\ 
   r_v &= \tilde{r}_{\tilde{u}} \tilde{u}_v + \tilde{r}_{\tilde{v}} \tilde{v}_v.
-\end{align*}alii \] 
+\end{align*}
 Zdaj hočemo vektor $a r_u + b r_v$ zapisati v obliki $\alpha \tilde{r}_u + \beta \tilde{r}_v$. Dobimo 
-\[ a r_u + b r_v  = a(\tilde{r}_{\tilde{u}} \tilde{u}_u + \tilde{r}_{\tilde{v}} \tilde{v}_u) + b (\tilde{r}_{\tilde{u}} \tilde{u}_v + \tilde{r}_{\tilde{v}} \tilde{v}_v) 
-= \underbrace{(a \tilde{u}_u + b \tilde{u}_v)}_{\alpha} \tilde{r}_{\tilde{u}} + \underbrace{(a \tilde{v}_u + b \tilde{v}_v)}_{\beta} \tilde{r}_{\tilde{v}}. \]
+\begin{equation*} a r_u + b r_v  = a(\tilde{r}_{\tilde{u}} \tilde{u}_u + \tilde{r}_{\tilde{v}} \tilde{v}_u) + b (\tilde{r}_{\tilde{u}} \tilde{u}_v + \tilde{r}_{\tilde{v}} \tilde{v}_v) 
+= \underbrace{(a \tilde{u}_u + b \tilde{u}_v)}_{\alpha} \tilde{r}_{\tilde{u}} + \underbrace{(a \tilde{v}_u + b \tilde{v}_v)}_{\beta} \tilde{r}_{\tilde{v}}. \end{equation*}
 Torej za vsak par vektorjev $(a, b)^{T}$, $(\alpha, \beta)^{T}$ velja zveza 
-\[ \begin{pmatrix}
+\begin{equation*} \begin{pmatrix}
   \alpha\\
   \beta\\
 \end{pmatrix} = 
@@ -685,10 +687,10 @@ Torej za vsak par vektorjev $(a, b)^{T}$, $(\alpha, \beta)^{T}$ velja zveza
 \begin{pmatrix}
   a\\
   b\\
-\end{pmatrix}. \]
+\end{pmatrix}. \end{equation*}
 
 Torej za vse pare vektorjev velja 
-\[ \begin{align*} 
+\begin{align*} 
     \left\langle \begin{pmatrix}
       a\\
       b\\
@@ -732,14 +734,14 @@ Torej za vse pare vektorjev velja
       c\\
       d  \\
     \end{pmatrix}.
-\end{align*} \]
+\end{align*} 
 Od tod sledi naslednji izrek.
 
 \begin{izrek}
 \label{izr_transformacija_1_forme}
   Naj za parametrizaciji $r: V_1 \to  X$ in $V_2 \to X$ velja 
-  \[ r(u,v) = \tilde{r}(\tilde{u}(u,v), \tilde{v}(u,v)) = \tilde{r}(g(u,v)).\]Potem za I-formi glede na ti parametrizaciji velja 
-  \[ \begin{pmatrix}
+  \begin{equation*} r(u,v) = \tilde{r}(\tilde{u}(u,v), \tilde{v}(u,v)) = \tilde{r}(g(u,v)).\end{equation*}Potem za I-formi glede na ti parametrizaciji velja 
+  \begin{equation*} \begin{pmatrix}
   E & F \\
   F & G
   \end{pmatrix} = \operatorname{Jac}(g)^{T}
@@ -747,7 +749,7 @@ Od tod sledi naslednji izrek.
     \tilde{E} & \tilde{F} \\
     \tilde{F} & \tilde{G}
     \end{pmatrix}
-  \operatorname{Jac}(g). \]
+  \operatorname{Jac}(g). \end{equation*}
 \end{izrek}
 
 \begin{posledica}
@@ -757,9 +759,9 @@ Od tod sledi naslednji izrek.
 \noident
 {\em Dokaz:\/}
  Dokazujemo 
- \[ A(X) = \int_{V_1} \sqrt{EG - F^2}   \, du \, dv = \int_{V_2}  \sqrt{\tilde{E}\tilde{G} -  \tilde{F}^2}  \, d \tilde{u} \, d \tilde{v}.\]
- Po izreku o transformaciji I-forme \ref{izr_transformacija_1_forme} velja 
- \[ \begin{align*}
+ \begin{equation*} A(X) = \int_{V_1} \sqrt{EG - F^2}   \, du \, dv = \int_{V_2}  \sqrt{\tilde{E}\tilde{G} -  \tilde{F}^2}  \, d \tilde{u} \, d \tilde{v}.\end{equation*}
+ Po izreku o transformaciji I-forme \href{izr_transformacija_1_forme} velja 
+ \begin{align*}
      A(X) &= \int_{V_1} \sqrt{\det \begin{pmatrix}
      E & F \\
      F & G
@@ -778,7 +780,7 @@ Od tod sledi naslednji izrek.
       \tilde{E} & \tilde{F} \\
       \tilde{F} & \tilde{G}
       \end{pmatrix}}   \, d \tilde{u} \, d \tilde{v}.  
- \end{align*} \]
+ \end{align*}
 \qed
 
 Recimo, da imamo podano $V \subseteq  \mathbb{R}^2$ in matrično funkcijo \begin{align*}
@@ -799,34 +801,34 @@ Intuitivno je ukrivljenost ploskve $X$ v točki $r(u,v) = m \in X$ `hitrost` odd
 Naj bo $n$ normala na ravnino $T_{m}X$ v točki $m$. Naj bo torej točka $r(u', v') = r(u + \Delta u, v + \Delta v)$ blizu točke $m = r(u,v)$ in izmerimo razdaljo od točke $r(u', v')$ do $T_mX$.
 
 Dobimo 
-\[ d = \langle n, r(u', v') - r(u,v) \rangle.\]
+\begin{equation*} d = \langle n, r(u', v') - r(u,v) \rangle.\end{equation*}
 Ker sta spremembi $\Delta u$ in $\Delta v$ majhni, naredimo Taylorjev razvoj, ter izrazimo 
-\[ r(u', v') - r(u,v) = r_u \Delta u + r_v \Delta v + \frac{1}{2} \left(r_{uu} (\Delta u)^2 + 2r_{uv} \Delta u \Delta v + r_{vv} (\Delta v)^2 \right) + \ldots \]
+\begin{equation*} r(u', v') - r(u,v) = r_u \Delta u + r_v \Delta v + \frac{1}{2} \left(r_{uu} (\Delta u)^2 + 2r_{uv} \Delta u \Delta v + r_{vv} (\Delta v)^2 \right) + \ldots \end{equation*}
 
 Ker vemo tudi, da je normala pravokotna na vektorja $r_u$ in $r_v$, lahko zapišemo 
-\[ d = \langle n, r(u', v') - r(u,v) \rangle \approx \underbrace{\langle r_u, n \rangle}_0   \Delta u + \underbrace{\langle r_v, n \rangle}_0  \Delta v  
-+ \frac{1}{2} \left( \langle r_{uu}, n \rangle (\Delta u)^2 +  2\langle r_{uv}, n \rangle \Delta u \Delta v + \langle r_{vv}, n \rangle (\Delta v)^2 \right).\]
+\begin{equation*} d = \langle n, r(u', v') - r(u,v) \rangle \approx \underbrace{\langle r_u, n \rangle}_0   \Delta u + \underbrace{\langle r_v, n \rangle}_0  \Delta v  
++ \frac{1}{2} \left( \langle r_{uu}, n \rangle (\Delta u)^2 +  2\langle r_{uv}, n \rangle \Delta u \Delta v + \langle r_{vv}, n \rangle (\Delta v)^2 \right).\end{equation*}
 oziroma 
-\[ d \approx \frac{1}{2} \left( \langle r_{uu}, n \rangle (\Delta u)^2 +  2\langle r_{uv}, n \rangle \Delta u \Delta v + \langle r_{vv}, n \rangle (\Delta v)^2 \right). \]
+\begin{equation*} d \approx \frac{1}{2} \left( \langle r_{uu}, n \rangle (\Delta u)^2 +  2\langle r_{uv}, n \rangle \Delta u \Delta v + \langle r_{vv}, n \rangle (\Delta v)^2 \right). \end{equation*}
 
 Zdaj lahko smiselno definiramo drugo fundamentalno formo ploskve.
 
 \begin{definicija}
 \label{def_druga_fundamentalna_forma_ploskve}
  Druga fundamentaa forma ploslve $X$ v točki $m = r(u,v)$ je podana z matriko 
- \[ \begin{pmatrix}
+ \begin{equation*} \begin{pmatrix}
  L & M \\
  M & N
  \end{pmatrix}_{(u,v)} = \begin{pmatrix}
  L(u,v) & M(u,v) \\
  M(u,v) & N(u,v)
- \end{pmatrix}, \]
+ \end{pmatrix}, \end{equation*}
  kjer so $L, M, N: V \to  \mathbb{R}$ funkcije s predpisi 
- \[ \begin{align*}
+ \begin{align*}
     L(u,v)  &= \langle r_{uu}(u,v), n(u,v) \rangle  \\
     M(u,v)  &= \langle r_{uv}(u,v), n(u,v) \rangle  \\
     N(u,v)  &= \langle r_{vv}(u,v), n(u,v) \rangle  
- \end{align*} \]
+ \end{align*}
 
 \end{definicija}
 
@@ -835,7 +837,7 @@ Zdaj lahko smiselno definiramo drugo fundamentalno formo ploskve.
 \end{opomba}
 
 Razmislili smo že, da veja 
-\[ d \approx \begin{pmatrix}
+\begin{equation*} d \approx \begin{pmatrix}
   \Delta u  &  \Delta v 
 \end{pmatrix} \begin{pmatrix}
   L & M \\
@@ -844,12 +846,12 @@ Razmislili smo že, da veja
 \begin{pmatrix}
   \Delta u \\
   \Delta v 
-\end{pmatrix}.\]
+\end{pmatrix}.\end{equation*}
 
 Od te točke naprej predpostavljamo, da so vse krivulje naravno parametrizirane. Naj bo $\gamma: [a,b] \to X$ gladka krivulja. 
 Spomnimo se definicije fleksijske ukrivljenosti krivulje \href{def_fleksijska_ukrivljenost}, velja $\kappa(t) = \lvert\lvert \ddot{\gamma}(t) \rvert\rvert$.
 V nadaljevanju bomo razdelili vektor pospeška na geodetsko in normalno komponentno, torej 
-\[ \ddot{\gamma} = \ddot{\gamma}_g + \ddot{\gamma}_n.\]
+\begin{equation*} \ddot{\gamma} = \ddot{\gamma}_g + \ddot{\gamma}_n.\end{equation*}
 
 Zato najprej definirajmo geodetsko in normalno ukrivljenost.
 
@@ -857,12 +859,12 @@ Zato najprej definirajmo geodetsko in normalno ukrivljenost.
 \label{def_geodetska_in_normalna_ukrivljenost}
 Naj bo $X \subseteq \mathbb{R}^3$ ploskev s parametrizacijo $r: V \subseteq \mathbb{R}^2 \to  X$ in naj bo $\gamma: [a,b] \to X$ gladka krivulja. 
 Definirajmo normalo na krivuljo $\gamma$
-\[ n_{\gamma}(t) = \frac{r_u(u(t), v(t)) \times  r_v(u(t), v(t))}{\lvert\lvert r_u(u(t), v(t)) \rvert\rvert }.\]
+\begin{equation*} n_{\gamma}(t) = \frac{r_u(u(t), v(t)) \times  r_v(u(t), v(t))}{\lvert\lvert r_u(u(t), v(t)) \rvert\rvert }.\end{equation*}
 Potem definiramo normalno in geodetsko ukrivljenost kot 
-\[ \begin{align*}
+\begin{align*}
     \kappa_n(t) &= \langle \ddot{\gamma}(t), n_{\gamma}(t) \rangle,  \\
     \kappa_g(t) &= \langle \ddot{\gamma}(t), \dot{\gamma}(t) \times n_{\gamma}(t) \rangle.
-\end{align*} \] 
+\end{align*}
 
 \end{definicija}
 
@@ -872,7 +874,7 @@ Zdaj si poglejmo, kako se izraža normalna ukrivljenost s pomočjo druge fundame
 \label{izr_izrazava_normalne_ukrivljenosti_z_drugo_fundamentalno_formo}
   Naj bo $\gamma: [a,b] \to X$ gladka krivulja, podana s parametrizacijo $\gamma(t) = r(u(t), v(t))$. Tedaj lahko njeno normalno ukrivljenost
   izračunamo po formuli 
-  \[ \kappa_n(t) = \begin{pmatrix}
+  \begin{equation*} \kappa_n(t) = \begin{pmatrix}
     \dot{u}(t) \\
     \dot{v}(t) 
   \end{pmatrix} = 
@@ -883,18 +885,18 @@ Zdaj si poglejmo, kako se izraža normalna ukrivljenost s pomočjo druge fundame
   \begin{pmatrix}
     \dot{u}(t) \\
     \dot{v}(t) 
-  \end{pmatrix}.  \]
+  \end{pmatrix}.  \end{equation*}
 \end{izrek}
 
 \noident
 {\em Dokaz:\/}
  Najprej zapišemo prva dva odvoda 
- \[ \begin{align*}
+ \begin{align*}
      \dot{\gamma}(t) &= r_u \dot{u} + r_v \dot{v}, \\
      \ddot{\gamma}(t) &= \ddot{u} r_u + \ddot{v} r_v + r_{uu} \dot{u}^2 + 2r_{uv} \dot{u} \dot{v} + r_{vv} \dot{v}^2   .
- \end{align*} \]
+ \end{align*}
 Od tod dobimo 
-\[ \begin{align*}
+\begin{align*}
     \kappa_n = \langle \ddot{\gamma}, n \rangle  &= \langle r_{uu}, n \rangle \dot{u}^2 + 2  \langle r_{uv}, n \rangle \dot{u} \dot{v} + \langle r_{vv}, n \rangle  \dot{v}^2 \\
      &= L \dot{u}^2 + 2M \dot{u} \dot{v} + F \dot{v}^2 \\
      &= \begin{pmatrix}
@@ -908,7 +910,7 @@ Od tod dobimo
         \dot{u} \\
         \dot{v} 
       \end{pmatrix}.
-\end{align*} \]
+\end{align*}
 \qed
 
 Vsako funkcijo normalne ukrivljenosti lahko razširimo na tangentno ravnino na naslednji način.
@@ -942,7 +944,7 @@ Vsako funkcijo normalne ukrivljenosti lahko razširimo na tangentno ravnino na n
  Če je $(\xi, \eta) = (\dot{u}, \dot{v})$ in $\gamma$ naravno parametriziana krivulja, potem par $(\xi, \eta)$ leži
  na enotski krožnici v ravnini $T_mX$. V $\mathbb{R}^3$ je to res običajna krožnica glede na
  evklidkski skalarni produkt, v koordinatah $(\xi, \eta)$ pa je 
- \[ E \xi^2 + 2F \xi \eta + G \eta^2  = 1.\]
+ \begin{equation*} E \xi^2 + 2F \xi \eta + G \eta^2  = 1.\end{equation*}
 \end{opomba}
 
 \begin{definicija}
@@ -967,7 +969,7 @@ Vsako funkcijo normalne ukrivljenosti lahko razširimo na tangentno ravnino na n
 \begin{definicija}
 \label{def_Gaussova_ukrivljenost}
  Gaussova ukrivljenost ploskve $X$ v točki $m$ je podana s produktom 
- \[ \kappa(m) = \kappa_1(m) \kappa_2(m).\]
+ \begin{equation*} \kappa(m) = \kappa_1(m) \kappa_2(m).\end{equation*}
 \end{definicija}
 
 \begin{opomba}
@@ -978,7 +980,7 @@ Vsako funkcijo normalne ukrivljenosti lahko razširimo na tangentno ravnino na n
 \begin{definicija}
 \label{def_povprecna_ukrivljenost}
     Povprečna ukrivljenst ploskve $X$ v točki $m$ je podana s formulo 
-    \[ H(m) = \frac{1}{2} (\kappa_1(m) + \kappa_2(m) ).\]
+    \begin{equation*} H(m) = \frac{1}{2} (\kappa_1(m) + \kappa_2(m) ).\end{equation*}
 \end{definicija}
 
 Z naslednjim izrekom bomo utemeljili, da sta glavni ukrivljenosti res kvečjem dve. 
@@ -986,15 +988,158 @@ Z naslednjim izrekom bomo utemeljili, da sta glavni ukrivljenosti res kvečjem d
 \begin{izrek}
 \label{izr_glavni_ukrivljenosti_sta_nicli_kvadratne_emacbe}
   Glavni ukrivljenosti sta ničli kvadratne enačbe 
-  \[ \det \left( \begin{pmatrix}
+  \begin{equation*} \det \left( \begin{pmatrix}
   L & M \\
   M & N
   \end{pmatrix}_{(m)} - \lambda \begin{pmatrix}
   E & F \\
   F & G
-  \end{pmatrix}_{(m)}  \right) = 0. \]
+  \end{pmatrix}_{(m)}  \right) = 0. \end{equation*}
 \end{izrek}
 \noident
 {\em Dokaz:\/}
- 
+ Ekstrema $\lambda_1$, $\lambda_2$ sta vezana ekstrema za funkcijo $\kappa_n: T_mX \to \mathbb{R}$.
+ Zaradi homeomorfizma $T_mX \approx R^2$ lahko identificiramo elemente $T_mX$ s pari $(\xi, \eta)$. Naša krožnica je
+ določena z vezjo $\lvert\lvert (\xi, \eta) \rvert\rvert = 1$. Torej iščemo ekstreme funkcije \begin{equation*}
+   \kappa_n(\xi, \eta) = \begin{pmatrix}
+     \xi & \eta 
+   \end{pmatrix}
+   \begin{pmatrix}
+     L & M \\
+     M & N
+   \end{pmatrix}  
+   \begin{pmatrix}
+     \xi \\
+     \eta 
+   \end{pmatrix} = L \xi^2 + 2M \xi \eta + N \eta^2
+ \end{equation*}  
+   pri vezi \begin{equation*}
+     g(\xi, \eta)  = \lvert\lvert (\xi, \eta) \rvert\rvert = \begin{pmatrix}
+       \xi & \eta 
+     \end{pmatrix}
+     \begin{pmatrix}
+       E & F \\
+       F & G
+     \end{pmatrix}  
+     \begin{pmatrix}
+       \xi \\
+       \eta 
+     \end{pmatrix} = E \xi^2 + 2F \xi \eta + G \eta^2.
+   \end{equation*}  
+    Zdaj se s pomočjo analize 2 spomnimo, da se vezane ekstreme išče s pomočjo Lagrangeeve funkcije \begin{equation*}
+      \kappa_n(\xi, \eta) - \lambda g(\xi, \eta).
+    \end{equation*}  
+    Da bo skalar $\lambda$ ekstrem, mora veljati zveza \begin{equation*}
+      \operatorname{grad}(\kappa_n(\xi, \eta) - \lambda g(\xi, \eta)) = 0.
+    \end{equation*}  
+    Zaradi linearnosti gradienta je to ekvivalentno zvezi \begin{equation*}
+        \operatorname{grad}(\kappa_n(\xi, \eta)) - \lambda \operatorname{grad}(g(\xi, \eta)).
+    \end{equation*}
+    Pri tem dobimo \begin{align*}
+        \operatorname{grad}(\kappa_n(\xi, \eta)) = \begin{pmatrix}
+            \frac{ \partial \kappa_n }{ \partial \xi } \\\\
+            \frac{ \partial \kappa_n }{ \partial \eta }
+        \end{pmatrix}  &= 2 \begin{pmatrix}
+        L & M \\\\
+        M & N
+        \end{pmatrix}  \begin{pmatrix}
+            \xi \\\\
+            \eta
+        \end{pmatrix},  \\
+        \operatorname{grad}(g(\xi, \eta)) = \begin{pmatrix}
+            \frac{ \partial g }{ \partial \xi } \\\\
+            \frac{ \partial g }{ \partial \eta }
+        \end{pmatrix}  &= 2 \begin{pmatrix}
+        E & F \\
+        F & G
+        \end{pmatrix}  \begin{pmatrix}
+            \xi \\\\
+            \eta
+        \end{pmatrix}.
+    \end{align*}
+
+    Torej rešujemo enačbo \begin{equation*}
+      \left(
+        \begin{pmatrix}
+      L & M \\
+      M & N
+      \end{pmatrix}  - \lambda \begin{pmatrix}
+    E & F \\
+    F & G
+    \end{pmatrix} \right) \begin{pmatrix}
+        \xi \\\\
+        \eta
+    \end{pmatrix} =  \begin{pmatrix}
+        0 \\\\
+        0
+    \end{pmatrix}.
+    \end{equation*}  
+     Ta enačba ima netrivialne rešitve natanko tedaj, ko je \begin{equation*}
+       \det \left( 
+        \begin{pmatrix}
+      L & M \\
+      M & N
+      \end{pmatrix}  - \lambda \begin{pmatrix}
+    E & F \\
+    F & G
+    \end{pmatrix} \right) = 0.
+     \end{equation*}  
+     Denimo, da imamo neki rešitvi $\lambda_1$, $\lambda_2$. Potem obstajata vektorja $(\xi_1, \eta_1)^{T}$, $(\xi_2, \eta_2)^{T}$, da je   
+     \begin{equation*}
+        \left(
+            \begin{pmatrix}
+          L & M \\
+          M & N
+          \end{pmatrix}  - \lambda_i \begin{pmatrix}
+        E & F \\
+        F & G
+        \end{pmatrix} \right) \begin{pmatrix}
+            \xi_i \\\\
+            \eta_i
+        \end{pmatrix} =  \begin{pmatrix}
+            0 \\\\
+            0
+        \end{pmatrix}.
+     \end{equation*}  
+    Če vzamemo enotska vektorja $(\xi_1, \eta_1)^{T}$, $(\xi_2, \eta_2)^{T}$, in množimo zgornjo enačbo z leve z $(\xi_i, \eta_i)$, 
+    dobimo 
+    \begin{equation*}
+        \underbrace{\begin{pmatrix}
+            \xi_i & \eta_i
+        \end{pmatrix}
+            \begin{pmatrix}
+          L & M \\
+          M & N
+          \end{pmatrix}\begin{pmatrix}
+            \xi_i \\\\
+            \eta_i
+        \end{pmatrix}}_{\kappa_n(\xi, \eta)}    - \lambda_i 
+        \underbrace{\begin{pmatrix}
+            \xi_i & \eta_i
+        \end{pmatrix}
+        \begin{pmatrix}
+        E & F \\
+        F & G
+        \end{pmatrix} \begin{pmatrix}
+            \xi_i \\\\
+            \eta_i
+        \end{pmatrix}}_1  =  \begin{pmatrix}
+            0 \\\\
+            0
+        \end{pmatrix}.
+     \end{equation*}
+     Desni člen pride $1$, ker smo izbrali enotska vektorja. Preostaneta nam torej enačbi \begin{equation*}
+       \kappa_n(\xi_i, \eta_i) = \lambda_i.
+     \end{equation*}  
+     Točki $(\xi_i, \eta_i)$ sta vezana ekstrema funkcije $\kappa_n$ pri vezi $g = 1$. Torej sta to ničli
+     \begin{equation*}
+        \det \left( 
+         \begin{pmatrix}
+       L & M \\
+       M & N
+       \end{pmatrix}  - \lambda \begin{pmatrix}
+     E & F \\
+     F & G
+     \end{pmatrix} \right) = 0.
+      \end{equation*}  
 \qed
