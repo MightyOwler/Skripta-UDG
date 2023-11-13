@@ -1141,5 +1141,243 @@ Z naslednjim izrekom bomo utemeljili, da sta glavni ukrivljenosti res kvečjem d
      E & F \\
      F & G
      \end{pmatrix} \right) = 0.
-      \end{equation*}  
+      \end{equation*} 
 \qed
+
+\begin{definicija}
+\label{def_posploseni_lastni_problem}
+ Posplošeni lastni problem ali relativni lastni problem je lastni problem oblike \begin{equation*}
+   A(\vec{v}) = \lambda B(\vec{v}).
+ \end{equation*}  
+  Če je $B = I$, potem dobimo običajni lasntni problem \begin{equation*}
+    A(\vec{v}) = \lambda \vec{v}.
+  \end{equation*}  
+\end{definicija}
+
+Iz dokaza prejšnjega izreka je razvidno, da sta $\kappa_1$ in $\kappa_2$ lastni vrednosti martrike \begin{equation*}
+  \begin{pmatrix}
+  E & F \\
+  F & G
+  \end{pmatrix}^{-1}\begin{pmatrix}
+  L & M \\
+  M & N
+  \end{pmatrix},
+\end{equation*}  
+  glavni smeri $(\xi_1, \eta_1)^{T}$, $(\xi_2, \eta_2)^{T}$ pa sta njuna lastna vektorja.
+
+
+\begin{izrek}
+\label{izr_izrazava_gaussove_ukrivljenosti}
+Za Gaussovo ukrivljenost $\kappa: X \to  \mathbb{R}$ velja zveza \begin{equation*}
+\kappa(m) = \frac{(LN - M^2)(m)}{(EG - F^2)(m)}. 
+\end{equation*}  
+\end{izrek}
+
+\noident
+{\em Dokaz:\/}
+Po definiciji je $\kappa(m) = \kappa_1(m) \kappa_2(m)$. Razsmilili smo že, da sta glavni ukrivljenosti
+lastni vrednosti matrike \begin{equation*}
+  \begin{pmatrix}
+    E & F \\
+    F & G
+    \end{pmatrix}_{(m)}^{-1}\begin{pmatrix}
+    L & M \\
+    M & N
+    \end{pmatrix}_{(m)},
+\end{equation*}  
+  torej bo njun produkt (ki je natanko Gaussova ukrivljenost) enak njeni determinanti. Torej \begin{equation*}
+    \kappa(m) = \kappa_1(m) \kappa_2(m) = \det \left(  \begin{pmatrix}
+      E & F \\
+      F & G
+      \end{pmatrix}_{(m)}^{-1}\begin{pmatrix}
+      L & M \\
+      M & N
+      \end{pmatrix}_{(m)} \right) = \frac{(LN - M^2)(m)}{(EG - F^2)(m)}.
+  \end{equation*}  
+    
+\qed
+
+\begin{izrek}
+\label{izr_izrazava_povprecne_ukrivljenosti}
+ Za povprečno ukrivljenost velja zveza \begin{equation*}
+ H(m) = \frac{1}{2} \frac{(LF - 2MF + NE)(m)}{(EG - F^2)(m)}
+ \end{equation*}  
+\end{izrek}
+\noident
+{\em Dokaz:\/}
+Podobno kot v prejšnjem dokazu uporabimo dejstvo, da sta glavni ukrivljenosti lastni vrednosti matrike \begin{equation*}
+  \begin{pmatrix}
+    E & F \\
+    F & G
+    \end{pmatrix}_{(m)}^{-1}\begin{pmatrix}
+    L & M \\
+    M & N
+    \end{pmatrix}_{(m)},
+  \end{equation*}  
+kar pomeni, da bo njuna vsota enaka sledi te matrike. Imamo torej \begin{align*}
+  H(m) = \frac{1}{2}(\kappa_1(m) + \kappa_2(m)) &= \frac{1}{2} \mathrm{Tr} \left( \begin{pmatrix}
+    E & F \\
+    F & G
+    \end{pmatrix}_{(m)}^{-1}\begin{pmatrix}
+    L & M \\
+    M & N
+    \end{pmatrix}_{(m)} \right)   \\
+     &= \frac{1}{2(EG - F^2)(m)} \mathrm{Tr} \left(  \begin{pmatrix}
+      G & -F \\
+      -F & E
+      \end{pmatrix}_{(m)} \begin{pmatrix}
+      L & M \\
+      M & N
+      \end{pmatrix}_{(m)} \right) \\
+      &=  \frac{1}{2(EG - F^2)(m)} \mathrm{Tr} \left( \begin{pmatrix}
+        LG - MF & * \\
+        * & -MF + NE
+        \end{pmatrix}_{(m)} \right) \\
+        &= \frac{1}{2} \frac{(LF - 2MF + NE)(m)}{(EG - F^2)(m)}.
+\end{align*}
+\qed
+
+
+\begin{opomba}
+Zgornja izreka bi lahko dokazali drugače z uporabo dejstva, da imata polinoma $a x^2 + b x + c$ in $x^2 + \frac{b}{a} x + \frac{c}{a}$ isti ničli.
+To sta ničli kvadratne enačbe \begin{equation*}
+ p(\lambda) = a \lambda^2 + b \lambda + c =  \det \left( 
+   \begin{pmatrix}
+ L & M \\
+ M & N
+ \end{pmatrix}  - \lambda \begin{pmatrix}
+E & F \\
+F & G
+\end{pmatrix} \right) = 0.
+\end{equation*}
+Po Vietovih pravilih pa vemo, da je produkt ničel enak konstantnemu koeficientu polinoma. Torej imamo \begin{equation*}
+\kappa_1 \kappa_2 = \frac{c}{a}.
+\end{equation*}  
+Očitno velja, da je $$p(0) = c = \det \begin{pmatrix}
+L & M \\
+M & N
+\end{pmatrix}.$$ Po drugi stani pa lahko dobimo \begin{equation*}
+a = \lim_{\lambda \to \infty} \frac{1}{\lambda^2} p(\lambda) = \ldots = \det \begin{pmatrix}
+E & F \\
+F & G
+\end{pmatrix}.
+\end{equation*}
+Torej bo res \begin{equation*}
+\kappa = \kappa_1 \kappa_2 = \frac{c}{a} = \frac{1}{2} \frac{(LF - 2MF + NE)(m)}{(EG - F^2)(m)}.
+\end{equation*}  
+\end{opomba}
+
+\begin{izrek}
+\label{izr_glavni_smeri_sta_si_pravokotni}
+Glavni smeri $(\xi_1, \eta_1)_{(m)}^{T}$, $(\xi_2, \eta_2)_{(m)}^{T}$ sta si pravokotni v $T_m X$. 
+\end{izrek}
+\noident
+{\em Dokaz:\/}
+Dokaz poteka prek sklepa o sebi adjungiranosti preslikave \begin{equation*}
+  \begin{pmatrix}
+    E & F \\
+    F & G
+    \end{pmatrix}^{-1}\begin{pmatrix}
+    L & M \\
+    M & N
+    \end{pmatrix} \right)   \\
+     &= \frac{1}{2(EG - F^2)(m)} \mathrm{Tr} \left(  \begin{pmatrix}
+      G & -F \\
+      -F & E
+      \end{pmatrix} \begin{pmatrix}
+      L & M \\
+      M & N
+      \end{pmatrix}.
+\end{equation*}  
+Najprej za večjo preglednost vpeljimo nove oznake \begin{equation*}
+A = \begin{pmatrix}
+E & F \\
+F & G
+\end{pmatrix}, \,\,\, B = \begin{pmatrix}
+L & M \\
+M & N
+\end{pmatrix}, \,\,\, C = A^{-1}B.
+\end{equation*}  
+Ker vemo, da za sebi adjungirane preslikave (ki imajo različne lastne vektorje) velja, da morajo biti ti med seboj pravokotni,
+je dovolj, da dokažemo sebi adjungiranost preslikave $C$. Torej za vsaka vektroja $\vec{v}, \vec{w} \in  T_m X$ dokazujemo \begin{equation*}
+\langle C\vec{v}, \vec{w} \rangle = \langle \vec{v}, C^{*} \vec{w} \rangle.
+\end{equation*}  
+Pri tem se zavedajmo, da je za poljubna vektorja skalarni produkt določen s pomočjo 1. fundamentalne forme. V bazi $\left\{ r_u, r_v\right\} $ je podan z \begin{equation*}
+  \langle \vec{v}, \vec{w} \rangle = \vec{v}^{T} A \vec{w}. 
+\end{equation*}  
+Torej imamo za vsaka $\vec{v}, \vec{w} \in T_mX$ enačbi \begin{align*}
+  \langle C\vec{v}, \vec{w} \rangle &= (C\vec{v})^{T} A \vec{w} = \vec{v}^{T} C^{T} A \vec{w}, \\
+  \langle \vec{v}, C^{*} \vec{w} \rangle  &= \vec{v}^{T} A C^{*} \vec{w}.
+\end{align*}
+To pomeni, da mora veljati $AC^{*} = C^{T}A$, iz česar sledi\begin{equation*}
+C^{*} = A^{-1}C^{T}A = A^{-1}(A^{-1}B)^{T}A = A^{-1}B^{T}A^{-T}A = A^{-1}B A^{-1} A = A^{-1} B = C.
+\end{equation*}  
+\qed
+
+\subsubsection{Interpretacija glavne ukrivljenosti}
+
+Intuitivno je ukrivljenost krivulje hitrost spreminjanja tangente. Hkrati pa velja, da čimbolj je krivulja ukrivljena, tem hitreje
+normala spreminja smer. Podoben pojav lahko opazujemo tudi na ploskvah, bolj kot je ploskev ukrivljena, hitreje se spreminja normala.
+Naj to torej točka $m \in  X$, ter $U$ njena okolica $m \in  U \subseteq X$, difeomorfna disku. Poglejmo si, kaj se dogaja z normalo po točkah $U$.
+
+\begin{definicija}
+\label{def_gaussova_preslikava}
+Naj bo $X \subseteq  \mathbb{R}^3$ ploskev. Preslikava \begin{align*}
+  \tilde{n}: X &\longrightarrow S^{2} \\
+  m &\longmapsto n(m) \in  (T_mX)^{\perp}; \lvert\lvert n(m) \rvert\rvert = 1,   
+\end{align*}se imenuje Gaussova preslikava.
+\end{definicija}
+
+Povprečno intenzivnost spreminjanja normale na $U$ lahko merimo s kvocientnom površin \begin{equation*}
+\frac{A(\tilde{n}(U))}{A(U)},
+\end{equation*}  
+kjer je $A(U)$ ploščina okolice $U \subseteq X$, $A(\tilde{n}(U))$ pa je ploščina slike \begin{equation*}
+U \subseteq X \to \tilde{n}_{*}(U) \subseteq S^2. 
+\end{equation*}  
+Množica $\tilde{n}_{*}(U)$ je podmnožica enotske sfere $S^2$.
+
+Predpostavimo, da je preslikava \begin{center}
+  \adjustbox{scale=1.0,center}{
+    \begin{tikzcd}
+      {r:V} && U \subseteq X && {\tilde{n}_{*}(U) \subseteq S^2} 
+      \arrow[from=1-1, to=1-3]
+      \arrow["{\tilde{n}}", from=1-3, to=1-5]
+      \arrow["n"', bend right=20, from=1-1, to=1-5]
+    \end{tikzcd}
+  }
+\end{center}
+parametrizacija ploskve $\tilde{n}_{*}(U) \subseteq S^2$. Po definiciji površine ploskve veljata izraza \begin{align*}
+    A(U) &= \int_{V} \lvert\lvert r_u \times  r_v \rvert\rvert   \, du \, dv,  \\
+    A(\tilde{n}_{*}(U)) &= \int_{V} \lvert\lvert n_u \times  n_v \rvert\rvert  \, du \, dv. 
+\end{align*}
+Vemo tudi, da velja \begin{equation*}\label{eq_1}
+  \lvert\lvert n_u \times  n_v \rvert\rvert = \sqrt{\langle n_u \times n_v, n_u \times  n_v \rangle }, 
+\end{equation*}  
+hkrati pa velja tudi \begin{equation}
+  \lvert\lvert n_u \times  n_v \rvert\rvert = \langle n, n_u \times n_v \rangle = \langle \frac{r_u \times r_v}{\lvert\lvert r_u \times  r_v \rvert\rvert } , n_u \times n_v \rangle .
+\end{equation}  
+Iz enačbe \href{eq_1}{(1)} sledi po Lagrangevem pravilu za dvojni vektorski produkt še \begin{equation} \label{eq_2}
+  \lvert\lvert n_u \times  n_v \rvert\rvert = \frac{1}{\sqrt{EG - F^2} } (\langle r_u, n_u \rangle \langle r_v, n_v \rangle - \langle r_u, n_v \rangle \langle r_v, n_u \rangle  ).
+\end{equation}  
+Če zdaj enačbo $\langle r_u, n \rangle = 0$ paricalno odvajamo po $u$, dobimo \begin{equation*}
+\langle r_{uu}, n \rangle + \langle r_u, n_u \rangle = 0 \implies \langle r_u, n_u \rangle = - L,  
+\end{equation*}  
+če pa jo odvajamo po $v$, dobimo \begin{equation*}
+\langle r_{uv}, n \rangle + \langle r_u, n_v \rangle = 0 \implies  \langle r_u, n_v \rangle = - M
+\end{equation*}  
+Podobno z odvajanjem enačbe $\langle r_v, n \rangle = 0$ dobimo preostali dve enačbi \begin{align*}
+  \langle r_v, n_u \rangle  &= - M, \\
+  \langle r_v, n_v \rangle  &= - N.
+\end{align*}
+Od tod pa iz enačbe \href{eq_2}{(2)} sledi \begin{equation*}
+  \lvert\lvert n_u \times  n_v \rvert\rvert = \frac{LN - M^2}{\sqrt{EG - F^2} }.
+\end{equation*}  
+
+S pomočjo te izražave lahko zapišemo \begin{equation*}
+    \frac{A(\tilde{n}(U))}{A(U)} = \frac{\int_{V} \lvert\lvert n_u \times  n_v \rvert\rvert   \, du \, dv}{\int_{V} \lvert\lvert r_u \times  r_v \rvert\rvert   \, du \, dv} 
+    = \frac{\int_{V} \frac{LN - M^2}{\sqrt{EG - F^2} }   \, du \, dv}{\int_{V} \sqrt{EG - F^2} \, du \, dv }.
+    \end{equation*}  
+Od tod pa s pomočjo izreka o povprečni vrednosti in zveznosti funkcij dobimo, da je \begin{equation*}
+\lim_{V \to (u_0, v_0)} \frac{A(\tilde{n}(U))}{A(U)} = \frac{(LN - M^2)(m)}{(EG - F^2)(m)} = \kappa(m).
+\end{equation*}  
+  
