@@ -1163,7 +1163,7 @@ Iz dokaza prejšnjega izreka je razvidno, da sta $\kappa_1$ in $\kappa_2$ lastni
   M & N
   \end{pmatrix},
 \end{equation*}  
-  glavni smeri $(\xi_1, \eta_1)^{T}$, $(\xi_2, \eta_2)^{T}$ pa sta njuna lastna vektorja.
+  glavni smeri $(\xi_1, \eta_1)^{T}$, $(\xi_2, \eta_2)^{T}$ pa sta njena lastna vektorja.
 
 
 \begin{izrek}
@@ -1175,7 +1175,7 @@ Za Gaussovo ukrivljenost $\kappa: X \to  \mathbb{R}$ velja zveza \begin{equation
 
 \noident
 {\em Dokaz:\/}
-Po definiciji je $\kappa(m) = \kappa_1(m) \kappa_2(m)$. Razsmilili smo že, da sta glavni ukrivljenosti
+Po definiciji je $\kappa(m) = \kappa_1(m) \kappa_2(m)$. Razmislili smo že, da sta glavni ukrivljenosti
 lastni vrednosti matrike \begin{equation*}
   \begin{pmatrix}
     E & F \\
@@ -1200,7 +1200,7 @@ lastni vrednosti matrike \begin{equation*}
 \begin{izrek}
 \label{izr_izrazava_povprecne_ukrivljenosti}
  Za povprečno ukrivljenost velja zveza \begin{equation*}
- H(m) = \frac{1}{2} \frac{(LF - 2MF + NE)(m)}{(EG - F^2)(m)}
+ H(m) = \frac{1}{2} \frac{(LF - 2MF + NE)(m)}{(EG - F^2)(m)}.
  \end{equation*}  
 \end{izrek}
 \noident
@@ -1240,7 +1240,7 @@ kar pomeni, da bo njuna vsota enaka sledi te matrike. Imamo torej \begin{align*}
 
 \begin{opomba}
 Zgornja izreka bi lahko dokazali drugače z uporabo dejstva, da imata polinoma $a x^2 + b x + c$ in $x^2 + \frac{b}{a} x + \frac{c}{a}$ isti ničli.
-To sta ničli kvadratne enačbe \begin{equation*}
+Glavni ukrivljenosti sta ničli kvadratne enačbe \begin{equation*}
  p(\lambda) = a \lambda^2 + b \lambda + c =  \det \left( 
    \begin{pmatrix}
  L & M \\
@@ -1263,7 +1263,7 @@ F & G
 \end{pmatrix}.
 \end{equation*}
 Torej bo res \begin{equation*}
-\kappa = \kappa_1 \kappa_2 = \frac{c}{a} = \frac{1}{2} \frac{(LF - 2MF + NE)(m)}{(EG - F^2)(m)}.
+\kappa = \kappa_1 \kappa_2 = \frac{c}{a} = \frac{1}{2} \frac{LF - 2MF + NE}{EG - F^2}.
 \end{equation*}  
 \end{opomba}
 
@@ -1280,26 +1280,25 @@ Dokaz poteka prek sklepa o sebi adjungiranosti preslikave \begin{equation*}
     \end{pmatrix}^{-1}\begin{pmatrix}
     L & M \\
     M & N
-    \end{pmatrix} \right)   \\
-     &= \frac{1}{2(EG - F^2)(m)} \mathrm{Tr} \left(  \begin{pmatrix}
-      G & -F \\
-      -F & E
-      \end{pmatrix} \begin{pmatrix}
-      L & M \\
-      M & N
-      \end{pmatrix}.
+    \end{pmatrix}
 \end{equation*}  
 Najprej za večjo preglednost vpeljimo nove oznake \begin{equation*}
-A = \begin{pmatrix}
+A := \begin{pmatrix}
 E & F \\
 F & G
-\end{pmatrix}, \,\,\, B = \begin{pmatrix}
+\end{pmatrix}, \,\,\, B := \begin{pmatrix}
 L & M \\
 M & N
-\end{pmatrix}, \,\,\, C = A^{-1}B.
+\end{pmatrix}, \,\,\, C := \begin{pmatrix}
+  E & F \\
+  F & G
+  \end{pmatrix}^{-1}\begin{pmatrix}
+  L & M \\
+  M & N
+  \end{pmatrix} = A^{-1}B.
 \end{equation*}  
 Ker vemo, da za sebi adjungirane preslikave (ki imajo različne lastne vektorje) velja, da morajo biti ti med seboj pravokotni,
-je dovolj, da dokažemo sebi adjungiranost preslikave $C$. Torej za vsaka vektroja $\vec{v}, \vec{w} \in  T_m X$ dokazujemo \begin{equation*}
+je dovolj dokazati sebi adjungiranost preslikave $C$. Torej za vsaka vektroja $\vec{v}, \vec{w} \in  T_m X$ dokazujemo \begin{equation*}
 \langle C\vec{v}, \vec{w} \rangle = \langle \vec{v}, C^{*} \vec{w} \rangle.
 \end{equation*}  
 Pri tem se zavedajmo, da je za poljubna vektorja skalarni produkt določen s pomočjo 1. fundamentalne forme. V bazi $\left\{ r_u, r_v\right\} $ je podan z \begin{equation*}
@@ -1309,7 +1308,7 @@ Torej imamo za vsaka $\vec{v}, \vec{w} \in T_mX$ enačbi \begin{align*}
   \langle C\vec{v}, \vec{w} \rangle &= (C\vec{v})^{T} A \vec{w} = \vec{v}^{T} C^{T} A \vec{w}, \\
   \langle \vec{v}, C^{*} \vec{w} \rangle  &= \vec{v}^{T} A C^{*} \vec{w}.
 \end{align*}
-To pomeni, da mora veljati $AC^{*} = C^{T}A$, iz česar sledi\begin{equation*}
+To pomeni, da dokazujemo $AC^{*} = C^{T}A$, oziroma ekvivalentno $C^{*} = A^{-1}C^{T}A$. \begin{equation*}
 C^{*} = A^{-1}C^{T}A = A^{-1}(A^{-1}B)^{T}A = A^{-1}B^{T}A^{-T}A = A^{-1}B A^{-1} A = A^{-1} B = C.
 \end{equation*}  
 \qed
@@ -1318,7 +1317,7 @@ C^{*} = A^{-1}C^{T}A = A^{-1}(A^{-1}B)^{T}A = A^{-1}B^{T}A^{-T}A = A^{-1}B A^{-1
 
 Intuitivno je ukrivljenost krivulje hitrost spreminjanja tangente. Hkrati pa velja, da čimbolj je krivulja ukrivljena, tem hitreje
 normala spreminja smer. Podoben pojav lahko opazujemo tudi na ploskvah, bolj kot je ploskev ukrivljena, hitreje se spreminja normala.
-Naj to torej točka $m \in  X$, ter $U$ njena okolica $m \in  U \subseteq X$, difeomorfna disku. Poglejmo si, kaj se dogaja z normalo po točkah $U$.
+Naj to torej točka $m \in  X$, ter $U \subseteq X$ njena okolica, difeomorfna disku. Poglejmo si, kaj se dogaja z normalo po točkah $U$.
 
 \begin{definicija}
 \label{def_gaussova_preslikava}
@@ -1332,11 +1331,11 @@ Povprečno intenzivnost spreminjanja normale na $U$ lahko merimo s kvocientnom p
 \frac{A(\tilde{n}(U))}{A(U)},
 \end{equation*}  
 kjer je $A(U)$ ploščina okolice $U \subseteq X$, $A(\tilde{n}(U))$ pa je ploščina slike \begin{equation*}
-U \subseteq X \to \tilde{n}_{*}(U) \subseteq S^2. 
+\tilde{n}: U \subseteq X \to \tilde{n}_{*}(U) \subseteq S^2. 
 \end{equation*}  
 Množica $\tilde{n}_{*}(U)$ je podmnožica enotske sfere $S^2$.
 
-Predpostavimo, da je preslikava \begin{center}
+Predpostavimo, da je preslikava $r$ \begin{center}
   \adjustbox{scale=1.0,center}{
     \begin{tikzcd}
       {r:V} && U \subseteq X && {\tilde{n}_{*}(U) \subseteq S^2} 
