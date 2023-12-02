@@ -1,0 +1,44 @@
+\section{Geodetske krivulje}
+
+\begin{definicija}
+\label{def_geodetska_krivulja}
+Naj bo $X$ ploskev in $m_1, m_2 \in X$. Naj bo $\Gamma$ družina krivulj $\gamma_i: [a,b] \to X$, za katere velja $\gamma_i(a) = m_1$ in $\gamma_i(b) = m_2$.
+Krivulja $\gamma \in  \Gamma$ je geodetska krivulja, če je najkrajša krivulja iz družine $\Gamma$, glede na prvo fundamentalno formo na $X$. 
+\end{definicija}
+
+\begin{definicija}
+\label{def_dolzinski_funkcional}
+Naj bo $X$ ploskev in $m_1, m_2 \in X$. Naj bo $\gamma: [a,b] \to  X$ krivulja, za katero velja $\gamma(a) = m_1$ in $\gamma(b) = m_2$. Potem presliakvo \begin{equation*}
+\mathcal{L}(\gamma) = \int_{a}^{b} \sqrt{E \dot{u}^2(u(t), v(t)) + 2F(u(t), v(t)) \dot{u} \dot{v} + G(u(t), v(t)) \dot{v}^2}  \, dt 
+\end{equation*}  
+imenujemo dolžinski funkcional.
+\end{definicija}
+
+Naj bo sedaj \begin{equation*}
+\mathcal{V} = \left\{ \gamma: [a,b] \to  X, \gamma \text{ gladka krivulja}, \gamma(a) = m_1, \gamma(b) = m_2 \right\}. 
+\end{equation*}
+\begin{opomba}
+Takšni družini krivulj rečemo tudi variacija. Od tod pride ime "variacijski račun".
+\end{opomba}
+Potem imamo funkcional $\mathcal{L}: \mathcal{V} \to  \mathbb{R}$. Ekstreme tega funkcionala bomo iskali tako, kot iščemo ekstreme
+funkcij ene ali dveh spremenljivk. Kandidati za ekstreme splošne funkcije $F: \Omega \subseteq \mathbb{R}^n \to  \mathbb{R}$ so stacionarne točke $F$, torej
+točke $x_0 \in \mathbb{R}^n$, da je $D_{x_0}F = 0$. Vemo pa, da bo $D_{x_0}F = 0$ natanko tedaj, ko za vsak dovolj majhen $\varepsilon > 0$ in za vsako krivuljo
+$\beta: [- \varepsilon, \varepsilon] \to  \Omega$, za katero je $\beta(0) = x_0$, za vsak $t \in [-\varepsilon, \varepsilon]$ velja \begin{equation*}
+\frac{d}{dt}  \bigg|_{t = 0} F(\beta(t)) = (D_{x_0}F) \dot{\beta}(0) = 0. 
+\end{equation*}  
+To je direktna posledica dejstva, da je lahko vektor $\dot{\beta}(0) \in  \mathbb{R}^n$ poljuben.
+
+Vrnimo se k funkcionalu $\mathcal{L}$. Ne bomo opazovali odvoda $\mathcal{L}$, temveč le smerne odvode $\mathcal{L}$ po vseh poteh, ki nas zanimajo. Krivulje $\gamma_i$ v evklidskem prostoru so točke v prostoru krivulj $\mathcal{V}$. Zanima nas,
+kaj so krivulje v prostoru $\mathcal{V}$.
+
+\begin{definicija}
+\label{def_krivulja_v_prostoru_krivulj}
+Krivulja v prostoru krivulj $\mathcal{V}$ je preslikava \begin{align*}
+    \Gamma  (-\varepsilon, \varepsilon): &\longrightarrow \mathcal{V} \\
+    s &\longmapsto \gamma_s,
+\end{align*}
+za katero za vsak $t \in  [a,b]$ velja $\Gamma(s,t) = \gamma_s(t)$. Hkrati morata biti za vsak $s \in (-\varepsilon, \varepsilon)$ izpoljnena pogoja \begin{align*}
+    \Gamma(s)(a) &= m_1 = \gamma_s(a), \\
+    \Gamma(s)(b) &= m_2 = \gamma_s(b).
+\end{align*}
+\end{definicija}

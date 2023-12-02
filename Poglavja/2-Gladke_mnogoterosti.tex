@@ -1539,6 +1539,7 @@ najdemo taki funkciji $\lambda, \mu$, da bo veljalo \begin{align*}
 \qed
 
 \begin{lema}
+\label{lem_tangentno_premonosna_mesani_produkt}
 Naj bo $X$ premonosna %TODO vprašaj ali smo to sploh definirali
 ploskev, podana s krivuljo $\gamma(u)$ in vektorskim poljem $a(u)$ vzdolž krivulje $\gamma(u)$. Ploskev $X$ je
 tangetno premonosna natanko tedaj, ko velja pogoj na mešani produkt \begin{equation*}
@@ -1626,15 +1627,56 @@ Velja torej \begin{equation*}
   L & M \\
   M & N
   \end{pmatrix} \begin{pmatrix}
-    0 \\ \alpha,
+    0 \\ \alpha
   \end{pmatrix} = N \alpha^2.
 \end{equation*}
-Ker lahko izberemo neničelen $\alpha$, to pomeni, da je $N = 0.$ Iz pogoja $LN - M^2 = 0$ dobimo še $M$ = 0, torej za našo parametrizacijo $X$ velja \begin{equation*}
+Ker lahko izberemo neničelen $\alpha$, to pomeni, da je $N = 0.$ Iz pogoja $LN - M^2 = 0$ dobimo še $M$ = 0, torej za drugo fundamentalno formo naše parametrizacije $X$ velja \begin{equation*}
 II = \begin{pmatrix}
 L & 0 \\
 0 & 0
 \end{pmatrix}.
 \end{equation*}  
-Zdaj   
+Zdaj trdimo, da je $(e_2)_v = 0$. Zato bomo vektorsko polje $(e_2)_v$ razvili po bazi $\left\{ e_1, e_2, n\right\}$. Zato bomo najprej po tej bazi
+razvili vekotorja $n_u$ in $n_v$. Pri tem se zavedajmo, da je $e_1 = \frac{r_u}{\lvert\lvert r_u \rvert\rvert }$ in $e_2 = \frac{r_v}{\lvert\lvert r_v \rvert\rvert }$.
+Dobimo \begin{equation*}
+n_u = \langle n_u, e_1 \rangle e_1 + \langle n_u, e_2 \rangle e_2 + \langle n_u, n \rangle n. 
+\end{equation*}  
+Iz zveze $\langle n, r_u \rangle = 0$ s parcialnim odvajanjem po $u$ dobimo \begin{equation*}
+  \langle n_u, r_u \rangle = - \langle n, r_{uu} \rangle  = -L.
+\end{equation*}  
+Torej velja \begin{equation*}
+\langle n_u, e_1 \rangle = \frac{1}{\lvert\lvert r_u \rvert\rvert } \langle n_u, r_u \rangle = -\frac{L}{\sqrt{E}}.   
+\end{equation*}  
+Na enak način dobimo \begin{equation*}
+\langle n_u, e_2 \rangle = \frac{1}{\lvert\lvert r_v \rvert\rvert } \langle n, r_{uv} \rangle = \frac{M}{\sqrt{G}} = 0.
+\end{equation*}  
+Iz parcialnega odvajanja zveze $\langle n, n \rangle = 1$ po $u$ pa dobimo še $\langle n_u, n \rangle = 0$. Torej velja, da je \begin{equation*}
+n_u = -\frac{L}{\sqrt{E}} e_1 \implies e_1 =-\frac{\sqrt{E} }{L} n_u.
+\end{equation*}  
+Z enakim postopkom dobimo, da je v tej bazi $n_v = 0$. Tam je namreč $\langle n_v, r_v \rangle = - N = 0.$
 
+Zdaj izrazimo še vektor $(e_2)_v$ po tej bazi. Po enakih idejah kot prej dobimo \begin{align*}
+  \langle (e_2)_v, e_1 \rangle &=  -\frac{\sqrt{E} }{L} \langle (e_2)_v, n_u \rangle = \frac{\sqrt{E}}{L} \langle e_2, (n_v)_u \rangle = 0.  \\
+  \langle (e_2)_v, e_2 \rangle   &= 0 \\
+  \langle (e_2)_v, n \rangle &= \langle e_2, n \rangle_v - \langle e_2, n_v \rangle = 0   
+\end{align*}
+Torej smo pokazali, da je $(e_2)_v = 0$. Zdaj dokažimo, da je $X$ tangentno premonosna ploskev s premičjem, napetim
+na vektorsko polje $e_2$. Zato si oglejmo krivulje $v \mapsto r(u_0, v)$, kjer je točka $u_0$ fiksna. V naši parametrizaciji velja,
+da je $r_v = \mu e_2$. Zato je \begin{equation*}
+r_{uv} = \mu_v e_2 + \mu \underbrace{ (e_2)_v}_0  = \mu_v e_2.
+\end{equation*}  
+To pomeni, da bosta v vsaki točki krivulje $v \mapsto r(u_0, v)$ vektorja hitrosti in pospeška vzporedna. Torej bo ta krivulja premica. Naj bo sedaj
+$\gamma(u) = r(u, v_0)$. Naša ploskev je premonosna, lahko jo parametriziramo s parametrizacijo \begin{equation*}
+r(u,v) = \gamma(u) + f(v) \underbrace{r_v(u, v_0)}_{a(u)}. 
+\end{equation*}  
+Zdaj izračunajmo mešani produkt \begin{equation*}
+\left[ \frac{ \partial \gamma }{ \partial u }, a , \frac{ \partial a }{ \partial u }  \right] = \left[ r_u, r_v, r_{uv} \right]
+= \langle r_u \times  r_v, r_{uv} \rangle = \lvert\lvert r_u \times  r_v \rvert\rvert \langle n, r_{uv} \rangle
+= \lvert\lvert r_u \times r_v \rvert\rvert \underbrace{M}_0  = 0.
+\end{equation*}  
+Po lemi \href{lem_tangentno_premonosna_mesani_produkt} sledi, da je $X$ tangentno premonosna ploskev.
 \qed
+
+\begin{opomba}
+Gaussova ukrivljenost krogle z radijem $R$ je $\frac{1}{R^2}$. To ustreza naši intuiciji, da je ping pong žogica bolj ukrivljena od Zemlje.
+\end{opomba}
