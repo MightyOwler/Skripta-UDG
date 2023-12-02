@@ -758,7 +758,7 @@ Od tod sledi naslednji izrek.
 \label{psl_dobra_definiranost_ploscine}
  Definicija ploščine \href{def_ploscina_plosvke} je dobra.
 \end{posledica}
-\noident
+\noindent
 {\em Dokaz:\/}
  Dokazujemo 
  \begin{equation*} A(X) = \int_{V_1} \sqrt{EG - F^2}   \, du \, dv = \int_{V_2}  \sqrt{\tilde{E}\tilde{G} -  \tilde{F}^2}  \, d \tilde{u} \, d \tilde{v}.\end{equation*}
@@ -888,7 +888,7 @@ Zdaj si poglejmo, kako se izraža normalna ukrivljenost krivulje s pomočjo drug
   \end{pmatrix}.  \end{equation*}
 \end{izrek}
 
-\noident
+\noindent
 {\em Dokaz:\/}
  Najprej zapišemo prva dva odvoda 
  \begin{align*}
@@ -996,7 +996,7 @@ Z naslednjim izrekom bomo utemeljili, da sta glavni ukrivljenosti res kvečjem d
   F & G
   \end{pmatrix}_{(m)}  \right) = 0. \end{equation*}
 \end{izrek}
-\noident
+\noindent
 {\em Dokaz:\/}
  Ekstrema $\lambda_1$, $\lambda_2$ sta vezana ekstrema za funkcijo $\kappa_n: T_mX \to \mathbb{R}$.
  Zaradi homeomorfizma $T_mX \approx \mathbb{R}^2$ lahko identificiramo elemente $T_mX$ s pari $(\xi, \eta)$. Naša krožnica je
@@ -1173,7 +1173,7 @@ Za Gaussovo ukrivljenost $\kappa: X \to  \mathbb{R}$ velja zveza \begin{equation
 \end{equation*}  
 \end{izrek}
 
-\noident
+\noindent
 {\em Dokaz:\/}
 Po definiciji je $\kappa(m) = \kappa_1(m) \kappa_2(m)$. Razmislili smo že, da sta glavni ukrivljenosti
 lastni vrednosti matrike \begin{equation*}
@@ -1203,7 +1203,7 @@ lastni vrednosti matrike \begin{equation*}
  H(m) = \frac{1}{2} \frac{(LF - 2MF + NE)(m)}{(EG - F^2)(m)}.
  \end{equation*}  
 \end{izrek}
-\noident
+\noindent
 {\em Dokaz:\/}
 Podobno kot v prejšnjem dokazu uporabimo dejstvo, da sta glavni ukrivljenosti lastni vrednosti matrike \begin{equation*}
   \begin{pmatrix}
@@ -1271,7 +1271,7 @@ Torej bo res \begin{equation*}
 \label{izr_glavni_smeri_sta_si_pravokotni}
 Glavni smeri $(\xi_1, \eta_1)_{(m)}^{T}$, $(\xi_2, \eta_2)_{(m)}^{T}$ sta si pravokotni v $T_m X$. 
 \end{izrek}
-\noident
+\noindent
 {\em Dokaz:\/}
 Dokaz poteka prek sklepa o sebi adjungiranosti preslikave \begin{equation*}
   \begin{pmatrix}
@@ -1379,4 +1379,262 @@ S pomočjo te izražave lahko zapišemo \begin{equation*}
 Od tod pa s pomočjo izreka o povprečni vrednosti in zveznosti funkcij dobimo, da je \begin{equation*}
 \lim_{V \to (u_0, v_0)} \frac{A(\tilde{n}(U))}{A(U)} = \frac{(LN - M^2)(m)}{(EG - F^2)(m)} = \kappa(m).
 \end{equation*}  
-  
+
+
+\subsection{Ploščate ploskve}
+
+\begin{definicija}
+\label{def_ploscate_ploskve}
+Ploskev $X$ je ploščata, če je njena Gaussova ukrivljenost $\kappa = 0$. 
+\end{definicija}
+
+\begin{izrek}
+\label{izr_plsokev_je_ploscata_ce_je_del_valja_ali_tangentnopremosnosne_ploskve}
+Ploskev $X$ je ploščata, če je del valja ali tangentno premonosne krivulje ploskve.
+\end{izrek}
+
+\begin{posledica}
+\label{psl_plsokev_je_ploscata_iff_izometricna_kosu_ravnine}
+Ploskev $X$ je ploščata natanko tedaj, ko je izometrična kosu ravnine.
+\end{posledica}
+
+Za dokaz tega izreka bomo potrebovali naslednji dve lemi.
+
+
+\begin{lema}
+\label{lem_obstoj_funkcij}
+Naj bo $X$ poljubna poskev. Tedaj obstaja za $X$ parametrizacija $s : V \to  X$, za katero velja, da obstajata funkciji $\lambda(u,v), \mu(u,v) : V \to  \mathbb{R}$, za kateri velja
+\begin{itemize}
+  \item $s_u(u,v) = \lambda(u,v)e_1(u,v)$,
+  \item $s_v(u,v) = \mu(u,v)e_2(u,v)$.
+\end{itemize}
+Preslikavi $e_1, e_2: V \to  TX$ označujeta glavni smeri ploskve $X$ glede na parametrizacijo $s$.
+\end{lema}
+
+\noindent
+{\em Dokaz:\/}
+Naj bo $s: V_1 \to  X$ parametrizacija ploskve $X$. Iskano parametrizacijo bomo dobili kot reparametrizacijo $s$.
+Lokalno lahko parametrizacijo $s = s(u,v); (u,v) \in V_1$ podamo kot parametrizacijo $s(u,v) = s(\xi, \eta); (\xi, \eta) \in V$.
+To nam poda funkciji $s(u,v) = s(\xi(u,v), \eta(u,v))$ ter $s(\xi, \eta) = s(u(\xi, \eta), v(\xi, \eta))$.  
+Iz prve enačbe po verižnem pravilu dobimo \begin{align*}
+    s_u &= \frac{ \partial \xi }{ \partial u } s_{\xi} + \frac{ \partial \eta }{ \partial u } s_{\eta},  \\
+    s_v &= \frac{ \partial \xi }{ \partial v } s_{\xi} + \frac{ \partial \eta }{ \partial v } s_{\eta}.
+\end{align*}
+Zdaj zapišemo glavni smeri kot linearni kombinaciji vektorjev $s_u$ in $s_v$.
+\begin{align*}
+    e_1 &= \alpha s_u + \beta s_v, \\
+    e_2 &= \gamma s_u + \delta s_v.
+\end{align*}
+V ti kombinaciji vstavimo izražavi $s_u$ in $s_v$, da dobimo \begin{align*}
+  e_1 &= \alpha \left(\frac{ \partial \xi }{ \partial u } s_{\xi} + \frac{ \partial \eta }{ \partial u } s_{\eta}\right) + \beta \left(\frac{ \partial \xi }{ \partial v } s_{\xi} + \frac{ \partial \eta }{ \partial v } s_{\eta}\right), \\
+  e_2 &= \gamma \left(\frac{ \partial \xi }{ \partial u } s_{\xi} + \frac{ \partial \eta }{ \partial u } s_{\eta}\right) + \delta \left(\frac{ \partial \xi }{ \partial v } s_{\xi} + \frac{ \partial \eta }{ \partial v } s_{\eta}\right).
+\end{align*}
+Od tod izrazimo glavni smeri kot lineani kombianciji vektorjev $s_{\xi}, s_{\eta}$. \begin{align*}
+    e_{1} &= \left(\frac{ \partial \xi }{ \partial u } \alpha + \frac{ \partial \xi }{ \partial v } \beta \right) s_{\xi} + \left(\frac{ \partial \eta }{ \partial u } \alpha + \frac{ \partial \eta }{ \partial v } \beta \right) s_{\eta}, \\
+    e_2 &= \left(\frac{ \partial \xi }{ \partial u } \gamma + \frac{ \partial \xi }{ \partial v } \delta \right) s_{\xi} + \left(\frac{ \partial \eta }{ \partial u } \gamma + \frac{ \partial \eta }{ \partial v } \delta \right) s_{\eta}.
+\end{align*}
+
+To lahko bolj kompaktno zapišemo kot \begin{align*}
+    e_1 &=  \begin{pmatrix}
+    \frac{ \partial \xi }{ \partial u }  & \frac{ \partial \xi }{ \partial v }  \\
+    \frac{ \partial \eta }{ \partial u }  & \frac{ \partial \eta }{ \partial v } 
+    \end{pmatrix} \begin{pmatrix}
+    \alpha \\ \beta 
+    \end{pmatrix}     \\
+    e_2 &= \begin{pmatrix}
+      \frac{ \partial \xi }{ \partial u }  & \frac{ \partial \xi }{ \partial v },  \\
+      \frac{ \partial \eta }{ \partial u }  & \frac{ \partial \eta }{ \partial v }.
+      \end{pmatrix} \begin{pmatrix}
+      \gamma \\ \delta 
+      \end{pmatrix}  
+\end{align*}
+
+Zdaj se vprašamo, ali res potrebujemo funkciji $\lambda, \eta$? Če bi obstajala parametrizacija $s$, za katero bi veljalo $s_{\xi} = e_1$, $s_{\eta} = e_2$, potem bi veljalo 
+\begin{align*}
+    e_1 &= 1 \cdot s_{\xi} + 0 \cdot s_{\eta},  \\
+    e_2 &= 0 \cdot s_{\xi} + 1 \cdot s_{\eta}.
+\end{align*}
+Torej bi morala biti v bazi $\left\{ s_{\xi}, s_{\eta} \right\}$ $e_1$ in $e_2$ standardna enotska vektorja, torej
+\begin{align*}
+  e_1 &=  \begin{pmatrix}
+  \frac{ \partial \xi }{ \partial u }  & \frac{ \partial \xi }{ \partial v }  \\
+  \frac{ \partial \eta }{ \partial u }  & \frac{ \partial \eta }{ \partial v } 
+  \end{pmatrix} \begin{pmatrix}
+  \alpha \\ \beta 
+  \end{pmatrix}  = \begin{pmatrix}
+    1 \\ 0 
+    \end{pmatrix},   \\
+  e_2 &= \begin{pmatrix}
+    \frac{ \partial \xi }{ \partial u }  & \frac{ \partial \xi }{ \partial v },  \\
+    \frac{ \partial \eta }{ \partial u }  & \frac{ \partial \eta }{ \partial v }.
+    \end{pmatrix} \begin{pmatrix}
+    \gamma \\ \delta 
+    \end{pmatrix}  = \begin{pmatrix}
+      0 \\ 1 
+      \end{pmatrix}.
+\end{align*}
+To lahko zapišemo z eno samo enačbo kot \begin{equation*}
+  \begin{pmatrix}
+    \frac{ \partial \xi }{ \partial u }  & \frac{ \partial \xi }{ \partial v }  \\
+    \frac{ \partial \eta }{ \partial u }  & \frac{ \partial \eta }{ \partial v } 
+    \end{pmatrix} \begin{pmatrix}
+      \alpha & \gamma \\ \beta & \delta
+      \end{pmatrix} = \begin{pmatrix}
+        1 & 0  \\ 0 & 1 
+        \end{pmatrix}.
+\end{equation*}  
+Označimo sedaj \begin{equation*}
+\begin{pmatrix}
+A & C \\
+B & D
+\end{pmatrix} = \begin{pmatrix}
+  \alpha & \gamma \\ \beta & \delta
+  \end{pmatrix}^{-1},
+\end{equation*}  
+da dobimo pogoj 
+\begin{equation*}
+  \begin{pmatrix}
+    \frac{ \partial \xi }{ \partial u }  & \frac{ \partial \xi }{ \partial v }  \\
+    \frac{ \partial \eta }{ \partial u }  & \frac{ \partial \eta }{ \partial v } 
+    \end{pmatrix} = \begin{pmatrix}
+      A & C \\
+      B & D
+      \end{pmatrix}.
+\end{equation*}  
+Vrstici leve matrike sta gradienta funkcij $\xi$ in $\eta$.\begin{align*}
+    \operatorname{grad} \xi (u,v) &= (A(u,v), C(u,v)), \\
+    \operatorname{grad} \eta (u,v) &= (B(u,v), D(u,v)).
+\end{align*}
+Od tod pa očitno sledi, da morata biti polji $(A(u,v), C(u,v))$ in $(B(u,v), D(u,v))$ potencialni, kar v splošnem ni res.
+Zato moramo zahtevo $s_{\xi} = e_1$, $s_{\eta} = e_2$ omejiti na $s_{\xi} = \lambda e_1$, $s_{\eta} = \mu e_2$.
+Tako dobimo pogoj \begin{equation*}
+  \begin{pmatrix}
+    \frac{ \partial \xi }{ \partial u }  & \frac{ \partial \xi }{ \partial v }  \\
+    \frac{ \partial \eta }{ \partial u }  & \frac{ \partial \eta }{ \partial v } 
+    \end{pmatrix} \begin{pmatrix}
+      \alpha & \gamma \\ \beta & \delta
+      \end{pmatrix} = \begin{pmatrix}
+        \frac{1}{\lambda} & 0  \\ 0 & \frac{1}{\mu}
+        \end{pmatrix}.
+\end{equation*}  
+Tako imamo \begin{equation*}
+  \begin{pmatrix}
+    \frac{ \partial \xi }{ \partial u }  & \frac{ \partial \xi }{ \partial v }  \\
+    \frac{ \partial \eta }{ \partial u }  & \frac{ \partial \eta }{ \partial v } 
+    \end{pmatrix} = \begin{pmatrix}
+      \frac{1}{\lambda} & 0  \\ 0 & \frac{1}{\mu} 
+      \end{pmatrix}\begin{pmatrix}
+      A & C \\
+      B & D
+      \end{pmatrix} = \begin{pmatrix}
+        \frac{1}{\lambda} A & \frac{1}{\lambda} C \\
+        \frac{1}{\mu} B & \frac{1}{\mu} D
+        \end{pmatrix}.
+\end{equation*}  
+Zato lahko (po izreku iz analize 3??) %TODO vprašaj
+najdemo taki funkciji $\lambda, \mu$, da bo veljalo \begin{align*}
+  \operatorname{grad} \xi (u,v) &= \frac{1}{\lambda(u,v)}(A(u,v), C(u,v)), \\
+  \operatorname{grad} \eta (u,v) &= \frac{1}{\mu(u,v)}(B(u,v), D(u,v)).
+\end{align*}
+\qed
+
+\begin{lema}
+Naj bo $X$ premonosna %TODO vprašaj ali smo to sploh definirali
+ploskev, podana s krivuljo $\gamma(u)$ in vektorskim poljem $a(u)$ vzdolž krivulje $\gamma(u)$. Ploskev $X$ je
+tangetno premonosna natanko tedaj, ko velja pogoj na mešani produkt \begin{equation*}
+\left[ \gamma'(u), a(u), a'(u) \right] = 0.
+\end{equation*}  
+\noindent
+\end{lema}
+
+\noindent
+{\em Dokaz:\/}
+Dokazati je treba samo implikacijo v desno smer. Naj bo $X$ tangentno premonosna ploskev z naravno parametrizacijo \begin{equation*}
+r(u,v) = \gamma(u) + v a(u).
+\end{equation*}  
+Dokazati moramo, da obstaja funkcija $\rho$ v $X$, za katero velja \begin{equation*}
+\rho'(u) = g(u) a(u).
+\end{equation*}  
+Ker bi morala krivulja $\rho(u)$ ležati v premonosni ploskvi $X$, bi morala obstajati neka funkcija $f$, za katero bi veljalo
+\begin{equation*}
+\rho(u) = \gamma(u) + f(u)a(u).
+\end{equation*}  
+Torej bo funkcija $\rho$ obstajala, če obstajata funkciji $f$ in $g$, da velja naslednji pogoj \begin{equation*}
+\rho' = \gamma' + f'a + f a' = (g - f') a - fa'.
+\end{equation*}  
+Iz pogoja na mešani produkt vemo, da so vektorji $\gamma', a, a'$ koplanarni. Zato lahko $\gamma'$ izrazimo kot linearno kombinacijo ostalih dveh, torej
+obstajata funkciji $\alpha, \beta$, da velja
+\begin{equation*}
+\gamma' = \alpha a + \beta a'.
+\end{equation*}  
+Rešitev zgornjih dveh sistemov enačb sta funkciji \begin{align*}
+    f &= -\beta, \\
+    g &= \alpha + \beta', 
+\end{align*}
+kar pomeni, da funkcija $\rho$ obstaja, torej je $X$ res tangentno premonosna ploskev.
+\qed
+
+\begin{opomba}
+V zgornjem dokazu bi lahko namesto \begin{equation*} r(u,v) = \gamma(u) + v \alpha(u) \end{equation*} pisali 
+\begin{equation*} r(u,v) = \gamma(u) + \lambda(v) \alpha(u) \end{equation*} za neko monotono funkcijo $\lambda$.
+Monotonost bi privzeli zato, da bi dobili smiselno parametrizacijo.
+\end{opomba}
+
+Zdaj se lotimo še dokaza izreka.
+
+\noindent
+{\em Dokaz izreka \href{izr_plsokev_je_ploscata_ce_je_del_valja_ali_tangentnopremosnosne_ploskve}:\/}
+Predpostavimo, da za vsak $m \in X$ velja $\kappa(m) = 0$, kar brez škode za splošnost implicira $\kappa_2(m) = 0$. Če bi bila za vsak $m \in X$ povprečna vrednost $H(m) = 0$ je $X$ ravnina. Predpostavimo torej, da obstaja
+$k \in  X$, da je $H(k) \neq 0$.
+Po lemi \href{lem_obstoj_funkcij} vemo, da obstaja parametrizacija $r(u,v): V \to X$, za katero velja $r_u = \lambda e_1$, $r_v = \mu e_2$. 
+Za takšno parametrizacijo velja $\langle r_u, r_v \rangle = \lambda \mu \langle e_1, e_2 \rangle$, torej bo prva fundamentalna forma te parametrizacije enaka \begin{equation*}
+I = \begin{pmatrix}
+E & 0 \\
+0 & G
+\end{pmatrix}.
+\end{equation*}  
+Vemo pa tudi, da sta glavni ukrivljenosti rešitvi enačb \begin{equation*} \det \left( \begin{pmatrix}
+  L & M \\
+  M & N
+  \end{pmatrix} - \kappa_i \begin{pmatrix}
+  E & F \\
+  F & G
+  \end{pmatrix}  \right) = 0. \end{equation*}
+V našem primeru je za $i = 2$ \begin{equation*}
+  \det  \begin{pmatrix}
+    L & M \\
+    M & N
+    \end{pmatrix} = 0 \implies LN - M^2 = 0.
+\end{equation*}  
+Spomnimo se, da je normalna ukrivljenost podana s predpisom \begin{equation*}
+\kappa_n(\xi, \eta) = \begin{pmatrix}
+    \xi & \eta
+\end{pmatrix} \begin{pmatrix}
+L & M \\
+M & N
+\end{pmatrix} \begin{pmatrix}
+  \xi \\ \eta,
+\end{pmatrix}
+\end{equation*}  
+v naši parametrizaciji pa je smer, ki pripada glavni ukrivljenosti $\kappa_2$ v bazi $\left\{ r_u, r_v\right\}$ podana z $\begin{pmatrix}
+    0 & \alpha
+\end{pmatrix}^{T}.$
+Velja torej \begin{equation*}
+  \kappa_2 = \begin{pmatrix}
+      0 & \alpha
+  \end{pmatrix} \begin{pmatrix}
+  L & M \\
+  M & N
+  \end{pmatrix} \begin{pmatrix}
+    0 \\ \alpha,
+  \end{pmatrix} = N \alpha^2.
+\end{equation*}
+Ker lahko izberemo neničelen $\alpha$, to pomeni, da je $N = 0.$ Iz pogoja $LN - M^2 = 0$ dobimo še $M$ = 0, torej za našo parametrizacijo $X$ velja \begin{equation*}
+II = \begin{pmatrix}
+L & 0 \\
+0 & 0
+\end{pmatrix}.
+\end{equation*}  
+Zdaj   
+
+\qed
