@@ -42,3 +42,111 @@ za katero za vsak $t \in  [a,b]$ velja $\Gamma(s,t) = \gamma_s(t)$. Hkrati morat
     \Gamma(s)(b) &= m_2 = \gamma_s(b).
 \end{align*}
 \end{definicija}
+
+Posodobimo sedaj našo definicijo geodetke.
+
+\begin{definicija}
+\label{def_posodobljne_geodetkse_krivulje}
+Krivulja $\gamma : [a,b] \to  X$ je geodetska krivulja, če je stacionarna točka dolžinskega funkcionala, torej če je \begin{equation*}
+\frac{ \partial  }{ \partial s} \bigg|_{s = 0} \mathcal{L}(\Gamma(t,s)) = (D_\gamma \mathcal{L}) \left( \frac{ \partial  }{ \partial s} \bigg|_{s = 0} \Gamma(t,s) \right) . 
+\end{equation*}    
+\end{definicija}
+
+\begin{opomba}
+Zgornja enakost je nekoliko sumljiva, ker imamo na levi strani šibek odvod, na desni pa krepek.
+\end{opomba}
+
+Naj bo $\gamma(t) = r(u(t), v(t)): [a,b] \to X$ krivulja. Potem je \begin{equation*}
+\mathcal{L}(\gamma(t)) = \int_{a}^{b} \sqrt{E\dot{u}^2 + 2F\dot{u}\dot{v} + G\dot{v}^2}  \, dt. 
+\end{equation*}  
+Naj bo $\Gamma : [a,b] \times  (-\varepsilon, \varepsilon) \to  X$ pot v $\mathcal{V}$, torej variacija $\gamma$. To pomeni, da velja za vse $(t,s) \in [a,b] \times  (-\varepsilon, \varepsilon)$ sistem enačb
+\begin{align*}
+    \Gamma(t,s) &= r(u(t,s), v(t,s)) \\
+     u(t,s) &= u(t), \\
+     v(t,s) &= v(t), \\
+     u(a,s) &= v(s), \\
+     u(a,s) &= u(a), \\
+     v(a,s) &= v(a), \\
+     u(b,s) &= u(b), \\
+     v(b,s) &= v(b). 
+\end{align*}
+Potem imamo \begin{align*}
+    \frac{ \partial  }{ \partial s} \bigg|_{s = 0} \mathcal{L}(\Gamma(t,s))  &= \frac{ \partial  }{ \partial s } \bigg|_{s = 0}  \left(\underbrace{\int_{a}^{b} \sqrt{E\dot{u}^2 + 2F\dot{u}\dot{v} + G\dot{v}^2}  \, dt }_{R(t,s)}\right)_{E = E(u,v), u = u(t,s), \dot{u} = \dot{u}(t,s), \ldots} \\
+    &=  \frac{1}{2} \int_{a}^{b} \frac{1}{\sqrt{R(t,s)}} \frac{ \partial  }{ \partial s } R(t,s)  \, dt \\
+    &=  \frac{1}{2} \int_{} \bigg[\frac{1}{\sqrt{R(t,s)}} (E_u \dot{u} u_s + 2F_u \dot{u} \dot{v} u_s + G_u u_s + E_v \dot{u}^2 v_s + 2F_v \dot{u} \dot{v} v_s + G_v \dot{v}^2 v_s) \\
+    &+  2(E \dot{u} \dot{u}_s + F \dot{v} \dot{u}_s + F\dot{u} \dot{v}_s + G \dot{v} \dot{v}_s) \bigg] \, dt \\
+    &= \frac{1}{2} \int_{a}^{b}  \frac{1}{\sqrt{R(t,s)}} \bigg[ (Eu \dot{u}^2 + F_u \dot{u} \dot{v} + G_u \dot{v}^2) u_s + (E_v \dot{u}^2 + 2F_v \dot{u} \dot{v} + G_v \dot{v}^2) \bigg] \, dt \\
+    &+ \int_{a}^{b} \frac{1}{\sqrt{R(t,s)}} [(E\dot{u} + F\dot{v})\dot{u}_s + (F\dot{u} + G\dot{v}) \dot{v}_s] \, dt = (*)
+\end{align*}  
+
+Na tej točki velja omeniti, da če imamo podano variacijo $\Gamma(t,s) = r(u(t,s), v(t,s))$, potem tangento podaja predpis \begin{equation*}
+\frac{ \partial  }{ \partial s } (u(t,s), v(t,s)) = (u_s(t,s), v_s(t,s)).
+\end{equation*}  
+To pomeni, da bomo morali v zgornjem izrazu dobiti $(u_s(t,s), v_s(t,s))$. Nadaljujemo s per partesom: \begin{align*}
+    (*) &= \frac{1}{2} \int_{a}^{b}  \frac{1}{\sqrt{R(t,s)}} \bigg[ (Eu \dot{u}^2 + F_u \dot{u} \dot{v} + G_u \dot{v}^2) u_s + (E_v \dot{u}^2 + 2F_v \dot{u} \dot{v} + G_v \dot{v}^2) \bigg]v_s \, dt \\
+    &- \int_{a}^{b} \frac{ \partial  }{ \partial t } \left( \frac{1}{\sqrt{R(t,s)}} (E\dot{u} + F\dot{v}) \right) u_s  + \frac{ \partial  }{ \partial t } \left( \frac{1}{\sqrt{R(t,s)}} (F\dot{u} + G\dot{v}) \right) v_s \, dt.
+\end{align*}
+Glede na začetne pogoje vemo, da mora biti $u_s(a,s) = u_s(b,s) = 0$, zato bo prvi celoten prvi del izraza enak 0.
+TODO: Tukaj nisem prepričan, da je vse prav, kot smo pisali. Bom pregledal čez vikend.
+
+\ldots
+
+Pridemo do tega, da je krivulja $\gamma(t)$ stacionarna točka funkcionala $\mathcal{L}: \mathcal{V} \to  \mathbb{R}$, če je \begin{equation*}
+\frac{ \partial  }{ \partial s } \mathcal{L}(\Gamma(t,s)) = 0,\,\,\, \forall (t,s).  
+\end{equation*}  
+To formuliramo z naslednjim izrekom, ki je ena izmed osnovnih variant osnovnega izreka o variacijskem računu.
+
+\begin{izrek}
+\label{izr_osnovni_izrek_o_variacijskem_racunu}
+Naj bosta funkciji $P, Q: [a,b] \to  \mathbb{R}$ podani s predpisi \begin{align*}
+    P(t) &= \frac{1}{2} R^{-\frac{1}{2}} (E_u \dot{u}^2 + 2F_u \dot{u} \dot{v} + G_u \dot{v}^2) - \frac{d}{dt} (R^{-\frac{1}{2}}(E\dot{u} + F\dot{v})), \\
+    Q(t) &= \frac{1}{2} R^{-\frac{1}{2}} (E_v \dot{u}^2 + 2F_v \dot{u} \dot{v} + G_v \dot{v}^2) - \frac{d}{dt} (R^{-\frac{1}{2}}(F\dot{u} + G\dot{v})).
+\end{align*}
+
+Naj bo $\Gamma(t) = (u(t,s), v(t,s)) : [a,b] \times (-\varepsilon, \varepsilon) \to \mathbb{R}^2$ variacija. Potem velja enakost \begin{equation*}
+ \int_{a}^{b}  \left( P(t) \frac{ \partial u }{ \partial s }(t, s)  + Q(t) \frac{ \partial v }{ \partial s }(t, s) \right)  \, dt = 0 
+ \end{equation*}  
+natanko tedaj, ko je $P(t) = 0$ in $Q(t) = 0$.
+\end{izrek}
+
+\noindent
+{\em Dokaz:\/}
+Dokazujemo s protislovjem. Recimo, da obstaja $t_0 \in (a,b)$, da je $P(t_0) \neq 0$. Brez škode za splošnost lahko privzamemo
+$P(t_0) = c > 0$. Ker je $P$ zvezna, obstaja $\delta > 0$, da je $P(t) > \frac{c}{2}$ za vsak $t \in (t_0 - \delta, t_0 + \delta)$. 
+Naj bo \begin{equation*}
+(u(t,s), v(t,s)) = (u(t) + s \varphi(t), v(t)),
+\end{equation*}  
+kjer je $\varphi$ testna funckija, torej velja $\varphi(t) \ge 0$ na $(t_0 - \delta, t_0 + \delta)$ ter $\varphi(t) = 0$ na $[a,b] \setminus [t_0 - \delta, t_0 + \delta]$.
+Potem veljata zvezi $\frac{ \partial u }{ \partial s }(t)= \varphi(t)$ ter $\frac{ \partial v }{ \partial s }(t) = 0$. Za to variacijo imamo
+\begin{align*}
+    \int_{a}^{b} (P(t)\frac{ \partial u }{ \partial s } (t) + Q(t)\frac{ \partial v }{ \partial s } (t)  ) \, dt &= \int_{a}^{b} P(t) \varphi(t) \, dt     \\
+     &= \int_{t_0 - \delta}^{t_0 + \delta} P(t) \varphi(t)  \, dt > \frac{c}{2}  \int_{t_0 - \delta}^{t_0 + \delta} \varphi(t) \, dt > 0.
+\end{align*} 
+S tem smo pokazali dokaz za $P$, za $Q$ sledi simetrično.
+\qed
+
+To pomeni, da morata za geodetski krivulji veljati diferencialni enačbi drugega reda \begin{align*}
+    0 &= \frac{1}{2} R^{-\frac{1}{2}} (E_u \dot{u}^2 + 2F_u \dot{u} \dot{v} + G_u \dot{v}^2) - \frac{d}{dt} (R^{-\frac{1}{2}}(E\dot{u} + F\dot{v})), \\
+    0 &= \frac{1}{2} R^{-\frac{1}{2}} (E_v \dot{u}^2 + 2F_v \dot{u} \dot{v} + G_v \dot{v}^2) - \frac{d}{dt} (R^{-\frac{1}{2}}(F\dot{u} + G\dot{v})).
+\end{align*}
+Imenujemo jih Euler-Lagrangevi enačbi za geodetke.
+
+\begin{opomba}
+Če je $\gamma(t) = r(u(t), v(t))$ naravna parametrizacija, potem je $R = 1$ in se enačbi nekoliko poenostavita:
+\begin{align*}
+    0 &= \frac{1}{2} (E_u \dot{u}^2 + 2F_u \dot{u} \dot{v} + G_u \dot{v}^2) - \frac{d}{dt} (E\dot{u} + F\dot{v}), \\
+    0 &= \frac{1}{2} (E_v \dot{u}^2 + 2F_v \dot{u} \dot{v} + G_v \dot{v}^2) - \frac{d}{dt} (F\dot{u} + G\dot{v}).
+\end{align*}
+\end{opomba}
+
+\begin{izrek}
+\label{izr_karakterizacija_geodetke_pri_naravni_parametrizaciji}
+ Naj bo $\gamma(t)$ naravno parametrizirana krivulja. Potem je $\gamma(t)$ geodetka natanko tedaj, ko je \begin{equation*}
+ \ddot{\gamma} \in (T_{\gamma(t)}X)^{\perp}.
+ \end{equation*}  
+Z drugimi besedami, odvod mora biti vedno pravokoten na tangentno ravnino.
+\end{izrek}
+\noindent
+{\em Dokaz:\/}
+Za domačo nalogo?
+\qed
