@@ -9,7 +9,7 @@ Topološki prostor $M$
 je $n$-dimenzionalna mnogoterost, če za vsak $m \in M$
 obstaja okolica $m \in U \subseteq M$ in homeomorfizem
 $\varphi : U \to V^{\text{odp}} \subseteq
-\mathbb{R}^n$ (pri tem je $V \approx B^{n}$).
+\mathbb{R}^n$, pri čemer je $V \approx B^{n}$.
 \end{definicija}
 
 
@@ -22,7 +22,7 @@ $n$-dimenzionalna mnogoterost,
 $1$-dimenzionalna mnogoterost,
   \item $S^{n} =
 \left\{\left( x_1, x_2, \ldots, x_n, x_{n+1}
-\right) \middle| \sum_{j=1}^{n+1} x_{i}^2 =
+\right) \middle| \sum_{j=1}^{n+1} x_{j}^2 =
 1\right\} \subseteq \mathbb{R}^{n+1}$ je
 $n$-dimenzionalna mnogoterost,
 	\item Projektivni
@@ -75,12 +75,11 @@ definicije odvedljivosti preslikav v evklidskih prostorih.
 Preslikava $F: W^{\text{odp}} \subseteq
 \mathbb{R}^n \to \mathbb{R}^n$ je odvedljiva v točki $w \in W$, če
 obstaja linearna preslikava $A : \mathbb{R}^n \to \mathbb{R}^n$ in
-preslikava $\mathcal{O}: W \to \mathbb{R}^n$, da za vse ustrezne
-argumente velja \begin{equation*} F\left( w + h \right) = F\left( w \right) + Ah
+preslikava $\mathcal{O}: W \to \mathbb{R}^n$, da za vse dovolj majhne $h$ velja \begin{equation*} F\left( w + h \right) = F\left( w \right) + Ah
 + \mathcal{O}\left( h \right)\end{equation*} in $\lim_{h \to 0}
 \frac{\lvert\lvert \mathcal{O}\left( h \right) \rvert\rvert
 }{\lvert\lvert h \rvert\rvert } = 0.$ Odvod preslikave $F$ v točki $w$
-je preslikava $A = D_wF = \left( DF \right)_w.$
+je preslikava $A =: D_wF = \left( DF \right)_w.$
 \end{definicija}
 
 
@@ -97,13 +96,12 @@ bijektivna odvedljiva preslikava, ki ima odvedljiv inverz.
 
 \begin{definicija}
 \label{def_atlas}
-Naj bo $M$ $n$-dimenzionalna mnogoterost. Gladek atlas $\mathcal{U}$ na $M$ je družina parov
-$\mathcal{U} = \left\{ \left( U_\alpha, \varphi_\alpha\right)
-\mid \alpha \in  A \right\},$ če za vsak $\alpha \in A$ velja:
+Naj bo $M$ $n$-dimenzionalna mnogoterost. Družina parov $$\mathcal{U} = \left\{ \left( U_\alpha, \varphi_\alpha\right)
+\mid \alpha \in  A \right\},$$ je gladek atlas na $M$, če za vsak $\alpha \in A$ velja:
 \begin{enumerate}
- \item $U_\alpha^{\text{odp}} \subseteq M$ \item
-$\varphi_\alpha: U_\alpha \to V_\alpha \subseteq \mathbb{R}^n$
-je homeomorfizem za nek $V_\alpha \subseteq \mathbb{R}^n$
+ \item $U_\alpha^{\text{odp}} \subseteq M$
+ \item $\varphi_\alpha: U_\alpha \to V_\alpha \subseteq \mathbb{R}^n$
+je homeomorfizem na množico $V_\alpha \subseteq \mathbb{R}^n$, $V_\alpha \approx B^{n}$
  \item $\left\{ U_\alpha \middle|\, \alpha\in  A \right\}$ je
 pokritje $M$ \item za vsaka $\alpha, \beta \in A$ je
 preslikava $g_{\alpha \beta}  = \varphi_\beta \circ
@@ -120,7 +118,7 @@ $\mathcal{C}^{\omega}$-atlas.
 
 \begin{opomba}
 Preslikava $g_{\alpha \beta}$  iz prejšnje definicije
-je preslikava iz $U_\alpha \subseteq \mathbb{R}^n \to
+je preslikava med evklidskima prostoroma $U_\alpha \subseteq \mathbb{R}^n \to
 \mathbb{R}^n$. Torej jo znamo odvajati in vemo, da je v izbranih
 koordinatah na $\mathbb{R}^n$ matrika odvoda enaka Jacobijevi
 matriki: \begin{equation*} F\left( x_1, \ldots, x_{n} \right) =
@@ -141,7 +139,7 @@ ki premore kakšen gladek atlas, je gladka mnogoterost.
 \end{definicija}
 
 Za motivacijo naslednje definicije se spomnimo dejstva, da vemo,
-kakšne so gladke preslikave iz $\mathbb{R}^n \to  \mathbb{R}^n$. Nismo
+kakšne so gladke preslikave iz $\mathbb{R}^n \to  \mathbb{R}$. Nismo
 pa še definirali gladkih preslikav iz mnogoterosti $M \to \mathbb{R}$. 
 
 \begin{definicija}
@@ -191,6 +189,6 @@ mnogoterost in $\mathcal{U}$ gladek atlas na $M$. Potem je $\left[
 \href{https://en.wikipedia.org/wiki/Donaldson%27s_theorem}{Donaldsonovega}
 in \href{https://mathworld.wolfram.com/FreedmanTheorem.html}{Freedmanovega}
 izreka sledi, da ima $\mathbb{R}^{4}$ neštevno neskončno
-eksotičnih gladkih struktur. Vsi ostali $\mathbb{R}^n$ imajo
-zgolj svojo trivialno in nobene eksotične.
+eksotičnih gladkih struktur, za vse ostale $n$ pa ima $\mathbb{R}^n$ 
+zgolj svojo trivialno struturo in nobene eksotične.
 \end{opomba}
