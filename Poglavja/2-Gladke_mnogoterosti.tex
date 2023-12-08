@@ -1548,12 +1548,25 @@ Tako imamo \begin{equation*}
         \frac{1}{\mu} B & \frac{1}{\mu} D
         \end{pmatrix}.
 \end{equation*}  
-Zato lahko (po izreku iz analize 3??) %TODO vprašaj
+Zato lahko (TODO: po izreku iz analize 3??)
 najdemo taki funkciji $\lambda, \mu$, da bo veljalo \begin{align*}
   \operatorname{grad} \xi (u,v) &= \frac{1}{\lambda(u,v)}(A(u,v), C(u,v)), \\
   \operatorname{grad} \eta (u,v) &= \frac{1}{\mu(u,v)}(B(u,v), D(u,v)).
 \end{align*}
 \qed
+
+TODO: Kaj sploh je premonosna ploskev?? Možna (nepreverjena) definicija je sledeča?? 
+
+\begin{definicija}
+\label{def_premnosna_ploskev}
+Naj bo $X \subseteq  \mathbb{R}^3$ ploskev, $\gamma: [a,b] \to X$ krivulja in $\tilde{a}: \mathbb{R}^3 \to \mathbb{R}^3$ vektorsko polje. 
+Vektorskemu polju $\tilde{a}$ priredimo vektorsko polje vzdož krivulje $\gamma$ s predpisom $a(u) := \tilde{a}(\gamma(u))$. 
+Ploskev $X$ je premonosna z vektorskim polje $a(u)$ vzdolž krivulje $\gamma(u)$, če za vsako krivuljo $\rho(u)$ v $X$ obstaja funkcija $f: [a,b] \to \mathbb{R}$, da velja \begin{equation*}
+\rho(u) = \gamma(u) + f(u)a(u).
+\end{equation*}
+Verjetno se seveda da ta pogoj povedati drugače, torej da opišeš točke na $X$ z nekim predpisom, vendar si ne bi upal ugibati.
+\end{definicija}
+
 
 \begin{lema}
 \label{lem_tangentno_premonosna_mesani_produkt}
@@ -1578,7 +1591,7 @@ Ker bi morala krivulja $\rho(u)$ ležati v premonosni ploskvi $X$, bi morala obs
 \rho(u) = \gamma(u) + f(u)a(u).
 \end{equation*}  
 Torej bo funkcija $\rho$ obstajala, če obstajata funkciji $f$ in $g$, da velja naslednji pogoj \begin{equation*}
-\rho' = \gamma' + f'a + f a' = (g - f') a - fa'.
+\rho' = \gamma' + f'a + f a' \implies \gamma' = (g - f') a - fa'.
 \end{equation*}  
 Iz pogoja na mešani produkt vemo, da so vektorji $\gamma', a, a'$ koplanarni. Zato lahko $\gamma'$ izrazimo kot linearno kombinacijo ostalih dveh, torej
 obstajata funkciji $\alpha, \beta$, da velja
@@ -1605,7 +1618,7 @@ Zdaj se lotimo še dokaza izreka.
 Predpostavimo, da za vsak $m \in X$ velja $\kappa(m) = 0$, kar brez škode za splošnost implicira $\kappa_2(m) = 0$. Če bi bila za vsak $m \in X$ povprečna vrednost $H(m) = 0$ je $X$ ravnina. Predpostavimo torej, da obstaja
 $k \in  X$, da je $H(k) \neq 0$.
 Po lemi \href{lem_obstoj_funkcij} vemo, da obstaja parametrizacija $r(u,v): V \to X$, za katero velja $r_u = \lambda e_1$, $r_v = \mu e_2$. 
-Za takšno parametrizacijo velja $\langle r_u, r_v \rangle = \lambda \mu \langle e_1, e_2 \rangle$, torej bo prva fundamentalna forma te parametrizacije enaka \begin{equation*}
+Za takšno parametrizacijo velja $F = \langle r_u, r_v \rangle = \lambda \mu \langle e_1, e_2 \rangle = 0$, torej bo prva fundamentalna forma te parametrizacije enaka \begin{equation*}
 I = \begin{pmatrix}
 E & 0 \\
 0 & G
@@ -1631,10 +1644,10 @@ Spomnimo se, da je normalna ukrivljenost podana s predpisom \begin{equation*}
 L & M \\
 M & N
 \end{pmatrix} \begin{pmatrix}
-  \xi \\ \eta,
-\end{pmatrix}
+  \xi \\ \eta
+\end{pmatrix},
 \end{equation*}  
-v naši parametrizaciji pa je smer, ki pripada glavni ukrivljenosti $\kappa_2$ v bazi $\left\{ r_u, r_v\right\}$ podana z $\begin{pmatrix}
+v naši parametrizaciji pa je smer, ki pripada glavni ukrivljenosti $\kappa_2$ v bazi $\left\{ r_u, r_v\right\}$, podana z $\begin{pmatrix}
     0 & \alpha
 \end{pmatrix}^{T}.$
 Velja torej \begin{equation*}
@@ -1653,7 +1666,7 @@ L & 0 \\
 0 & 0
 \end{pmatrix}.
 \end{equation*}  
-Zdaj trdimo, da je $(e_2)_v = 0$. Zato bomo vektorsko polje $(e_2)_v$ razvili po bazi $\left\{ e_1, e_2, n\right\}$. Zato bomo najprej po tej bazi
+Zdaj trdimo, da je $(e_2)_v = 0$. Zato bomo vektorsko polje $(e_2)_v$ razvili po bazi $\left\{ e_1, e_2, n\right\}$. Najprej bomo po tej bazi
 razvili vekotorja $n_u$ in $n_v$. Pri tem se zavedajmo, da je $e_1 = \frac{r_u}{\lvert\lvert r_u \rvert\rvert }$ in $e_2 = \frac{r_v}{\lvert\lvert r_v \rvert\rvert }$.
 Dobimo \begin{equation*}
 n_u = \langle n_u, e_1 \rangle e_1 + \langle n_u, e_2 \rangle e_2 + \langle n_u, n \rangle n. 
@@ -1662,25 +1675,24 @@ Iz zveze $\langle n, r_u \rangle = 0$ s parcialnim odvajanjem po $u$ dobimo \beg
   \langle n_u, r_u \rangle = - \langle n, r_{uu} \rangle  = -L.
 \end{equation*}  
 Torej velja \begin{equation*}
-\langle n_u, e_1 \rangle = \frac{1}{\lvert\lvert r_u \rvert\rvert } \langle n_u, r_u \rangle = -\frac{L}{\sqrt{E}}.   
+\langle n_u, e_1 \rangle = -\frac{1}{\lvert\lvert r_u \rvert\rvert } \langle n, r_{uu} \rangle = -\frac{L}{\sqrt{E}}.   
 \end{equation*}  
 Na enak način dobimo \begin{equation*}
-\langle n_u, e_2 \rangle = \frac{1}{\lvert\lvert r_v \rvert\rvert } \langle n, r_{uv} \rangle = \frac{M}{\sqrt{G}} = 0.
+\langle n_u, e_2 \rangle = -\frac{1}{\lvert\lvert r_v \rvert\rvert } \langle n, r_{uv} \rangle = -\frac{M}{\sqrt{G}} = 0.
 \end{equation*}  
 Iz parcialnega odvajanja zveze $\langle n, n \rangle = 1$ po $u$ pa dobimo še $\langle n_u, n \rangle = 0$. Torej velja, da je \begin{equation*}
 n_u = -\frac{L}{\sqrt{E}} e_1 \implies e_1 =-\frac{\sqrt{E} }{L} n_u.
 \end{equation*}  
 Z enakim postopkom dobimo, da je v tej bazi $n_v = 0$. Tam je namreč $\langle n_v, r_v \rangle = - N = 0.$
-
 Zdaj izrazimo še vektor $(e_2)_v$ po tej bazi. Po enakih idejah kot prej dobimo \begin{align*}
   \langle (e_2)_v, e_1 \rangle &=  -\frac{\sqrt{E} }{L} \langle (e_2)_v, n_u \rangle = \frac{\sqrt{E}}{L} \langle e_2, (n_v)_u \rangle = 0.  \\
   \langle (e_2)_v, e_2 \rangle   &= 0 \\
-  \langle (e_2)_v, n \rangle &= \langle e_2, n \rangle_v - \langle e_2, n_v \rangle = 0   
+  \langle (e_2)_v, n \rangle &= (\langle e_2, n \rangle)_v - \langle e_2, n_v \rangle = 0   
 \end{align*}
 Torej smo pokazali, da je $(e_2)_v = 0$. Zdaj dokažimo, da je $X$ tangentno premonosna ploskev s premičjem, napetim
 na vektorsko polje $e_2$. Zato si oglejmo krivulje $v \mapsto r(u_0, v)$, kjer je točka $u_0$ fiksna. V naši parametrizaciji velja,
 da je $r_v = \mu e_2$. Zato je \begin{equation*}
-r_{uv} = \mu_v e_2 + \mu \underbrace{ (e_2)_v}_0  = \mu_v e_2.
+r_{vv} = \mu_v e_2 + \mu \underbrace{ (e_2)_v}_0  = \mu_v e_2.
 \end{equation*}  
 To pomeni, da bosta v vsaki točki krivulje $v \mapsto r(u_0, v)$ vektorja hitrosti in pospeška vzporedna. Torej bo ta krivulja premica. Naj bo sedaj
 $\gamma(u) = r(u, v_0)$. Naša ploskev je premonosna, lahko jo parametriziramo s parametrizacijo \begin{equation*}

@@ -3,12 +3,12 @@
 \begin{definicija}
 \label{def_geodetska_krivulja}
 Naj bo $X$ ploskev in $m_1, m_2 \in X$. Naj bo $\Gamma$ družina krivulj $\gamma_i: [a,b] \to X$, za katere velja $\gamma_i(a) = m_1$ in $\gamma_i(b) = m_2$.
-Krivulja $\gamma \in  \Gamma$ je geodetska krivulja, če je najkrajša krivulja iz družine $\Gamma$, glede na prvo fundamentalno formo na $X$. 
+Krivulja $\gamma \in  \Gamma$ je geodetska krivulja, če je najkrajša krivulja iz družine $\Gamma$. 
 \end{definicija}
 
 \begin{definicija}
 \label{def_dolzinski_funkcional}
-Naj bo $X$ ploskev in $m_1, m_2 \in X$. Naj bo $\gamma: [a,b] \to  X$ krivulja, za katero velja $\gamma(a) = m_1$ in $\gamma(b) = m_2$. Potem presliakvo \begin{equation*}
+Naj bo $X$ ploskev in $m_1, m_2 \in X$. Naj bo $\gamma: [a,b] \to  X$ krivulja, za katero velja $\gamma(a) = m_1$ in $\gamma(b) = m_2$. Potem preslikavo \begin{equation*}
 \mathcal{L}(\gamma) = \int_{a}^{b} \sqrt{E \dot{u}^2(u(t), v(t)) + 2F(u(t), v(t)) \dot{u} \dot{v} + G(u(t), v(t)) \dot{v}^2}  \, dt 
 \end{equation*}  
 imenujemo dolžinski funkcional.
@@ -20,13 +20,13 @@ Naj bo sedaj \begin{equation*}
 \begin{opomba}
 Takšni družini krivulj rečemo tudi variacija. Od tod pride ime "variacijski račun".
 \end{opomba}
-Potem imamo funkcional $\mathcal{L}: \mathcal{V} \to  \mathbb{R}$. Ekstreme tega funkcionala bomo iskali tako, kot iščemo ekstreme
+Ekstreme funkcionala $\mathcal{L}: \mathcal{V} \to  \mathbb{R}$ bomo iskali tako, kot iščemo ekstreme
 funkcij ene ali dveh spremenljivk. Kandidati za ekstreme splošne funkcije $F: \Omega \subseteq \mathbb{R}^n \to  \mathbb{R}$ so stacionarne točke $F$, torej
 točke $x_0 \in \mathbb{R}^n$, da je $D_{x_0}F = 0$. Vemo pa, da bo $D_{x_0}F = 0$ natanko tedaj, ko za vsak dovolj majhen $\varepsilon > 0$ in za vsako krivuljo
-$\beta: [- \varepsilon, \varepsilon] \to  \Omega$, za katero je $\beta(0) = x_0$, za vsak $t \in [-\varepsilon, \varepsilon]$ velja \begin{equation*}
+$\beta: [- \varepsilon, \varepsilon] \to  \Omega$, za katero je $\beta(0) = x_0$, velja \begin{equation*}
 \frac{d}{dt}  \bigg|_{t = 0} F(\beta(t)) = (D_{x_0}F) \dot{\beta}(0) = 0. 
 \end{equation*}  
-To je direktna posledica dejstva, da je lahko vektor $\dot{\beta}(0) \in  \mathbb{R}^n$ poljuben.
+% To je direktna posledica dejstva, da je lahko vektor $\dot{\beta}(0) \in  \mathbb{R}^n$ poljuben.  TODO poglej, kaj je s to izjavo
 
 Vrnimo se k funkcionalu $\mathcal{L}$. Ne bomo opazovali odvoda $\mathcal{L}$, temveč le smerne odvode $\mathcal{L}$ po vseh poteh, ki nas zanimajo. Krivulje $\gamma_i$ v evklidskem prostoru so točke v prostoru krivulj $\mathcal{V}$. Zanima nas,
 kaj so krivulje v prostoru $\mathcal{V}$.
@@ -34,12 +34,12 @@ kaj so krivulje v prostoru $\mathcal{V}$.
 \begin{definicija}
 \label{def_krivulja_v_prostoru_krivulj}
 Krivulja v prostoru krivulj $\mathcal{V}$ je preslikava \begin{align*}
-    \Gamma  (-\varepsilon, \varepsilon): &\longrightarrow \mathcal{V} \\
+    \Gamma : (-\varepsilon, \varepsilon) &\longrightarrow \mathcal{V} \\
     s &\longmapsto \gamma_s,
 \end{align*}
-za katero za vsak $t \in  [a,b]$ velja $\Gamma(s,t) = \gamma_s(t)$. Hkrati morata biti za vsak $s \in (-\varepsilon, \varepsilon)$ izpoljnena pogoja \begin{align*}
-    \Gamma(s)(a) &= m_1 = \gamma_s(a), \\
-    \Gamma(s)(b) &= m_2 = \gamma_s(b).
+za katero za vsak $t \in  [a,b]$ velja $\Gamma(t,s) := \Gamma(s)(t) = \gamma_s(t)$. Hkrati morata biti za vsak $s \in (-\varepsilon, \varepsilon)$ izpoljnena pogoja \begin{align*}
+    \Gamma(a,s) &= m_1 = \gamma_s(a), \\
+    \Gamma(b,s) &= m_2 = \gamma_s(b).
 \end{align*}
 \end{definicija}
 
@@ -64,7 +64,6 @@ Naj bo $\Gamma : [a,b] \times  (-\varepsilon, \varepsilon) \to  X$ pot v $\mathc
     \Gamma(t,s) &= r(u(t,s), v(t,s)) \\
      u(t,s) &= u(t), \\
      v(t,s) &= v(t), \\
-     u(a,s) &= v(s), \\
      u(a,s) &= u(a), \\
      v(a,s) &= v(a), \\
      u(b,s) &= u(b), \\
@@ -87,12 +86,12 @@ To pomeni, da bomo morali v zgornjem izrazu dobiti $(u_s(t,s), v_s(t,s))$. Nadal
     &- \int_{a}^{b} \frac{ \partial  }{ \partial t } \left( \frac{1}{\sqrt{R(t,s)}} (E\dot{u} + F\dot{v}) \right) u_s  + \frac{ \partial  }{ \partial t } \left( \frac{1}{\sqrt{R(t,s)}} (F\dot{u} + G\dot{v}) \right) v_s \, dt.
 \end{align*}
 Glede na začetne pogoje vemo, da mora biti $u_s(a,s) = u_s(b,s) = 0$, zato bo prvi celoten prvi del izraza enak 0.
-TODO: Tukaj nisem prepričan, da je vse prav, kot smo pisali. Bom pregledal čez vikend.
+TODO: Tukaj nisem prepričan, da je vse prav, kot smo pisali. Bom pregledal čez počitnice.
 
 \ldots
 
-Pridemo do tega, da je krivulja $\gamma(t)$ stacionarna točka funkcionala $\mathcal{L}: \mathcal{V} \to  \mathbb{R}$, če je \begin{equation*}
-\frac{ \partial  }{ \partial s } \mathcal{L}(\Gamma(t,s)) = 0,\,\,\, \forall (t,s).  
+Pridemo do tega, da je krivulja $\gamma(t)$ stacionarna točka funkcionala $\mathcal{L}: \mathcal{V} \to  \mathbb{R}$, če je za vsak par $(t,s)$\begin{equation*}
+\frac{ \partial  }{ \partial s } \mathcal{L}(\Gamma(t,s)) = 0.  
 \end{equation*}  
 To formuliramo z naslednjim izrekom, ki je ena izmed osnovnih variant osnovnega izreka o variacijskem računu.
 
@@ -103,7 +102,7 @@ Naj bosta funkciji $P, Q: [a,b] \to  \mathbb{R}$ podani s predpisi \begin{align*
     Q(t) &= \frac{1}{2} R^{-\frac{1}{2}} (E_v \dot{u}^2 + 2F_v \dot{u} \dot{v} + G_v \dot{v}^2) - \frac{d}{dt} (R^{-\frac{1}{2}}(F\dot{u} + G\dot{v})).
 \end{align*}
 
-Naj bo $\Gamma(t) = (u(t,s), v(t,s)) : [a,b] \times (-\varepsilon, \varepsilon) \to \mathbb{R}^2$ variacija. Potem velja enakost \begin{equation*}
+Naj bo $\Gamma(t) = (u(t,s), v(t,s)) : [a,b] \times (-\varepsilon, \varepsilon) \to \mathbb{R}^2$ variacija, torej veljajo naj ustrezni pogoji na $u$ in $v$. Potem velja enakost \begin{equation*}
  \int_{a}^{b}  \left( P(t) \frac{ \partial u }{ \partial s }(t, s)  + Q(t) \frac{ \partial v }{ \partial s }(t, s) \right)  \, dt = 0 
  \end{equation*}  
 natanko tedaj, ko je $P(t) = 0$ in $Q(t) = 0$.
@@ -116,10 +115,11 @@ $P(t_0) = c > 0$. Ker je $P$ zvezna, obstaja $\delta > 0$, da je $P(t) > \frac{c
 Naj bo \begin{equation*}
 (u(t,s), v(t,s)) = (u(t) + s \varphi(t), v(t)),
 \end{equation*}  
-kjer je $\varphi$ testna funckija, torej velja $\varphi(t) \ge 0$ na $(t_0 - \delta, t_0 + \delta)$ ter $\varphi(t) = 0$ na $[a,b] \setminus [t_0 - \delta, t_0 + \delta]$.
-Potem veljata zvezi $\frac{ \partial u }{ \partial s }(t)= \varphi(t)$ ter $\frac{ \partial v }{ \partial s }(t) = 0$. Za to variacijo imamo
+kjer je $\varphi$ testna funckija, torej velja $\varphi(t) > 0$ na $(t_0 - \delta, t_0 + \delta)$ ter $\varphi(t) = 0$ na $[a,b] \setminus [t_0 - \delta, t_0 + \delta]$.
+Potem veljata zvezi $\frac{ \partial u }{ \partial s }(t)= \varphi(t)$ ter $\frac{ \partial v }{ \partial s }(t) = 0$.
+Za to variacijo imamo
 \begin{align*}
-    \int_{a}^{b} (P(t)\frac{ \partial u }{ \partial s } (t) + Q(t)\frac{ \partial v }{ \partial s } (t)  ) \, dt &= \int_{a}^{b} P(t) \varphi(t) \, dt     \\
+    \int_{a}^{b} \left(P(t)\frac{ \partial u }{ \partial s } (t) + Q(t)\frac{ \partial v }{ \partial s } (t)  \right) \, dt &= \int_{a}^{b} P(t) \varphi(t) \, dt     \\
      &= \int_{t_0 - \delta}^{t_0 + \delta} P(t) \varphi(t)  \, dt > \frac{c}{2}  \int_{t_0 - \delta}^{t_0 + \delta} \varphi(t) \, dt > 0.
 \end{align*} 
 S tem smo pokazali dokaz za $P$, za $Q$ sledi simetrično.
