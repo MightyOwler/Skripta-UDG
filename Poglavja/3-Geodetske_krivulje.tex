@@ -270,16 +270,16 @@ Intrinzična količina je količina, ki ni odvisna od vložitve ploskve v prosto
 \end{definicija}
 
 \begin{opomba}
-Druga fundamentalna forma ploskve ni intrinzična, ampak ekstrinzična lastnost ploskve.
+Druga fundamentalna forma ploskve ni intrinzična, ampak ekstrinzična količina ploskve.
 \end{opomba}
 
 \noindent
 {\em Dokaz Theorema egregium:\/}
-Poiskali bomo način, kako izraziti $\kappa$ z $E, F, G$ in njihovimi odvodi. Najprej izberimo par ortonormiranih
+Poiskali bomo način, kako izraziti $\kappa$ z $E, F, G$ in njihovimi odvodi. Naj bo $r: V \subseteq \mathbb{R}^2 \to  X \subseteq  \mathbb{R}^3$ parametrizacija ploskve $X$. Izberimo par ortonormiranih
 vektorskih polj $e_1, e_2$ na $X$: \begin{equation*}
 e_i(u,v): V \subseteq \mathbb{R}^2  \to \bigsqcup_{(u,v) \in  V} T_{r(u,v)}X.
 \end{equation*}  
-Velja zveza s Kroneckerjevo delto \begin{equation*}
+Skalarne produkte teh dve vektorjev lahko izrazimo s Kroneckerjevo delto \begin{equation*}
 \langle e_i, e_j \rangle_{I} = \delta_{ij}. 
 \end{equation*}
 Naj bo $n(u,v) \in (T_{r(u,v)}X)^{\perp}$ enotska normala v točki $r(u,v)$. V vsaki točki je $r(u,v) = m \in  X$ je trojica vektorjev $\left\{ e_1(u,v), e_2(u,v), n(u,v)\right\}$ baza prostora $\mathbb{R}^3$. 
@@ -290,47 +290,44 @@ Trdimo, da velja sistem enačb \begin{align*}
     (e_2)_v &= - \alpha_2 e_1 + \mu_2 n.
 \end{align*}
 Pri tem so $\alpha_i, \lambda_i, \mu_i: V \to \mathbb{R}$ funkcije, odvisne od $(u,v)$.
-Ker velja $\langle e_i, e_i \rangle = 1 $ sledi \begin{align*}
+Ker velja $\langle e_i, e_i \rangle = 1 $, sledi \begin{align*}
     \langle e_i, e_i \rangle_u  &=  2 \langle (e_i)_u, e_i \rangle  = 0, \\
-    \langle e_i, e_i \rangle_v  &=  2 \langle (e_i)_v, e_i \rangle  = 0. \\
+    \langle e_i, e_i \rangle_v  &=  2 \langle (e_i)_v, e_i \rangle  = 0.
 \end{align*}
 Velja pa tudi $\langle e_1, e_2 \rangle = 0$, iz česar po parcialnem odvajanju po $u$ sledi
 \begin{equation*}
     \langle (e_1)_u, e_2 \rangle + \langle e_1, (e_2)_u \rangle = 0, 
 \end{equation*}  
 oziroma \begin{equation*}
-\alpha_1 = \langle (e_1)_u, e_2 \rangle = - \langle e_1, (e_2)_u \rangle = - \alpha_1.    
+\alpha_1 := \langle (e_1)_u, e_2 \rangle = - \langle e_1, (e_2)_u \rangle.    
 \end{equation*}  
 Simetrično pokažemo s parcialnim odvajanjem po $v$ \begin{equation*}
-\alpha_2 \langle (e_1)_v, e_2 \rangle = - \langle e_1, (e_2)_v \rangle = - \alpha_2.
+\alpha_2  = \langle (e_1)_v, e_2 \rangle = - \langle e_1, (e_2)_v \rangle.
 \end{equation*}  
 
 Bistveni korak pri dokazovanju Gaussovega Theorema egregium bo naslednja lema.
 \begin{lema}
 \begin{equation*}
-\langle  (e_1)_u, (e_2)_v \rangle - \langle (e_1)_v , (e_2)_u \rangle  = \lambda_1 \mu_2 - \lambda_2 \mu_1 = (\alpha_1)_v - (\alpha_2)_u = \frac{LN - M^2}{\sqrt{EG - F^2} }.
+(\alpha_1)_v - (\alpha_2)_u = \langle  (e_1)_u, (e_2)_v \rangle - \langle (e_1)_v , (e_2)_u \rangle  = \lambda_1 \mu_2 - \lambda_2 \mu_1 =  \frac{LN - M^2}{\sqrt{EG - F^2} }.
 \end{equation*}  
 \end{lema}
 
 \noindent
 {\em Dokaz leme:\/}
-Prvo enakost smo že dokazali v zgornjem razmisleku. Po drugi strani pa iz istih enačb dobimo sklep \begin{align*}
+Sredinsko enakost smo že dokazali v zgornjem razmisleku. Po drugi strani pa iz istih enačb dobimo sklep \begin{align*}
     (\alpha_1)_v - (\alpha_2)_u &= \frac{ \partial  }{ \partial u }  \langle e_1, (e_2)_v \rangle - \frac{ \partial  }{ \partial v}  \langle e_1, (e_2)_u \rangle \\
      &= \langle  (e_1)_u, (e_2)_v \rangle + \langle  e_1, (e_2)_{uv} \rangle  - \langle  (e_1)_v, (e_2)_u \rangle - \langle  e_1, (e_2)_{uv} \rangle \\
      &= \langle  (e_1)_u, (e_2)_v \rangle - \langle  (e_1)_v, (e_2)_u \rangle.
-\end{align*}
-Zdaj se spomnimo, da smo izpeljali formulo za Gaussovo ukrivljenost \begin{equation*}
-\kappa = \frac{LN - M^2}{EG - F^2}.
-\end{equation*}  
-Spomnimo se tudi $\langle n, r_u \rangle = 0$. Ker velja $n = e_1 \times  e_2$, imamo \begin{equation*}
+\end{align*}  
+V splošnem velja $\langle n, r_u \rangle = 0$. Ker je $n = e_1 \times  e_2$, imamo po Lagrangeevi enakosti za skalarni produkt vektorskih produktov \begin{equation*}
 \langle n_u \times n_v, n \rangle = \langle n_u \times  n_v, e_1 \times e_2 \rangle = \langle n_u, e_1 \rangle \langle n_v, e_2 \rangle - \langle n_u, e_2 \rangle \langle n_v, e_1 \rangle = \lambda_1 \mu_2 - \lambda_2 \mu_1. 
 \end{equation*}  
 Pri tem zadnjo enakost dobimo prek \begin{align*}
-     \langle n, e_1 \rangle &= 0 \,\,\,(\bigg/ \frac{ \partial  }{ \partial u }) \\
-     \langle n_u, e_1 \rangle + \langle  n, (e_1)_u \rangle  &= 0 \\
+     \langle n, e_1 \rangle &= 0, \,\,\, \left(\bigg/ \frac{ \partial  }{ \partial u } \right) \\
+     \langle n_u, e_1 \rangle + \langle  n, (e_1)_u \rangle  &= 0, \\
      \langle n_u, e_1 \rangle &= - \langle n, (e_1)_u \rangle,  
 \end{align*}
-od koder iz glavnega sistema enačb res dobimo %TODO kako?
+od koder iz dokazanega sistema enačb res dobimo %TODO kako?
 \begin{equation*}
     \langle n_u, e_1 \rangle \langle n_v, e_2 \rangle - \langle n_u, e_2 \rangle \langle n_v, e_1 \rangle = \lambda_1 \mu_2 - \lambda_2 \mu_1.
 \end{equation*}  
@@ -339,19 +336,19 @@ od koder iz glavnega sistema enačb res dobimo %TODO kako?
 Privzemimo sedaj, da smo dokazali \begin{equation*}
 (\alpha_1)_v - (\alpha_2)_u = \frac{LN - M^2}{\sqrt{EG - F^2}}.  
 \end{equation*}  
- Po drugi strani pa velja \begin{equation*}
+ Po drugi strani pa smo izpeljali zvezo za Gaussovo ukrivljenost \begin{equation*}
     \kappa = \frac{LN - M^2}{EG - F^2}.
  \end{equation*}  
-Če nam torej uspe pokazati, da je izraz $(\alpha_1)_v - (\alpha_2)_u$ izrazljiv s koeficienti prve fundamentalne forme in njihovimi odvodi, bo Theorema egregium dokazan, saj lahko zapišemo \begin{equation*}
+Če nam uspe pokazati, da je izraz $(\alpha_1)_v - (\alpha_2)_u$ izrazljiv s koeficienti prve fundamentalne forme in njihovimi odvodi, bo Theorema egregium dokazan, saj lahko zapišemo \begin{equation*}
 \kappa = \frac{(\alpha_1)_v - (\alpha_2)_u}{\sqrt{EG - F^2}}.
 \end{equation*}  
 
-Oglejmo si Gramm-Schmidtov postopek, ki nadometi bazo $\left\{ r_u, r_v\right\}$ z bazo $\left\{ e_1, e_2 \right\} $. \begin{align*}
+Oglejmo si Gramm-Schmidtov postopek, ki nadomesti bazo $\left\{ r_u, r_v\right\}$ z bazo $\left\{ e_1, e_2 \right\} $. \begin{align*}
     e_1 &= a r_u   \\
     e_2 &= b r_u + c r_v.
 \end{align*}
-Pri tem je $a = \frac{1}{\sqrt{E} }$. Iz enačbe $\langle e_1, e_2 \rangle$ dobimo \begin{align*}
-    \langle b r_u + c r_v, a r_u \rangle  &= ab E + ac F  \\
+Pri tem takoj vidimo, da je $a = \frac{1}{\sqrt{E} }$. Iz enačbe $\langle e_1, e_2 \rangle$ dobimo \begin{align*}
+    \langle a r_u , b r_u + c r_v \rangle  &= ab E + ac F  \\
      &= a(bE + cF) \\
      &= a \langle (b, c)^{T}, (E, F)^{T} \rangle = 0. 
 \end{align*}
@@ -360,8 +357,8 @@ To pomeni, da je vektor $(E, F)^{T}$ vzporeden $(c, -b)^{T}$, oziroma \begin{ali
     c &= \lambda E.
 \end{align*}
 Upoštevajmo še, da mora biti $e_2$ enotski vektor. \begin{align*}
-    \langle e_2, e_2 \rangle  &= \langle (-bF)r_u + \lambda E r_v, (-\lambda F) r_u + \lambda E r_v \rangle   \\
-     &= \lambda^2 F^2 E - \lambda^2 E F^2 - \lambda^2 FEF + \lambda^2 E^2 G \\
+    \langle e_2, e_2 \rangle  &= \langle - \lambda F r_u + \lambda E r_v, -\lambda F r_u + \lambda E r_v \rangle   \\
+     &= \lambda^2 E F^2 - \lambda^2 E F^2 - \lambda^2 EF^2 + \lambda^2 E^2 G \\
      &= -\lambda^2 E F^2 + \lambda^2 E^2 G \\
      &= \lambda^2 (E^2 G - EF^2 ) = \lambda^2  E (EG - F^2) = 1.
 \end{align*}
@@ -375,17 +372,19 @@ To povzemimo: \begin{align*}
 \end{align*}
 Od tod dobimo \begin{align*}
     \alpha_1 &= \langle (e_1)_u, e_2 \rangle  \\
+     &= \langle (a r_u)_u, e_2 \rangle  \\
      &= a \langle r_{uu}, e_2 \rangle + a_u \underbrace{\langle r_u, e_2 \rangle}_0  \\
     &= ab \langle r_{uu}, r_u \rangle + ac \langle r_{uu}, r_v \rangle \\
-    &= \frac{1}{2} ab E_u + ac (F_u - \frac{1}{2} E_v). 
+    &= \frac{1}{2} ab E_u + ac \left(F_u - \frac{1}{2} E_v \right). 
 \end{align*}
 Podobno dobimo \begin{align*}
     \alpha_2 &= \langle (e_1)_v, e_2 \rangle  \\
+     &= \langle (a r_u)_v, e_2 \rangle  \\
      &= a \langle r_{uv}, e_2 \rangle + a_v \underbrace{\langle r_u, e_2 \rangle}_0  \\
     &= ab \langle r_{uv}, r_u \rangle + ac \langle r_{uv}, r_v \rangle \\
-    &= \frac{1}{2} ab E_v + ac (F_u - \frac{1}{2} G_u). 
+    &= \frac{1}{2} ab E_v + ac \left(F_u - \frac{1}{2} G_u \right). 
 \end{align*}
-Ker smo koeficiente $a, b$ in $c$ že uspeli izraziti z $E, F, G$ in njihovimi odvodi, nam je isto uspel tudi za izraz $(\alpha_1)_v - (\alpha_2)_u$.
+Ker smo koeficiente $a, b$ in $c$ že uspeli izraziti z $E, F, G$ in njihovimi odvodi, nam je isto uspelo tudi za izraz $(\alpha_1)_v - (\alpha_2)_u$.
 S tem je Gaussov Theorema egregium dokaz.
 \qed
 
@@ -415,18 +414,16 @@ Formula za Gaussovo ukrivljenost se še bolj poenostavi, če je parametrizacija 
 
 \begin{izrek}
 \label{izr_gaussova_ukrivljenost_pri_geodetski_parametrizaciji}
- Če je ploskev $X$ parametrizirana z geodetsko parametrizacijo, se Gaussova ukrivljenost izraža s formulo \begin{equation*}
+ Če je ploskev $X$ parametrizirana z geodetsko parametrizacijo, se njena Gaussova ukrivljenost izraža s formulo \begin{equation*}
  \kappa = - \frac{1}{\sqrt{G}} \left(  \frac{ \partial^{2} \sqrt{G}  }{ \partial u^{2} }  \right).
  \end{equation*}  
-   
 \end{izrek}
 
 \subsection{Ploskve s konstantno ukrivljenostjo}
 \begin{izrek}
-\label{izr_klasifikacija_ploskev_z_ukrivljenostjo_0}
- \begin{enumerate}
+\label{izr_klasifikacija_ploskev_z_ukrivljenostjo_0}\begin{enumerate}
     \item Ploskev $X$, katere ukrivljenost je identično enaka $0$, je izometrična kosu ravnine.
-    \item Ploskev $X$, katere ukrivljenost je identično enaka $\frac{1}{a^2}$ ali $-\frac{1}{a^2}$ je izometrična kosu sfere z radijem $a$ oziroma
+    \item Ploskev $X$, katere ukrivljenost je identično enaka $1 / a^2$ ali $- 1 / a^2$ je izometrična kosu sfere z radijem $a$ oziroma
     kosu traktroida (psevdosfere) s parametrom $a$.
  \end{enumerate}
 \end{izrek}
@@ -434,13 +431,13 @@ Formula za Gaussovo ukrivljenost se še bolj poenostavi, če je parametrizacija 
 \noindent
 {\em Dokaz:\/}
 \begin{enumerate}
-    \item Vpeljimo nov koeficient $g = \sqrt{G}$. Dokazali smo že, da lahko vsako ploskev lokalno parametriziramo z geodetsko parametrizacijo. V tej parametrizaciji velja \begin{equation*}
+    \item Vpeljimo novo oznako za koeficient $g := \sqrt{G}$. Ta funkcija je dobro definirana, saj mora zaradi regularnosti parametrizacije biti $G > 0$. Dokazali smo že, da lahko vsako ploskev lokalno parametriziramo z geodetsko parametrizacijo. V tej parametrizaciji velja \begin{equation*}
         \kappa = - \frac{1}{\sqrt{G}} \left( \frac{ \partial^{2} \sqrt{G}  }{ \partial u^{2} }  \right) = \frac{1}{g} \frac{ \partial^{2} g }{ \partial u^{2} } .
         \end{equation*}  
         Za ploščato ploskev torej velja \begin{equation*}
         -\frac{1}{g} \frac{ \partial^{2} g }{ \partial u^{2} } = 0 \implies \frac{ \partial^{2} g }{ \partial u^{2} } = 0. 
         \end{equation*}
-        To pomeni \begin{equation*}
+        To pomeni, da je funkcija $g = g(u,v)$ oblike \begin{equation*}
         g(u,v) = A(v) u + B(v).
         \end{equation*}  
         Poiskati moramo ustrezni funkciji $A(v)$ in $B(v)$, ki ju bomo dobili iz geometrijskih lastnosti geodetske parametrizacije. Spomnimo se, da za
@@ -458,7 +455,7 @@ Formula za Gaussovo ukrivljenost se še bolj poenostavi, če je parametrizacija 
         Torej dobimo \begin{equation*}
         0 = \frac{1}{2} G_u \implies G_u(0,v) = 0.
         \end{equation*}  
-        Začetna pogoja $G(0, v) = 1$, $G_u(0,v) = 0$ implicirata \begin{align*}
+        Začetna pogoja $G(0, v) = 1$ in $G_u(0,v) = 0$ implicirata \begin{align*}
             G(0,v)  = 1 &\implies g(0,v) = 1 \\
             G_u(0,v)  = 0 &\implies G_u = (g^2)_u = 2gg_u = 0 \implies g_u(0, v) = 0.
         \end{align*} 
@@ -487,10 +484,10 @@ g(u,v) = A(v) \cos (\frac{1}{a} u) + B(v) \sin(\frac{1}{a} u)
 \end{equation*}in zadošča začetnima pogojema \begin{equation*}
 g(0, v) = 1, \,\,\, g_u(0, v) = 0.
 \end{equation*}  
-Tako dobimo $g(0, v) = A(v) = 1$, $g_u(0,v) = \frac{1}{a} B(v) = 0 \implies B(v)  = 1 .\\$
+Tako dobimo $g(0, v) = A(v) = 1$, $g_u(0,v) = \frac{1}{a} B(v) = 0 \implies B(v)  = 0.\\$
 Torej imamo \begin{align*}
     g(u,v) &= \cos (\frac{1}{a} u),  \\
-    G(u,v) &= \cos^2 (\frac{1}{a} u),
+    G(u,v) &= \cos^2 \left(\frac{1}{a} u\right),
 \end{align*}
 prva fundamentalna forma se glasi \begin{equation*}
 I = \begin{pmatrix}
@@ -500,11 +497,10 @@ I = \begin{pmatrix}
 \end{equation*}  
 kar je natanko fundamentalna forma sfere. Torej je $X$ izometrična kosu sfere. 
 
-V primeru $\kappa = - \frac{1}{a^2}$ dobimo enačbi 
-\begin{align*}
-    \frac{g_{uu}}{g} &= \frac{1}{a^2}  \\
-    g_{uu} &= \frac{1}{a^2} g.
-\end{align*}
+V primeru $\kappa = - \frac{1}{a^2}$ dobimo enačbo 
+\begin{equation*}
+    \frac{g_{uu}}{g} &= \frac{1}{a^2} \implies  g_{uu} &= \frac{1}{a^2} g.
+\end{equation*}
 Nato na isti način kot za $\kappa = \frac{1}{a^2}$ dobimo splošno rešitev \begin{equation*}
 g(u,v) = A(v) \cosh ( \frac{1}{a}  u) + B(v) \sinh (\frac{1}{a} u),
 \end{equation*}  
@@ -516,8 +512,5 @@ G(u,v) = \begin{pmatrix}
 \end{equation*}  
 kar je natanko fundamentalna forma traktroida.
 \end{enumerate}
-
-
-
 
 \qed
