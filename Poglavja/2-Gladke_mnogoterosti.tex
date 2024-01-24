@@ -70,7 +70,7 @@ a_1 & \ldots & a_n
 \begin{pmatrix}
 \langle v_1, v_1 \rangle & \dots & \langle v_1, v_n
 \rangle \\ \vdots & \ddots & \vdots \\ \langle v_n,
-v_1 \rangle & \dots & \langle v_1,v_n \rangle
+v_1 \rangle & \dots & \langle v_n,v_n \rangle
 \end{pmatrix}
 \begin{pmatrix} b_1 \\ \vdots \\ b_n
 \end{pmatrix}. \end{equation*}
@@ -141,9 +141,7 @@ $\mathbb{R}^3$.
 {\em Dokaz:\/} Naj bo $r : V
 \subseteq  \mathbb{R}^2 \to X \subseteq \mathbb{R}^3$ neka regularna
 parametrizacija ploskve $X$ (to pomeni, da mora biti rang preslikave
-$r$ maksimalen, torej konstantno enak 2) v okolici točke  $m \in  X$. Naj
-bo $p = \left( u, v \right) \in  V \subseteq \mathbb{R}^2.$ Pišimo \begin{equation*} r\left(
-p \right) = r\left( u,v \right) = 
+$r$ maksimalen, torej konstantno enak 2) v okolici točke  $m \in  X$.  Označimo za vsak $\left( u, v \right) \in  V \subseteq \mathbb{R}^2$ \begin{equation*} r\left( u,v \right) = 
 \begin{pmatrix} x\left( u,v
 \right) \\ y\left( u,v \right) \\ z\left( u,v \right)
 \end{pmatrix} . \end{equation*}
@@ -153,10 +151,10 @@ Najprej dokažimo inkluzijo $T_mX \subseteq \operatorname{im} \left(
 D_{(u_0, v_0)}r \right)$. 
 Naj bo $\gamma: \left( -\varepsilon,
 \varepsilon \right) \to X \subseteq \mathbb{R}^2,$ $\gamma \left( 0
-\right) = m = r\left( u_0, v_0 \right)$ poljubna krivulja. Direktno
-po definiciji tangentne krivulje sledi $\dot{\gamma\left( 0 \right)}
+\right) = m$ poljubna krivulja. Direktno
+po definiciji tangentne krivulje sledi $\dot{\gamma}\left( 0 \right)
 \in T_mX$. 
-Dokazati moramo $\dot{\gamma(0)} \in \operatorname{im} \left(D_{\left( u_0, v_0 \right)} r \right)$. Naj bo
+Dokazati moramo $\dot{\gamma}(0) \in \operatorname{im} \left(D_{\left( u_0, v_0 \right)} r \right)$. Naj bo
 $\beta \left( t \right) : \left( -\varepsilon, \varepsilon \right)\to
 V$ podana z $\beta\left( t \right) = r^{-1}\left( \gamma\left( t
 \right) \right)$. Ker je praslika preslikave $\beta$ vsebovana v
@@ -171,7 +169,7 @@ $\dot{\gamma} (0) \in \operatorname{im} \left( D_{(u_0,v_0)}r
 
 Nato dokažimo še obratno inkluzijo $T_mX \supseteq
 \operatorname{im} \left( D_{(u_0, v_0)}r \right)$. Vzemimo poljuben
-vektor $\omega \in \mathbb{R}^2$ in naj bo $v = \left( D_{(u_0, v_0)r} \cdot w \right)$. Potrebujemo krivuljo $\gamma(t) : (-\varepsilon, \varepsilon) \to  X,
+vektor $w \in \mathbb{R}^2$ in naj bo $v = \left( D_{(u_0, v_0)} r \right) w$. Potrebujemo krivuljo $\gamma(t) : (-\varepsilon, \varepsilon) \to  X,
 \gamma(0) = m,$ za katero bo veljalo $\dot{\gamma} (0) = v.$
 Oglejmo si \begin{equation*} \left( D_{(u_0, v_0)}r \right)\dot{\beta} (0) =
 \frac{d}{dt} \big|_{t = 0} r(\beta(t)). \end{equation*}  Trdimo, da za $\gamma(t) =
@@ -210,6 +208,9 @@ oziroma z eno samo parametrizacijo.
 	\begin{pmatrix}
 		g_{11}(m) & g_{12}(m) \\\
 		g_{21}(m) & g_{22}(m) \\
+	\end{pmatrix} = \begin{pmatrix}
+		\langle r_u, r_u \rangle_g (m) & \langle r_u, r_v \rangle_g(m) \\\
+		\langle r_u, r_v \rangle_g(m) & \langle r_v, r_v \rangle_g(m) \\
 	\end{pmatrix},
  \end{align*}
  kjer je za vsak $m \in  X$ matrika $g(m)$ simetrična in pozitivno definitna. To lahko povemo s pogojema
@@ -283,7 +284,7 @@ Včasih tudi zlorabimo notacijo
 
 \begin{definicija}
 \label{def_prva_fundamentalna_forma}
- Metrika na $X \subseteq  \mathbb{R}^2$, ki je glede na $r: V \to  X
+ Metrika na $X \subseteq  \mathbb{R}^2$, ki je glede na parametrizacijo $r: V \to  X
 \subseteq  \mathbb{R}^3$ podana z matrično funkcijo \begin{align*}
  	g_f: V &\longrightarrow M_2(\mathbb{R}) \\
 	(u,v) &\longmapsto 
@@ -479,7 +480,7 @@ izračunamo
 \int_{0}^{\varepsilon} \sqrt{\langle r_u(u_0 + t, v_0), r_u(u_0 + t, v_0) \rangle}   \, dt =
 \int_{0}^{\varepsilon}\sqrt{  E(u_0 + t, v_0) }  \, dt. 
 \end{equation*}
-Sedaj si oglejmo $f(\gamma (t)) = \tilde{r}(\beta(t)) = \tilde{r}(u_0
+Sedaj si oglejmo $f(\gamma (t)) = \tilde{r}(\beta_1(t)) = \tilde{r}(u_0
 + t, v_0)$. Potem imamo:
 
 \begin{align*}
@@ -498,7 +499,7 @@ Po izreku o povprečni vrednosti obstajata vrednosti $\hat{t}, \hat{\hat{t}} \in
 \begin{equation*} E(u_0 + \hat{t} , v_0) \varepsilon = \tilde{E}(u_0 + \hat{\hat{t}} , v_0) \varepsilon\end{equation*}in če pošljemo $\varepsilon \to  0$,
 zaradi zveznosti funkcij dobimo 
 \begin{equation*} E(u_0, v_0) = \tilde{E}(u_0, v_0). \end{equation*}
-Še lažje ta rezultat dobimo tako, da na obeh straneh odvajamo po $\varepsilon$ in vstavimo $\varepsilon = 0$.
+Še lažje ta rezultat dobimo tako, da na obeh straneh odvajamo po $\varepsilon$ in vstavimo $t = 0$.
 
 Če zdaj vzamemo $\beta_2(t) = (u_0, v_0 + t)$, dobimo po enakem postopku kot prej 
 \begin{equation*} G(u_0, v_0) = \tilde{G}(u_0, v_0). \end{equation*}
@@ -508,7 +509,7 @@ Nato vzamemo $\beta_3(t) = (u_0 + t, v_0 + t)$ in imamo
   = \mathcal{L}_{\tilde{r}}(\tilde{\gamma}) &= \int_{0}^{\varepsilon} \sqrt{\tilde{E}(u_0 + t, v_0 + t) + 2\tilde{F}(u_0 + t, v_0 + t) + \tilde{G}(u_0 + t, v_0 + t)}   \, dt. 
 \end{align*}
 
-Če zdaj zopet odvajamo po $\varepsilon$ in vstavimo $\varepsilon = 0$, dobimo enakost integrandov v točki $(u_0, v_0)$, od koder sledi še zadnja zahteva
+Če zdaj zopet odvajamo po $\varepsilon$ in vstavimo $t = 0$, dobimo enakost integrandov v točki $(u_0, v_0)$, od koder sledi še zadnja zahteva
 \begin{equation*} F(u_0, v_0) = \tilde{F}(u_0, v_0). \end{equation*}
 \qed
 
@@ -552,7 +553,10 @@ Izkaže se, da znamo, pred izrekom pa navedimo še definicijo tangentno premonos
 \begin{definicija}
   \label{def_tangentno_premonsna_ploskev}
    Naj bo $\gamma: [a,b] \to  \mathbb{R}^3$ prostorska krivulja, parametriziarana z naravnim parametrom. Tangentna premonosna ploskev,
-   podana s krivuljo $\gamma$, je del prostora $\mathbb{R}^3$, ki ga opiše tangenta na $\gamma(t)$ na intervalu $t \in  [a,b]$.
+   podana s krivuljo $\gamma$, je del prostora $\mathbb{R}^3$, ki ga opiše tangenta na $\gamma(t)$ na intervalu $t \in  [a,b]$. Parametriziramo jo lahko s predpisom \begin{equation*}
+   r(t, u) = \gamma(t) + u\dot{\gamma}(t).
+   \end{equation*}  
+     
   \end{definicija}
 \begin{izrek}
 \label{izr_izometricnost_ploskev_ravnini}
@@ -618,15 +622,14 @@ Torej vidimo, da je matrika prve fundamentalne forme tangentno premonosne ploskv
  Enotski vektor, pravokoten na $\dot{\gamma}(u) = (\dot{x}(u), \dot{y}(u))$, je vektor $(\dot{y}(u), -\dot{x}(u))$. Ta vektor je vzporeden vektorju pospeška,
  torej bo za neko funkcijo $k : [\alpha, \beta]  \to \mathbb{R}$ veljalo 
  \begin{equation*} (\ddot{x}(u), \ddot{y}(u)) = k(u) (\dot{y}(u), -\dot{x}(u)). \end{equation*}Če obe strani enačbe normiramo, iz prejšnega sistema enačb vidimo, da mora priti natanko 
- \begin{equation*} (\ddot{x}(u), \ddot{y}(u)) = \kappa(u) (\dot{y}(u), -\dot{x}(u)).\end{equation*}To je sistem navadnih diferencialnih enačb 
+ \begin{equation*} (\ddot{x}(u), \ddot{y}(u)) = \kappa(u) (\dot{y}(u), -\dot{x}(u)).\end{equation*}Zanima nas, ali obstaja krivulja, za katero je $\kappa = \tilde{\kappa}$, torej z drugimi besedami, ali je rešljiv sistem navadnih diferencialnih enačb 
  \begin{align*}
-     \ddot{x}(u) &= \kappa(u) \dot{y}(u), \\
-     \ddot{y}(u) &= -\kappa(u) \dot{x}(u).
+     \ddot{x}(u) &= \tilde{\kappa}(u) \dot{y}(u), \\
+     \ddot{y}(u) &= -\tilde{\kappa}(u) \dot{x}(u).
  \end{align*}
-Pri analizi 3 smo (bomo čez 14 dni?!) dokazali eksistenčni izrek za obstoj rešitev tega sistema. Z drugimi besedami, obstaja
-naravno parametrizirana krivulja $\gamma(u) = (x(u), y(u))$, za katero za vsak $u \in [\alpha, \beta]$ velja $\lvert\lvert \ddot{\gamma}(u) \rvert\rvert = \kappa(u)$.
-TODO s tem dokaz seveda še ni končan. S spremebo oznake neznane funkcije je to precej očitno. Ta dokaz bo treba popraviti. Treba je dokazati, da je lahko funkcija $k(u)$ poljubna, torej
-da je lahko enaka $k(u) = \tilde{\kappa}(u)$.
+Pri analizi 3 smo dokazali eksistenčni izrek za obstoj rešitev tega sistema. Torej obstaja
+naravno parametrizirana krivulja $\gamma(u) = (x(u), y(u))$, za katero za vsak $u \in [\alpha, \beta]$ velja $\lvert\lvert \ddot{\gamma}(u) \rvert\rvert = \tilde{\kappa}(u)$.
+
 \qed
 
 \begin{opomba}
@@ -685,7 +688,7 @@ razviti bo bazi $\left\{ \tilde{r}_{\tilde{u}}, \tilde{r}_{\tilde{v}} \right\}$.
   r_u   &= \tilde{r}_{\tilde{u}} \tilde{u}_u + \tilde{r}_{\tilde{v}} \tilde{v}_u, \\ 
   r_v &= \tilde{r}_{\tilde{u}} \tilde{u}_v + \tilde{r}_{\tilde{v}} \tilde{v}_v.
 \end{align*}
-Zdaj hočemo vektor $a r_u + b r_v$ zapisati v obliki $\alpha \tilde{r}_u + \beta \tilde{r}_v$. Dobimo 
+Zdaj hočemo vektor $a r_u + b r_v$ zapisati v obliki $\alpha \tilde{r}_\tilde{u} + \beta \tilde{r}_\tilde{v}$. Dobimo 
 \begin{equation*} a r_u + b r_v  = a(\tilde{r}_{\tilde{u}} \tilde{u}_u + \tilde{r}_{\tilde{v}} \tilde{v}_u) + b (\tilde{r}_{\tilde{u}} \tilde{u}_v + \tilde{r}_{\tilde{v}} \tilde{v}_v) 
 = \underbrace{(a \tilde{u}_u + b \tilde{u}_v)}_{\alpha} \tilde{r}_{\tilde{u}} + \underbrace{(a \tilde{v}_u + b \tilde{v}_v)}_{\beta} \tilde{r}_{\tilde{v}}. \end{equation*}
 Torej za vsak par vektorjev $(a, b)^{T}$, $(\alpha, \beta)^{T}$ velja zveza 
@@ -876,7 +879,7 @@ Definirajmo normalo na krivuljo $\gamma$ kot preslikavo $n_{\gamma}: [a,b] \to  
 Potem definiramo normalno in geodetsko ukrivljenost krivulje $\gamma$ kot 
 \begin{align*}
     \kappa_n(t) &= \langle \ddot{\gamma}(t), n_{\gamma}(t) \rangle,  \\
-    \kappa_g(t) &= \langle \ddot{\gamma}(t), \dot{\gamma}(t) \times n_{\gamma}(t) \rangle.
+    \kappa_g(t) &= \langle \ddot{\gamma}(t),  n_{\gamma}(t)  \dot{\gamma}(t) \rangle.
 \end{align*}
 
 \end{definicija}
@@ -913,7 +916,7 @@ Od tod dobimo
      &= L \dot{u}^2 + 2M \dot{u} \dot{v} + F \dot{v}^2 \\
      &= \begin{pmatrix}
         \dot{u} & \dot{v} 
-      \end{pmatrix} = 
+      \end{pmatrix}
       \begin{pmatrix}
         L & M \\
         M & N
@@ -956,7 +959,7 @@ Včasih zlorabimo notacijo in pišemo \begin{equation*}
 \end{definicija}
 
 \begin{opomba}
- Če je $(\xi, \eta) = (\dot{u}, \dot{v})$ in je $\gamma$ naravno parametriziana krivulja, potem par $(\xi, \eta)$ leži
+ Če je $(\xi, \eta) = (\dot{u}, \dot{v})$ in je $\gamma$ naravno parametrizirana krivulja, potem par $(\xi, \eta)$ leži
  na enotski krožnici v ravnini $T_mX$. V $\mathbb{R}^3$ je to res običajna krožnica glede na
  evklidkski skalarni produkt, v koordinatah $(\xi, \eta)$ pa jo določa enačba 
  \begin{equation*} E \xi^2 + 2F \xi \eta + G \eta^2  = 1.\end{equation*}
@@ -1164,7 +1167,7 @@ Z naslednjim izrekom bomo utemeljili, da sta glavni ukrivljenosti res kvečjem d
  Posplošeni lastni problem ali relativni lastni problem je lastni problem oblike \begin{equation*}
    A(\vec{v}) = \lambda B(\vec{v}).
  \end{equation*}  
-  Če je $B = I$, potem dobimo običajni lastni problem \begin{equation*}
+  Če je $B = Id$, potem dobimo običajni lastni problem \begin{equation*}
     A(\vec{v}) = \lambda \vec{v}.
   \end{equation*}  
 \end{definicija}
@@ -1266,7 +1269,7 @@ E & F \\
 F & G
 \end{pmatrix} \right) = 0.
 \end{equation*}
-Po Vietovih pravilih pa vemo, da je produkt ničel enak konstantnemu koeficientu polinoma. Torej imamo \begin{equation*}
+Po Vietovih pravilih pa vemo, da je produkt ničel enak izrazu \begin{equation*}
 \kappa_1 \kappa_2 = \frac{c}{a}.
 \end{equation*}  
 Očitno velja, da je $$p(0) = c = \det \begin{pmatrix}
@@ -1282,7 +1285,7 @@ Torej bo res \begin{equation*}
 \kappa = \kappa_1 \kappa_2 = \frac{c}{a} = \frac{LN - M^2}{EG - F^2}.
 \end{equation*}
 Po drugi strani pa imamo Vietovo pravilo za vsoto ničel, torej $\kappa_1 + \kappa_2 = -\frac{b}{a}$. Če poračunamo
-$b$ po predpisu za polinom $p$, dobimo natanko zvezo iz prejšnjega izreka. 
+$b$ po predpisu za polinom $p$, dobimo natanko izraz povprečne ukrivljenosti iz prejšnjega izreka. 
 \end{opomba}
 
 \begin{izrek}
@@ -1317,7 +1320,7 @@ M & N
 \end{equation*}  
 Ker vemo, da za sebi adjungirane preslikave (ki imajo različne lastne vektorje) velja, da morajo biti ti med seboj pravokotni,
 je dovolj dokazati sebi adjungiranost preslikave $C$. Torej za vsaka vektroja $\vec{v}, \vec{w} \in  T_m X$ dokazujemo \begin{equation*}
-\langle C\vec{v}, \vec{w} \rangle = \langle \vec{v}, C^{*} \vec{w} \rangle.
+\langle C\vec{v}, \vec{w} \rangle = \langle \vec{v}, C \vec{w} \rangle.
 \end{equation*}  
 Pri tem se zavedajmo, da je za poljubna vektorja skalarni produkt določen s pomočjo prve fundamentalne forme. V bazi $\left\{ r_u, r_v\right\} $ je podan z \begin{equation*}
   \langle \vec{v}, \vec{w} \rangle = \vec{v}^{T} A \vec{w}. 
@@ -1345,8 +1348,8 @@ Naj bo $X \subseteq  \mathbb{R}^3$ ploskev. Preslikava, ki točki priredi enotsk
 \end{align*}se imenuje Gaussova preslikava.
 \end{definicija}
 
-Povprečno intenzivnost spreminjanja normale na $U$ lahko merimo s kvocientnom površin \begin{equation*}
-\frac{A(\tilde{n}(U))}{A(U)},
+Povprečno intenzivnost spreminjanja normale na $U$ lahko merimo s kvocientom površin \begin{equation*}
+\frac{A(\tilde{n}_{*}(U))}{A(U)},
 \end{equation*}  
 kjer je $A(U)$ ploščina okolice $U \subseteq X$, $A(\tilde{n}(U))$ pa je ploščina slike \begin{equation*}
 \tilde{n}: U \subseteq X \to \tilde{n}_{*}(U) \subseteq S^2. 
@@ -1407,7 +1410,7 @@ Ploskev $X$ je ploščata, če je njena Gaussova ukrivljenost $\kappa = 0$.
 
 \begin{izrek}
 \label{izr_plsokev_je_ploscata_ce_je_del_valja_ali_tangentnopremosnosne_ploskve}
-Ploskev $X$ je ploščata, če je del valja ali tangentno premonosne krivulje ploskve.
+Ploskev $X$ je ploščata, če je del stožca, valja ali tangentno premonosne ploskve.
 \end{izrek}
 
 \begin{posledica}
@@ -1555,16 +1558,13 @@ najdemo taki funkciji $\lambda, \mu$, da bo veljalo \begin{align*}
 \end{align*}
 \qed
 
-TODO: Kaj sploh je premonosna ploskev?? Možna (nepreverjena) definicija je sledeča?? 
-
 \begin{definicija}
 \label{def_premnosna_ploskev}
 Naj bo $X \subseteq  \mathbb{R}^3$ ploskev, $\gamma: [a,b] \to X$ krivulja in $\tilde{a}: \mathbb{R}^3 \to \mathbb{R}^3$ vektorsko polje. 
 Vektorskemu polju $\tilde{a}$ priredimo vektorsko polje vzdož krivulje $\gamma$ s predpisom $a(u) := \tilde{a}(\gamma(u))$. 
-Ploskev $X$ je premonosna z vektorskim polje $a(u)$ vzdolž krivulje $\gamma(u)$, če za vsako krivuljo $\rho(u)$ v $X$ obstaja funkcija $f: [a,b] \to \mathbb{R}$, da velja \begin{equation*}
-\rho(u) = \gamma(u) + f(u)a(u).
-\end{equation*}
-Verjetno se seveda da ta pogoj povedati drugače, torej da opišeš točke na $X$ z nekim predpisom, vendar si ne bi upal ugibati.
+Ploskev $X$ je premonosna ploskev, podana s krivuljo $\gamma$ in vektorskim poljem $a$ vzdolž krivulje $\gamma$, za katero obstaja parametrizacija \begin{equation*}
+\rho(u) = \gamma(u) + va(u).
+\end{equation*}Če za polje $a$ velja $a(u) = \dot{\gamma}(u)$, potem je ploskev tangetno premonosna.
 \end{definicija}
 
 
