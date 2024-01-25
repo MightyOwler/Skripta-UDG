@@ -175,6 +175,69 @@ Naj bo $X$ orientabilna sklenjena ploskev. Potem velja \begin{equation*}
 \end{equation*}  
 \end{izrek}
 
+\begin{izrek}
+\label{izr_Eulerjeva_karakteristika_je_topoloska_invarianta}
+Eulerjeva karakteristika ploskve je topološka invarianta. Natančneje, če sta ploskvi $X_1, X_2$ homeomorfni, potem 
+je $\chi(X_1) = \chi(X_2)$. 
+\end{izrek}
+
+Če sta $x_1, X_2$ sklenjeni in orientabilni, velja tudi obrat, torej iz $\chi(X_1) = \chi(X_2)$ sledi $X_1 \approx X_2$. Še več, velja \begin{equation*}
+\chi(X) = 2 - 2g(X),
+\end{equation*}  
+kjer je $g$ genus oziroma rod ploskve, torej na primer število lukenj v povezani vsoti torusov.
+
+\noindent
+{\em Dokaz globalne verzije Gauss-Bonnetovega izreka:\/}
+Naj bo $\mathcal{P}$ diagonalizacija ploskve $X$. Za vsako lice $F_i$ iz $\mathcal{P}$ napišimo lokalno Gauss-Bonnetovo formulo:
+\begin{equation*}
+\sum_{i = 1}^{n_k} \alpha_{k_i} = \pi(n_k - 2) + \int_{F_k} \kappa \, dA + \int_{\partial F_k } \varkappa_g \, ds.  
+\end{equation*}  
+Vse te formule seštejemo: \begin{equation*}
+\sum_{k = 1}^{\#F} \sum_{i = 1}^{n_k} \alpha_{k_i} = \pi \sum_{k = 1}^{\#F}  (n_k - 2) + \sum_{k = 1}^{\#F}  \int_{F_k} \kappa \, dA + \sum_{k = 1}^{\#F}  \int_{\partial F_k } \varkappa_g \, ds = 2 \pi \#E - 2\pi \# F + \int_{X} \kappa \, dA. 
+\end{equation*}  
+Vsota vseh $n_k$ je enaka dvakratniku števila robov, oziroma \begin{equation*}
+    \sum_{k = 1}^{\#F} n_k = 2 \# E \implies \sum_{k = 1}^{\#F}  (n_k - 2) = 2 \# E - 2 \# F.
+\end{equation*}  
+  Ker imajo robovi na ploskvi mero $0$, velja tudi zveza \begin{equation*}
+    \sum_{k = 1}^{\#F}  \int_{F_k} \kappa \, dA = \int_{X} \kappa \, dA.  
+  \end{equation*}  
+Izraz \begin{equation*}
+    \sum_{k = 1}^{\#F} \int_{\partial F_k} \varkappa_g \, ds = 0, 
+\end{equation*}  
+ker ima zaradi skladne orientacije večkotnikov vsak prispevek stranice pri integiranju tudi svoj nasprotno enak prispevek. 
+Velja tudi \begin{equation*}
+    \sum_{k = 1}^{\#F} \sum_{i = 1}^{n_k} \alpha_{k_i} = 2 \pi \# V.
+\end{equation*}  
+Ko povežemo vse te enačbe, dobimo \begin{equation*}
+\int_{X} \kappa \, dA = 2 \pi (\# V - \# E + \# F ) = 2 \pi \chi(X). 
+\end{equation*}  
+  
+ \qed
 
 
+
+\subsection{Vektorska polja na ploskvah} 
+
+\begin{definicija}
+\label{def_vektorsko_polje}
+Naj bo $X$ sklenjena, orientabilna ploskev. Vektorsko polje $xi$ na $X$ je gladka preslikava $\xi: X \to  \mathbb{R}^3$, da za vsak $m \in  X$ velja $\xi(m) \in  T_mX$.
+\end{definicija}
+
+\begin{definicija}
+\label{def_stacionarna_tocka_vektorskega_polja}
+Stacionarna točka oziroma ničla vektorskega polja $\xi$ je točka $m \in  X$, za katero velja $\xi(m) = 0$. Ničla je izolirana, če obstaja okolica $m \in  U \subseteq X$, da je $\xi(p) \neq 0$ za vsak $p \in  U \setminus \left\{ m\right\} $.
+\end{definicija}
+
+\begin{definicija}
+\label{def_veckratnost_izolirane_nicle}
+Večkratnost izolirane ničle $p \in  X$ polja $\xi$ je podana s predpisom \begin{equation*}
+m_p = m(p) = \frac{1}{2\pi} \int_{\gamma} \dot{\psi}(s) \, ds. 
+\end{equation*}  
+Pri tem je $\gamma$ dovolj majhna krivulja v $X$, ki obkroži točko $p$ in je rob nekega diska v $X$. Kot $\psi(s)$ je kot med
+$\dot{\gamma}(s)$ in vektorjem $\eta(\gamma(s))$, kjer je $\eta$ neko neničelno vektorsko polje na disku $U \subseteq X$.  
+\end{definicija}
+
+
+
+Pokažimo, da je definicija večkratnosti dobra. 
 
