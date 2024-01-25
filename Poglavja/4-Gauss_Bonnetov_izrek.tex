@@ -1,0 +1,180 @@
+\section{Gauss-Bonnetov izrek}
+
+Gauss-Bonnetov izrek ima dve verziji: lokalno in globalno. Prvi izrek obravnava (odsekoma) gladke sklenjene krivulje, drugi pa poveže Gaussovo ukrivljenost z Eulerjevo karakteristiko ploskve.
+
+\begin{izrek}
+\label{izr_lokalna_verzija_GB_izreka}
+ Naj bo $X$ gladka ploskev in naj bo $\gamma$ enostavno sklenjena krivulja na $X$, ki omejuje območje $R \subseteq  X$, difeomorfno disku, z robom $\partial R = \gamma$. 
+ Tedaj velja \begin{equation*}
+ \int_{\gamma} \varkappa_g \, ds = 2 \pi - \int_{R} \kappa \, dA.
+ \end{equation*}  
+Pri tem je $\varkappa_g(\gamma(s))$ geodetska ukrivljenost krivlje $\gamma$, $ds$ pa ločni element na $\gamma$ glede na naravno parametrizacijo. 
+\end{izrek}
+
+Pred dokazom si poglejmo dva primera:
+\begin{primer}
+Recimo, da je $X$ ravnina. Zanjo velja $\kappa = 0$, torej se Gauss-Bonnetova formula glasi \begin{equation*}
+    \int_{\gamma} \varkappa_g \, ds = 2 \pi = \int_{\gamma} \kappa \, ds.
+\end{equation*}  
+To je smiselno zaradi naslednjega razmisleka. Naj bo $\psi(s)$ kot med $\dot{\gamma}(s)$ in abscisno osjo. "Očitno" velja \begin{equation*}
+\int_{\gamma} \frac{ d \psi }{ ds }   \, ds = \int_{\gamma}  \dot{\psi}(s) \, ds = \psi(l(s)) - \psi(0) = 2 \pi. 
+\end{equation*}
+Pokazati moramo, da je $\dot{\psi} = \lvert\lvert \ddot{\gamma} \rvert\rvert = \varkappa$. Najprej imamo po definiciji kota $\psi$ zvezo \begin{equation*}
+    \dot{\gamma}(s) = (\cos(\psi(s)), \sin(\psi(s))).
+\end{equation*} 
+Sledi \begin{equation*}
+\ddot{\gamma}(s) = (- \dot{\psi} \sin(\psi(s)), \dot{\psi} \cos(\psi(s))) \implies \lvert\lvert \ddot{\gamma} \rvert\rvert = \dot{\psi}.
+\end{equation*}  
+Torej res dobimo \begin{equation*}
+    \int_{\gamma} \varkappa \, ds = 2 \pi.
+\end{equation*}  
+
+\begin{opomba}
+Da lahko krivulja brez samopresečišč obroži točko največ enkrat, je dokazal Hopf v svojem \href{https://de.wikipedia.org/wiki/Umlaufsatz}{umlaufsatzu}.  
+\end{opomba}
+\end{primer}
+
+\begin{primer}
+    Naj bo $X$ sfera s polmerom $r$ in $R \subseteq  X$ zgornja polsfera. Potem je $\gamma = \partial R$ ekvator in zato geodetska krivulja. Velja torej $\varkappa_g = 0$ ter $\kappa = \frac{1}{r^2}$. Dobimo \begin{equation*}
+    0 = \int_{\gamma} \varkappa_g  \, ds = 2 \pi - \int_{R} \kappa  \, dA \implies \int_{R}  \, dA =  2 \pi r^2.
+    \end{equation*}  
+    Torej ima zgornja polsfera površino $2 \pi r^2$, kar se seveda ujema z našim znanjem o površini sfere.
+\end{primer}
+
+\noindent
+{\em Dokaz lokalnega Gauss-Bonnetovega izreka:\/}
+Ključ do izreka bo Greenova formula. Naj bo $\beta$ sklenjena krivulja, ki omejuje območje $S$. Tedaj za poljubni gladki funkciji $P, Q$ na $S$ velja \begin{equation*}
+\int_{\beta} P \, du  + Q \, dv = \int_{S} Q_u - P_v \, du dv.
+\end{equation*}  
+Naj bo $r: V \to  X$ parametrizacija naše paramploskve in naj bo krivulja $\gamma(s) = r(\beta(s))$ naravno parametrizirana. Oglejmo si količino \begin{equation*}
+I = \int_{\beta} \langle e_1, \dot{e}_2 \rangle   \, ds = \int_{0}^{l(s)}  \langle e_1, \dot{e}_2 \rangle   \, ds .
+\end{equation*}  
+Pri tem sta  $e_1$ in $e_2$ gladki, ortonormirani vektorski polji na $R$. Zapišimo najprej $e_2(s) = e_2(u(s), v(s))$. Potem imamo \begin{equation*}
+\dot{e}_2 = (e_2)_u \dot{u} + (e_2)_v \dot{v}.
+\end{equation*}  
+Tako dobimo \begin{equation*}
+\langle e_1, \dot{e}_2 \rangle ds  = \underbrace{\langle e_1, (e_2)_u \rangle}_P  \, du +  \underbrace{\langle e_1, (e_2)_v \rangle}_Q  \, dv.
+\end{equation*}  
+Zdaj uporabimo Greenovo formulo, da dobimo \begin{align*}
+    I &= \int_{S} \langle e_1, (e_2)_v \rangle_u - \langle e_1, (e_2)_u \rangle_v   \, dS  \\
+     &= \int_{S} \langle (e_1)_u, (e_2)_v \rangle + \langle e_1, (e_2)_{uv} \rangle - \langle (e_1)_v, (e_2)_u \rangle   - \langle e_1, (e_2)_{uv} \rangle \, dS \\
+     &=  \int_{S} \langle (e_1)_u, (e_2)_v \rangle - \langle (e_1)_v, (e_2)_u \rangle  \, dS \\
+     &= \int_{S} \frac{LN - M^2}{\sqrt{EG - F^2} }  \, dS. \,\,\,(\text{iz dokaza Theorema egregium})
+\end{align*}
+Imamo \begin{equation*}
+I = \int_{S} \frac{LN - M^2}{\sqrt{EG - F^2} }  \, du dv =  \int_{S} \frac{LN - M^2}{EG - F^2} \sqrt{EG - F^2}  \, du dv = \int_{R} \frac{LN - M^2}{EG - F^2} \, dA = \int_{R} \kappa \, dA.
+\end{equation*}  
+
+Oglejmo si $I$ še na drugačen način. Naj bo $\theta(s)$ kot med $\gamma(s)$ in $e_1(s)$. Ker je za vsak $s$ $\left\{ e_1(\gamma(s)), e_2(\gamma(s))\right\}$ ortonormirana baza v tangentnem prostoru
+$T_{\gamma(s)}X$, lahko naišemo \begin{equation*}
+\dot{\gamma}(s) = \cos(\theta(s))e_1(\gamma(s)) + \sin(\theta(s))e_2(\gamma(s)).
+\end{equation*}  
+Označimo $\eta = n \times \dot{\gamma} = - \sin(\theta(s)) e_1(\gamma(s)) + \cos(\theta(s)) e_2(\gamma(s))$, ki je enotski vektor v  $T_{\gamma(s)}X$.
+Imamo še \begin{equation*}
+\ddot{\gamma} = -\dot{\theta} \sin(\theta) e_1 + \theta \cos(\theta) e_2 +  \cos(\theta)\dot{e}_1 + \sin(\theta)\dot{e}_2 = \dot{\theta} \eta + \cos(\theta) \dot{e}_1 + \sin(\theta) \dot{e}_2.  
+\end{equation*}  
+Zdaj lahko izračunamo geodetsko ukrivljenost krivulje $\gamma$: \begin{align*}
+    \varkappa_g &= \langle \ddot{\gamma}, \eta \rangle  \\
+     &= \langle \dot{\theta} \eta + \cos(\theta) \dot{e}_1 + \sin(\theta) \dot{e}_2, \eta  \rangle \\
+     &= \dot{\theta} + \langle \cos(\theta) \dot{e}_1 + \sin(\theta)\dot{e}_2, - \sin(\theta) \dot{e}_1 + \cos(\theta) \dot{e}_2 \rangle \\
+     &= \dot{\theta} - (\cos^2(\theta) + \sin^2(\theta) ) \langle e_1, \dot{e}_2  \rangle \\
+     &= \dot{\theta} - \langle e_1, \dot{e}_2  \rangle.  
+\end{align*}
+Pri prehodu na predzadnjo enakost smo uporabili dejstvi, da $\langle e_i, \dot{e}_i \rangle = 0$ ter $\langle e_1, \dot{e}_2 \rangle = - \langle e_2, \dot{e}_1 \rangle$.
+Ugotovili smo, da je \begin{equation*}
+\int_{\gamma} \varkappa_g  \, ds = \int_{\beta} \dot{\theta}  \, ds - \int_{\beta} \langle e_1, \dot{e}_2 \rangle   \, ds.  
+\end{equation*}  
+Od tod dobimo \begin{equation*}
+    \int_{\gamma} \varkappa_g  \, ds  = 2 \pi  - \int_{R}  K \, dA.  
+\end{equation*}  
+\qed
+  
+Zdaj dokažimo še nekoliko splošnejšo verzijo izreka, ki velja za odsekoma gladke kriuvlje.
+
+\begin{izrek}
+\label{izr_odsekoma_gladke_krivulje_GB}
+Naj bo $\gamma$ naravno parametrizirana odsekoma gladka krivulja, ki omejuje $n$-kotnik $R$ z notranjimi koti $\alpha_1, \alpha_2, \ldots, \alpha_n$. Potem velja \begin{equation*}
+\sum_{i=1}^{n} \alpha_i = \pi(n-2) + \int_{\gamma} \varkappa_g  \, ds + \int_{R} K \, dA.  
+\end{equation*}  
+\end{izrek}
+
+\noindent
+{\em Dokaz:\/}
+Naj bodo $\delta_i$ zunanji koti mnogokotnika, ki pripadajo kotom $\alpha_i$, torej velja $\delta_i = \pi - \alpha_i$. Opazimo, da bo vrednost izraza \begin{equation*}
+    \int_{\gamma} \dot{\theta}  \, ds = 2 \pi - \sum_{i = 1}^{n} \delta_i.
+\end{equation*}  
+Torej bo \begin{align*}
+    I = \int_{R} \kappa  \, dA &= 2 \pi  - \sum_{i = 1}^{n} \delta_i - \int_{\gamma} \varkappa_g  \, ds   \\
+     &= 2 \pi- \sum_{i =1}^{n} (\pi - \alpha_i) - \int_{\gamma} \varkappa_g \, ds \\
+    &= (2 - n)\pi + \sum_{i = 1}^{n} \alpha_i - \int_{\gamma} \varkappa_g \, ds \\
+    &\implies \sum_{i = 1}^{n} \alpha_i = (n - 2)\pi + \int_{\gamma} \varkappa_g \, ds.
+\end{align*}  
+\qed
+\begin{posledica}
+    \label{psl_posledica_globalnega_GB_izreka}
+    Če je $R$ mnogokotnik, omejen z  geodetkami, velja \begin{equation*}
+        \sum_{i=1}^{n} \alpha_i = \pi(n-2)  + \int_{R} K \, dA. 
+    \end{equation*}  
+      
+    \end{posledica}
+
+S pomočjo izreka za odsekoma gladke krivulje lahko dokažemo globalno verzijo Gauss-Bonnetovega izreka, ki poveže Gaussovo ukrivljenost z Eulerjevo karakteristiko ploskve. Najprej uvedimo nekaj definicij\ldots
+
+\begin{definicija}
+\label{def_sklenjena_mnogoterost}
+Mnogoterost $X$ je sklenjena mnogoterost, če je kompaktna in brez robu.
+\end{definicija}
+
+\begin{opomba}
+V resnici smo na začetku leta definirali samo mnogoterosti brez robu, torej takšne, za katere lahko za vsako točko najdemo neko okolico, homeomorfno odprti krogli.
+\end{opomba}
+
+\begin{primer}
+Sfera, torus, povezane vsote torusov so sklenjene mnogoterosti. Plašč valja ni sklenjena mnogoterost, ker ima dva roba. 
+\end{primer}
+
+\begin{definicija}
+\label{def_poligonalizacija_ploskve}
+Poligonalizacija ploskve $X$ je družina krivočrtnih mnogokotnikov $\left\{ F_i\right\}_1^{n}$ na $X$, za katere velja \begin{enumerate}
+    \item  $F_i^{\text{zap}} \subseteq  X$, 
+    \item $\bigcup_{i = 1}^{n} F_i = X$,
+    \item za vsaka $i \neq j$ je presek $F_i \cap  F_j$ bodisi prazen, bodisi unija (ene ali več) stranic. 
+\end{enumerate}
+Družina $\left\{ F_i\right\}_1^{n}$ na $X$ se imenuje množica lic. Poleg tega definiramo še množico vseh robov $\left\{ E_i\right\}$ ter množico vseh vozlišč $\left\{ V_i\right\}$ na $X$.
+\end{definicija}
+
+\begin{definicija}
+\label{def_Eulerjeva_karakteristika}
+Eulerjeva karakteristika poligonalizacije $\mathcal{P} = \left\{ F, E, V\right\}$ je podana s formulo \begin{equation*}
+\chi(\mathcal{P}) =  \#V -  \#E + \#F.
+\end{equation*}  
+\end{definicija}
+
+Brez dokaza bomo privzeli naslednji izrek, ki poskrbi za doboro definiranost Eulerjeve karakterisitike ploskve.
+\begin{izrek}
+\label{izr_dobra_definiranost_Eulerjeve_karkteristike}
+ Naj bosta $\mathcal{P}_1, \mathcal{P}_2$ dve poligonalizaciji ploskve $X$. Potem velja \begin{equation*}
+ \chi(\mathcal{P}_1) = \chi(\mathcal{P}_2).
+\end{equation*}  
+\end{izrek}
+
+\begin{definicija}
+\label{def_Eulerjeva_karkteristika}
+Naj bo $\mathcal{P}$ poljubna poligonalizacija ploskve $X$. Eulerjeva karkteristika ploskve $X$ je podana s predpisom \begin{equation*}
+\chi(X) = \chi(\mathcal{P}).
+\end{equation*}  
+   
+\end{definicija}
+
+Nazadnje povejmo globalno verzijo Gauss-Bonnetovega izreka.
+
+\begin{izrek}
+\label{izr_globalni_GB}
+Naj bo $X$ orientabilna sklenjena ploskev. Potem velja \begin{equation*}
+2 \pi \chi(X) = \int_{X} \kappa \, dA.
+\end{equation*}  
+\end{izrek}
+
+
+
+

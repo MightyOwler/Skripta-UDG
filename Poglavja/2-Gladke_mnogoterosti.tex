@@ -1570,8 +1570,7 @@ Ploskev $X$ je premonosna ploskev, podana s krivuljo $\gamma$ in vektorskim polj
 
 \begin{lema}
 \label{lem_tangentno_premonosna_mesani_produkt}
-Naj bo $X$ premonosna %TODO vprašaj ali smo to sploh definirali
-ploskev, podana s krivuljo $\gamma(u)$ in vektorskim poljem $a(u)$ vzdolž krivulje $\gamma(u)$. Ploskev $X$ je
+Naj bo $X$ premonosna ploskev, podana s krivuljo $\gamma(u)$ in vektorskim poljem $a(u)$ vzdolž krivulje $\gamma(u)$. Ploskev $X$ je
 tangetno premonosna natanko tedaj, ko velja pogoj na mešani produkt \begin{equation*}
 \left[ \gamma'(u), a(u), a'(u) \right] = 0.
 \end{equation*}  
@@ -1580,17 +1579,16 @@ tangetno premonosna natanko tedaj, ko velja pogoj na mešani produkt \begin{equa
 
 \noindent
 {\em Dokaz:\/}
-Dokazati je treba samo implikacijo v desno smer. Naj bo $X$ tangentno premonosna ploskev z naravno parametrizacijo \begin{equation*}
-r(u,v) = \gamma(u) + v a(u).
-\end{equation*}  
-Dokazati moramo, da obstaja funkcija $\rho$ v $X$, za katero velja \begin{equation*}
-\rho'(u) = g(u) a(u).
-\end{equation*}  
-Ker bi morala krivulja $\rho(u)$ ležati v premonosni ploskvi $X$, bi morala obstajati neka funkcija $f$, za katero bi veljalo
+Dokazati bo treba samo implikacijo v levo smer. Naj bo $X$ premonosna ploskev s parametrizacijo \begin{equation*}
+r(u,v) = \gamma(u) + v a(u)
+\end{equation*} in naj velja zgornji pogoj na mešani produkt.
+Ploskev $X$ bo tangetno premonosna, če nam uspe poiskati takšno krivuljo $\rho(u)$ ter funkciji $f$ in $g$, da velja 
 \begin{equation*}
-\rho(u) = \gamma(u) + f(u)a(u).
-\end{equation*}  
-Torej bo funkcija $\rho$ obstajala, če obstajata funkciji $f$ in $g$, da velja naslednji pogoj \begin{equation*}
+  \rho(u) = \gamma(u) + f(u)a(u),
+  \end{equation*}hkrati pa je izpoljnjen še pogoj na vzporednost odvoda krivulje $\rho(u)$ s poljem $a(u)$ \begin{equation*}
+    \rho'(u) = g(u) a(u).
+    \end{equation*} 
+Z odvajanjem $\rho$ dobimo enačbo, ki ji morata zadoščati $f$ in $g$ \begin{equation*}
 \rho' = \gamma' + f'a + f a' \implies \gamma' = (g - f') a - fa'.
 \end{equation*}  
 Iz pogoja na mešani produkt vemo, da so vektorji $\gamma', a, a'$ koplanarni. Zato lahko $\gamma'$ izrazimo kot linearno kombinacijo ostalih dveh, torej
@@ -1598,7 +1596,7 @@ obstajata funkciji $\alpha, \beta$, da velja
 \begin{equation*}
 \gamma' = \alpha a + \beta a'.
 \end{equation*}  
-Rešitev zgornjih dveh sistemov enačb sta funkciji \begin{align*}
+Rešitev zgornjega sistema enačb sta funkciji \begin{align*}
     f &= -\beta, \\
     g &= \alpha + \beta', 
 \end{align*}
@@ -1606,8 +1604,8 @@ kar pomeni, da funkcija $\rho$ obstaja, torej je $X$ res tangentno premonosna pl
 \qed
 
 \begin{opomba}
-V zgornjem dokazu bi lahko namesto \begin{equation*} r(u,v) = \gamma(u) + v \alpha(u) \end{equation*} pisali 
-\begin{equation*} r(u,v) = \gamma(u) + \lambda(v) \alpha(u) \end{equation*} za neko monotono funkcijo $\lambda$.
+V dokazu bi lahko namesto \begin{equation*} r(u,v) = \gamma(u) + v a(u) \end{equation*} pisali 
+\begin{equation*} r(u,v) = \gamma(u) + \lambda(v) a(u) \end{equation*} za neko monotono funkcijo $\lambda$.
 Monotonost bi privzeli zato, da bi dobili smiselno parametrizacijo.
 \end{opomba}
 
@@ -1615,7 +1613,7 @@ Zdaj se lotimo še dokaza izreka.
 
 \noindent
 {\em Dokaz izreka \href{izr_plsokev_je_ploscata_ce_je_del_valja_ali_tangentnopremosnosne_ploskve}:\/}
-Predpostavimo, da za vsak $m \in X$ velja $\kappa(m) = 0$, kar brez škode za splošnost implicira $\kappa_2(m) = 0$. Če bi bila za vsak $m \in X$ povprečna vrednost $H(m) = 0$ je $X$ ravnina. Predpostavimo torej, da obstaja
+Predpostavimo, da za vsak $m \in X$ velja $\kappa(m) = 0$, kar brez škode za splošnost implicira $\kappa_2(m) = 0$. Če bi bila za vsak $m \in X$ povprečna vrednost $H(m) = \frac{1}{2}(\kappa_1(m) \kappa_2(m))= 0$ je $X$ ravnina. Predpostavimo torej, da obstaja
 $k \in  X$, da je $H(k) \neq 0$.
 Po lemi \href{lem_obstoj_funkcij} vemo, da obstaja parametrizacija $r(u,v): V \to X$, za katero velja $r_u = \lambda e_1$, $r_v = \mu e_2$. 
 Za takšno parametrizacijo velja $F = \langle r_u, r_v \rangle = \lambda \mu \langle e_1, e_2 \rangle = 0$, torej bo prva fundamentalna forma te parametrizacije enaka \begin{equation*}
