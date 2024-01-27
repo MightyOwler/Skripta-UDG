@@ -279,17 +279,19 @@ Poiskali bomo način, kako izraziti $\kappa$ z $E, F, G$ in njihovimi odvodi. Na
 vektorskih polj $e_1, e_2$ na $X$: \begin{equation*}
 e_i(u,v): V \subseteq \mathbb{R}^2  \to \bigsqcup_{(u,v) \in  V} T_{r(u,v)}X.
 \end{equation*}  
-Skalarne produkte teh dve vektorjev lahko izrazimo s Kroneckerjevo delto \begin{equation*}
+Skalarne produkte (glede na prvo fundamentalno formo) teh dveh vektorjev lahko izrazimo s Kroneckerjevo delto: \begin{equation*}
 \langle e_i, e_j \rangle_{I} = \delta_{ij}. 
 \end{equation*}
-Naj bo $n(u,v) \in (T_{r(u,v)}X)^{\perp}$ enotska normala v točki $r(u,v)$. V vsaki točki je $r(u,v) = m \in  X$ je trojica vektorjev $\left\{ e_1(u,v), e_2(u,v), n(u,v)\right\}$ baza prostora $\mathbb{R}^3$. 
+Naj bo $n(u,v) \in (T_{r(u,v)}X)^{\perp}$ enotska normala v točki $r(u,v)$ podana s predpisom $n(u,v) = e_1(u,v) \times  e_2(u,v)$. V vsaki točki je $r(u,v) = m \in  X$ je trojica vektorjev $\left\{ e_1(u,v), e_2(u,v), n(u,v)\right\}$ ortonormirana baza prostora $\mathbb{R}^3$. 
 Trdimo, da velja sistem enačb \begin{align*}
     (e_1)_u &= \alpha_1 e_2 + \lambda_1 n, \\
     (e_1)_v &= \alpha_2 e_2 + \lambda_2 n, \\
     (e_2)_u &= - \alpha_1 e_1 + \mu_1 n, \\
     (e_2)_v &= - \alpha_2 e_1 + \mu_2 n.
 \end{align*}
-Pri tem so $\alpha_i, \lambda_i, \mu_i: V \to \mathbb{R}$ funkcije, odvisne od $(u,v)$.
+Pri tem so $\alpha_i, \lambda_i, \mu_i: V \to \mathbb{R}$ funkcije, odvisne od $(u,v)$. Vektor $(e_1)_u$ (in na enak način ostale) razvijemo po bazi: \begin{equation*}
+(e_1)_u = \langle (e_1)_u, e_1 \rangle e_1 + \langle  (e_1)_u, e_2 \rangle e_2 + \langle (e_1)_u, n \rangle n. 
+\end{equation*}
 Ker velja $\langle e_i, e_i \rangle = 1 $, sledi \begin{align*}
     \langle e_i, e_i \rangle_u  &=  2 \langle (e_i)_u, e_i \rangle  = 0, \\
     \langle e_i, e_i \rangle_v  &=  2 \langle (e_i)_v, e_i \rangle  = 0.
@@ -322,15 +324,13 @@ Sredinsko enakost smo že dokazali v zgornjem razmisleku. Po drugi strani pa iz 
 V splošnem velja $\langle n, r_u \rangle = 0$. Ker je $n = e_1 \times  e_2$, imamo po Lagrangeevi enakosti za skalarni produkt vektorskih produktov \begin{equation*}
 \langle n_u \times n_v, n \rangle = \langle n_u \times  n_v, e_1 \times e_2 \rangle = \langle n_u, e_1 \rangle \langle n_v, e_2 \rangle - \langle n_u, e_2 \rangle \langle n_v, e_1 \rangle = \lambda_1 \mu_2 - \lambda_2 \mu_1. 
 \end{equation*}  
-Pri tem zadnjo enakost dobimo prek \begin{align*}
+Člene iz zadnje enakosti dobimo s pomočjo sklepa \begin{align*}
      \langle n, e_1 \rangle &= 0, \,\,\, \left(\bigg/ \frac{ \partial  }{ \partial u } \right) \\
      \langle n_u, e_1 \rangle + \langle  n, (e_1)_u \rangle  &= 0, \\
-     \langle n_u, e_1 \rangle &= - \langle n, (e_1)_u \rangle,  
+     \langle n_u, e_1 \rangle &= - \langle n, (e_1)_u \rangle = - \lambda_1, \\
+     (\text{podobno dobimo recimo}) \,\,\, \langle n_v, e_2 \rangle &= - \langle n, (e_2)_v \rangle = -\mu_2,   
 \end{align*}
-od koder iz dokazanega sistema enačb res dobimo %TODO kako?
-\begin{equation*}
-    \langle n_u, e_1 \rangle \langle n_v, e_2 \rangle - \langle n_u, e_2 \rangle \langle n_v, e_1 \rangle = \lambda_1 \mu_2 - \lambda_2 \mu_1.
-\end{equation*}  
+in upoštevanja definicij koeficientov pri razvoju vektorjev $(e_1)_u, (e_1)_v, (e_2)_u$ in $(e_2)_v$ po bazi.
 \qed
 
 Privzemimo sedaj, da smo dokazali \begin{equation*}
@@ -382,20 +382,17 @@ Podobno dobimo \begin{align*}
      &= \langle (a r_u)_v, e_2 \rangle  \\
      &= a \langle r_{uv}, e_2 \rangle + a_v \underbrace{\langle r_u, e_2 \rangle}_0  \\
     &= ab \langle r_{uv}, r_u \rangle + ac \langle r_{uv}, r_v \rangle \\
-    &= \frac{1}{2} ab E_v + ac \left(F_u - \frac{1}{2} G_u \right). 
+    &= \frac{1}{2} ab E_v + \frac{1}{2}ac G_u. 
 \end{align*}
 Ker smo koeficiente $a, b$ in $c$ že uspeli izraziti z $E, F, G$ in njihovimi odvodi, nam je isto uspelo tudi za izraz $(\alpha_1)_v - (\alpha_2)_u$.
 S tem je Gaussov Theorema egregium dokaz.
 \qed
 
 \begin{opomba}
-Splošen izraz za $\kappa$ je kar zakompliciran. Čim pa predpostavimo, da imamo parametrizacijo $F  =0$, velja \begin{align*}
-    a &= \frac{1}{\sqrt{E} },\\
-    b &= 0, \\
-    c &= \frac{1}{\sqrt{G}},
+Splošen izraz za $\kappa$ je kar zakompliciran. Čim pa predpostavimo, da imamo parametrizacijo $F =0$, velja \begin{align*}
+    a = \frac{1}{\sqrt{E} }, \,\,\,  b = 0, \,\,\,   c = \frac{1}{\sqrt{G}},
 \end{align*}oziroma \begin{align*}
-    \alpha_1 &= -\frac{1}{2} \frac{E_v}{\sqrt{EG} } \\
-    \alpha_2 &= \frac{1}{2} \frac{G_u}{\sqrt{EG} }.
+    \alpha_1 = -\frac{1}{2} \frac{E_v}{\sqrt{EG} }, \,\,\, \alpha_2 = \frac{1}{2} \frac{G_u}{\sqrt{EG} }.
 \end{align*}
 Od tod dobimo \begin{equation*}
 \kappa  = \frac{(\alpha_1)_v - (\alpha_2)_u}{\sqrt{EG}}.
@@ -406,7 +403,7 @@ To povzamemo v izreku.
 \begin{izrek}
 \label{izr_gaussova_ukrivljenost_v_primeru_F_enako_0}
 Če je $F = 0$, je Gaussova ukrivljenost podana s formulo \begin{equation*}
-\kappa = - \frac{1}{\sqrt{EG}} \left(\frac{ \partial  }{ \partial u }  \left(  \frac{G_u}{\sqrt{EG} } + \frac{ \partial  }{ \partial v } \left( \frac{E_v}{\sqrt{EG} } \right)  \right)   \right).
+\kappa = - \frac{1}{2\sqrt{EG}} \left(\left(  \frac{G_u}{\sqrt{EG} } \right)_u + \left( \frac{E_v}{\sqrt{EG} } \right)_v \right).
 \end{equation*}  
 \end{izrek}
 
@@ -415,7 +412,7 @@ Formula za Gaussovo ukrivljenost se še bolj poenostavi, če je parametrizacija 
 \begin{izrek}
 \label{izr_gaussova_ukrivljenost_pri_geodetski_parametrizaciji}
  Če je ploskev $X$ parametrizirana z geodetsko parametrizacijo, se njena Gaussova ukrivljenost izraža s formulo \begin{equation*}
- \kappa = - \frac{1}{\sqrt{G}} \left(  \frac{ \partial^{2} \sqrt{G}  }{ \partial u^{2} }  \right).
+ \kappa = - \frac{1}{2\sqrt{G}} \left( \frac{G_u}{\sqrt{G}} \right)_u .
  \end{equation*}  
 \end{izrek}
 
