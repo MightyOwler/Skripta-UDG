@@ -170,24 +170,16 @@ $\dot{\gamma} (0) \in \operatorname{im} \left( D_{(u_0,v_0)}r
 Nato dokažimo še obratno inkluzijo $T_mX \supseteq
 \operatorname{im} \left( D_{(u_0, v_0)}r \right)$. Vzemimo poljuben
 vektor $w \in \mathbb{R}^2$ in naj bo $v = \left( D_{(u_0, v_0)} r \right) w$. Potrebujemo krivuljo $\gamma(t) : (-\varepsilon, \varepsilon) \to  X,
-\gamma(0) = m,$ za katero bo veljalo $\dot{\gamma} (0) = v.$
+\gamma(0) = m,$ za katero bo veljalo $\dot{\gamma} (0) = v.$  Definirajmo funkcijo $\beta(t): (-\varepsilon, \varepsilon) \to V$,
+s predpisom $\beta(t) = wt + (u_0, v_0)$. Trdimo, da za $\gamma(t) =
+r(\beta(t))$  velja $\dot{\gamma}(0) \in  T_mX.$
 Oglejmo si \begin{equation*} \left( D_{(u_0, v_0)}r \right)\dot{\beta} (0) =
-\frac{d}{dt} \big|_{t = 0} r(\beta(t)). \end{equation*}  Trdimo, da za $\gamma(t) =
-r(\beta(t))$  velja $\dot{\gamma}(0) \in  T_mX.$ To
-je res, saj je $\gamma(t): (-\varepsilon,
-\varepsilon)\to  X \subseteq \mathbb{R}^3$, hkrati pa tudi $\gamma(0) = r(\beta(0) )= r(u_0, v_0) = m$. Torej velja,
+\frac{d}{dt} \big|_{t = 0} r(\beta(t)). \end{equation*}   Ker je $\gamma(t): (-\varepsilon,
+\varepsilon)\to  X \subseteq \mathbb{R}^3$, hkrati pa tudi $\gamma(0) = r(\beta(0) )= r(u_0, v_0) = m$, je po definiciji tangentnega prostora $\dot{\gamma}(t) \in T_mX$. Torej velja,
 da je $T_mX = \operatorname{im}(D_{(u_0,v_0)}r)$. Ker smo zahtevali,
 da je parametrizacija regularna, je matrika $D_{(u_0,v_0)}r$ ranga 2,
 torej je  $T_mX$ dvodimenzionalen vektorski prostor.
 \qed
-
-\begin{opomba}
-TODO
-Če se ne motim, je v drugi polovici zgornjega dokaza napaka. Morali bi nastaviti funkcijo $\beta(t): (-\varepsilon, \varepsilon) \to V$,
-s predpisom $\beta(t) = wt + (u_0, v_0)$. Potem definiramo krivuljo $\gamma(t) = r(\beta(t))$, za katero res veljata zahtevani lastnosti.
-\end{opomba}
-
-
 
 \begin{opomba}
  Tangentna ravnina je pravi vektorski prostor in ne afin kot
@@ -515,7 +507,7 @@ Nato vzamemo $\beta_3(t) = (u_0 + t, v_0 + t)$ in imamo
 
 \begin{primer}
  Ali je stožec brez ene tvorilke izometričen kosu ravnine? Naj bo podan 
- \begin{equation*} S = \left\{ (x,y,z)  \middle|\, x^2 + y^2 + z^2 = 1 \right\}.\end{equation*}
+ \begin{equation*} S = \left\{ (x,y,z)  \middle|\, x^2 + y^2  = z^2 \right\}.\end{equation*}
  Parametriziramo ga z
  \begin{equation*} r(u,v) = (u \cos v, u \sin v, u) \end{equation*}in po znanem postopku dobimo 
  \begin{equation*} \begin{pmatrix}
@@ -526,7 +518,7 @@ Nato vzamemo $\beta_3(t) = (u_0 + t, v_0 + t)$ in imamo
   2 & 0\\
   0 & u^2\\
  \end{pmatrix}.\end{equation*}
-Pričakujemo, da bo $S$ izometričen nekemu krožnemu izseku, ki ga parametriziramo z 
+Pričakujemo, da bo $S$ izometričen nekemu krožnemu izseku v ravnini, ki ga parametriziramo z 
 \begin{equation*} \tilde{r}(u,v) = (\alpha u \cos(\beta v), \alpha u \sin(\beta v), 0).\end{equation*}Tako dobimo sistem enačb 
 \begin{equation*} \begin{pmatrix}
   \tilde{E} & \tilde{F}\\
@@ -688,7 +680,7 @@ razviti bo bazi $\left\{ \tilde{r}_{\tilde{u}}, \tilde{r}_{\tilde{v}} \right\}$.
   r_u   &= \tilde{r}_{\tilde{u}} \tilde{u}_u + \tilde{r}_{\tilde{v}} \tilde{v}_u, \\ 
   r_v &= \tilde{r}_{\tilde{u}} \tilde{u}_v + \tilde{r}_{\tilde{v}} \tilde{v}_v.
 \end{align*}
-Zdaj hočemo vektor $a r_u + b r_v$ zapisati v obliki $\alpha \tilde{r}_\tilde{u} + \beta \tilde{r}_\tilde{v}$. Dobimo 
+Zdaj hočemo vektor $a r_u + b r_v$ zapisati v obliki $\alpha \tilde{r}_{\tilde{u}} + \beta \tilde{r}_\tilde{v}$. Dobimo 
 \begin{equation*} a r_u + b r_v  = a(\tilde{r}_{\tilde{u}} \tilde{u}_u + \tilde{r}_{\tilde{v}} \tilde{v}_u) + b (\tilde{r}_{\tilde{u}} \tilde{u}_v + \tilde{r}_{\tilde{v}} \tilde{v}_v) 
 = \underbrace{(a \tilde{u}_u + b \tilde{u}_v)}_{\alpha} \tilde{r}_{\tilde{u}} + \underbrace{(a \tilde{v}_u + b \tilde{v}_v)}_{\beta} \tilde{r}_{\tilde{v}}. \end{equation*}
 Torej za vsak par vektorjev $(a, b)^{T}$, $(\alpha, \beta)^{T}$ velja zveza 
@@ -841,9 +833,9 @@ Zdaj lahko smiselno definiramo drugo fundamentalno formo ploskve.
  \end{pmatrix}, \end{equation*}
  kjer so $L, M, N: V \to  \mathbb{R}$ funkcije s predpisi 
  \begin{align*}
-    L(u,v)  &= \langle r_{uu}(u,v), n(u,v) \rangle  \\
-    M(u,v)  &= \langle r_{uv}(u,v), n(u,v) \rangle  \\
-    N(u,v)  &= \langle r_{vv}(u,v), n(u,v) \rangle  
+    L(u,v)  &= \langle r_{uu}(u,v), n(u,v) \rangle,  \\
+    M(u,v)  &= \langle r_{uv}(u,v), n(u,v) \rangle,  \\
+    N(u,v)  &= \langle r_{vv}(u,v), n(u,v) \rangle. 
  \end{align*}
 
 \end{definicija}
@@ -879,7 +871,7 @@ Definirajmo normalo na krivuljo $\gamma$ kot preslikavo $n_{\gamma}: [a,b] \to  
 Potem definiramo normalno in geodetsko ukrivljenost krivulje $\gamma$ kot 
 \begin{align*}
     \kappa_n(t) &= \langle \ddot{\gamma}(t), n_{\gamma}(t) \rangle,  \\
-    \kappa_g(t) &= \langle \ddot{\gamma}(t),  n_{\gamma}(t)  \dot{\gamma}(t) \rangle.
+    \kappa_g(t) &= \langle \ddot{\gamma}(t),  n_{\gamma}(t)  \times \dot{\gamma}(t) \rangle.
 \end{align*}
 
 \end{definicija}
@@ -991,7 +983,7 @@ Včasih zlorabimo notacijo in pišemo \begin{equation*}
 \end{definicija}
 
 \begin{opomba}
- Izkazalo se bo, da je Gaussova ukrivljenost izometrična varianta in da je tesno povezana z Eulerjevo karakteristiko.
+ Izkazalo se bo, da je Gaussova ukrivljenost izometrična invarianta in da je tesno povezana z Eulerjevo karakteristiko.
 \end{opomba}
 
 
@@ -1372,7 +1364,7 @@ parametrizacija ploskve $\tilde{n}_{*}(U) \subseteq S^2$. Po definiciji površin
 Vemo tudi, da velja \begin{equation*}\label{eq_1}
   \lvert\lvert n_u \times  n_v \rvert\rvert = \sqrt{\langle n_u \times n_v, n_u \times  n_v \rangle } 
 \end{equation*}  
-in hkrati (TODO: zakaj?) \begin{equation}
+in hkrati zaradi enotske dolžine normale \begin{equation}
   \lvert\lvert n_u \times  n_v \rvert\rvert = \langle n, n_u \times n_v \rangle = \left\langle \frac{r_u \times r_v}{\lvert\lvert r_u \times  r_v \rvert\rvert } , n_u \times n_v \right\rangle .
 \end{equation}  
 Iz enačbe \href{eq_1}{(1)} sledi po Lagrangevem pravilu za dvojni vektorski produkt še \begin{equation} \label{eq_2}
@@ -1551,20 +1543,21 @@ Tako imamo \begin{equation*}
         \frac{1}{\mu} B & \frac{1}{\mu} D
         \end{pmatrix}.
 \end{equation*}  
-Zato lahko (TODO: po izreku iz analize 3??)
-najdemo taki funkciji $\lambda, \mu$, da bo veljalo \begin{align*}
+Iz analize 3 vemo, da lahko v takšni situaciji najdemo integrirajoča množitelja $\lambda, \mu: V \to \mathbb{R}$, da bo veljalo \begin{align*}
   \operatorname{grad} \xi (u,v) &= \frac{1}{\lambda(u,v)}(A(u,v), C(u,v)), \\
   \operatorname{grad} \eta (u,v) &= \frac{1}{\mu(u,v)}(B(u,v), D(u,v)).
 \end{align*}
 \qed
+
+
 
 \begin{definicija}
 \label{def_premnosna_ploskev}
 Naj bo $X \subseteq  \mathbb{R}^3$ ploskev, $\gamma: [a,b] \to X$ krivulja in $\tilde{a}: \mathbb{R}^3 \to \mathbb{R}^3$ vektorsko polje. 
 Vektorskemu polju $\tilde{a}$ priredimo vektorsko polje vzdož krivulje $\gamma$ s predpisom $a(u) := \tilde{a}(\gamma(u))$. 
 Ploskev $X$ je premonosna ploskev, podana s krivuljo $\gamma$ in vektorskim poljem $a$ vzdolž krivulje $\gamma$, za katero obstaja parametrizacija \begin{equation*}
-\rho(u) = \gamma(u) + va(u).
-\end{equation*}Če za polje $a$ velja $a(u) = \dot{\gamma}(u)$, potem je ploskev tangetno premonosna.
+r(u, v) = \gamma(u) + va(u).
+\end{equation*}Če za polje $a$ velja $a(u) = \gamma'(u)$, potem je ploskev tangetno premonosna.
 \end{definicija}
 
 
@@ -1598,7 +1591,7 @@ obstajata funkciji $\alpha, \beta$, da velja
 \end{equation*}  
 Rešitev zgornjega sistema enačb sta funkciji \begin{align*}
     f &= -\beta, \\
-    g &= \alpha + \beta', 
+    g &= \alpha - \beta', 
 \end{align*}
 kar pomeni, da funkcija $\rho$ obstaja, torej je $X$ res tangentno premonosna ploskev.
 \qed
