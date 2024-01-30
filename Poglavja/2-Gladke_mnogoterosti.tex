@@ -1268,10 +1268,20 @@ Očitno velja, da je $$p(0) = c = \det \begin{pmatrix}
 L & M \\
 M & N
 \end{pmatrix}.$$ Po drugi stani pa lahko dobimo \begin{equation*}
-a = \lim_{\lambda \to \infty} \frac{1}{\lambda^2} p(\lambda) = \ldots = \det \begin{pmatrix}
+a = \lim_{\lambda \to \infty} \frac{1}{\lambda^2} p(\lambda) = \lim_{\lambda \to \infty} \det \left( 
+  \frac{1}{\lambda} \begin{pmatrix}
+L & M \\
+M & N
+\end{pmatrix}  -  \begin{pmatrix}
 E & F \\
 F & G
-\end{pmatrix}.
+\end{pmatrix} \right) = (-1)^2 \det \begin{pmatrix}
+E & F \\
+F & G
+\end{pmatrix} = \det \begin{pmatrix}
+  E & F \\
+  F & G
+  \end{pmatrix}.
 \end{equation*}
 Torej bo res \begin{equation*}
 \kappa = \kappa_1 \kappa_2 = \frac{c}{a} = \frac{LN - M^2}{EG - F^2}.
