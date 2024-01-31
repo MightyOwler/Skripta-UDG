@@ -200,7 +200,7 @@ oziroma z eno samo parametrizacijo.
 	\begin{pmatrix}
 		g_{11}(m) & g_{12}(m) \\\
 		g_{21}(m) & g_{22}(m) \\
-	\end{pmatrix} = \begin{pmatrix}
+	\end{pmatrix} =: \begin{pmatrix}
 		\langle r_u, r_u \rangle_g (m) & \langle r_u, r_v \rangle_g(m) \\\
 		\langle r_u, r_v \rangle_g(m) & \langle r_v, r_v \rangle_g(m) \\
 	\end{pmatrix},
@@ -223,14 +223,13 @@ z(u(t), v(t)) \end{pmatrix}, \end{equation*}
 \begin{equation*} \dot{\gamma}(t_0) = \frac{d}{dt} \big|_{t = t_0} r(\beta(t)) =
 (D_{(u_0, v_0)}r)(\dot{\beta}(t_0)) = 
 \begin{pmatrix}
-	\frac{ \partial x }{ \partial u }  & \frac{ \partial x }{ \partial v }  \\
-	\frac{ \partial y }{ \partial u }  & \frac{ \partial y }{ \partial
-	v }  \\
-	\frac{ \partial z }{ \partial u }  & \frac{ \partial z }{ \partial v }  \\
+	x_u & x_v \\
+	y_u & y_v \\
+	z_u & z_v  \\
 
 \end{pmatrix}_{(u_0, v_0)}
 \begin{pmatrix}
-	\dot{u} \\ \dot{v}
+	\dot{u}(t_0) \\ \dot{v}(t_0)
 \end{pmatrix}
  = r_u(u_0 , v_0)\dot{u}(t_0) + r_v(u_0 , v_0)\dot{v}(t_0). \end{equation*}
  To je razvoj vektorja $\dot{\gamma}(t_0)$ po bazi $\left\{ r_u(u_0 ,
@@ -545,8 +544,8 @@ Izkaže se, da znamo, pred izrekom pa navedimo še definicijo tangentno premonos
 \begin{definicija}
   \label{def_tangentno_premonsna_ploskev}
    Naj bo $\gamma: [a,b] \to  \mathbb{R}^3$ prostorska krivulja, parametriziarana z naravnim parametrom. Tangentna premonosna ploskev,
-   podana s krivuljo $\gamma$, je del prostora $\mathbb{R}^3$, ki ga opiše tangenta na $\gamma(t)$ na intervalu $t \in  [a,b]$. Parametriziramo jo lahko s predpisom \begin{equation*}
-   r(t, u) = \gamma(t) + u\dot{\gamma}(t).
+   podana s krivuljo $\gamma$, je del prostora $\mathbb{R}^3$, ki ga opiše tangenta na $\gamma(u)$ na intervalu $u \in  [a,b]$. Parametriziramo jo lahko s predpisom \begin{equation*}
+   r(u, v) = \gamma(u) + v\dot{\gamma}(u).
    \end{equation*}  
      
   \end{definicija}
@@ -569,7 +568,7 @@ samo v ovinkih in to pravokotno glede na smer vožnje.
 \begin{definicija}
 \label{def_fleksijska_ukrivljenost}
  Fleksijska ukrivljenost naravno parametrizirane krivulje $\gamma(u)$ je podana s 
- \begin{equation*} \kappa(u) = \sqrt{\langle \ddot{\gamma}(u), \ddot{\gamma}(u) \rangle } = \lvert\lvert \ddot{\gamma}(u) \rvert\rvert. \end{equation*}
+ \begin{equation*} \varkappa(u) = \sqrt{\langle \ddot{\gamma}(u), \ddot{\gamma}(u) \rangle } = \lvert\lvert \ddot{\gamma}(u) \rvert\rvert. \end{equation*}
 \end{definicija}
 
 Izračunajmo prvo fundamentalno formo tangentno premonosne ploskve. Ker velja zveza
@@ -586,7 +585,7 @@ F & G
   \langle \dot{\gamma}(u) + v \ddot{\gamma}(u), \dot{\gamma}(u) + v \ddot{\gamma}(u) \rangle  & \langle \dot{\gamma}(u) + v \ddot{\gamma}(u), \dot{\gamma}(u) \rangle \\
   \langle \dot{\gamma}(u) + v \ddot{\gamma}(u), \dot{\gamma}(u) \rangle & \langle \dot{\gamma}(u), \dot{\gamma}(u) \rangle
   \end{pmatrix}= \begin{pmatrix}
-  1 + v^2 \kappa^2(u) & 1\\
+  1 + v^2 \varkappa^2(u) & 1\\
   1 & 1\\
 \end{pmatrix}.\end{equation*}
 
@@ -594,8 +593,8 @@ Torej vidimo, da je matrika prve fundamentalne forme tangentno premonosne ploskv
 
 \begin{trditev}
 \label{trd_obstoj_krivulje_glede_na_funkcijo_fleksijske_ukrivljenosti}
- Naj bo podana poljubna (zvezna?) funkcija $\tilde{\kappa}: [\alpha, \beta] \to  \mathbb{R}$. Potem obstaja naravno parametrizirana ravninska krivulja $\gamma: [\alpha, \beta] \to  \mathbb{R}^2$, katere fleksijska ukrivljenost v točki
-  $\gamma(u)$ je enaka $\kappa(u) = \tilde{\kappa}(u)$.
+ Naj bo podana poljubna (zvezna?) funkcija $\tilde{\varkappa}: [\alpha, \beta] \to  \mathbb{R}$. Potem obstaja naravno parametrizirana ravninska krivulja $\gamma: [\alpha, \beta] \to  \mathbb{R}^2$, katere fleksijska ukrivljenost v točki
+  $\gamma(u)$ je enaka $\varkappa(u) = \tilde{\varkappa}(u)$.
 \end{trditev}
 
 {\em Dokaz:\/}
@@ -608,20 +607,19 @@ Torej vidimo, da je matrika prve fundamentalne forme tangentno premonosne ploskv
  Ker je parametrizacija naravna, imamo še sistem enačb
  \begin{align*}
   \lvert\lvert \dot{\gamma}(u) \rvert\rvert &= 1,   \\
-  \lvert\lvert \ddot{\gamma}(u) \rvert\rvert &= \kappa(u) ,   \\
+  \lvert\lvert \ddot{\gamma}(u) \rvert\rvert &= \varkappa(u) ,   \\
     \langle \ddot{\gamma}(u), \dot{\gamma}(u) \rangle   &= 0.
  \end{align*}
  Enotski vektor, pravokoten na $\dot{\gamma}(u) = (\dot{x}(u), \dot{y}(u))$, je vektor $(\dot{y}(u), -\dot{x}(u))$. Ta vektor je vzporeden vektorju pospeška,
  torej bo za neko funkcijo $k : [\alpha, \beta]  \to \mathbb{R}$ veljalo 
  \begin{equation*} (\ddot{x}(u), \ddot{y}(u)) = k(u) (\dot{y}(u), -\dot{x}(u)). \end{equation*}Če obe strani enačbe normiramo, iz prejšnega sistema enačb vidimo, da mora priti natanko 
- \begin{equation*} (\ddot{x}(u), \ddot{y}(u)) = \kappa(u) (\dot{y}(u), -\dot{x}(u)).\end{equation*}Zanima nas, ali obstaja krivulja, za katero je $\kappa = \tilde{\kappa}$, torej z drugimi besedami, ali je rešljiv sistem navadnih diferencialnih enačb 
+ \begin{equation*} (\ddot{x}(u), \ddot{y}(u)) = \varkappa(u) (\dot{y}(u), -\dot{x}(u)).\end{equation*}Zanima nas, ali obstaja krivulja, za katero je $\varkappa = \tilde{\varkappa}$, torej z drugimi besedami, ali je rešljiv sistem navadnih diferencialnih enačb 
  \begin{align*}
-     \ddot{x}(u) &= \tilde{\kappa}(u) \dot{y}(u), \\
-     \ddot{y}(u) &= -\tilde{\kappa}(u) \dot{x}(u).
+     \ddot{x}(u) &= \tilde{\varkappa}(u) \dot{y}(u), \\
+     \ddot{y}(u) &= -\tilde{\varkappa}(u) \dot{x}(u).
  \end{align*}
 Pri analizi 3 smo dokazali eksistenčni izrek za obstoj rešitev tega sistema. Torej obstaja
-naravno parametrizirana krivulja $\gamma(u) = (x(u), y(u))$, za katero za vsak $u \in [\alpha, \beta]$ velja $\lvert\lvert \ddot{\gamma}(u) \rvert\rvert = \tilde{\kappa}(u)$.
-
+naravno parametrizirana krivulja $\gamma(u) = (x(u), y(u))$, za katero za vsak $u \in [\alpha, \beta]$ velja $\lvert\lvert \ddot{\gamma}(u) \rvert\rvert = \tilde{\varkappa}(u)$.
 \qed
 
 \begin{opomba}
@@ -857,7 +855,7 @@ Razmislili smo, da velja ocena razdalje
 \end{pmatrix}.\end{equation*}
 
 Od te točke naprej predpostavljamo, da so vse krivulje naravno parametrizirane. Naj bo $\gamma: [a,b] \to X$ gladka krivulja. 
-Spomnimo se definicije fleksijske ukrivljenosti krivulje \href{def_fleksijska_ukrivljenost}, velja $\kappa(t) = \lvert\lvert \ddot{\gamma}(t) \rvert\rvert$.
+Spomnimo se definicije fleksijske ukrivljenosti krivulje \href{def_fleksijska_ukrivljenost}, velja $\varkappa(t) = \lvert\lvert \ddot{\gamma}(t) \rvert\rvert$.
 V nadaljevanju bomo razdelili vektor pospeška na geodetsko in normalno komponentno, torej 
 \begin{equation*} \ddot{\gamma}(t) = \ddot{\gamma}_g(t) + \ddot{\gamma}_n(t).\end{equation*}
 
@@ -870,8 +868,8 @@ Definirajmo normalo na krivuljo $\gamma$ kot preslikavo $n_{\gamma}: [a,b] \to  
 \begin{equation*} n_{\gamma}(t) = \frac{r_u(u(t), v(t)) \times  r_v(u(t), v(t))}{\lvert\lvert r_u(u(t), v(t)) \times  r_v(u(t), v(t)) \rvert\rvert }.\end{equation*}
 Potem definiramo normalno in geodetsko ukrivljenost krivulje $\gamma$ kot 
 \begin{align*}
-    \kappa_n(t) &= \langle \ddot{\gamma}(t), n_{\gamma}(t) \rangle,  \\
-    \kappa_g(t) &= \langle \ddot{\gamma}(t),  n_{\gamma}(t)  \times \dot{\gamma}(t) \rangle.
+    \varkappa_n(t) &= \langle \ddot{\gamma}(t), n_{\gamma}(t) \rangle,  \\
+    \varkappa_g(t) &= \langle \ddot{\gamma}(t),  n_{\gamma}(t)  \times \dot{\gamma}(t) \rangle.
 \end{align*}
 
 \end{definicija}
@@ -882,7 +880,7 @@ Zdaj si poglejmo, kako se izraža normalna ukrivljenost krivulje s pomočjo drug
 \label{izr_izrazava_normalne_ukrivljenosti_z_drugo_fundamentalno_formo}
   Naj bo $\gamma: [a,b] \to X$ gladka krivulja, podana s parametrizacijo $\gamma(t) = r(u(t), v(t))$. Tedaj lahko njeno normalno ukrivljenost
   izračunamo po formuli 
-  \begin{equation*} \kappa_n(t) = \begin{pmatrix}
+  \begin{equation*} \varkappa_n(t) = \begin{pmatrix}
     \dot{u}(t) & \dot{v}(t) 
   \end{pmatrix}  
   \begin{pmatrix}
@@ -904,7 +902,7 @@ Zdaj si poglejmo, kako se izraža normalna ukrivljenost krivulje s pomočjo drug
  \end{align*}
 Od tod dobimo 
 \begin{align*}
-    \kappa_n = \langle \ddot{\gamma}, n \rangle  &= \langle r_{uu}, n \rangle \dot{u}^2 + 2  \langle r_{uv}, n \rangle \dot{u} \dot{v} + \langle r_{vv}, n \rangle  \dot{v}^2 \\
+    \varkappa_n = \langle \ddot{\gamma}, n \rangle  &= \langle r_{uu}, n \rangle \dot{u}^2 + 2  \langle r_{uv}, n \rangle \dot{u} \dot{v} + \langle r_{vv}, n \rangle  \dot{v}^2 \\
      &= L \dot{u}^2 + 2M \dot{u} \dot{v} + F \dot{v}^2 \\
      &= \begin{pmatrix}
         \dot{u} & \dot{v} 
@@ -931,8 +929,8 @@ Vsako funkcijo normalne ukrivljenosti lahko razširimo na tangentno ravnino na n
     \end{pmatrix}$ druga fundamentalna forma ploskve $X$ glede na $r$. Naj bo $r(u_0, v_0) = m \in  X$. Vemo, da je $\left\{ r_u(u_0, v_0), r_v(u_0, v_0) \right\}$ baza za
     tangetno ravnino $T_mX$, zato lahko vsak vektor v njej enolično zapišemo v obliki $\xi r_u(u_0, v_0) + \eta r_v(u_0, v_0).$
     Potem obstaja funkcija \begin{align*}
-       \kappa_n : T_mX &\longrightarrow \mathbb{R} \\
-        \kappa_n(\xi r_u(u_0, v_0) + \eta r_v(u_0, v_0)) &=
+       \varkappa_n : T_mX &\longrightarrow \mathbb{R} \\
+        \varkappa_n(\xi r_u(u_0, v_0) + \eta r_v(u_0, v_0)) &=
         \begin{pmatrix}
           \xi  & \eta
         \end{pmatrix}
@@ -946,7 +944,7 @@ Vsako funkcijo normalne ukrivljenosti lahko razširimo na tangentno ravnino na n
         \end{pmatrix}.
     \end{align*} 
 Včasih zlorabimo notacijo in pišemo \begin{equation*}
-  \kappa_n(\xi, \eta) := \kappa_n(\xi r_u(u_0, v_0) + \eta r_v(u_0, v_0)).
+  \varkappa_n(\xi, \eta) := \varkappa_n(\xi r_u(u_0, v_0) + \eta r_v(u_0, v_0)).
 \end{equation*}  
 \end{definicija}
 
@@ -959,21 +957,21 @@ Včasih zlorabimo notacijo in pišemo \begin{equation*}
 
 \begin{definicija}
 \label{def_glavni_ukrivljenosti_ploskve}
- Ekstrema funkcije $\kappa_n: T_mX \to  \mathbb{R}$, skrčene na enotsko sfero $E \xi^2 + 2F \xi \eta + G \eta^2  = 1$, imenujemo glavni ukrivljenosti ploskve $X$ v točki $m$. 
+ Ekstrema funkcije $\varkappa_n: T_mX \to  \mathbb{R}$, skrčene na enotsko sfero $E \xi^2 + 2F \xi \eta + G \eta^2  = 1$, imenujemo glavni ukrivljenosti ploskve $X$ v točki $m$. 
  Označimo ju s $\kappa_1$ in $\kappa_2$. 
 \end{definicija}
 
 \begin{opomba}
- Ali minimum označimo s $\kappa_1$ ali $\kappa_2$, je stvar dogovora. Ekstrema obstajata, ker je krožnica kompakt, torej ima zvezna funkcija $\kappa_n$ na njej minimum in maksimum.
+ Ali minimum označimo s $\kappa_1$ ali $\kappa_2$, je stvar dogovora. Ekstrema obstajata, ker je krožnica kompakt, torej ima zvezna funkcija $\varkappa_n$ na njej minimum in maksimum.
 \end{opomba}
 
 \begin{definicija}
 \label{def_glavni_smeri}
- Tangetna vektorja $\xi_1 r_u  + \eta_1 r_v$, $\xi_2 r_u  + \eta_2 r_v \in T_mX$, ki sta (različna) ekstrema funkcije $\kappa_n$, se imenujeta glavni smeri.
+ Tangetna vektorja $\xi_1 r_u  + \eta_1 r_v$, $\xi_2 r_u  + \eta_2 r_v \in T_mX$, ki sta (različna) ekstrema funkcije $\varkappa_n$, se imenujeta glavni smeri.
 \end{definicija}
 
 \begin{opomba}
- Kmalu bomo dokazali, da sta glavni smeri res kvečjem dve, zato je takšna definicija upravičena (če bi bila $\kappa_n$ poljubna zvezna funkcija, bi lahko imela več ekstremov).
+ Kmalu bomo dokazali, da sta glavni smeri res kvečjem dve, zato je takšna definicija upravičena (če bi bila $\varkappa_n$ poljubna zvezna funkcija, bi lahko imela več ekstremov).
 \end{opomba}
 
 \begin{definicija}
@@ -1008,10 +1006,10 @@ Z naslednjim izrekom bomo utemeljili, da sta glavni ukrivljenosti res kvečjem d
 \end{izrek}
 \noindent
 {\em Dokaz:\/}
- Ekstrema $\lambda_1$, $\lambda_2$ sta vezana ekstrema za funkcijo $\kappa_n: T_mX \to \mathbb{R}$.
+ Ekstrema $\lambda_1$, $\lambda_2$ sta vezana ekstrema za funkcijo $\varkappa_n: T_mX \to \mathbb{R}$.
  Zaradi homeomorfizma $T_mX \approx \mathbb{R}^2$ lahko identificiramo elemente $T_mX$ s pari $(\xi, \eta)$. Naša krožnica je
  določena z vezjo $\lvert\lvert (\xi, \eta) \rvert\rvert = 1$ oziroma ekvivalentno $\lvert\lvert (\xi, \eta) \rvert\rvert^2 = 1$. Torej iščemo ekstreme funkcije \begin{equation*}
-   \kappa_n(\xi, \eta) = \begin{pmatrix}
+   \varkappa_n(\xi, \eta) = \begin{pmatrix}
      \xi & \eta 
    \end{pmatrix}
    \begin{pmatrix}
@@ -1037,18 +1035,18 @@ Z naslednjim izrekom bomo utemeljili, da sta glavni ukrivljenosti res kvečjem d
      \end{pmatrix} = E \xi^2 + 2F \xi \eta + G \eta^2 = 1.
    \end{equation*}  
     Zdaj se s pomočjo analize 2 spomnimo, da se vezane ekstreme išče s pomočjo Lagrangeeve funkcije \begin{equation*}
-      \kappa_n(\xi, \eta) - \lambda g(\xi, \eta).
+      \varkappa_n(\xi, \eta) - \lambda g(\xi, \eta).
     \end{equation*}  
     Da bo skalar $\lambda$ določal ekstrem, mora veljati zveza \begin{equation*}
-      \operatorname{grad}(\kappa_n(\xi, \eta) - \lambda g(\xi, \eta)) = 0.
+      \operatorname{grad}(\varkappa_n(\xi, \eta) - \lambda g(\xi, \eta)) = 0.
     \end{equation*}  
     Zaradi linearnosti gradienta je to ekvivalentno zvezi \begin{equation*}
-        \operatorname{grad}(\kappa_n(\xi, \eta)) - \lambda \operatorname{grad}(g(\xi, \eta)) = 0.
+        \operatorname{grad}(\varkappa_n(\xi, \eta)) - \lambda \operatorname{grad}(g(\xi, \eta)) = 0.
     \end{equation*}
     Zdaj poračunamo gradienta, da dobimo \begin{align*}
-        \operatorname{grad}(\kappa_n(\xi, \eta)) = \begin{pmatrix}
-            \frac{ \partial \kappa_n }{ \partial \xi } \\
-            \frac{ \partial \kappa_n }{ \partial \eta }
+        \operatorname{grad}(\varkappa_n(\xi, \eta)) = \begin{pmatrix}
+            \frac{ \partial \varkappa_n }{ \partial \xi } \\
+            \frac{ \partial \varkappa_n }{ \partial \eta }
         \end{pmatrix}  &= 2 \begin{pmatrix}
         L & M \\
         M & N
@@ -1111,7 +1109,7 @@ Z naslednjim izrekom bomo utemeljili, da sta glavni ukrivljenosti res kvečjem d
             0
         \end{pmatrix}.
      \end{equation*}  
-    Če vzamemo enotska vektorja $(\xi_1, \eta_1)^{T}$, $(\xi_2, \eta_2)^{T}$, in množimo $i$-to zgornjo enačbo z leve z $(\xi_i, \eta_i)$, 
+    Če vzamemo enotska vektorja $(\xi_1, \eta_1)^{T}$, $(\xi_2, \eta_2)^{T}$ (ki sta enotska glede na 1. fundamentalno formo v točki $m$), in množimo $i$-to zgornjo enačbo z leve z $(\xi_i, \eta_i)$, 
     dobimo 
     \begin{equation*}
         \underbrace{\begin{pmatrix}
@@ -1123,7 +1121,7 @@ Z naslednjim izrekom bomo utemeljili, da sta glavni ukrivljenosti res kvečjem d
           \end{pmatrix}\begin{pmatrix}
             \xi_i \\
             \eta_i
-        \end{pmatrix}}_{\kappa_n(\xi, \eta)}    - \lambda_i 
+        \end{pmatrix}}_{\varkappa_n(\xi_i, \eta_i)}    - \lambda_i 
         \underbrace{\begin{pmatrix}
             \xi_i & \eta_i
         \end{pmatrix}
@@ -1139,9 +1137,9 @@ Z naslednjim izrekom bomo utemeljili, da sta glavni ukrivljenosti res kvečjem d
         \end{pmatrix}.
      \end{equation*}
      Desni člen je enak $1$, ker smo izbrali enotska vektorja glede na skalarni produkt, porojen s to matriko. Preostaneta nam torej enačbi \begin{equation*}
-       \kappa_n(\xi_i, \eta_i) = \lambda_i, \,\,\, i = 1,2.
+       \varkappa_n(\xi_i, \eta_i) = \lambda_i, \,\,\, i = 1,2.
      \end{equation*}  
-     Točki $(\xi_i, \eta_i)$ sta vezana ekstrema funkcije $\kappa_n$ pri vezi $g = 1$. Torej sta to ničli kvadratnega polinoma
+     Točki $(\xi_i, \eta_i)$ sta vezana ekstrema funkcije $\varkappa_n$ pri vezi $g = 1$. Torej sta to ničli kvadratnega polinoma
      \begin{equation*}
         \det \left( 
          \begin{pmatrix}
@@ -1159,7 +1157,7 @@ Z naslednjim izrekom bomo utemeljili, da sta glavni ukrivljenosti res kvečjem d
  Posplošeni lastni problem ali relativni lastni problem je lastni problem oblike \begin{equation*}
    A(\vec{v}) = \lambda B(\vec{v}).
  \end{equation*}  
-  Če je $B = Id$, potem dobimo običajni lastni problem \begin{equation*}
+  Če je $B = \text{Id}$, potem dobimo običajni lastni problem \begin{equation*}
     A(\vec{v}) = \lambda \vec{v}.
   \end{equation*}  
 \end{definicija}
@@ -1211,7 +1209,7 @@ lastni vrednosti matrike \begin{equation*}
 \begin{izrek}
 \label{izr_izrazava_povprecne_ukrivljenosti}
  Za povprečno ukrivljenost velja zveza \begin{equation*}
- H(m) = \frac{1}{2} \frac{(LF - 2MF + NE)(m)}{(EG - F^2)(m)}.
+ H(m) = \frac{1}{2} \frac{(LG - 2MF + NE)(m)}{(EG - F^2)(m)}.
  \end{equation*}  
 \end{izrek}
 \noindent
@@ -1244,7 +1242,7 @@ kar pomeni, da bo njuna vsota enaka sledi te matrike. Imamo torej \begin{align*}
         LG - MF & * \\
         * & -MF + NE
         \end{pmatrix}_{(m)} \right) \\
-        &= \frac{1}{2} \frac{(LF - 2MF + NE)(m)}{(EG - F^2)(m)}.
+        &= \frac{1}{2} \frac{(LG - 2MF + NE)(m)}{(EG - F^2)(m)}.
 \end{align*}
 \qed
 
@@ -1639,7 +1637,7 @@ V našem primeru je za $i = 2$ \begin{equation*}
     \end{pmatrix} = 0 \implies LN - M^2 = 0.
 \end{equation*}  
 Spomnimo se, da je normalna ukrivljenost podana s predpisom \begin{equation*}
-\kappa_n(\xi, \eta) = \begin{pmatrix}
+\varkappa_n(\xi, \eta) = \begin{pmatrix}
     \xi & \eta
 \end{pmatrix} \begin{pmatrix}
 L & M \\
