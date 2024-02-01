@@ -65,7 +65,7 @@ Imamo \begin{equation*}
 I = \int_{S} \frac{LN - M^2}{\sqrt{EG - F^2} }  \, du dv =  \int_{S} \frac{LN - M^2}{EG - F^2} \sqrt{EG - F^2}  \, du dv = \int_{R} \frac{LN - M^2}{EG - F^2} \, dA = \int_{R} \kappa \, dA.
 \end{equation*}  
 
-Izrazimo $I$ še na drug način. Naj bo $\theta(s)$ kot med $\gamma(s)$ in $e_1(s)$. Ker je $\left\{ e_1(\gamma(s)), e_2(\gamma(s))\right\}$ ortonormirana baza v tangentnem prostoru
+Izrazimo $I$ še na drug način. Naj bo $\theta(s)$ kot med $\dot{\gamma}(s)$ in $e_1(s)$. Ker je $\left\{ e_1(\gamma(s)), e_2(\gamma(s))\right\}$ ortonormirana baza v tangentnem prostoru
 $T_{\gamma(s)}X$, lahko pišemo \begin{equation*}
 \dot{\gamma}(s) = \cos(\theta(s))e_1(\gamma(s)) + \sin(\theta(s))e_2(\gamma(s)).
 \end{equation*}  
@@ -85,7 +85,7 @@ Ugotovili smo, da je \begin{equation*}
 \int_{\gamma} \varkappa_g  \, ds = \int_{\beta} \dot{\theta}  \, ds - \int_{\beta} \langle e_1, \dot{e}_2 \rangle   \, ds.  
 \end{equation*}  
 Od tod dobimo \begin{equation*}
-    \int_{\gamma} \varkappa_g  \, ds  = 2 \pi  - \int_{R}  K \, dA.  
+    \int_{\gamma} \varkappa_g  \, ds  = 2 \pi  - \int_{R}  \kappa \, dA.  
 \end{equation*}  
 \qed
   
@@ -94,7 +94,7 @@ Zdaj dokažimo še nekoliko splošnejšo verzijo izreka, ki velja za odsekoma gl
 \begin{izrek}
 \label{izr_odsekoma_gladke_krivulje_GB}
 Naj bo $\gamma$ naravno parametrizirana odsekoma gladka krivulja, ki omejuje $n$-kotnik $R$ z notranjimi koti $\alpha_1, \alpha_2, \ldots, \alpha_n$. Potem velja \begin{equation*}
-\sum_{i=1}^{n} \alpha_i = (n-2) \pi + \int_{\gamma} \varkappa_g  \, ds + \int_{R} K \, dA.  
+\sum_{i=1}^{n} \alpha_i = (n-2) \pi + \int_{\gamma} \varkappa_g  \, ds + \int_{R} \kappa \, dA.  
 \end{equation*}  
 \end{izrek}
 
@@ -107,13 +107,13 @@ Torej bo \begin{align*}
     I = \int_{R} \kappa  \, dA &= 2 \pi  - \sum_{i = 1}^{n} \delta_i - \int_{\gamma} \varkappa_g  \, ds   \\
      &= 2 \pi- \sum_{i =1}^{n} (\pi - \alpha_i) - \int_{\gamma} \varkappa_g \, ds \\
     &= (2 - n)\pi + \sum_{i = 1}^{n} \alpha_i - \int_{\gamma} \varkappa_g \, ds \\
-    &\implies \sum_{i = 1}^{n} \alpha_i = (n - 2)\pi + \int_{\gamma} \varkappa_g \, ds + \int_{R} K \, dA.
+    &\implies \sum_{i = 1}^{n} \alpha_i = (n - 2)\pi + \int_{\gamma} \varkappa_g \, ds + \int_{R} \kappa \, dA.
 \end{align*}  
 \qed
 \begin{posledica}
     \label{psl_posledica_globalnega_GB_izreka}
     Če je $R$ mnogokotnik, omejen z  geodetkami, velja \begin{equation*}
-        \sum_{i=1}^{n} \alpha_i = (n-2) \pi  + \int_{R} K \, dA. 
+        \sum_{i=1}^{n} \alpha_i = (n-2) \pi  + \int_{R} \kappa \, dA. 
     \end{equation*}  
     \end{posledica}
 S pomočjo izreka za odsekoma gladke krivulje lahko dokažemo globalno verzijo Gauss-Bonnetovega izreka, ki poveže Gaussovo ukrivljenost z Eulerjevo karakteristiko ploskve. Najprej uvedimo nekaj definicij.
@@ -240,7 +240,7 @@ Pokažimo, da je definicija večkratnosti dobra. \begin{enumerate}
     \item Neodvisnost od izbire $\eta$: Naj bo $\zeta$ neničelno vektorsko polje na $U$. Potem bi imeli po definiciji \begin{equation*}
     m_{\eta}(p) = \frac{1}{2\pi} \int_{\gamma} \dot{\psi}(s) \, ds = \frac{1}{2 \pi} \int_{\gamma} \dot{(\psi + \varphi)}  \, ds,  
     \end{equation*}  
-    kjer je $\varphi(s)$ kot med $\eta(s)$ in $\gamma(s)$.
+    kjer je $\varphi(s)$ kot med $\eta(s)$ in $\zeta(s)$.
     Dokazati moramo torej \begin{equation*}
         \int_{\gamma} \dot{\varphi}  \, ds = 0.
     \end{equation*}  
@@ -269,7 +269,7 @@ Dokazali bomo naslednji izrek.
 \begin{izrek}
 \label{izr_vsota_nicel_vektorskega_polja}
  Naj bo $\zeta$ zvezno vektorsko polje na gladki sklenjeni orientabilni ploskvi $X$, ki ima samo izolirane ničle $X_1, X_2, \ldots, X_n$. Potem velja \begin{equation*}
- \sum_{i = 1}^{k} m(k) = \chi(X).
+\sum_{i = 1}^{k} m(k) = \chi(X).
  \end{equation*}  
 \end{izrek}
 
@@ -277,7 +277,7 @@ Dokazali bomo naslednji izrek.
 {\em Dokaz:\/}
 Okoli vsake ničle $X_i$ našega polja vzemimo disk $R_i$. Definirajmo $Y = X \setminus \bigcup_{i = 1}^{n} R_i$. Opremimo $Y$ z ortonormiranimi vektorskimi polji $e_1, e_2$. Za vsak $m \in Y$ naj bo $e_1(m) = \frac{\zeta(m)}{\lvert\lvert \zeta(m) \rvert\rvert } \neq 0$. Hkrati naj bo
 $e_2 = e_1(m) + \eta e_2(m)$. Po lokalni verziji Gauss-Bonnetovega izreka za gladek rob velja \begin{equation*}
-\int_{Y} \kappa  \, dA = \sum_{k = 1}^{n} \int_{\partial R_i} \langle e_1, \dot{e}_2 \rangle   \, ds.  
+\int_{Y} \kappa  \, dA = \sum_{i = 1}^{n} \int_{\partial R_i} \langle e_1, \dot{e}_2 \rangle   \, ds.  
 \end{equation*}
 Predznak je v tej enačbi pozitiven, ker se po krivuljah $\gamma_i = \partial R_i$ sprehajamo v pozitivni smeri glede na $R_i$, torej v negativni smeri glede na zunanjost $\bigcup_{i = 1}^{n} R_i$.    
 Poligonalizirajmo $Y$. Na vseh krivuljah, ki niso zunanje, se prispevki pri integraciji odštejejo. Za vsak $i = 1 ,\ldots, n$ izberemo med seboj ortonormirani polji $f_1^{i}, f_2^{i}$. Potem velja \begin{equation*}
@@ -288,13 +288,17 @@ Iz dokaza Gauss-Bonnetove formule vemo \begin{align*}
     \langle f_1^{i}, \dot{f}_2^{i}  \rangle  &= \dot{\phi}_i - \varkappa_g. 
 \end{align*}
 Pri tem je $\phi(m)$ kot med $e_1(m)$ in $\dot{\gamma}(m)$ za vsak $m \in  \gamma_i$. Če te formule povežemo, dobimo \begin{align*}
-    \int_{Y} \kappa  \, dA  + \sum_{k = 1}^{n} \int_{R_i} \kappa \, dA  &= \sum_{i = 1}^{n} \int_{\gamma_i} \langle e_1, \dot{e}_2 \rangle  - \langle f_1^{i}, \dot{f}_2^{i} \rangle   \, ds.    \\
+    \int_{Y} \kappa  \, dA  + \sum_{i = 1}^{n} \int_{R_i} \kappa \, dA  &= \sum_{i = 1}^{n} \int_{\gamma_i} \langle e_1, \dot{e}_2 \rangle  - \langle f_1^{i}, \dot{f}_2^{i} \rangle   \, ds.    \\
     \int_{X} \kappa  \, dA  &= \sum_{i = 1}^{n} \int_{\gamma_i} \dot{\theta} - \dot{\phi}_i \, ds.  
 \end{align*}
 Zdaj upoštevamo, da je $\theta = \measuredangle{(e_1, \dot{\gamma})}$, $\phi_i = \measuredangle{(f_1^{i}, \dot{\gamma})}$, torej $\theta - \phi_i = \measuredangle{(\zeta, f_1^{i})} =: \psi_i$.
 Dobimo \begin{equation*}
 \int_{X} \kappa  \, dA = \sum_{i = 1}^{n} \int_{\gamma_i} \dot{\psi}_i  \, ds = \frac{1}{2\pi} \sum_{i = 1}^{n} m_\zeta(X_i). 
+\end{equation*}
+\begin{equation*}
+\implies \sum_{i = 1}^{n} m(X_i) = \chi(X).
 \end{equation*}  
+    
 \qed
 
 \begin{primer}
@@ -375,7 +379,7 @@ Ker je Hessejeva matrika simetrična, obstaja ortogonalna preslikava (rotacija) 
     \tilde{k} 
   \end{pmatrix} = \lambda_1 \tilde{h}^2 + \lambda_2 \tilde{k}^2 = C. 
 \end{equation*}  
-V primeru pozitivno ali negativno definitne Hessejeve matrike ($\lambda_1 \lambda_2  > 0$) ta enačba predstavlja elipso. Pokažimo, da je gradient vedno pravokoten na nivojnice. Naj bo $\beta(t)$ nivojnica $f$, torej $f(\beta(t)) = \text{kons.}$\begin{equation*}
+V primeru pozitivno ali negativno definitne Hessejeve matrike ($\lambda_1 \lambda_2  > 0$) ta enačba predstavlja elipso. Pokažimo, da je gradient vedno pravokoten na nivojnice. Naj bo $\beta(t)$ nivojnica $f$, torej $f(\beta(t)) = \text{konst.}$\begin{equation*}
 \frac{d}{dt} \bigg|_{t = 0} f(\beta(t)) = \langle \nabla_X f, \dot{\beta}(0) \rangle  = 0 \implies \nabla_X f \perp \dot{\beta}(0).
 \end{equation*}  
 Okoli negativno definitne točke ima torej gradientno polje izvor, okoli pozitino definitne točke pa ponor (prava izbira besede?). Če je Hessejeva matrika neizrojena in nedefinitna, je njena diagonalizacija oblike \begin{equation*}
