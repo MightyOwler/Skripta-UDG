@@ -23,7 +23,7 @@ Takšni družini krivulj rečemo tudi variacija. Od tod pride ime "variacijski r
 Ekstreme funkcionala $\mathcal{L}: \mathcal{V} \to  \mathbb{R}$ bomo iskali tako, kot iščemo ekstreme
 funkcij ene ali dveh spremenljivk. Kandidati za ekstreme splošne funkcije $F: \Omega \subseteq \mathbb{R}^n \to  \mathbb{R}$ so stacionarne točke $F$, torej
 točke $x_0 \in \mathbb{R}^n$, da je $D_{x_0}F = 0$. Vemo pa, da bo $D_{x_0}F = 0$ natanko tedaj, ko za vsak dovolj majhen $\varepsilon > 0$ in za vsako krivuljo
-$\beta: [- \varepsilon, \varepsilon] \to  \Omega$, za katero je $\beta(0) = x_0$, velja \begin{equation*}
+$\beta: (- \varepsilon, \varepsilon) \to  \Omega$, za katero je $\beta(0) = x_0$, velja \begin{equation*}
 \frac{d}{dt}  \bigg|_{t = 0} F(\beta(t)) = (D_{x_0}F) \dot{\beta}(0) = 0. 
 \end{equation*}  
 % To je direktna posledica dejstva, da je lahko vektor $\dot{\beta}(0) \in  \mathbb{R}^n$ poljuben.  TODO poglej, kaj je s to izjavo
@@ -100,7 +100,7 @@ To formuliramo z naslednjim izrekom, ki je ena izmed osnovnih variant osnovnega 
 
 \begin{izrek}
 \label{izr_osnovni_izrek_o_variacijskem_racunu}
-Naj bosta $P, Q: [a,b] \to  \mathbb{R}$ (zvezni?) funkciji in naj bo $\Gamma(t) = (u(t,s), v(t,s)) : [a,b] \times (-\varepsilon, \varepsilon) \to \mathbb{R}^2$ variacija, torej $u(t, 0) = u(t), v(t, 0) = v(t), u(a,s) = u(a), v(a,s) = v(a), u(b,s) = u(b)$ in $v(b,s) = v(b)$. Potem velja enakost \begin{equation*}
+Naj bosta $P, Q: [a,b] \to  \mathbb{R}$ zvezni funkciji in naj bo $\Gamma(t) = r(u(t,s), v(t,s)) : [a,b] \times (-\varepsilon, \varepsilon) \to \mathbb{R}^2$ variacija, torej $u(t, 0) = u(t), v(t, 0) = v(t), u(a,s) = u(a), v(a,s) = v(a), u(b,s) = u(b)$ in $v(b,s) = v(b)$. Potem velja enakost \begin{equation*}
  \int_{a}^{b}  \left( P(t) \frac{ \partial u }{ \partial s }(t, s)  + Q(t) \frac{ \partial v }{ \partial s }(t, s) \right)  \, dt = 0 
  \end{equation*}  
 natanko tedaj, ko je $P(t) = 0$ in $Q(t) = 0$.
@@ -152,7 +152,7 @@ Z drugimi besedami, drugi odvod mora biti vedno pravokoten na tangentno ravnino.
 {\em Dokaz:\/}
 Naj bo $\gamma = r(u,v)$. Potem imamo \begin{align*}
     \dot{\gamma} &= \dot{u} r_u + \dot{v} r_v ,\\
-    \ddot{\gamma} &= \ddot{u} r_u + \dot{u}^2 r_{uu} + \ddot{v} r_v + \dot{v}^2.
+    \ddot{\gamma} &= \ddot{u} r_u + \dot{u}^2 r_{uu} + \ddot{v} r_v + \dot{v}^2r_{vv} + 2\dot{u}\dot{v}r_{uv}.
 \end{align*}
 Veljati morata enačbi $\langle \ddot{\gamma}, r_u \rangle = 0$, $\langle \ddot{\gamma}, r_v \rangle  = 0$. Prva od teh enačb
 je ekvivalentna \begin{align*}
@@ -215,7 +215,7 @@ F(0, v) = 0.
 \end{equation*}
 Ker sta vektorja $\dot{\gamma}_v (0), r_v (0, v)$ pravokotna, lahko zapišemo  
 \begin{equation*}
-F(0, v ) = \langle r_u(0, v), r_u(0, v) \rangle = \langle \dot{\gamma}_v (0), r_v (0, v) \rangle =  0. 
+F(0, v ) = \langle r_u(0, v), r_v(0, v) \rangle = \langle \dot{\gamma}_v (0), r_v (0, v) \rangle =  0. 
 \end{equation*}  
 Ker je geodetka $u \mapsto r(u, v_0) = \gamma_{v_0}(u)$ naravno parametrizirana geodetka, velja \begin{equation*}
 r_{uu}(u, v_0) = \ddot{\gamma}_{v_0}(u) \in (T_{r(u, v_0)}X)^{\perp}.
@@ -243,6 +243,9 @@ I = \begin{pmatrix}
 \begin{primer}
 Naj bo $X$ rotacijska ploskev, ki jo dobimo, če okoli $x$-osi zavrtimo krivuljo $(f(u), \cosh (\alpha u))$, kjer je $f$ podan z \begin{equation*}
 f(u) = \int_{0}^{u} \sqrt{1 - \alpha^2 \sinh^2(\alpha t)}  \, dt. 
+\end{equation*}
+Z drugimi besedami, ploskev $X$ je parametrizirana z \begin{equation*}
+r(u,v) = \left( f(u), \cosh(\alpha u) \cos v, \cosh(\alpha u) \sin v \right).
 \end{equation*}  
 Po znanem postopku poračunamo prvo fundamentalno formo in dobimo rezultat \begin{equation*}
     I = \begin{pmatrix}
@@ -316,13 +319,22 @@ Bistveni korak pri dokazovanju Gaussovega Theorema egregium bo naslednja lema.
 
 \noindent
 {\em Dokaz leme:\/}
-Sredinsko enakost smo že dokazali v zgornjem razmisleku. Po drugi strani pa iz istih enačb dobimo sklep \begin{align*}
+Sredinska enačba sledi direktno iz izražave parcialnih odvodov, ki smo jo izpeljali na začetku dokaza. Po drugi strani pa iz istih enačb dobimo sklep \begin{align*}
     (\alpha_1)_v - (\alpha_2)_u &= \frac{ \partial  }{ \partial u }  \langle e_1, (e_2)_v \rangle - \frac{ \partial  }{ \partial v}  \langle e_1, (e_2)_u \rangle \\
      &= \langle  (e_1)_u, (e_2)_v \rangle + \langle  e_1, (e_2)_{uv} \rangle  - \langle  (e_1)_v, (e_2)_u \rangle - \langle  e_1, (e_2)_{uv} \rangle \\
      &= \langle  (e_1)_u, (e_2)_v \rangle - \langle  (e_1)_v, (e_2)_u \rangle.
-\end{align*}  
-V splošnem velja $\langle n, r_u \rangle = 0$. Ker je $n = e_1 \times  e_2$, imamo po Lagrangeevi enakosti za skalarni produkt vektorskih produktov \begin{equation*}
-\langle n_u \times n_v, n \rangle = \langle n_u \times  n_v, e_1 \times e_2 \rangle = \langle n_u, e_1 \rangle \langle n_v, e_2 \rangle - \langle n_u, e_2 \rangle \langle n_v, e_1 \rangle = \lambda_1 \mu_2 - \lambda_2 \mu_1. 
+\end{align*}
+Spomnimo se, da smo pri definiciji Gaussove ukrivljenosti \begin{equation*}
+\kappa(m) = \lim_{U \to m} \frac{A(n_{*}(U))}{A(U)}
+\end{equation*}  
+srečali formulo \begin{equation*}
+\langle n_u \times n_v, n \rangle = \frac{LN - M^2}{\sqrt{EG - F^2}}. 
+\end{equation*}  
+Ker je $n = \frac{r_u \times r_v}{\lvert\lvert r_u \times  r_v \rvert\rvert }$, imamo po Lagrangeevi enakosti za skalarni produkt vektorskih produktov \begin{equation*}
+\langle n_u \times n_v, n \rangle = \frac{1}{\lvert\lvert r_u \times  r_v \rvert\rvert } \langle n_u \times  n_v, r_u \times r_v \rangle = \frac{1}{\lvert\lvert r_u \times  r_v \rvert\rvert } (\langle n_u, r_u \rangle \langle n_v, r_v \rangle - \langle n_u, r_v \rangle \langle n_v, r_u \rangle) = \frac{LN - M^2}{\sqrt{EG - F^2} } . 
+\end{equation*}
+Po drugi strani pa je v našem primeru kar $n = e_1 \times  e_2$, torej bo \begin{equation*}
+\langle n_u \times  n_v, n \rangle = \langle n_u \times  n_v, e_1 \times e_2 \rangle = \langle n_u, e_1 \rangle \langle n_v, e_2 \rangle - \langle n_u, e_2 \rangle \langle n_v , e_1\rangle = \lambda_1 \mu_2 - \lambda_2 \mu_1. 
 \end{equation*}  
 Člene iz zadnje enakosti dobimo s pomočjo sklepa \begin{align*}
      \langle n, e_1 \rangle &= 0, \,\,\, \left(\bigg/ \frac{ \partial  }{ \partial u } \right) \\

@@ -490,7 +490,7 @@ Po izreku o povprečni vrednosti obstajata vrednosti $\hat{t}, \hat{\hat{t}} \in
 \begin{equation*} E(u_0 + \hat{t} , v_0) \varepsilon = \tilde{E}(u_0 + \hat{\hat{t}} , v_0) \varepsilon\end{equation*}in če pošljemo $\varepsilon \to  0$,
 zaradi zveznosti funkcij dobimo 
 \begin{equation*} E(u_0, v_0) = \tilde{E}(u_0, v_0). \end{equation*}
-Še lažje ta rezultat dobimo tako, da na obeh straneh odvajamo po $\varepsilon$ in vstavimo $t = 0$.
+Še lažje ta rezultat dobimo tako, da na obeh straneh odvajamo po $\varepsilon$ in vstavimo $\varepsilon = 0$.
 
 Če zdaj vzamemo $\beta_2(t) = (u_0, v_0 + t)$, dobimo po enakem postopku kot prej 
 \begin{equation*} G(u_0, v_0) = \tilde{G}(u_0, v_0). \end{equation*}
@@ -500,13 +500,13 @@ Nato vzamemo $\beta_3(t) = (u_0 + t, v_0 + t)$ in imamo
   = \mathcal{L}_{\tilde{r}}(\tilde{\gamma}) &= \int_{0}^{\varepsilon} \sqrt{\tilde{E}(u_0 + t, v_0 + t) + 2\tilde{F}(u_0 + t, v_0 + t) + \tilde{G}(u_0 + t, v_0 + t)}   \, dt. 
 \end{align*}
 
-Če zdaj zopet odvajamo po $\varepsilon$ in vstavimo $t = 0$, dobimo enakost integrandov v točki $(u_0, v_0)$, od koder sledi še zadnja zahteva
+Če zdaj zopet odvajamo po $\varepsilon$ in vstavimo $\varepsilon = 0$, dobimo enakost integrandov v točki $(u_0, v_0)$, od koder sledi še zadnja zahteva
 \begin{equation*} F(u_0, v_0) = \tilde{F}(u_0, v_0). \end{equation*}
 \qed
 
 \begin{primer}
  Ali je stožec brez ene tvorilke izometričen kosu ravnine? Naj bo podan 
- \begin{equation*} S = \left\{ (x,y,z)  \middle|\, x^2 + y^2  = z^2 \right\}.\end{equation*}
+ \begin{equation*} S = \left\{ (x,y,z) \in \mathbb{R}^3 \middle|\, x^2 + y^2  = z^2 \right\}.\end{equation*}
  Parametriziramo ga z
  \begin{equation*} r(u,v) = (u \cos v, u \sin v, u) \end{equation*}in po znanem postopku dobimo 
  \begin{equation*} \begin{pmatrix}
@@ -1284,7 +1284,7 @@ F & G
 Torej bo res \begin{equation*}
 \kappa = \kappa_1 \kappa_2 = \frac{c}{a} = \frac{LN - M^2}{EG - F^2}.
 \end{equation*}
-Po drugi strani pa imamo Vietovo pravilo za vsoto ničel, torej $\kappa_1 + \kappa_2 = -\frac{b}{a}$. Če poračunamo
+Po Vietovem pravilu za vsoto ničel imamo zvezo $\kappa_1 + \kappa_2 = -\frac{b}{a}$. Če poračunamo
 $b$ po predpisu za polinom $p$, dobimo natanko izraz povprečne ukrivljenosti iz prejšnjega izreka. 
 \end{opomba}
 
@@ -1561,7 +1561,7 @@ Iz analize 3 vemo, da lahko v takšni situaciji najdemo integrirajoča množitel
 
 \begin{definicija}
 \label{def_premnosna_ploskev}
-Naj bo $X \subseteq  \mathbb{R}^3$ ploskev, $\gamma: [a,b] \to X$ krivulja in $\tilde{a}: \mathbb{R}^3 \to \mathbb{R}^3$ vektorsko polje. 
+Naj bo $\gamma: [a,b] \to \mathbb{R}^3$ krivulja in $\tilde{a}: \mathbb{R}^3 \to \mathbb{R}^3$ vektorsko polje. 
 Vektorskemu polju $\tilde{a}$ priredimo vektorsko polje vzdož krivulje $\gamma$ s predpisom $a(u) := \tilde{a}(\gamma(u))$. 
 Ploskev $X$ je premonosna ploskev, podana s krivuljo $\gamma$ in vektorskim poljem $a$ vzdolž krivulje $\gamma$, za katero obstaja parametrizacija \begin{equation*}
 r(u, v) = \gamma(u) + va(u).
@@ -1580,7 +1580,7 @@ tangetno premonosna natanko tedaj, ko velja pogoj na mešani produkt \begin{equa
 
 \noindent
 {\em Dokaz:\/}
-Dokazati bo treba samo implikacijo v levo smer. Naj bo $X$ premonosna ploskev s parametrizacijo \begin{equation*}
+Implikacija $(\Rightarrow)$ je očitna, saj za tangentno premonosne ploskve velja $a(u) = \gamma'(u)$. Dokažimo obrat. Naj bo $X$ premonosna ploskev s parametrizacijo \begin{equation*}
 r(u,v) = \gamma(u) + v a(u)
 \end{equation*} in naj velja zgornji pogoj na mešani produkt.
 Ploskev $X$ bo tangetno premonosna, če nam uspe poiskati takšno krivuljo $\rho(u)$ ter funkciji $f$ in $g$, da velja 
@@ -1614,7 +1614,7 @@ Zdaj se lotimo še dokaza izreka.
 
 \noindent
 {\em Dokaz izreka \href{izr_plsokev_je_ploscata_ce_je_del_valja_ali_tangentnopremosnosne_ploskve}:\/}
-Predpostavimo, da za vsak $m \in X$ velja $\kappa(m) = 0$, kar brez škode za splošnost implicira $\kappa_2(m) = 0$. Če bi bila za vsak $m \in X$ povprečna vrednost $H(m) = \frac{1}{2}(\kappa_1(m) \kappa_2(m))= 0$ je $X$ ravnina. Predpostavimo torej, da obstaja
+Predpostavimo, da za vsak $m \in X$ velja $\kappa(m) = 0$, kar brez škode za splošnost implicira $\kappa_2(m) = 0$. Če bi bila za vsak $m \in X$ povprečna vrednost $H(m) = \frac{1}{2}(\kappa_1(m) + \kappa_2(m))= 0$, je $X$ ravnina. Predpostavimo torej, da obstaja
 $k \in  X$, da je $H(k) \neq 0$.
 Po lemi \href{lem_obstoj_funkcij} vemo, da obstaja parametrizacija $r(u,v): V \to X$, za katero velja $r_u = \lambda e_1$, $r_v = \mu e_2$. 
 Za takšno parametrizacijo velja $F = \langle r_u, r_v \rangle = \lambda \mu \langle e_1, e_2 \rangle = 0$, torej bo prva fundamentalna forma te parametrizacije enaka \begin{equation*}
@@ -1657,7 +1657,7 @@ Velja torej \begin{equation*}
   M & N
   \end{pmatrix} \begin{pmatrix}
     0 \\ \alpha
-  \end{pmatrix} = N \alpha^2.
+  \end{pmatrix} = N \alpha^2 = 0.
 \end{equation*}
 Ker lahko izberemo neničelen $\alpha$, to pomeni, da je $N = 0.$ Iz pogoja $LN - M^2 = 0$ dobimo še $M$ = 0, torej za drugo fundamentalno formo naše parametrizacije $X$ velja \begin{equation*}
 II = \begin{pmatrix}
@@ -1684,9 +1684,9 @@ n_u = -\frac{L}{\sqrt{E}} e_1 \implies e_1 =-\frac{\sqrt{E} }{L} n_u.
 \end{equation*}  
 Z enakim postopkom dobimo, da je v tej bazi $n_v = 0$. Tam je namreč $\langle n_v, r_v \rangle = - N = 0.$
 Zdaj izrazimo še vektor $(e_2)_v$ po tej bazi. Po enakih idejah kot prej dobimo \begin{align*}
-  \langle (e_2)_v, e_1 \rangle &=  -\frac{\sqrt{E} }{L} \langle (e_2)_v, n_u \rangle = \frac{\sqrt{E}}{L} \langle e_2, (n_v)_u \rangle = 0.  \\
+  \langle (e_2)_v, e_1 \rangle &=  -\frac{\sqrt{E} }{L} \langle (e_2)_v, n_u \rangle = \frac{\sqrt{E}}{L} \langle e_2, (\underbrace{n_v}_0)_u \rangle = 0.  \\
   \langle (e_2)_v, e_2 \rangle   &= 0 \\
-  \langle (e_2)_v, n \rangle &= (\langle e_2, n \rangle)_v - \langle e_2, n_v \rangle = 0   
+  \langle (e_2)_v, n \rangle &= - \langle e_2, n_v \rangle = 0   
 \end{align*}
 Torej smo pokazali, da je $(e_2)_v = 0$. Zdaj dokažimo, da je $X$ tangentno premonosna ploskev s premičjem, napetim
 na vektorsko polje $e_2$. Zato si oglejmo krivulje $v \mapsto r(u_0, v)$, kjer je točka $u_0$ fiksna. V naši parametrizaciji velja,
@@ -1698,7 +1698,7 @@ $\gamma(u) = r(u, v_0)$. Naša ploskev je premonosna, lahko jo parametriziramo s
 r(u,v) = \gamma(u) + f(v) \underbrace{r_v(u, v_0)}_{a(u)}. 
 \end{equation*}  
 Zdaj izračunajmo mešani produkt \begin{equation*}
-\left[ \frac{ \partial \gamma }{ \partial u }, a , \frac{ \partial a }{ \partial u }  \right] = \left[ r_u, r_v, r_{uv} \right]
+\left[ \gamma', a , a' \right] = \left[ r_u, r_v, r_{uv} \right]
 = \langle r_u \times  r_v, r_{uv} \rangle = \lvert\lvert r_u \times  r_v \rvert\rvert \langle n, r_{uv} \rangle
 = \lvert\lvert r_u \times r_v \rvert\rvert \underbrace{M}_0  = 0.
 \end{equation*}  
