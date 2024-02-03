@@ -193,7 +193,7 @@ Naj bo $\mathcal{P}$ poligonalizacija ploskve $X$. Za vsako lice $F_i$ iz $\math
 Vse te formule seštejemo: \begin{equation*}
 \sum_{k = 1}^{\#F} \sum_{i = 1}^{n_k} \alpha_{k_i} = \pi \sum_{k = 1}^{\#F}  (n_k - 2) + \sum_{k = 1}^{\#F}  \int_{F_k} \kappa \, dA + \sum_{k = 1}^{\#F}  \int_{\partial F_k } \varkappa_g \, ds = 2 \pi \#E - 2\pi \# F + \int_{X} \kappa \, dA. 
 \end{equation*}  
-Vsota vseh $n_k$ je enaka dvakratniku števila robov, oziroma \begin{equation*}
+Po lemi o rokovanju je vsota vseh $n_k$ je enaka dvakratniku števila robov, oziroma \begin{equation*}
     \sum_{k = 1}^{\#F} n_k = 2 \# E \implies \sum_{k = 1}^{\#F}  (n_k - 2) = 2 \# E - 2 \# F.
 \end{equation*}  
   Ker ima unija robov $\bigcup_{k = 1}^{n} \partial F_k$ na ploskvi mero $0$, imamo zvezo \begin{equation*}
@@ -269,7 +269,7 @@ Dokazali bomo naslednji izrek.
 \begin{izrek}
 \label{izr_vsota_nicel_vektorskega_polja}
  Naj bo $\zeta$ zvezno vektorsko polje na gladki sklenjeni orientabilni ploskvi $X$, ki ima samo izolirane ničle $X_1, X_2, \ldots, X_n$. Potem velja \begin{equation*}
-\sum_{i = 1}^{k} m(X_i) = \chi(X).
+\sum_{i = 1}^{n} m(X_i) = \chi(X).
  \end{equation*}  
 \end{izrek}
 
@@ -288,7 +288,7 @@ Iz dokaza Gauss-Bonnetove formule vemo \begin{align*}
     \langle f_1^{i}, \dot{f}_2^{i}  \rangle  &= \dot{\phi}_i - \varkappa_g. 
 \end{align*}
 Pri tem je $\theta(m)$ kot med $e_1(m)$ in $\dot{\gamma}(m)$, $\phi_i(m)$ pa kot med $f_1^{i}(m)$ in $\dot{\gamma}(m)$ za vsak $m \in  \gamma_i$. Če te formule povežemo, dobimo \begin{align*}
-    \int_{Y} \kappa  \, dA  + \sum_{i = 1}^{n} \int_{R_i} \kappa \, dA  &= \sum_{i = 1}^{n}  \langle f_1^{i}, \dot{f}_2^{i} \rangle - \int_{\gamma_i} \langle e_1, \dot{e}_2 \rangle    \, ds.    \\
+    \int_{Y} \kappa  \, dA  + \sum_{i = 1}^{n} \int_{R_i} \kappa \, dA  &= \sum_{i = 1}^{n}  \int_{\gamma_i} \langle f_1^{i}, \dot{f}_2^{i} \rangle -  \langle e_1, \dot{e}_2 \rangle    \, ds.    \\
     \int_{X} \kappa  \, dA  &= \sum_{i = 1}^{n} \int_{\gamma_i}  \dot{\phi}_i  - \dot{\theta} \, ds.  
 \end{align*}
 Zdaj upoštevamo, da je $\theta = \measuredangle{(e_1, \dot{\gamma})}$, $\phi_i = \measuredangle{(f_1^{i}, \dot{\gamma})}$, torej $\phi_i - \theta = \measuredangle{(f_1^{i}, e_1)} = \measuredangle{(f_1^{i}, \zeta)} = \measuredangle{(\zeta, -f_1^i)} =: \psi_i$.
@@ -312,10 +312,10 @@ Kaj bi se zgodilo, če bi bilo naše polje gradientno polje neke funkcije?
 \label{def_gradientno_polje}
 Naj bo $f: X \to  \mathbb{R}$ gladka funkcija. Naj bo $\gamma: (-\varepsilon, \varepsilon) \to  X$ gladka krivulja, $\gamma(0) = m$. Gradientno polje $\operatorname{grad}_X f = \nabla_X f$ je po Rieszovem reprezentacijskem izreku enolično določeno na naslednji način:
 \[ \frac{d}{dt} \bigg|_{t = 0} f(\gamma(t)) = (D_mf)(\dot{\gamma}(0)) = \langle \nabla_X f, \dot{\gamma}(0) \rangle. \]  
-Takšna definicija je legitimna, ker je $D_mf: T_mX \to  \mathbb{R}$ linearen funkcional, vsak linearen funkcional pa lahko predstavimo s skalarnim produktom. Skalarni produkt $\langle \nabla_X f, \dot{\gamma}(0) \rangle$ je določen s prvo fundamentalno formo na $T_mX$.
+Takšna definicija je legitimna, ker je $D_mf: T_mX \to  \mathbb{R}$ linearen funkcional, vsak linearen funkcional pa lahko predstavimo kot delovanje skalarnega produkta. Skalarni produkt $\langle \nabla_X f, \dot{\gamma}(0) \rangle$ je določen s prvo fundamentalno formo na $T_mX$.
 \end{definicija}
 
-Dobili smo izrek.
+Skupaj z izrekom \ref{izr_vsota_nicel_vektorskega_polja}[] smo dobili naslednji izrek.
 \begin{izrek}
 \label{izr_vsota_nicel_gradientnih_polj}
  Naj bo $X$ sklenjena in orientabilna gladka mnogoterost ter $f: X \to  \mathbb{R}$ taka funckija, da so vse ničle polja $\nabla_X f$ izolirane. Potem je \begin{equation*}
@@ -325,16 +325,16 @@ Dobili smo izrek.
 
 \begin{izrek}
 \label{izr_formula_stacionarnih_tock}
-Naj bo $X$ sklenjena in orientabilna gladka mnogoterost ter $f: X \to  \mathbb{R}$ funckija s končno mnogo izoliranimi stacionarnimi točkami in neizrojeno Hessejevo matriko.
+Naj bo $X$ sklenjena in orientabilna gladka mnogoterost ter $f: X \to  \mathbb{R}$ vsaj dvakrat zvezno parcialno odvedljiva funckija s končno mnogo izoliranimi stacionarnimi točkami in neizrojeno Hessejevo matriko.
 Naj bo $\text{Max}$ število lokalnih maksimumov $f$, $\text{Min}$ število lokalnih minimumov $f$ ter $\text{Sed}$ število sedel $f$. Potem velja \begin{equation*}
 \chi(X) = \text{Max} - \text{Sed} + \text{Min}.
 \end{equation*}  
 \end{izrek}
 \noindent
 {\em Skica dokaza:\/}
-Okoli minumimov in maksimumov je večkratnost $m_{\nabla_X f} = 1$. Razmisliti moramo, kako izgleda $\nabla_X f$ v okolici sedla.
+Okoli minumimov in maksimumov funkcije $f$ je večkratnost $m_{\nabla_X f} = 1$. Razmisliti moramo, kako izgleda $\nabla_X f$ v okolici sedla.
 Naj bo $R \subseteq X$ tako majhen disk okoli sedla, da se geometrijsko ne razlikuje od situacije na ravnini. Razvijemo $f$ v Taylorjevo vrsto okoli stacionarne točke $\nabla_X f$. \begin{align*}
-f(u_0 + h, v_0 + k) &= f(u_0 ,v_0) + f_u(u_0, v_0)h + f_v(u_0, v_0)k + \frac{1}{2} \begin{pmatrix}
+f(u_0 + h, v_0 + k) &\approx f(u_0 ,v_0) + f_u(u_0, v_0)h + f_v(u_0, v_0)k + \frac{1}{2} \begin{pmatrix}
   h & k 
 \end{pmatrix}
 \begin{pmatrix}
@@ -400,7 +400,7 @@ Okoli negativno definitne točke ima torej gradientno polje izvor, okoli pozitin
         \tilde{k} 
       \end{pmatrix} = \lambda_1 \tilde{h}^2 - \lambda_2 \tilde{k}^2 = C,
 \end{equation*}  
-torej so nivojnice hiperbole. Za sedla velja $m_{\nabla_X f} = -1$. Če uporabimo prejšnji izrek za $\zeta = \nabla_X f$ dobimo \begin{equation*}
+torej so nivojnice hiperbole. Takšnim stacionarnim točkam pravimo starcionarne točke sedla, zanje velja $m_{\nabla_X f} = -1$. Če uporabimo prejšnji izrek za $\zeta = \nabla_X f$ dobimo \begin{equation*}
 \chi(X) = \sum_{i = 1}^{n} m_{\nabla_X f}(X_i) = \text{Max} - \text{Sed} + \text{Min}.
 \end{equation*}  
 \qed

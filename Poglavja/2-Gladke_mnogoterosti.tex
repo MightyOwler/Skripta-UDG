@@ -572,8 +572,7 @@ samo v ovinkih in to pravokotno glede na smer vožnje.
 \end{definicija}
 
 Izračunajmo prvo fundamentalno formo tangentno premonosne ploskve. Ker velja zveza
-\begin{equation*} r(u,v) = \gamma(u) + v \dot{\gamma}(u),\end{equation*}takoj dobimo 
-\begin{align*}
+\begin{equation*} r(u,v) = \gamma(u) + v \dot{\gamma}(u),\end{equation*}takoj dobimo S\begin{align*}
     r_u(u,v) &= \dot{\gamma}(u) + v \ddot{\gamma}(u), \\
     r_v(u,v) &= \dot{\gamma}(u). 
 \end{align*}
@@ -589,11 +588,11 @@ F & G
   1 & 1\\
 \end{pmatrix}.\end{equation*}
 
-Torej vidimo, da je matrika prve fundamentalne forme tangentno premonosne ploskve odvisna samo od fleksijske ukrivljenosti.
+Vidimo, da je matrika prve fundamentalne forme tangentno premonosne ploskve odvisna samo od fleksijske ukrivljenosti.
 
 \begin{trditev}
 \label{trd_obstoj_krivulje_glede_na_funkcijo_fleksijske_ukrivljenosti}
- Naj bo podana poljubna (zvezna?) funkcija $\tilde{\varkappa}: [\alpha, \beta] \to  \mathbb{R}$. Potem obstaja naravno parametrizirana ravninska krivulja $\gamma: [\alpha, \beta] \to  \mathbb{R}^2$, katere fleksijska ukrivljenost v točki
+ Naj bo podana poljubna zvezna funkcija $\tilde{\varkappa}: [\alpha, \beta] \to  \mathbb{R}$. Potem obstaja naravno parametrizirana ravninska krivulja $\gamma: [\alpha, \beta] \to  \mathbb{R}^2$, katere fleksijska ukrivljenost v točki
   $\gamma(u)$ je enaka $\varkappa(u) = \tilde{\varkappa}(u)$.
 \end{trditev}
 
@@ -624,7 +623,7 @@ naravno parametrizirana krivulja $\gamma(u) = (x(u), y(u))$, za katero za vsak $
 
 \begin{opomba}
  Pri določenih $(u,v)$ nam krivulja $\gamma(u)$ podaja tangentno premonosno ploskev. Ta ploskev je del ravnine, v kateri
- leži krivulja krivulja $\gamma(u)$. Po izreku \href{izr_izometricnost_ploskev_ravnini} je ta ploskev izometrična nekemu kosu ravnine.
+ leži krivulja krivulja $\gamma(u)$. Po izreku [\ref{izr_izometricnost_ploskev_ravnini}] je ta ploskev izometrična nekemu kosu ravnine.
 \end{opomba}
 
 S tem razmislekom smo dokazali izrek.
@@ -761,13 +760,13 @@ Od tod sledi naslednji izrek.
 
 \begin{posledica}
 \label{psl_dobra_definiranost_ploscine}
- Definicija ploščine \href{def_ploscina_plosvke} je dobra.
+ Definicija ploščine [\ref{def_ploscina_plosvke}] je dobra.
 \end{posledica}
 \noindent
 {\em Dokaz:\/}
  Dokazujemo 
  \begin{equation*} A(X) = \int_{V_1} \sqrt{EG - F^2}   \, du \, dv = \int_{V_2}  \sqrt{\tilde{E}\tilde{G} -  \tilde{F}^2}  \, d \tilde{u} \, d \tilde{v}.\end{equation*}
- Po izreku o transformaciji prve fundamentalne forme \href{izr_transformacija_1_forme} velja 
+ Po izreku o transformaciji prve fundamentalne forme [\ref{izr_transformacija_1_forme}] velja 
  \begin{align*}
      A(X) &= \int_{V_1} \sqrt{\det \begin{pmatrix}
      E & F \\
@@ -855,7 +854,7 @@ Razmislili smo, da velja ocena razdalje
 \end{pmatrix}.\end{equation*}
 
 Od te točke naprej predpostavljamo, da so vse krivulje naravno parametrizirane. Naj bo $\gamma: [a,b] \to X$ gladka krivulja. 
-Spomnimo se definicije fleksijske ukrivljenosti krivulje \href{def_fleksijska_ukrivljenost}, velja $\varkappa(t) = \lvert\lvert \ddot{\gamma}(t) \rvert\rvert$.
+Spomnimo se definicije fleksijske ukrivljenosti krivulje [\ref{def_fleksijska_ukrivljenost}], velja $\varkappa(t) = \lvert\lvert \ddot{\gamma}(t) \rvert\rvert$.
 V nadaljevanju bomo razdelili vektor pospeška na geodetsko in normalno komponentno, torej 
 \begin{equation*} \ddot{\gamma}(t) = \ddot{\gamma}_g(t) + \ddot{\gamma}_n(t).\end{equation*}
 
@@ -1131,10 +1130,7 @@ Z naslednjim izrekom bomo utemeljili, da sta glavni ukrivljenosti res kvečjem d
         \end{pmatrix} \begin{pmatrix}
             \xi_i \\
             \eta_i
-        \end{pmatrix}}_1  =  \begin{pmatrix}
-            0 \\
-            0
-        \end{pmatrix}.
+        \end{pmatrix}}_1  =  0.
      \end{equation*}
      Desni člen je enak $1$, ker smo izbrali enotska vektorja glede na skalarni produkt, porojen s to matriko. Preostaneta nam torej enačbi \begin{equation*}
        \varkappa_n(\xi_i, \eta_i) = \lambda_i, \,\,\, i = 1,2.
@@ -1613,10 +1609,10 @@ Monotonost bi privzeli zato, da bi dobili smiselno parametrizacijo.
 Zdaj se lotimo še dokaza izreka.
 
 \noindent
-{\em Dokaz izreka \href{izr_plsokev_je_ploscata_ce_je_del_valja_ali_tangentnopremosnosne_ploskve}:\/}
+{\em Dokaz izreka [\ref{izr_plsokev_je_ploscata_ce_je_del_valja_ali_tangentnopremosnosne_ploskve}]:\/}
 Predpostavimo, da za vsak $m \in X$ velja $\kappa(m) = 0$, kar brez škode za splošnost implicira $\kappa_2(m) = 0$. Če bi bila za vsak $m \in X$ povprečna vrednost $H(m) = \frac{1}{2}(\kappa_1(m) + \kappa_2(m))= 0$, je $X$ ravnina. Predpostavimo torej, da obstaja
 $k \in  X$, da je $H(k) \neq 0$.
-Po lemi \href{lem_obstoj_funkcij} vemo, da obstaja parametrizacija $r(u,v): V \to X$, za katero velja $r_u = \lambda e_1$, $r_v = \mu e_2$. 
+Po lemi [\ref{lem_obstoj_funkcij}] vemo, da obstaja parametrizacija $r(u,v): V \to X$, za katero velja $r_u = \lambda e_1$, $r_v = \mu e_2$. 
 Za takšno parametrizacijo velja $F = \langle r_u, r_v \rangle = \lambda \mu \langle e_1, e_2 \rangle = 0$, torej bo prva fundamentalna forma te parametrizacije enaka \begin{equation*}
 I = \begin{pmatrix}
 E & 0 \\
@@ -1702,7 +1698,7 @@ Zdaj izračunajmo mešani produkt \begin{equation*}
 = \langle r_u \times  r_v, r_{uv} \rangle = \lvert\lvert r_u \times  r_v \rvert\rvert \langle n, r_{uv} \rangle
 = \lvert\lvert r_u \times r_v \rvert\rvert \underbrace{M}_0  = 0.
 \end{equation*}  
-Po lemi \href{lem_tangentno_premonosna_mesani_produkt} sledi, da je $X$ tangentno premonosna ploskev.
+Po lemi [\ref{lem_tangentno_premonosna_mesani_produkt}] sledi, da je $X$ tangentno premonosna ploskev.
 \qed
 
 \begin{opomba}
