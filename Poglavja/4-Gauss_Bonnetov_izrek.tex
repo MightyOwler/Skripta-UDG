@@ -76,7 +76,7 @@ Imamo še \begin{equation*}
 Zdaj lahko izračunamo geodetsko ukrivljenost krivulje $\gamma$: \begin{align*}
     \varkappa_g &= \langle \ddot{\gamma}, \eta \rangle  \\
      &= \langle \dot{\theta} \eta + \cos(\theta) \dot{e}_1 + \sin(\theta) \dot{e}_2, \eta  \rangle \\
-     &= \dot{\theta} + \langle \cos(\theta) \dot{e}_1 + \sin(\theta)\dot{e}_2, - \sin(\theta) \dot{e}_1 + \cos(\theta) \dot{e}_2 \rangle \\
+     &= \dot{\theta} + \langle \cos(\theta) \dot{e}_1 + \sin(\theta)\dot{e}_2, - \sin(\theta) e_1 + \cos(\theta) e_2 \rangle \\
      &= \dot{\theta} - (\cos^2(\theta) + \sin^2(\theta) ) \langle e_1, \dot{e}_2  \rangle \\
      &= \dot{\theta} - \langle e_1, \dot{e}_2  \rangle.  
 \end{align*}
@@ -148,7 +148,7 @@ Eulerjeva karakteristika poligonalizacije $\mathcal{P} = \left\{ F, E, V\right\}
 \end{equation*}  
 \end{definicija}
 
-Brez dokaza bomo privzeli naslednji izrek, ki poskrbi za doboro definiranost Eulerjeve karakterisitike ploskve.
+Brez dokaza bomo privzeli naslednji izrek, ki poskrbi za dobro definiranost Eulerjeve karakterisitike ploskve.
 \begin{izrek}
 \label{izr_dobra_definiranost_Eulerjeve_karkteristike}
  Naj bosta $\mathcal{P}_1, \mathcal{P}_2$ dve poligonalizaciji ploskve $X$. Potem velja \begin{equation*}
@@ -269,7 +269,7 @@ Dokazali bomo naslednji izrek.
 \begin{izrek}
 \label{izr_vsota_nicel_vektorskega_polja}
  Naj bo $\zeta$ zvezno vektorsko polje na gladki sklenjeni orientabilni ploskvi $X$, ki ima samo izolirane ničle $X_1, X_2, \ldots, X_n$. Potem velja \begin{equation*}
-\sum_{i = 1}^{k} m(k) = \chi(X).
+\sum_{i = 1}^{k} m(X_i) = \chi(X).
  \end{equation*}  
 \end{izrek}
 
@@ -277,21 +277,21 @@ Dokazali bomo naslednji izrek.
 {\em Dokaz:\/}
 Okoli vsake ničle $X_i$ našega polja vzemimo disk $R_i$. Definirajmo $Y = X \setminus \bigcup_{i = 1}^{n} R_i$. Opremimo $Y$ z ortonormiranimi vektorskimi polji $e_1, e_2$. Za vsak $m \in Y$ naj bo $e_1(m) = \frac{\zeta(m)}{\lvert\lvert \zeta(m) \rvert\rvert } \neq 0$. Hkrati naj bo
 $e_2 = e_1(m) + \eta e_2(m)$. Po lokalni verziji Gauss-Bonnetovega izreka za gladek rob velja \begin{equation*}
-\int_{Y} \kappa  \, dA = \sum_{i = 1}^{n} \int_{\partial R_i} \langle e_1, \dot{e}_2 \rangle   \, ds.  
+\int_{Y} \kappa  \, dA = -\sum_{i = 1}^{n} \int_{\partial R_i} \langle e_1, \dot{e}_2 \rangle   \, ds.  
 \end{equation*}
-Predznak je v tej enačbi pozitiven, ker se po krivuljah $\gamma_i = \partial R_i$ sprehajamo v pozitivni smeri glede na $R_i$, torej v negativni smeri glede na zunanjost $\bigcup_{i = 1}^{n} R_i$.    
+Predznak je v tej enačbi negativen, ker se po krivuljah $\gamma_i = \partial R_i$ sprehajamo v pozitivni smeri glede na $R_i$, torej v negativni smeri glede na zunanjost $\bigcup_{i = 1}^{n} R_i$.    
 Poligonalizirajmo $Y$. Na vseh krivuljah, ki niso zunanje, se prispevki pri integraciji odštejejo. Za vsak $i = 1 ,\ldots, n$ izberemo med seboj ortonormirani polji $f_1^{i}, f_2^{i}$. Potem velja \begin{equation*}
-\int_{R_i} \kappa   \, dA = \int_{\gamma_i} \langle \dot{f}_1^{i}, f_2^{i} \rangle   \, ds.  
+\int_{R_i} \kappa   \, dA = \int_{\gamma_i} \langle f_1^{i}, \dot{f}_2^{i} \rangle   \, ds.  
 \end{equation*}  
 Iz dokaza Gauss-Bonnetove formule vemo \begin{align*}
     \langle e_1, \dot{e}_2  \rangle  &= \dot{\theta} - \varkappa_g, \\
     \langle f_1^{i}, \dot{f}_2^{i}  \rangle  &= \dot{\phi}_i - \varkappa_g. 
 \end{align*}
-Pri tem je $\phi(m)$ kot med $e_1(m)$ in $\dot{\gamma}(m)$ za vsak $m \in  \gamma_i$. Če te formule povežemo, dobimo \begin{align*}
-    \int_{Y} \kappa  \, dA  + \sum_{i = 1}^{n} \int_{R_i} \kappa \, dA  &= \sum_{i = 1}^{n} \int_{\gamma_i} \langle e_1, \dot{e}_2 \rangle  - \langle f_1^{i}, \dot{f}_2^{i} \rangle   \, ds.    \\
-    \int_{X} \kappa  \, dA  &= \sum_{i = 1}^{n} \int_{\gamma_i} \dot{\theta} - \dot{\phi}_i \, ds.  
+Pri tem je $\theta(m)$ kot med $e_1(m)$ in $\dot{\gamma}(m)$, $\phi_i(m)$ pa kot med $f_1^{i}(m)$ in $\dot{\gamma}(m)$ za vsak $m \in  \gamma_i$. Če te formule povežemo, dobimo \begin{align*}
+    \int_{Y} \kappa  \, dA  + \sum_{i = 1}^{n} \int_{R_i} \kappa \, dA  &= \sum_{i = 1}^{n}  \langle f_1^{i}, \dot{f}_2^{i} \rangle - \int_{\gamma_i} \langle e_1, \dot{e}_2 \rangle    \, ds.    \\
+    \int_{X} \kappa  \, dA  &= \sum_{i = 1}^{n} \int_{\gamma_i}  \dot{\phi}_i  - \dot{\theta} \, ds.  
 \end{align*}
-Zdaj upoštevamo, da je $\theta = \measuredangle{(e_1, \dot{\gamma})}$, $\phi_i = \measuredangle{(f_1^{i}, \dot{\gamma})}$, torej $\theta - \phi_i = \measuredangle{(\zeta, f_1^{i})} =: \psi_i$.
+Zdaj upoštevamo, da je $\theta = \measuredangle{(e_1, \dot{\gamma})}$, $\phi_i = \measuredangle{(f_1^{i}, \dot{\gamma})}$, torej $\phi_i - \theta = \measuredangle{(f_1^{i}, e_1)} = \measuredangle{(f_1^{i}, \zeta)} = \measuredangle{(\zeta, -f_1^i)} =: \psi_i$.
 Dobimo \begin{equation*}
 \int_{X} \kappa  \, dA = \sum_{i = 1}^{n} \int_{\gamma_i} \dot{\psi}_i  \, ds = \frac{1}{2\pi} \sum_{i = 1}^{n} m_\zeta(X_i). 
 \end{equation*}

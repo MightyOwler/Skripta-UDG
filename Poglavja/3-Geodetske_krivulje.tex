@@ -100,7 +100,7 @@ To formuliramo z naslednjim izrekom, ki je ena izmed osnovnih variant osnovnega 
 
 \begin{izrek}
 \label{izr_osnovni_izrek_o_variacijskem_racunu}
-Naj bosta $P, Q: [a,b] \to  \mathbb{R}$ zvezni funkciji in naj bo $\Gamma(t) = r(u(t,s), v(t,s)) : [a,b] \times (-\varepsilon, \varepsilon) \to \mathbb{R}^2$ variacija, torej $u(t, 0) = u(t), v(t, 0) = v(t), u(a,s) = u(a), v(a,s) = v(a), u(b,s) = u(b)$ in $v(b,s) = v(b)$. Potem velja enakost \begin{equation*}
+Naj bosta $P, Q: [a,b] \to  \mathbb{R}$ zvezni funkciji in naj bo $\Gamma(t, s) = r(u(t,s), v(t,s)) : [a,b] \times (-\varepsilon, \varepsilon) \to \mathbb{R}^2$ variacija, torej $u(t, 0) = u(t), v(t, 0) = v(t), u(a,s) = u(a), v(a,s) = v(a), u(b,s) = u(b)$ in $v(b,s) = v(b)$. Potem velja enakost \begin{equation*}
  \int_{a}^{b}  \left( P(t) \frac{ \partial u }{ \partial s }(t, s)  + Q(t) \frac{ \partial v }{ \partial s }(t, s) \right)  \, dt = 0 
  \end{equation*}  
 natanko tedaj, ko je $P(t) = 0$ in $Q(t) = 0$.
@@ -144,7 +144,7 @@ Imenujemo ju Euler-Lagrangevi enačbi za geodetke.
 \begin{izrek}
 \label{izr_karakterizacija_geodetke_pri_naravni_parametrizaciji}
  Naj bo $\gamma(t)$ naravno parametrizirana krivulja. Potem je $\gamma(t)$ geodetka natanko tedaj, ko je \begin{equation*}
- \ddot{\gamma} \in (T_{\gamma(t)}X)^{\perp}.
+ \ddot{\gamma}(t) \in (T_{\gamma(t)}X)^{\perp}.
  \end{equation*}  
 Z drugimi besedami, drugi odvod mora biti vedno pravokoten na tangentno ravnino.
 \end{izrek}
@@ -221,10 +221,10 @@ Ker je geodetka $u \mapsto r(u, v_0) = \gamma_{v_0}(u)$ naravno parametrizirana 
 r_{uu}(u, v_0) = \ddot{\gamma}_{v_0}(u) \in (T_{r(u, v_0)}X)^{\perp}.
 \end{equation*}  
 V splošnem velja $r_v \in  T_{r(u, v_0)}X$, torej sledi \begin{equation*}
-\langle r_{uu}, r_v \rangle = 0. 
+\langle r_{uu}, r_v \rangle = 0 = F_u - \langle r_u, r_{uv} \rangle . 
 \end{equation*}  
 Po drugi strani pa vemo, da je $E = 1$, zato lahko poračunamo \begin{equation*}
-\langle r_u, r_{uv} \rangle = \langle r_u, r_u \rangle_v = 2 \langle r_u, r_{uv} \rangle = 2 E_v = 0.   
+\langle r_u, r_{uv} \rangle =  \frac{1}{2} \langle r_u, r_u \rangle_v = \frac{1}{2} E_v = 0.   
 \end{equation*}  
 Zdaj iz pogojev $F(0, v_0) = 0$ ter $F_u(u, v_0) = 0$ sledi $F(u,v) = 0$ za vse $(u,v)$. 
 \qed
