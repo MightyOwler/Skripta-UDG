@@ -102,7 +102,7 @@ $a_f = Pa_e$ in $b_f = Pb_e$. Potem dobimo iz enakosti
 a_e, b_e \rangle \\ a_f^{T} A_f b_f &= a_e^{T} A_e
 b_e \\ a_e^{T} P^{T} A_f P b_e &= a_e^{T} A_e b_e,
 \forall a_e, b_e. \end{align*} Od tod sledi, da je
-$P^{T}A_fP = A_e$ oziroma zaradi ortogonalnosti
+$P^{T}A_fP = A_e$ oziroma v primeru ortogonalnosti
 $P$ ekvivalentno \begin{equation*}A_f = PA_eP^{T}.\end{equation*}
 
 Torej transformacijska pravila določajo vrsto
@@ -461,7 +461,7 @@ Ker so posamezni sumandi po predpostavki enaki, sta dolžini enaki, torej je $f 
 \tilde{r} \circ r^{-1}$ res izometrija.
 
 Zdaj dokažimo še $(\implies)$. Denimo, da imamo med ploskvama $X$ in $\tilde{X}$
-izomerijo $f: X \to  \tilde{X}.$ Naj bo $\gamma(t): (0, \varepsilon) \to X$ krivulja s predpisom $\gamma(t) = r(\beta_1(t)) =
+izometrijo $f: X \to  \tilde{X}.$ Naj bo $\gamma(t): (0, \varepsilon) \to X$ krivulja s predpisom $\gamma(t) = r(\beta_1(t)) =
 r(u_0 + t, v_0)$. Pri tem je točka $(u_0, v_0) \in V$ poljubna in določa točko $p = r(u_0, v_0) \in  X$. Zdaj
 izračunamo 
 \begin{equation*} 
@@ -549,11 +549,13 @@ Izkaže se, da znamo, pred izrekom pa navedimo še definicijo tangentno premonos
    \end{equation*}  
      
   \end{definicija}
+
 \begin{izrek}
 \label{izr_izometricnost_ploskev_ravnini}
 Naj bo ploskev $X$ izometrična kakšnemu kosu ravnine. Potem je $X$ bodisi stožec, valj, ali kakšna tangentna premonosna ploskev.
 \end{izrek}
-
+Da je plašč stožca izometričen kosu ravnine, smo že videli v primeru (za valj je to še bolj očitno). V nadaljevanju bomo pokazali, da enako velja tudi za tangentno premonosne ploskve.
+Dejstvo, da so to res edine tri možnosti, bomo privzeli brez dokaza.
 
 
 Če je $\gamma = \gamma(u)$ naravna parametrizacija, potem je smiselna parametrizacija tangentno premonosne ploskve $X$
@@ -778,11 +780,11 @@ Od tod sledi naslednji izrek.
         \tilde{F} & \tilde{G}
         \end{pmatrix}
       \text{Jac}(g) \right) }   \, du \, dv \\ 
-      &= \int_{V_1} \sqrt{\begin{pmatrix}
+      &= \int_{V_1} \sqrt{\det \begin{pmatrix}
         \tilde{E} & \tilde{F} \\
         \tilde{F} & \tilde{G}
       \end{pmatrix}} \left| \det \left( \operatorname{Jac}(g) \right) \right|  \, du \, dv \\ 
-     \text{(uvedba novih spremenljivk)} &= \int_{V_2} \sqrt{\begin{pmatrix}
+     \text{(uvedba novih spremenljivk)} &= \int_{V_2} \sqrt{\det \begin{pmatrix}
       \tilde{E} & \tilde{F} \\
       \tilde{F} & \tilde{G}
       \end{pmatrix}}   \, d \tilde{u} \, d \tilde{v}.  
@@ -855,7 +857,7 @@ Razmislili smo, da velja ocena razdalje
 
 Od te točke naprej predpostavljamo, da so vse krivulje naravno parametrizirane. Naj bo $\gamma: [a,b] \to X$ gladka krivulja. 
 Spomnimo se definicije fleksijske ukrivljenosti krivulje [\ref{def_fleksijska_ukrivljenost}], velja $\varkappa(t) = \lvert\lvert \ddot{\gamma}(t) \rvert\rvert$.
-V nadaljevanju bomo razdelili vektor pospeška na geodetsko in normalno komponentno, torej 
+V nadaljevanju bomo razdelili vektor pospeška na geodetsko in normalno komponento, torej 
 \begin{equation*} \ddot{\gamma}(t) = \ddot{\gamma}_g(t) + \ddot{\gamma}_n(t).\end{equation*}
 
 Zato najprej definirajmo geodetsko in normalno ukrivljenost krivulje.
@@ -928,7 +930,7 @@ Vsako funkcijo normalne ukrivljenosti lahko razširimo na tangentno ravnino na n
     \end{pmatrix}$ druga fundamentalna forma ploskve $X$ glede na $r$. Naj bo $r(u_0, v_0) = m \in  X$. Vemo, da je $\left\{ r_u(u_0, v_0), r_v(u_0, v_0) \right\}$ baza za
     tangetno ravnino $T_mX$, zato lahko vsak vektor v njej enolično zapišemo v obliki $\xi r_u(u_0, v_0) + \eta r_v(u_0, v_0).$
     Potem obstaja funkcija \begin{align*}
-       \varkappa_n : T_mX &\longrightarrow \mathbb{R} \\
+       \varkappa_n : T_mX &\longrightarrow \mathbb{R}, \\
         \varkappa_n(\xi r_u(u_0, v_0) + \eta r_v(u_0, v_0)) &=
         \begin{pmatrix}
           \xi  & \eta
@@ -1347,7 +1349,7 @@ Naj bo $X \subseteq  \mathbb{R}^3$ ploskev. Preslikava, ki točki priredi enotsk
 Povprečno intenzivnost spreminjanja normale na $U$ lahko merimo s kvocientom površin \begin{equation*}
 \frac{A(\tilde{n}_{*}(U))}{A(U)},
 \end{equation*}  
-kjer je $A(U)$ ploščina okolice $U \subseteq X$, $A(\tilde{n}(U))$ pa je ploščina slike \begin{equation*}
+kjer je $A(U)$ ploščina okolice $U \subseteq X$, $A(\tilde{n}_{*}(U))$ pa je ploščina slike \begin{equation*}
 \tilde{n}: U \subseteq X \to \tilde{n}_{*}(U) \subseteq S^2. 
 \end{equation*} 
 
@@ -1393,7 +1395,7 @@ S pomočjo te izražave lahko zapišemo \begin{equation*}
     = \frac{\int_{V} \frac{LN - M^2}{\sqrt{EG - F^2} }   \, du \, dv}{\int_{V} \sqrt{EG - F^2} \, du \, dv }.
     \end{equation*}  
 Od tod pa s pomočjo izreka o povprečni vrednosti in zveznosti funkcij dobimo, da je \begin{equation*}
-\lim_{V \to (u_0, v_0)} \frac{A(\tilde{n}(U))}{A(U)} = \frac{(LN - M^2)(m)}{(EG - F^2)(m)} = \kappa(m).
+\lim_{V \to m} \frac{A(\tilde{n}(U))}{A(U)} = \frac{(LN - M^2)(m)}{(EG - F^2)(m)} = \kappa(m).
 \end{equation*}  
 
 

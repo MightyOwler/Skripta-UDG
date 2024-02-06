@@ -203,7 +203,7 @@ Poleg tega je\begin{equation*}
     \sum_{k = 1}^{\#F} \int_{\partial F_k} \varkappa_g \, ds = 0, 
 \end{equation*}  
 ker ima zaradi skladne orientacije večkotnikov vsak prispevek stranice pri integiranju tudi svoj nasprotno enak prispevek. 
-Velja tudi \begin{equation*}
+Ker je $X$ sklenjena ploskev, si lahko predstvljamo, da imamo okoli vsakega vozlišča vsoto kotov $2 \pi$, torej skupaj \begin{equation*}
     \sum_{k = 1}^{\#F} \sum_{i = 1}^{n_k} \alpha_{k_i} = 2 \pi \# V.
 \end{equation*}  
 Ko povežemo vse te enačbe, dobimo \begin{equation*}
@@ -269,7 +269,7 @@ Dokazali bomo naslednji izrek.
 \begin{izrek}
 \label{izr_vsota_nicel_vektorskega_polja}
  Naj bo $\zeta$ zvezno vektorsko polje na gladki sklenjeni orientabilni ploskvi $X$, ki ima samo izolirane ničle $X_1, X_2, \ldots, X_n$. Potem velja \begin{equation*}
-\sum_{i = 1}^{n} m(X_i) = \chi(X).
+\sum_{i = 1}^{n} m_{\zeta}(X_i) = \chi(X).
  \end{equation*}  
 \end{izrek}
 
@@ -287,7 +287,7 @@ Iz dokaza Gauss-Bonnetove formule vemo \begin{align*}
     \langle e_1, \dot{e}_2  \rangle  &= \dot{\theta} - \varkappa_g, \\
     \langle f_1^{i}, \dot{f}_2^{i}  \rangle  &= \dot{\phi}_i - \varkappa_g. 
 \end{align*}
-Pri tem je $\theta(m)$ kot med $e_1(m)$ in $\dot{\gamma}(m)$, $\phi_i(m)$ pa kot med $f_1^{i}(m)$ in $\dot{\gamma}(m)$ za vsak $m \in  \gamma_i$. Če te formule povežemo, dobimo \begin{align*}
+Pri tem je $\theta(m)$ kot med $e_1(m)$ in $\dot{\gamma}(m)$, $\phi_i(m)$ pa kot med $f_1^{i}(m)$ in $\dot{\gamma}_i(m)$ za vsak $m \in  \gamma_i$. Če te formule povežemo, dobimo \begin{align*}
     \int_{Y} \kappa  \, dA  + \sum_{i = 1}^{n} \int_{R_i} \kappa \, dA  &= \sum_{i = 1}^{n}  \int_{\gamma_i} \langle f_1^{i}, \dot{f}_2^{i} \rangle -  \langle e_1, \dot{e}_2 \rangle    \, ds.    \\
     \int_{X} \kappa  \, dA  &= \sum_{i = 1}^{n} \int_{\gamma_i}  \dot{\phi}_i  - \dot{\theta} \, ds.  
 \end{align*}
