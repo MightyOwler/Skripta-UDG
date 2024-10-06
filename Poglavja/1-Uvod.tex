@@ -9,24 +9,24 @@ Topološki prostor $M$
 je $n$-dimenzionalna mnogoterost, če za vsak $m \in M$
 obstaja okolica $m \in U \subseteq M$ in homeomorfizem
 $\varphi : U \to V^{\text{odp}} \subseteq
-\mathbb{R}^n$, pri čemer je $V \approx B^{n}$.
+\R ^n$, pri čemer je $V \approx B^{n}$.
 \end{definicija}
 
 
 \begin{primer}
 Naslednje množice so primeri mnogoterosti.
 \begin{enumerate}
-	\item $M = \mathbb{R}^n$ je
+	\item $M = \R ^n$ je
 $n$-dimenzionalna mnogoterost,
 	\item $S^1$ je
 $1$-dimenzionalna mnogoterost,
   \item $S^{n} =
 \left\{\left( x_1, x_2, \ldots, x_n, x_{n+1}
 \right) \middle| \sum_{j=1}^{n+1} x_{j}^2 =
-1\right\} \subseteq \mathbb{R}^{n+1}$ je
+1\right\} \subseteq \R ^{n+1}$ je
 $n$-dimenzionalna mnogoterost,
 	\item Projektivni
-prostori $\mathbb{R}P^{n} = \bigslant{B^{n}}{\sim} $,
+prostori $\R P^{n} = \bigslant{B^{n}}{\sim} $,
 kjer je $\vec{x} \sim \vec{y}  \iff \vec{y}  =
 -\vec{x}$ so $n$-dimenzionalne mnogoterosti.
 	\item Grupa \begin{equation*} \operatorname{SU}\left( 2 \right) = \left\{ A
@@ -34,22 +34,22 @@ kjer je $\vec{x} \sim \vec{y}  \iff \vec{y}  =
 \alpha & \beta \\ -
 \overline{\beta}  & \overline{\alpha}  \\
 \end{pmatrix}
-\middle|\, \alpha, \beta \in  \mathbb{C}, \, \det
+\middle|\, \alpha, \beta \in  \C , \, \det
 A = 1 \right\} 	\end{equation*}je $3$-dimenzionalna mnogoterost. Topološko in
 geometrijsko je namreč $\operatorname{SU}\left( 2 \right) = S^3.$ To
-je primer Lijeve grupe.
+je primer Liejeve grupe.
 	\item Grupa \begin{equation*}
 \operatorname{SO}\left( 3 \right) =
 \left\{ A =
 \begin{pmatrix} a_{11} &
-a_{12} & a_{13} \\ a_{21} & a_{22}
+% a_{12} & a_{13} \\ a_{21} & a_{22}
 & a_{23} \\ a_{31} & a_{32}
 & a_{33} \\
 \end{pmatrix}
-\middle|\, A^{T} = A^{-1}, \, \det  A
+\middle|\, a_{ij} \in \R  , \, A^{T} = A^{-1}, \, \det  A
 = 1 \right\}. \end{equation*} Izkaže se, da je
 $\operatorname{SO}\left( 3\right ) =
-\bigslant{B^3}{\sim } = \mathbb{R}P^3.$ To
+\bigslant{B^3}{\sim } = \R P^3.$ To
 velja, ker vsaka preslikava iz
 $\operatorname{SO}\left( 3\right )$
 predstavlja rotacijo prostora, vsako
@@ -60,7 +60,7 @@ kot. Če točki v krogli $B\left( 0, \pi
 \right)^{3} \approx B^3$ priredimo os in njeno
 razdaljo od izhodišča proglasimo za velikost kota vrtenja
 ter enačimo iste rotacije, dobimo natanko projektivni prostor
-$\mathbb{R}P^3$.
+$\R P^3$.
 \end{enumerate}
 \end{primer}
 
@@ -73,9 +73,9 @@ definicije odvedljivosti preslikav v evklidskih prostorih.
 
 \begin{definicija}
 Preslikava $F: W^{\text{odp}} \subseteq
-\mathbb{R}^n \to \mathbb{R}^m$ je odvedljiva v točki $w \in W$, če
-obstaja linearna preslikava $A : \mathbb{R}^n \to \mathbb{R}^m$ in
-preslikava $\mathcal{O}: W \to \mathbb{R}^m$, da za vse dovolj majhne $h$ velja \begin{equation*} F\left( w + h \right) = F\left( w \right) + Ah
+\R ^n \to \R ^m$ je odvedljiva v točki $w \in W$, če
+obstaja linearna preslikava $A : \R ^n \to \R ^m$ in
+preslikava $\mathcal{O}: W \to \R ^m$, da za vse dovolj majhne $h$ velja \begin{equation*} F\left( w + h \right) = F\left( w \right) + Ah
 + \mathcal{O}\left( h \right)\end{equation*} in $\lim_{h \to 0}
 \frac{\lvert\lvert \mathcal{O}\left( h \right) \rvert\rvert
 }{\lvert\lvert h \rvert\rvert } = 0.$ Odvod preslikave $F$ v točki $w$
@@ -85,7 +85,7 @@ je preslikava $A =: D_wF = \left( DF \right)_w.$
 
 \begin{definicija}
 \label{def_odvedljivost}
-Preslikava $F: W^{\text{odp}} \subseteq  \mathbb{R}^n \to \mathbb{R}^m$ je odvedljiva
+Preslikava $F: W^{\text{odp}} \subseteq  \R ^n \to \R ^m$ je odvedljiva
 na množici $W$, če je odvedljiva v vsaki točki $w \in
 W$.
 \end{definicija}
@@ -100,8 +100,8 @@ Naj bo $M$ $n$-dimenzionalna mnogoterost. Družina parov $$\mathcal{U} = \left\{
 \mid \alpha \in  A \right\},$$ je gladek atlas na $M$, če za vsak $\alpha \in A$ velja:
 \begin{enumerate}
  \item $U_\alpha^{\text{odp}} \subseteq M$
- \item $\varphi_\alpha: U_\alpha \to V_\alpha \subseteq \mathbb{R}^n$
-je homeomorfizem na množico $V_\alpha \subseteq \mathbb{R}^n$, $V_\alpha \approx B^{n}$
+ \item $\varphi_\alpha: U_\alpha \to V_\alpha \subseteq \R ^n$
+je homeomorfizem na množico $V_\alpha \subseteq \R ^n$, $V_\alpha \approx B^{n}$
  \item $\left\{ U_\alpha \middle|\, \alpha\in  A \right\}$ je
 pokritje $M$ \item za vsaka $\alpha, \beta \in A$ je
 preslikava $g_{\alpha \beta}  = \varphi_\beta \circ
@@ -118,9 +118,9 @@ $\mathcal{C}^{\omega}$-atlas.
 
 \begin{opomba}
 Preslikava $g_{\alpha \beta}$  iz prejšnje definicije
-je preslikava med evklidskima prostoroma $U_\alpha \subseteq \mathbb{R}^n \to
-\mathbb{R}^n$. Torej jo znamo odvajati in vemo, da je v izbranih
-koordinatah na $\mathbb{R}^n$ matrika odvoda enaka Jacobijevi
+je preslikava med evklidskima prostoroma $U_\alpha \subseteq \R ^n \to
+\R ^n$. Torej jo znamo odvajati in vemo, da je v izbranih
+koordinatah na $\R ^n$ matrika odvoda enaka Jacobijevi
 matriki: \begin{equation*} F\left( x_1, \ldots, x_{n} \right) =
 \begin{pmatrix}
 F_1(x_1, \dots, x_n)\\ \vdots\\ F_n(x_1, \dots, x_n)
@@ -139,14 +139,14 @@ ki premore kakšen gladek atlas, je gladka mnogoterost.
 \end{definicija}
 
 Za motivacijo naslednje definicije se spomnimo dejstva, da vemo,
-kakšne so gladke preslikave iz $\mathbb{R}^n \to  \mathbb{R}$. Nismo
-pa še definirali gladkih preslikav iz mnogoterosti $M \to \mathbb{R}$. 
+kakšne so gladke preslikave iz $\R ^n \to  \R $. Nismo
+pa še definirali gladkih preslikav iz mnogoterosti $M \to \R $. 
 
 \begin{definicija}
 \label{def_gladke_preslikave}
-Naj bo $M$ gladka $n$-dimenzionalna mnogoterost. Funkcija $f : M \to  \mathbb{R}$ je
+Naj bo $M$ gladka $n$-dimenzionalna mnogoterost. Funkcija $f : M \to  \R $ je
 gladka, če je gladka vsaka preslikava $f \circ \varphi_\alpha^{-1}
-: V_\alpha \subseteq \mathbb{R}^n \to  \mathbb{R}$.
+: V_\alpha \subseteq \R ^n \to  \R $.
 \end{definicija}
 
 
@@ -155,8 +155,8 @@ gladka, če je gladka vsaka preslikava $f \circ \varphi_\alpha^{-1}
 Naj bo $\left( M,\mathcal{U} \right)$  gladka mnogoterost. Krivulja $\gamma :
 \left( a, b \right) \to  M$ je gladka krivulja v $M$, če za
 $\forall  \alpha \in A$ velja, da je $\varphi_\alpha \circ \gamma
-: \left( a, b \right) \to  V_\alpha \subseteq \mathbb{R}^n$ gladka
-krivulja v $V_\alpha \subseteq  \mathbb{R}^n$.
+: \left( a, b \right) \to  V_\alpha \subseteq \R ^n$ gladka
+krivulja v $V_\alpha \subseteq  \R ^n$.
 \end{definicija}
 
 \begin{definicija} \label{def_ekvivalnentnost_atlasov} Atlasa
@@ -168,8 +168,8 @@ vsak par $\left( \alpha, \beta \right) \in  A \times  B$ iz
 $U_\alpha \cap  W_\beta \neq \emptyset$ sledi, da je \begin{equation*}
 \psi_\beta \circ \varphi_\alpha^{-1} : \left(
 \varphi_\alpha \right)_{*}\left( U_\alpha \cap W_\beta \right)
-\subseteq  \mathbb{R}^n \to \left( \psi_\beta \right)_{*}\left(
-U_\alpha \cap W_\beta \right)\subseteq \mathbb{R}^n \end{equation*} difeomorfizem.
+\subseteq  \R ^n \to \left( \psi_\beta \right)_{*}\left(
+U_\alpha \cap W_\beta \right)\subseteq \R ^n \end{equation*} difeomorfizem.
 \end{definicija}
 
 \begin{opomba}
@@ -187,7 +187,7 @@ mnogoterost in $\mathcal{U}$ gladek atlas na $M$. Potem je $\left[
 (eksotične strukture) na mnogoterostih, je zelo netrivialno. Iz
 \href{https://en.wikipedia.org/wiki/Donaldson%27s_theorem}{Donaldsonovega}
 in \href{https://mathworld.wolfram.com/FreedmanTheorem.html}{Freedmanovega}
-izreka sledi, da ima $\mathbb{R}^{4}$ neštevno neskončno
-eksotičnih gladkih struktur, za vse ostale $n$ pa ima $\mathbb{R}^n$ 
-zgolj svojo trivialno struturo in nobene eksotične.
+izreka sledi, da ima $\R ^{4}$ neštevno neskončno
+eksotičnih gladkih struktur, za vse ostale $n$ pa ima $\R ^n$ 
+zgolj svojo trivialno strukturo in nobene eksotične.
 \end{opomba}

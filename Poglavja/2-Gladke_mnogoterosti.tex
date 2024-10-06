@@ -5,13 +5,13 @@ V splošnem bi lahko mnogoterosti obravnavali kot abstraktne
 matematične strukture, ki ne prebivajo nujno v evklidskih
 prostorih. Pri uvodu v diferencialno geometrijo pa se bomo v
 glavnem ukvarjali z eno in dvodimenzionalnimi mnogoterostmi,
-vloženimi v prostor $\mathbb{R}^3$. 
+vloženimi v prostor $\R ^3$. 
 
 \begin{definicija}
 \label{def_gladka_vložena_ploskev} Množica
-$X \subseteq \mathbb{R}^3$ je gladka vložena ploskev, če
+$X \subseteq \R ^3$ je gladka vložena ploskev, če
 za vsako točko $m \in  X$ obstaja krogla $W \ni m \subseteq
-\mathbb{R}^3$ ter gladka funkcija $f : W \to \mathbb{R}$,
+\R ^3$ ter gladka funkcija $f : W \to \R $,
 za katero velja 
 \begin{enumerate} \item $X \cap W =
 f^{*}\left( \left\{ 0\right\}  \right)$,
@@ -19,17 +19,17 @@ f^{*}\left( \left\{ 0\right\}  \right)$,
 \end{enumerate}    
 \end{definicija}
 
-Vložena ploskev $X \subseteq  \mathbb{R}^3$ je tudi abstraktna
+Vložena ploskev $X \subseteq  \R ^3$ je tudi abstraktna
 mnogoterost. Poglejmo si, kako bi konstruirali atlas na $X$.
 Vzemimo točko $m \in  X$. Po definiciji vložene ploskve
-obstaja nivojnica $f: W \ni m \to \mathbb{R}$, za katero po drugi točki definicije vemo, da
+obstaja nivojnica $f: W \ni m \to \R $, za katero po drugi točki definicije vemo, da
 $D_mf = \left( \frac{ \partial f }{ \partial x } , \frac{
 \partial f }{ \partial y }  , \frac{ \partial f }{ \partial z
 } \right)\left( m \right) \neq 0$. Zdaj se spomnimo izreka o
 implicitni funkciji. Naj bo $m = \left( x_0, y_0 , z_0 \right)$ in
 BŠS naj bo $\frac{ \partial f }{ \partial z }\left( m \right) \neq
 0$. Torej obstaja gladka okolica $V \ni \left( x_0, y_0 \right)
-\subseteq \mathbb{R}^2$  in gladka funkcija $g: V \to \mathbb{R}$,
+\subseteq \R ^2$  in gladka funkcija $g: V \to \R $,
 da velja $f\left( x, y, g\left( x,y \right) \right) = 0$  za vsak
 $\left( x,y \right) \in  V$. Po potrebi lahko množico $W$
 zmanjšamo na $W_0 \subseteq  W$, da dobimo difeomorfizem
@@ -57,7 +57,7 @@ skalarnim produktom, torej $\lvert\lvert x \rvert\rvert =
 \sqrt{\langle x,x \rangle } $.
 
 Naj bo $\langle \cdot , \cdot  \rangle $  neki -- ne nujno običajni -- skalarni
-produkt na $\mathcal{V} = \mathbb{R}^n$ in naj bo $\left\{
+produkt na $\mathcal{V} = \R ^n$ in naj bo $\left\{
 v_1, \ldots , v_{n} \right\}$  baza za $\mathcal{V}$, ki ni
 nujno ortonormirana. Vzemimo vektorja $\vec{x}  =
 \sum_{i=1}^{n} a_{i}v_{i}$ in $\vec{y}  = \sum_{i=1}^{n}
@@ -83,12 +83,12 @@ definitnost te matrike.
 
 \begin{opomba}
 Kvadratne matrike so lahko koordinatni
-zapisi linearnih preslikav iz $\mathbb{R}^n \to
-\mathbb{R}^n$, lahko pa so tudi koordinatni zapisi
+zapisi linearnih preslikav iz $\R ^n \to
+\R ^n$, lahko pa so tudi koordinatni zapisi
 skalarnih produktov. To je odvisno od tega, kako se
 matrike transformirajo pri prehodu v različno bazo.
 
-Naj bo $\mathcal{L}: \mathbb{R}^n \to  \mathbb{R}^n$ linearna, $L_e$ matrika
+Naj bo $\mathcal{L}: \R ^n \to  \R ^n$ linearna, $L_e$ matrika
 linearne preslikave $\mathcal{L}$ glede na bazo $\left\{ e_1, \ldots
 , e_{n}\right\}$, $L_f$ pa glede na bazo $\left\{ f_1,
 \ldots, f_{n}\right\}.$ Naj bo $P$ prehodna preslikava
@@ -114,7 +114,7 @@ definicije.
 
 \begin{definicija}
 \label{def_rang_preslikave}
- Naj bo preslikava $F: W \subseteq  \mathbb{R}^n \to  \mathbb{R}^m$ odvedljiva.
+ Naj bo preslikava $F: W \subseteq  \R ^n \to  \R ^m$ odvedljiva.
  Rang preslikave $F$ v točki $w \in  W$ je enak rangu matrike $D_wF$. Pravimo,
  da ima $F$ v točki $w \in  W$ maksimalen rang, če ima matrika $D_wF$
  maksimalen rang.
@@ -123,12 +123,12 @@ definicije.
 
 \begin{definicija} 
 	\label{def_tangentna_ravnina}
-	Naj bo $X \subseteq \mathbb{R}^3$ vložena ploskev in točka $m
+	Naj bo $X \subseteq \R ^3$ vložena ploskev in točka $m
 \in X$. Tangentna ravnina $T_mX$ je množica tangent
 vseh krivulj v $X$, ki v času $t = 0$ gredo skozi $m$.
 \begin{equation*} T_mX = \left\{ \dot{\gamma}\left( 0 \right) \mid
 \gamma : \left(  - \varepsilon, \varepsilon \right)
-\to  X \subseteq  \mathbb{R}^3 \text{ krivulja, } \gamma\left(
+\to  X \subseteq  \R ^3 \text{ krivulja, } \gamma\left(
 0 \right) = m\right\} \end{equation*}
 \end{definicija}
 
@@ -136,12 +136,12 @@ vseh krivulj v $X$, ki v času $t = 0$ gredo skozi $m$.
 \begin{trditev}
 \label{trd_tangentna_ravnina_je_dvodimenzionalen_vektorski_prostor}
 $T_mX$ je dvodimenzionalen realen vektorski podprostor v
-$\mathbb{R}^3$. 
+$\R ^3$. 
 \end{trditev} 
 {\em Dokaz:\/} Naj bo $r : V
-\subseteq  \mathbb{R}^2 \to X \subseteq \mathbb{R}^3$ neka regularna
+\subseteq  \R ^2 \to X \subseteq \R ^3$ neka regularna
 parametrizacija ploskve $X$ (to pomeni, da mora biti rang preslikave
-$r$ maksimalen, torej konstantno enak 2) v okolici točke  $m \in  X$.  Označimo za vsak $\left( u, v \right) \in  V \subseteq \mathbb{R}^2$ \begin{equation*} r\left( u,v \right) = 
+$r$ maksimalen, torej konstantno enak 2) v okolici točke  $m \in  X$.  Označimo za vsak $\left( u, v \right) \in  V \subseteq \R ^2$ \begin{equation*} r\left( u,v \right) = 
 \begin{pmatrix} x\left( u,v
 \right) \\ y\left( u,v \right) \\ z\left( u,v \right)
 \end{pmatrix} . \end{equation*}
@@ -150,7 +150,7 @@ je $ T_mX = \operatorname{im} \left( D_{(u_0, v_0)}r \right) $.
 Najprej dokažimo inkluzijo $T_mX \subseteq \operatorname{im} \left(
 D_{(u_0, v_0)}r \right)$. 
 Naj bo $\gamma: \left( -\varepsilon,
-\varepsilon \right) \to X \subseteq \mathbb{R}^2,$ $\gamma \left( 0
+\varepsilon \right) \to X \subseteq \R ^2,$ $\gamma \left( 0
 \right) = m$ poljubna krivulja. Direktno
 po definiciji tangentne krivulje sledi $\dot{\gamma}\left( 0 \right)
 \in T_mX$. 
@@ -158,7 +158,7 @@ Dokazati moramo $\dot{\gamma}(0) \in \operatorname{im} \left(D_{\left( u_0, v_0 
 $\beta \left( t \right) : \left( -\varepsilon, \varepsilon \right)\to
 V$ podana z $\beta\left( t \right) = r^{-1}\left( \gamma\left( t
 \right) \right)$. Ker je praslika preslikave $\beta$ vsebovana v
-$\mathbb{R}^2,$ obstajata funkciji $u\left( t \right), v\left( t
+$\R ^2,$ obstajata funkciji $u\left( t \right), v\left( t
 \right)$, da je $\beta\left( t \right) = \left( u(t), v(t) \right).$
 Pri tem velja, da je $\beta(0) = (u(0), v(0)) = (u_0, v_0).$ Vidimo,
 da je $\gamma(t) = r(u(t), v(t)).$ Po verižnem pravilu za odvajanje
@@ -169,13 +169,13 @@ $\dot{\gamma} (0) \in \operatorname{im} \left( D_{(u_0,v_0)}r
 
 Nato dokažimo še obratno inkluzijo $T_mX \supseteq
 \operatorname{im} \left( D_{(u_0, v_0)}r \right)$. Vzemimo poljuben
-vektor $w \in \mathbb{R}^2$ in naj bo $v = \left( D_{(u_0, v_0)} r \right) w$. Potrebujemo krivuljo $\gamma(t) : (-\varepsilon, \varepsilon) \to  X,
+vektor $w \in \R ^2$ in naj bo $v = \left( D_{(u_0, v_0)} r \right) w$. Potrebujemo krivuljo $\gamma(t) : (-\varepsilon, \varepsilon) \to  X,
 \gamma(0) = m,$ za katero bo veljalo $\dot{\gamma} (0) = v.$  Definirajmo funkcijo $\beta(t): (-\varepsilon, \varepsilon) \to V$,
 s predpisom $\beta(t) = wt + (u_0, v_0)$. Trdimo, da za $\gamma(t) =
 r(\beta(t))$  velja $\dot{\gamma}(0) \in  T_mX.$
 Oglejmo si \begin{equation*} \left( D_{(u_0, v_0)}r \right)\dot{\beta} (0) =
 \frac{d}{dt} \big|_{t = 0} r(\beta(t)). \end{equation*}   Ker je $\gamma(t): (-\varepsilon,
-\varepsilon)\to  X \subseteq \mathbb{R}^3$, hkrati pa tudi $\gamma(0) = r(\beta(0) )= r(u_0, v_0) = m$, je po definiciji tangentnega prostora $\dot{\gamma}(t) \in T_mX$. Torej velja,
+\varepsilon)\to  X \subseteq \R ^3$, hkrati pa tudi $\gamma(0) = r(\beta(0) )= r(u_0, v_0) = m$, je po definiciji tangentnega prostora $\dot{\gamma}(t) \in T_mX$. Torej velja,
 da je $T_mX = \operatorname{im}(D_{(u_0,v_0)}r)$. Ker smo zahtevali,
 da je parametrizacija regularna, je matrika $D_{(u_0,v_0)}r$ ranga 2,
 torej je  $T_mX$ dvodimenzionalen vektorski prostor.
@@ -192,10 +192,10 @@ oziroma z eno samo parametrizacijo.
 
 \begin{definicija}
 \label{def_metrika_na_ploskvi}
- Metrika na ploskvi $X \subseteq  \mathbb{R}^3$, opremljeni s
- parametrizacijo $r: V \subseteq  \mathbb{R}^2 \to  X \subseteq
- \mathbb{R}^3$, je preslikava \begin{align*}
- 	g: X &\longrightarrow M_2(\mathbb{R}), \\
+ Metrika na ploskvi $X \subseteq  \R ^3$, opremljeni s
+ parametrizacijo $r: V \subseteq  \R ^2 \to  X \subseteq
+ \R ^3$, je preslikava \begin{align*}
+ 	g: X &\longrightarrow M_2(\R ), \\
  	m &\longmapsto 
 	\begin{pmatrix}
 		g_{11}(m) & g_{12}(m) \\\
@@ -215,7 +215,7 @@ $g_{12}(m) = g_{21}(m)$, $\det g(m) > 0$ in $g_{11}(m) >0.$
 \end{opomba}
  Naj bo $\gamma: [a,b] \to  X$ krivulja. Njeno parametrizacijo $r$
 lahko napišemo v obliki  $\gamma(t) = r(u(t), v(t))$ za primerne
-funkcije $u,v : [a,b] \to \mathbb{R}$, $\beta(t) = (u(t), v(t))$,
+funkcije $u,v : [a,b] \to \R $, $\beta(t) = (u(t), v(t))$,
 $\gamma(t) = r(\beta(t)).$ V koordinatah lahko zapišemo 
 
 \begin{equation*} \gamma(t) =  \begin{pmatrix}x(u(t), v(t))\\ y(u(t), v(t)) \\
@@ -239,7 +239,7 @@ primerih.
 
 \begin{definicija}
 \label{def_dolzina_krivulje}
-Naj bo $X \subseteq \mathbb{R}^3$ ploskev ter $r: V \subseteq \mathbb{R}^2 \to X$ njena parametrizacija. Naj bo $\gamma: [a,b] \to  X$ krivulja, ki ji pripadata funkciji $u, v: [a,b] \to  \mathbb{R}$, tako da velja \begin{equation*}
+Naj bo $X \subseteq \R ^3$ ploskev ter $r: V \subseteq \R ^2 \to X$ njena parametrizacija. Naj bo $\gamma: [a,b] \to  X$ krivulja, ki ji pripadata funkciji $u, v: [a,b] \to  \R $, tako da velja \begin{equation*}
 \gamma(t) = r(u(t), v(t)).
 \end{equation*}  
    Dolžina krivulje $\gamma$ glede na metriko $g$ je v parametrizaciji $r$ podana s formulo 
@@ -263,7 +263,7 @@ Ustrezni skalarni produkti na ravnini $T_mX$ so glede na
 parametrizacijo $r$ podani s predpisi $\left<r_u, r_u \right>_g  =
 g_{11}$, $\left<r_u, r_v \right>_g  =
 g_{12}$, $\left<r_v, r_v \right>_g  =
-g_{22}$. Naj bo sedaj ambientni prostor $\mathbb{R}^3$ opremljen s
+g_{22}$. Naj bo sedaj ambientni prostor $\R ^3$ opremljen s
 fiksnim evklidskim skalarnim produktom, in koeficiente $g_{ij}$
 poračunamo z njim (na enak način kot prej). Pri tem uporabimo
 naslednje standardne oznake: 
@@ -275,9 +275,9 @@ Včasih tudi zlorabimo notacijo
 
 \begin{definicija}
 \label{def_prva_fundamentalna_forma}
- Metrika na $X \subseteq  \mathbb{R}^2$, ki je glede na parametrizacijo $r: V \to  X
-\subseteq  \mathbb{R}^3$ podana z matrično funkcijo \begin{align*}
- 	g_f: V &\longrightarrow M_2(\mathbb{R}) \\
+ Metrika na $X \subseteq  \R ^2$, ki je glede na parametrizacijo $r: V \to  X
+\subseteq  \R ^3$ podana z matrično funkcijo \begin{align*}
+ 	g_f: V &\longrightarrow M_2(\R ) \\
 	(u,v) &\longmapsto 
 \begin{pmatrix}
 	E(u,v) & F(u,v) \\
@@ -328,7 +328,7 @@ definicija pa je nekoliko drugačna, kot bi morda pričakovali.
 \begin{definicija}
 \label{def_izometrija}
  Preslikava $f: X \to \tilde{X}$ nad dvema ploskvama $X, \tilde{X} \subseteq
- \mathbb{R}^3$ je izometrija, če za vsako krivuljo $\gamma: \left[ a,b
+ \R ^3$ je izometrija, če za vsako krivuljo $\gamma: \left[ a,b
  \right] \to  X$ velja enakost med dolžinama 
  \begin{equation*} \mathcal{L}_X(\gamma) = \mathcal{L}_{\tilde{X}}(f(\gamma)). \end{equation*}
 \end{definicija}
@@ -343,7 +343,7 @@ definicija pa je nekoliko drugačna, kot bi morda pričakovali.
  odvzamemo iz $S^2$ en poldnevnik, jo lahko parametriziramo s
  sferičnimi koordinatami: 
  \begin{equation*} r(u,v): V = \left( -\pi, \pi \right) \times \left(
- 0, \pi  \right) \subseteq  \mathbb{R}^2 \to  \mathbb{R}^3
+ 0, \pi  \right) \subseteq  \R ^2 \to  \R ^3
   \end{equation*} s predpisom \begin{equation*} r(u,v) = 
 \begin{pmatrix}\cos u \cos v \\ \cos u \sin v \\ \sin u
 \end{pmatrix}.\end{equation*}
@@ -506,7 +506,7 @@ Nato vzamemo $\beta_3(t) = (u_0 + t, v_0 + t)$ in imamo
 
 \begin{primer}
  Ali je stožec brez ene tvorilke izometričen kosu ravnine? Naj bo podan 
- \begin{equation*} S = \left\{ (x,y,z) \in \mathbb{R}^3 \middle|\, x^2 + y^2  = z^2 \right\}.\end{equation*}
+ \begin{equation*} S = \left\{ (x,y,z) \in \R ^3 \middle|\, x^2 + y^2  = z^2 \right\}.\end{equation*}
  Parametriziramo ga z
  \begin{equation*} r(u,v) = (u \cos v, u \sin v, u) \end{equation*}in po znanem postopku dobimo 
  \begin{equation*} \begin{pmatrix}
@@ -539,12 +539,12 @@ Pogoj  \begin{equation*} \begin{pmatrix}
  \begin{equation*} \tilde{r}(u,v) = \left(\sqrt{2}  u \cos(\frac{1}{\sqrt{2}} v), \sqrt{2}  u \sin(\frac{1}{\sqrt{2}} v), 0 \right).\end{equation*}
 \end{primer}
 
-Na tej točki se pojavi naravno vprašanje: ali znamo poiskati vse ploskve v $\mathbb{R}^3$, ki so izomertične ravnini?
+Na tej točki se pojavi naravno vprašanje: ali znamo poiskati vse ploskve v $\R ^3$, ki so izomertične ravnini?
 Izkaže se, da znamo, pred izrekom pa navedimo še definicijo tangentno premonosne ploskve.
 \begin{definicija}
   \label{def_tangentno_premonsna_ploskev}
-   Naj bo $\gamma: [a,b] \to  \mathbb{R}^3$ prostorska krivulja, parametriziarana z naravnim parametrom. Tangentna premonosna ploskev,
-   podana s krivuljo $\gamma$, je del prostora $\mathbb{R}^3$, ki ga opiše tangenta na $\gamma(u)$ na intervalu $u \in  [a,b]$. Parametriziramo jo lahko s predpisom \begin{equation*}
+   Naj bo $\gamma: [a,b] \to  \R ^3$ prostorska krivulja, parametriziarana z naravnim parametrom. Tangentna premonosna ploskev,
+   podana s krivuljo $\gamma$, je del prostora $\R ^3$, ki ga opiše tangenta na $\gamma(u)$ na intervalu $u \in  [a,b]$. Parametriziramo jo lahko s predpisom \begin{equation*}
    r(u, v) = \gamma(u) + v\dot{\gamma}(u).
    \end{equation*}  
      
@@ -594,7 +594,7 @@ Vidimo, da je matrika prve fundamentalne forme tangentno premonosne ploskve odvi
 
 \begin{trditev}
 \label{trd_obstoj_krivulje_glede_na_funkcijo_fleksijske_ukrivljenosti}
- Naj bo podana poljubna zvezna funkcija $\tilde{\varkappa}: [\alpha, \beta] \to  \mathbb{R}$. Potem obstaja naravno parametrizirana ravninska krivulja $\gamma: [\alpha, \beta] \to  \mathbb{R}^2$, katere fleksijska ukrivljenost v točki
+ Naj bo podana poljubna zvezna funkcija $\tilde{\varkappa}: [\alpha, \beta] \to  \R $. Potem obstaja naravno parametrizirana ravninska krivulja $\gamma: [\alpha, \beta] \to  \R ^2$, katere fleksijska ukrivljenost v točki
   $\gamma(u)$ je enaka $\varkappa(u) = \tilde{\varkappa}(u)$.
 \end{trditev}
 
@@ -612,7 +612,7 @@ Vidimo, da je matrika prve fundamentalne forme tangentno premonosne ploskve odvi
     \langle \ddot{\gamma}(u), \dot{\gamma}(u) \rangle   &= 0.
  \end{align*}
  Enotski vektor, pravokoten na $\dot{\gamma}(u) = (\dot{x}(u), \dot{y}(u))$, je vektor $(\dot{y}(u), -\dot{x}(u))$. Ta vektor je vzporeden vektorju pospeška,
- torej bo za neko funkcijo $k : [\alpha, \beta]  \to \mathbb{R}$ veljalo 
+ torej bo za neko funkcijo $k : [\alpha, \beta]  \to \R $ veljalo 
  \begin{equation*} (\ddot{x}(u), \ddot{y}(u)) = k(u) (\dot{y}(u), -\dot{x}(u)). \end{equation*}Če obe strani enačbe normiramo, iz prejšnega sistema enačb vidimo, da mora priti natanko 
  \begin{equation*} (\ddot{x}(u), \ddot{y}(u)) = \varkappa(u) (\dot{y}(u), -\dot{x}(u)).\end{equation*}Zanima nas, ali obstaja krivulja, za katero je $\varkappa = \tilde{\varkappa}$, torej z drugimi besedami, ali je rešljiv sistem navadnih diferencialnih enačb 
  \begin{align*}
@@ -637,7 +637,7 @@ S tem razmislekom smo dokazali izrek.
 
 \begin{definicija}
 \label{def_ploscina_plosvke}
-  Ploščina ploskve $X$, regularno parametrizirane z $r: V \subseteq  \mathbb{R}^2 \to  X \subseteq  \mathbb{R}^3$ je podana z 
+  Ploščina ploskve $X$, regularno parametrizirane z $r: V \subseteq  \R ^2 \to  X \subseteq  \R ^3$ je podana z 
   \begin{equation*} A(X) = \int_{V} \lvert\lvert r_u \times  r_v \rvert\rvert   \, du \, dv.\end{equation*} 
 \end{definicija}
 
@@ -657,7 +657,7 @@ lahko ploščino izrazimo tudi kot
 
 \begin{definicija}
 \label{def_prehodna_preslikava_med_parametrizacijama}
- Naj bosta $r: V_1 \subseteq  \mathbb{R}^2 \to  X \subseteq  \mathbb{R}^3$ in $\tilde{r}: V_2 \subseteq  \mathbb{R}^2 \to  X \subseteq  \mathbb{R}^3$ različni regularni parametrizaciji ploskve $X$.
+ Naj bosta $r: V_1 \subseteq  \R ^2 \to  X \subseteq  \R ^3$ in $\tilde{r}: V_2 \subseteq  \R ^2 \to  X \subseteq  \R ^3$ različni regularni parametrizaciji ploskve $X$.
  Potem je preslikava \begin{align*}
   g = \tilde{r}^{-1} \circ r: V_1 &\longrightarrow V_2 \\
   (u,v) &\longmapsto (\tilde{u}(u,v), \tilde{v}(u,v)),
@@ -679,7 +679,7 @@ razviti bo bazi $\left\{ \tilde{r}_{\tilde{u}}, \tilde{r}_{\tilde{v}} \right\}$.
   r_u   &= \tilde{r}_{\tilde{u}} \tilde{u}_u + \tilde{r}_{\tilde{v}} \tilde{v}_u, \\ 
   r_v &= \tilde{r}_{\tilde{u}} \tilde{u}_v + \tilde{r}_{\tilde{v}} \tilde{v}_v.
 \end{align*}
-Zdaj hočemo vektor $a r_u + b r_v$ zapisati v obliki $\alpha \tilde{r}_{\tilde{u}} + \beta \tilde{r}_\tilde{v}$. Dobimo 
+Zdaj hočemo vektor $a r_u + b r_v$ zapisati v obliki $\alpha \tilde{r}_{\tilde{u}} + \beta \tilde{r}_{\tilde{v}}$. Dobimo 
 \begin{equation*} a r_u + b r_v  = a(\tilde{r}_{\tilde{u}} \tilde{u}_u + \tilde{r}_{\tilde{v}} \tilde{v}_u) + b (\tilde{r}_{\tilde{u}} \tilde{u}_v + \tilde{r}_{\tilde{v}} \tilde{v}_v) 
 = \underbrace{(a \tilde{u}_u + b \tilde{u}_v)}_{\alpha} \tilde{r}_{\tilde{u}} + \underbrace{(a \tilde{v}_u + b \tilde{v}_v)}_{\beta} \tilde{r}_{\tilde{v}}. \end{equation*}
 Torej za vsak par vektorjev $(a, b)^{T}$, $(\alpha, \beta)^{T}$ velja zveza 
@@ -791,8 +791,8 @@ Od tod sledi naslednji izrek.
  \end{align*}
 \qed
 
-Recimo, da imamo podano $V \subseteq  \mathbb{R}^2$ in matrično funkcijo \begin{align*}
-  M: V &\longrightarrow M_2(\mathbb{R})_\text{simetrične, pozitivno definitne}  \\
+Recimo, da imamo podano $V \subseteq  \R ^2$ in matrično funkcijo \begin{align*}
+  M: V &\longrightarrow M_2(\R )_\text{simetrične, pozitivno definitne}  \\
   (u,v) &\longmapsto \begin{pmatrix}
   E & F \\
   F & G
@@ -804,7 +804,7 @@ Zanimivo vprašanje se glasi: Ali lahko to funkcijo realiziramo v vloženi mnogo
 
 \subsubsection{Druga fundamentalna forma}
 
-Naj bo $X \subseteq \mathbb{R}^3$ ploskev s parametrizacijo $r: V \subseteq \mathbb{R}^2 \to  X$.
+Naj bo $X \subseteq \R ^3$ ploskev s parametrizacijo $r: V \subseteq \R ^2 \to  X$.
 Intuitivno je ukrivljenost ploskve $X$ v točki $r(u,v) = m \in X$ `hitrost` oddaljevanja $X$ od tangentne ravnine $T_{m}X$.
 Naj bo $n$ normala na ravnino $T_{m}X$ v točki $m$. Naj bo točka $r(u', v') = r(u + \Delta u, v + \Delta v)$ blizu točke $m = r(u,v)$. Izmeriti hočemo razdaljo od točke $r(u', v')$ do $T_mX$.
 Dobimo 
@@ -822,7 +822,7 @@ Zdaj lahko smiselno definiramo drugo fundamentalno formo ploskve.
 
 \begin{definicija}
 \label{def_druga_fundamentalna_forma_ploskve}
- Naj bo $X \subseteq \mathbb{R}^3$ ploskev s parametrizacijo $r: V \subseteq \mathbb{R}^2 \to  X$. Druga fundamentalna forma $X$ v točki $m = r(u,v)$ je podana z matriko 
+ Naj bo $X \subseteq \R ^3$ ploskev s parametrizacijo $r: V \subseteq \R ^2 \to  X$. Druga fundamentalna forma $X$ v točki $m = r(u,v)$ je podana z matriko 
  \begin{equation*} \begin{pmatrix}
  L & M \\
  M & N
@@ -830,7 +830,7 @@ Zdaj lahko smiselno definiramo drugo fundamentalno formo ploskve.
  L(u,v) & M(u,v) \\
  M(u,v) & N(u,v)
  \end{pmatrix}, \end{equation*}
- kjer so $L, M, N: V \to  \mathbb{R}$ funkcije s predpisi 
+ kjer so $L, M, N: V \to  \R $ funkcije s predpisi 
  \begin{align*}
     L(u,v)  &= \langle r_{uu}(u,v), n(u,v) \rangle,  \\
     M(u,v)  &= \langle r_{uv}(u,v), n(u,v) \rangle,  \\
@@ -840,7 +840,7 @@ Zdaj lahko smiselno definiramo drugo fundamentalno formo ploskve.
 \end{definicija}
 
 \begin{opomba}
-    Za drugo fundamentalno formo je res nujen skalarni produkt v $\mathbb{R}^3$ (za razliko od prve fundamentalne forme, ki v vsaki točki določa drug skalarni produkt). 
+    Za drugo fundamentalno formo je res nujen skalarni produkt v $\R ^3$ (za razliko od prve fundamentalne forme, ki v vsaki točki določa drug skalarni produkt). 
 \end{opomba}
 
 Razmislili smo, da velja ocena razdalje
@@ -864,8 +864,8 @@ Zato najprej definirajmo geodetsko in normalno ukrivljenost krivulje.
 
 \begin{definicija}
 \label{def_geodetska_in_normalna_ukrivljenost}
-Naj bo $X \subseteq \mathbb{R}^3$ ploskev s parametrizacijo $r: V \subseteq \mathbb{R}^2 \to  X$ in naj bo $\gamma: [a,b] \to X$ gladka krivulja. 
-Definirajmo normalo na krivuljo $\gamma$ kot preslikavo $n_{\gamma}: [a,b] \to  TX$ s predpisom
+Naj bo $X \subseteq \R ^3$ ploskev s parametrizacijo $r: V \subseteq \R ^2 \to  X$ in naj bo $\gamma: [a,b] \to X$ gladka krivulja. 
+Definirajmo normalo na krivuljo $\gamma$ kot preslikavo $n_{\gamma}: [a,b] \to  TX^{\perp}$ s predpisom
 \begin{equation*} n_{\gamma}(t) = \frac{r_u(u(t), v(t)) \times  r_v(u(t), v(t))}{\lvert\lvert r_u(u(t), v(t)) \times  r_v(u(t), v(t)) \rvert\rvert }.\end{equation*}
 Potem definiramo normalno in geodetsko ukrivljenost krivulje $\gamma$ kot 
 \begin{align*}
@@ -923,14 +923,14 @@ Vsako funkcijo normalne ukrivljenosti lahko razširimo na tangentno ravnino na n
 
 \begin{definicija}
 \label{def_razsiritev_normalne_ukrivljenosti}
-    Naj bo $X \subseteq \mathbb{R}^3$ ploskev s parametrizacijo $r: V \subseteq \mathbb{R}^2 \to  X$
+    Naj bo $X \subseteq \R ^3$ ploskev s parametrizacijo $r: V \subseteq \R ^2 \to  X$
     in naj bo $\begin{pmatrix}
     L & M \\
     M & N
     \end{pmatrix}$ druga fundamentalna forma ploskve $X$ glede na $r$. Naj bo $r(u_0, v_0) = m \in  X$. Vemo, da je $\left\{ r_u(u_0, v_0), r_v(u_0, v_0) \right\}$ baza za
     tangetno ravnino $T_mX$, zato lahko vsak vektor v njej enolično zapišemo v obliki $\xi r_u(u_0, v_0) + \eta r_v(u_0, v_0).$
     Potem obstaja funkcija \begin{align*}
-       \varkappa_n : T_mX &\longrightarrow \mathbb{R}, \\
+       \varkappa_n : T_mX &\longrightarrow \R , \\
         \varkappa_n(\xi r_u(u_0, v_0) + \eta r_v(u_0, v_0)) &=
         \begin{pmatrix}
           \xi  & \eta
@@ -951,14 +951,14 @@ Včasih zlorabimo notacijo in pišemo \begin{equation*}
 
 \begin{opomba}
  Če je $(\xi, \eta) = (\dot{u}, \dot{v})$ in je $\gamma$ naravno parametrizirana krivulja, potem par $(\xi, \eta)$ leži
- na enotski krožnici v ravnini $T_mX$. V $\mathbb{R}^3$ je to res običajna krožnica glede na
+ na enotski krožnici v ravnini $T_mX$. V $\R ^3$ je to res običajna krožnica glede na
  evklidkski skalarni produkt, v koordinatah $(\xi, \eta)$ pa jo določa enačba 
  \begin{equation*} E \xi^2 + 2F \xi \eta + G \eta^2  = 1.\end{equation*}
 \end{opomba}
 
 \begin{definicija}
 \label{def_glavni_ukrivljenosti_ploskve}
- Ekstrema funkcije $\varkappa_n: T_mX \to  \mathbb{R}$, skrčene na enotsko sfero $E \xi^2 + 2F \xi \eta + G \eta^2  = 1$, imenujemo glavni ukrivljenosti ploskve $X$ v točki $m$. 
+ Ekstrema funkcije $\varkappa_n: T_mX \to  \R $, skrčene na enotsko sfero $E \xi^2 + 2F \xi \eta + G \eta^2  = 1$, imenujemo glavni ukrivljenosti ploskve $X$ v točki $m$. 
  Označimo ju s $\kappa_1$ in $\kappa_2$. 
 \end{definicija}
 
@@ -1007,8 +1007,8 @@ Z naslednjim izrekom bomo utemeljili, da sta glavni ukrivljenosti res kvečjem d
 \end{izrek}
 \noindent
 {\em Dokaz:\/}
- Ekstrema $\lambda_1$, $\lambda_2$ sta vezana ekstrema za funkcijo $\varkappa_n: T_mX \to \mathbb{R}$.
- Zaradi homeomorfizma $T_mX \approx \mathbb{R}^2$ lahko identificiramo elemente $T_mX$ s pari $(\xi, \eta)$. Naša krožnica je
+ Ekstrema $\lambda_1$, $\lambda_2$ sta vezana ekstrema za funkcijo $\varkappa_n: T_mX \to \R $.
+ Zaradi homeomorfizma $T_mX \approx \R ^2$ lahko identificiramo elemente $T_mX$ s pari $(\xi, \eta)$. Naša krožnica je
  določena z vezjo $\lvert\lvert (\xi, \eta) \rvert\rvert = 1$ oziroma ekvivalentno $\lvert\lvert (\xi, \eta) \rvert\rvert^2 = 1$. Torej iščemo ekstreme funkcije \begin{equation*}
    \varkappa_n(\xi, \eta) = \begin{pmatrix}
      \xi & \eta 
@@ -1175,7 +1175,7 @@ Iz dokaza prejšnjega izreka je razvidno, da sta $\kappa_1$ in $\kappa_2$ lastni
 
 \begin{izrek}
 \label{izr_izrazava_gaussove_ukrivljenosti}
-Za Gaussovo ukrivljenost $\kappa: X \to  \mathbb{R}$ velja zveza \begin{equation*}
+Za Gaussovo ukrivljenost $\kappa: X \to  \R $ velja zveza \begin{equation*}
 \kappa(m) = \frac{(LN - M^2)(m)}{(EG - F^2)(m)}. 
 \end{equation*}  
 \end{izrek}
@@ -1288,7 +1288,7 @@ $b$ po predpisu za polinom $p$, dobimo natanko izraz povprečne ukrivljenosti iz
 
 \begin{izrek}
 \label{izr_glavni_smeri_sta_si_pravokotni}
-Glavni smeri $(\xi_1, \eta_1)_{(m)}^{T}$, $(\xi_2, \eta_2)_{(m)}^{T}$ sta si pravokotni v $T_m X$. 
+Glavni smeri $(\xi_1, \eta_1)_{(m)}^{T}$ in $(\xi_2, \eta_2)_{(m)}^{T}$ sta si pravokotni v $T_m X$. 
 \end{izrek}
 \noindent
 {\em Dokaz:\/}
@@ -1317,7 +1317,7 @@ M & N
   \end{pmatrix} = A^{-1}B.
 \end{equation*}  
 Ker vemo, da za sebi adjungirane preslikave (ki imajo različne lastne vektorje) velja, da morajo biti ti med seboj pravokotni,
-je dovolj dokazati sebi adjungiranost preslikave $C$. Torej za vsaka vektroja $\vec{v}, \vec{w} \in  T_m X$ dokazujemo \begin{equation*}
+je dovolj dokazati sebi adjungiranost preslikave $C$. Torej za vsaka vektorja $\vec{v}, \vec{w} \in  T_m X$ dokazujemo \begin{equation*}
 \langle C\vec{v}, \vec{w} \rangle = \langle \vec{v}, C \vec{w} \rangle.
 \end{equation*}  
 Pri tem se zavedajmo, da je za poljubna vektorja skalarni produkt določen s pomočjo prve fundamentalne forme. V bazi $\left\{ r_u, r_v\right\} $ je podan z \begin{equation*}
@@ -1334,13 +1334,13 @@ C^{T}A = (A^{-1}B)^{T}A = B^{T}A^{-T}A = BA^{-1}A = B = A A^{-1} B = AC.
 
 \subsubsection{Interpretacija Gaussove ukrivljenosti}
 
-Intuitivno je ukrivljenost krivulje hitrost spreminjanja tangente. Hkrati pa velja, da čimbolj je krivulja ukrivljena, tem hitreje
+Intuitivno je ukrivljenost krivulje hitrost spreminjanja tangente. Hkrati pa velja, da čim bolj je krivulja ukrivljena, tem hitreje
 normala spreminja smer. Podoben pojav lahko opazujemo tudi na ploskvah, bolj kot je ploskev ukrivljena, hitreje se spreminja normala.
 Naj bo torej točka $m \in  X$, ter $U \subseteq X$ njena okolica, difeomorfna disku. Poglejmo si, kaj se dogaja z normalo po točkah $U$.
 
 \begin{definicija}
 \label{def_gaussova_preslikava}
-Naj bo $X \subseteq  \mathbb{R}^3$ ploskev. Preslikava, ki točki priredi enotsko normalo, \begin{align*}
+Naj bo $X \subseteq  \R ^3$ ploskev. Preslikava, ki točki priredi enotsko normalo, \begin{align*}
   \tilde{n}: X &\longrightarrow S^{2} \\
   m &\longmapsto n(m) \in  (T_mX)^{\perp}; \lvert\lvert n(m) \rvert\rvert = 1,   
 \end{align*}se imenuje Gaussova preslikava.
@@ -1421,7 +1421,7 @@ Za dokaz tega izreka bomo potrebovali naslednji dve lemi.
 
 \begin{lema}
 \label{lem_obstoj_funkcij}
-Naj bo $X$ poljubna ploskev. Tedaj obstaja za $X$ parametrizacija $s : V \to  X$ ter funkciji $\lambda, \mu : V \to  \mathbb{R}$, za kateri velja
+Naj bo $X$ poljubna ploskev. Tedaj obstaja za $X$ parametrizacija $s : V \to  X$ ter funkciji $\lambda, \mu : V \to  \R $, za kateri velja
 \begin{align*}
   s_u(u,v) &= \lambda(u,v)e_1(u,v),  \\
   s_v(u,v) &= \mu(u,v)e_2(u,v).
@@ -1549,7 +1549,7 @@ Tako imamo \begin{equation*}
         \frac{1}{\mu} B & \frac{1}{\mu} D
         \end{pmatrix}.
 \end{equation*}  
-Iz analize 3 vemo, da lahko v takšni situaciji najdemo integrirajoča množitelja $\lambda, \mu: V \to \mathbb{R}$, da bo veljalo \begin{align*}
+Iz analize 3 vemo, da lahko v takšni situaciji najdemo integrirajoča množitelja $\lambda, \mu: V \to \R $, da bo veljalo \begin{align*}
   \operatorname{grad} \xi (u,v) &= \frac{1}{\lambda(u,v)}(A(u,v), C(u,v)), \\
   \operatorname{grad} \eta (u,v) &= \frac{1}{\mu(u,v)}(B(u,v), D(u,v)).
 \end{align*}
@@ -1559,7 +1559,7 @@ Iz analize 3 vemo, da lahko v takšni situaciji najdemo integrirajoča množitel
 
 \begin{definicija}
 \label{def_premnosna_ploskev}
-Naj bo $\gamma: [a,b] \to \mathbb{R}^3$ krivulja in $\tilde{a}: \mathbb{R}^3 \to \mathbb{R}^3$ vektorsko polje. 
+Naj bo $\gamma: [a,b] \to \R ^3$ krivulja in $\tilde{a}: \R ^3 \to \R ^3$ vektorsko polje. 
 Vektorskemu polju $\tilde{a}$ priredimo vektorsko polje vzdož krivulje $\gamma$ s predpisom $a(u) := \tilde{a}(\gamma(u))$. 
 Ploskev $X$ je premonosna ploskev, podana s krivuljo $\gamma$ in vektorskim poljem $a$ vzdolž krivulje $\gamma$, za katero obstaja parametrizacija \begin{equation*}
 r(u, v) = \gamma(u) + va(u).
@@ -1664,7 +1664,7 @@ L & 0 \\
 \end{pmatrix}.
 \end{equation*}  
 Zdaj trdimo, da je $(e_2)_v = 0$. Zato bomo vektorsko polje $(e_2)_v$ razvili po bazi $\left\{ e_1, e_2, n\right\}$. Najprej bomo po tej bazi
-razvili vekotorja $n_u$ in $n_v$. Pri tem se zavedajmo, da je $e_1 = \frac{r_u}{\lvert\lvert r_u \rvert\rvert }$ in $e_2 = \frac{r_v}{\lvert\lvert r_v \rvert\rvert }$.
+razvili vektorja $n_u$ in $n_v$. Pri tem se zavedajmo, da je $e_1 = \frac{r_u}{\lvert\lvert r_u \rvert\rvert }$ in $e_2 = \frac{r_v}{\lvert\lvert r_v \rvert\rvert }$.
 Dobimo \begin{equation*}
 n_u = \langle n_u, e_1 \rangle e_1 + \langle n_u, e_2 \rangle e_2 + \langle n_u, n \rangle n. 
 \end{equation*}  
@@ -1691,8 +1691,8 @@ na vektorsko polje $e_2$. Zato si oglejmo krivulje $v \mapsto r(u_0, v)$, kjer j
 da je $r_v = \mu e_2$. Zato je \begin{equation*}
 r_{vv} = \mu_v e_2 + \mu \underbrace{ (e_2)_v}_0  = \mu_v e_2.
 \end{equation*}  
-To pomeni, da bosta v vsaki točki krivulje $v \mapsto r(u_0, v)$ vektorja hitrosti in pospeška vzporedna. Torej bo ta krivulja premica. Naj bo sedaj
-$\gamma(u) = r(u, v_0)$. Naša ploskev je premonosna, lahko jo parametriziramo s parametrizacijo \begin{equation*}
+To pomeni, da bosta v vsaki točki krivulje $v \mapsto r(u_0, v)$ vektorja hitrosti in pospeška vzporedna, torej bo ta krivulja premica. Naj bo sedaj
+$\gamma(u) = r(u, v_0)$. Naša ploskev je premonosna, lahko jo parametriziramo z \begin{equation*}
 r(u,v) = \gamma(u) + f(v) \underbrace{r_v(u, v_0)}_{a(u)}. 
 \end{equation*}  
 Zdaj izračunajmo mešani produkt \begin{equation*}

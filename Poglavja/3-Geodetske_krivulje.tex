@@ -20,13 +20,13 @@ Naj bo sedaj \begin{equation*}
 \begin{opomba}
 Takšni družini krivulj rečemo tudi variacija. Od tod pride ime "variacijski račun".
 \end{opomba}
-Ekstreme funkcionala $\mathcal{L}: \mathcal{V} \to  \mathbb{R}$ bomo iskali tako, kot iščemo ekstreme
-funkcij ene ali dveh spremenljivk. Kandidati za ekstreme splošne funkcije $F: \Omega \subseteq \mathbb{R}^n \to  \mathbb{R}$ so stacionarne točke $F$, torej
-točke $x_0 \in \mathbb{R}^n$, da je $D_{x_0}F = 0$. Vemo pa, da bo $D_{x_0}F = 0$ natanko tedaj, ko za vsak dovolj majhen $\varepsilon > 0$ in za vsako krivuljo
+Ekstreme funkcionala $\mathcal{L}: \mathcal{V} \to  \R $ bomo iskali tako, kot iščemo ekstreme
+funkcij ene ali dveh spremenljivk. Kandidati za ekstreme splošne funkcije $F: \Omega \subseteq \R ^n \to  \R $ so stacionarne točke $F$, torej
+točke $x_0 \in \R ^n$, da je $D_{x_0}F = 0$. Vemo pa, da bo $D_{x_0}F = 0$ natanko tedaj, ko za vsak dovolj majhen $\varepsilon > 0$ in za vsako krivuljo
 $\beta: (- \varepsilon, \varepsilon) \to  \Omega$, za katero je $\beta(0) = x_0$, velja \begin{equation*}
 \frac{d}{dt}  \bigg|_{t = 0} F(\beta(t)) = (D_{x_0}F) \dot{\beta}(0) = 0. 
 \end{equation*}  
-% To je direktna posledica dejstva, da je lahko vektor $\dot{\beta}(0) \in  \mathbb{R}^n$ poljuben.  TODO poglej, kaj je s to izjavo
+% To je direktna posledica dejstva, da je lahko vektor $\dot{\beta}(0) \in  \R ^n$ poljuben.  TODO poglej, kaj je s to izjavo
 
 Vrnimo se k funkcionalu $\mathcal{L}$. Ne bomo opazovali odvoda $\mathcal{L}$, temveč le smerne odvode $\mathcal{L}$ po vseh poteh, ki nas zanimajo. Krivulje $\gamma_i$ v evklidskem prostoru so točke v prostoru krivulj $\mathcal{V}$. Zanima nas,
 kaj so krivulje v prostoru $\mathcal{V}$.
@@ -78,7 +78,7 @@ Potem imamo \begin{align*}
     &+ \int_{a}^{b} R^{-\frac{1}{2}} \bigg[(E\dot{u} + F\dot{v})\dot{u}_s + (F\dot{u} + G\dot{v}) \dot{v}_s \bigg]_{s = 0} \, dt = (*)
 \end{align*}  
 
-Na tej točki velja omeniti, da če imamo podano variacijo $\Gamma(t,s) = r(u(t,s), v(t,s))$, potem tangento podaja predpis \begin{equation*}
+Na tej točki velja omeniti, da v primeru podane variacije $\Gamma(t,s) = r(u(t,s), v(t,s))$ tangento podaja predpis \begin{equation*}
 \frac{ \partial  }{ \partial s } (u(t,s), v(t,s)) = (u_s(t,s), v_s(t,s)).
 \end{equation*}  
 To pomeni, da bomo morali v zgornjem izrazu dobiti $(u_s(t,s), v_s(t,s))$. Nadaljujemo s per partesom drugega člena, pri čemer integriramo faktorja $\dot{u}_s$ in $\dot{v}_s$: \begin{align*}
@@ -88,8 +88,8 @@ To pomeni, da bomo morali v zgornjem izrazu dobiti $(u_s(t,s), v_s(t,s))$. Nadal
 Glede na začetne pogoje vemo, da mora biti $u_s(a,s) = u_s(b,s) = 0$, zato bo prvi celoten prvi del izraza enak 0: \begin{equation*}
 \bigg|_{s = 0} R^{-\frac{1}{2}} (E\dot{u} + F\dot{v}) u_s(t,s) \bigg|_a^{b} = 0
 \end{equation*}  
-in enako za člen $R^{-\frac{1}{2}} (E\dot{u} + F\dot{v}) v_s(t,s)$. Zdaj le še povzemimo vse skupaj.
-Prišli smo do tega, da je krivulja $\gamma(t)$ stacionarna točka funkcionala $\mathcal{L}: \mathcal{V} \to  \mathbb{R}$, če je za vsak par $(t,s)$\begin{equation*}
+in enako za člen $R^{-\frac{1}{2}} (F\dot{u} + G\dot{v}) v_s(t,s)$. Zdaj le še povzemimo vse skupaj.
+Prišli smo do tega, da je krivulja $\gamma(t)$ stacionarna točka funkcionala $\mathcal{L}: \mathcal{V} \to  \R $, če je za vsak par $(t,s)$\begin{equation*}
 \frac{ \partial  }{ \partial s } \mathcal{L}(\Gamma(t,s)) = \int_{a}^{b} P(t) \frac{ \partial u }{ \partial s } + Q(t) \frac{ \partial v }{ \partial s }  \, dt  = 0  
 \end{equation*}
 za funkciji \begin{align*}
@@ -100,7 +100,7 @@ To formuliramo z naslednjim izrekom, ki je ena izmed osnovnih variant osnovnega 
 
 \begin{izrek}
 \label{izr_osnovni_izrek_o_variacijskem_racunu}
-Naj bosta $P, Q: [a,b] \to  \mathbb{R}$ zvezni funkciji in naj bo $\Gamma(t, s) = r(u(t,s), v(t,s)) : [a,b] \times (-\varepsilon, \varepsilon) \to \mathbb{R}^2$ variacija, torej $u(t, 0) = u(t), v(t, 0) = v(t), u(a,s) = u(a), v(a,s) = v(a), u(b,s) = u(b)$ in $v(b,s) = v(b)$. Potem velja enakost \begin{equation*}
+Naj bosta $P, Q: [a,b] \to  \R $ zvezni funkciji in naj bo $\Gamma(t, s) = r(u(t,s), v(t,s)) : [a,b] \times (-\varepsilon, \varepsilon) \to \R ^2$ variacija, torej $u(t, 0) = u(t), v(t, 0) = v(t), u(a,s) = u(a), v(a,s) = v(a), u(b,s) = u(b)$ in $v(b,s) = v(b)$. Potem velja enakost \begin{equation*}
  \int_{a}^{b}  \left( P(t) \frac{ \partial u }{ \partial s }(t, s)  + Q(t) \frac{ \partial v }{ \partial s }(t, s) \right)  \, dt = 0 
  \end{equation*}  
 natanko tedaj, ko je $P(t) = 0$ in $Q(t) = 0$.
@@ -120,7 +120,7 @@ Za to variacijo imamo
     \int_{a}^{b} \left(P(t)\frac{ \partial u }{ \partial s } (t) + Q(t)\frac{ \partial v }{ \partial s } (t)  \right) \, dt &= \int_{a}^{b} P(t) \varphi(t) \, dt     \\
      &= \int_{t_0 - \delta}^{t_0 + \delta} P(t) \varphi(t)  \, dt > \frac{c}{2}  \int_{t_0 - \delta}^{t_0 + \delta} \varphi(t) \, dt > 0.
 \end{align*} 
-S tem smo pokazali dokaz za $P$, za $Q$ sledi simetrično.
+S tem smo zaključili dokaz za $P$, za $Q$ sledi simetrično.
 \qed
 
 \begin{posledica}
@@ -253,7 +253,7 @@ Po znanem postopku poračunamo prvo fundamentalno formo in dobimo rezultat \begi
         0 & \cosh^2 (\alpha u)\\
     \end{pmatrix}.
 \end{equation*}
-Ni težko opaziti, da je ta fundamentalna forma zelo podobna formi sfere. V resnici nam zgornji predpis podaja vložitev hiperbolične ravnine v prostor $\mathbb{R}^3$. 
+Ni težko opaziti, da je ta fundamentalna forma zelo podobna formi sfere. V resnici nam zgornji predpis podaja vložitev hiperbolične ravnine v prostor $\R ^3$. 
 \end{primer}
 
 \subsection{Gaussov izrek (Theorema egregium)}
@@ -278,21 +278,21 @@ Druga fundamentalna forma ploskve ni intrinzična, ampak ekstrinzična količina
 
 \noindent
 {\em Dokaz Theorema egregium:\/}
-Poiskali bomo način, kako izraziti $\kappa$ z $E, F, G$ in njihovimi odvodi. Naj bo $r: V \subseteq \mathbb{R}^2 \to  X \subseteq  \mathbb{R}^3$ parametrizacija ploskve $X$. Izberimo par ortonormiranih
+Poiskali bomo način, kako izraziti $\kappa$ z $E, F, G$ in njihovimi odvodi. Naj bo $r: V \subseteq \R ^2 \to  X \subseteq  \R ^3$ parametrizacija ploskve $X$. Izberimo par ortonormiranih
 vektorskih polj $e_1, e_2$ na $X$: \begin{equation*}
-e_i(u,v): V \subseteq \mathbb{R}^2  \to \bigsqcup_{(u,v) \in  V} T_{r(u,v)}X.
+e_i(u,v): V \subseteq \R ^2  \to \bigsqcup_{(u,v) \in  V} T_{r(u,v)}X.
 \end{equation*}  
 Skalarne produkte (glede na prvo fundamentalno formo) teh dveh vektorjev lahko izrazimo s Kroneckerjevo delto: \begin{equation*}
 \langle e_i, e_j \rangle_{I} = \delta_{ij}. 
 \end{equation*}
-Naj bo $n(u,v) \in (T_{r(u,v)}X)^{\perp}$ enotska normala v točki $r(u,v)$ podana s predpisom $n(u,v) = e_1(u,v) \times  e_2(u,v)$. V vsaki točki je $r(u,v) = m \in  X$ je trojica vektorjev $\left\{ e_1(u,v), e_2(u,v), n(u,v)\right\}$ ortonormirana baza prostora $\mathbb{R}^3$. 
+Naj bo $n(u,v) \in (T_{r(u,v)}X)^{\perp}$ enotska normala v točki $r(u,v)$ podana s predpisom $n(u,v) = e_1(u,v) \times  e_2(u,v)$. V vsaki točki je $r(u,v) = m \in  X$ je trojica vektorjev $\left\{ e_1(u,v), e_2(u,v), n(u,v)\right\}$ ortonormirana baza prostora $\R ^3$. 
 Trdimo, da velja sistem enačb \begin{align*}
     (e_1)_u &= \alpha_1 e_2 + \lambda_1 n, \\
     (e_1)_v &= \alpha_2 e_2 + \lambda_2 n, \\
     (e_2)_u &= - \alpha_1 e_1 + \mu_1 n, \\
     (e_2)_v &= - \alpha_2 e_1 + \mu_2 n.
 \end{align*}
-Pri tem so $\alpha_i, \lambda_i, \mu_i: V \to \mathbb{R}$ funkcije, odvisne od $(u,v)$. Vektor $(e_1)_u$ (in na enak način ostale) razvijemo po bazi: \begin{equation*}
+Pri tem so $\alpha_i, \lambda_i, \mu_i: V \to \R $ funkcije, odvisne od $(u,v)$. Vektor $(e_1)_u$ (in na enak način ostale) razvijemo po bazi: \begin{equation*}
 (e_1)_u = \langle (e_1)_u, e_1 \rangle e_1 + \langle  (e_1)_u, e_2 \rangle e_2 + \langle (e_1)_u, n \rangle n. 
 \end{equation*}
 Ker velja $\langle e_i, e_i \rangle = 1 $, sledi \begin{align*}
@@ -513,9 +513,9 @@ I = \begin{pmatrix}
 \end{equation*}  
 kar je natanko fundamentalna forma sfere. Torej je $X$ izometrična kosu sfere. 
 
-V primeru $\kappa = - \frac{1}{a^2}$ dobimo enačbo 
+V primeru $\kappa = - \frac{1}{a^2}$ dobimo 
 \begin{equation*}
-    \frac{g_{uu}}{g} &= \frac{1}{a^2} \implies  g_{uu} &= \frac{1}{a^2} g.
+    \frac{g_{uu}}{g} = \frac{1}{a^2} \implies  g_{uu} = \frac{1}{a^2} g.
 \end{equation*}
 Nato na isti način kot za $\kappa = \frac{1}{a^2}$ dobimo splošno rešitev \begin{equation*}
 g(u,v) = A(v) \cosh ( \frac{1}{a}  u) + B(v) \sinh (\frac{1}{a} u),
