@@ -1,5 +1,4 @@
 # Skripta-UDG
-Skripta za predmet uvod v diferencialno geometrijo (UDG). Updatana vsak teden (vsaj upam).
+Skripta za predmet uvod v diferencialno geometrijo (UDG).
 
-## Update
-Predavanja z dne 4.12.2023 bom vnesel v petek.
+Če najdete kakšno napako, mi lahko sporočite ali naredite pull request.
